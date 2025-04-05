@@ -66,7 +66,7 @@
 
 },
 
-"coding environment": {
+"code environment": {
 
     "python location": {
       "ok_button": "clipboard_python_location"
@@ -187,7 +187,7 @@
 
 
 
-"data science": {
+"data science1": {
 
 
 
@@ -443,7 +443,7 @@
 },
 
 
-"read QC": {
+"QC of reads": {
 
     "fastqc": {
       "inputbox1": "xxxxx",
@@ -453,24 +453,26 @@
 
 
 "alignment": {
-    "BLAST - search of 1 query into database": {
+    "Blast": {
+        "plaintext":"search of 1 query into large database",
         "ok_button": "xxxxx"
     },
-    "MUSCLE - simultaneous multiple comparisson, e.g. hemogobin of all animals": {
+    "Muscle": {
+      "plaintext":"simultaneous comparisson of multiple strings. e.g. hemogobin of all animals",
       "ok_button": "xxxxx"
     },
-    "Bowtie2 - mapping of DNA reads into dna, e.g. my full genome seq or Chipseq": {
-      "inputbox1": "xxxxx",
+    "Bowtie2": {
+      "plaintext":"mapping of DNA reads into DNA. e.g. new individual or chipseq",
       "ok_button": "xxxxx"
     },
-    "Hisat2 - mapping of RNA reads into dna": {
-        "inputbox1": "xxxxx",
+    "Hisat2": {
+        "plaintext":"mapping of *RNA* reads into DNA",
         "ok_button": "xxxxx"
       }
 },
 
-"mapped DNA analysis - my full genome seq": {
-    "Picard - PCR replicas removal": {
+"mapped DNA analysis (new individual)": {
+    "Picard - remove PCR replicas": {
         "ok_button": "xxxxx"
     },
     "Picard - correct and sort pairs": {
@@ -493,44 +495,70 @@
     }
 },
 
-"mapped DNA analysis - Chipseq": {
-    "Macs2 callpeak to fing points of atachment": {
+"mapped DNA analysis (chipseq)": {
+    "Macs2 callpeak": {
+       "plaintext":"fing points of atachment of protein in DNA",
         "ok_button": "xxxxx"
     },
     "generate motif": {
         "ok_button": "xxxxx"
     }
 },
-"mapped RNA analysis ": {
-    "FeatureCounts to find table per gene": {
+"mapped *RNA* analysis": {
+    "FeatureCounts": {
+        "plaintext":"generate read table per gene",
         "ok_button": "xxxxx"
     },
-    "Desec2 to find differential expression of genes": {
+    "Desec2": {
+        "plaintext":"find differential expression of genes",
         "ok_button": "xxxxx"
     }
 },
 "SC analysis ": {
     "cell and gene QC": {
+      "radiobutton1": "count x genes plot",
+      "radiobutton2": "mitocondrial violin",
         "ok_button": "xxxxx"
     },
     "Normalization": {
-        "ok_button": "xxxxx"
+      "plaintext1":"DIVIDE PER TOTAL",
+      "radiobutton1": "per total count",
+      "radiobutton2": "per total genes",
+      "radiobutton3": "mmmmm",
+      "plaintext2":"NON LINEAR TRANSFORM",
+      "radiobutton4": "log",
+      "radiobutton5": "sqrt",
+      "radiobutton6": "pearson residuals",
+      "ok_button": "xxxxx"
     },
-    "Log transformation": {
-        "ok_button": "xxxxx"
-    },
-    "Feature Selection and Dimentionality reduction": {
+    "Dimentionality reduction": {
+      "radiobutton1": "PCA",
+      "radiobutton2": "UMAP",
+      "radiobutton3": "t-SNE",
         "ok_button": "xxxxx"
     },
     "Clusterization": {
+      "radiobutton1": "leiden <- best",
+      "radiobutton2": "louvain",
         "ok_button": "xxxxx"
+    },
+    "Find marker": {
+      "radiobutton1": "sc.tl.rank_genes_groups",
+      "radiobutton2": "deseq2",
+      "ok_button": "xxxxx"
+    },
+    "Enrichment": {
+    "ok_button": "xxxxx"
     },
     "Trajectory": {
         "ok_button": "xxxxx"
     },
     "Velocity": {
         "ok_button": "xxxxx"
-    }
+    },
+    "GRN inference": {
+      "ok_button": "xxxxx"
+      }
 }
 
   }
