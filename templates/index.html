@@ -16,8 +16,9 @@
   <!-- Container for Vertical Stripes -->
   <div class="rainbow-container">
     {% for stripe_title, commands in config.items() %}
-      <div class="stripe">
-      <!-- <div class="stripe"  style="background-color: {{ colorconfig[stripe_title] }};"> -->
+      <!-- <div class="stripe">-->
+      <div class="stripe"  style="background-color: {{colorconfig[stripe_title]}}">
+      <!-- <div class="stripe"  style="background-color: #f6a5a5">-->
         <h2>{{ stripe_title }}</h2>
         {% for command_title, elements in commands.items() %}
           <div class="command-box">
