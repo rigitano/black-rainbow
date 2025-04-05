@@ -18,26 +18,26 @@ body {
   .stripe {
     flex: 1;
     padding: 10px;
-    background-color: #444; /* You might update this for gradient effects */
+    background-color: #444; /* Base background color */
     color: white;
-    border-right: 1px solid #222;
-  }
-  
-  .command-box {
+    border-right: 1px solid #222; /* Base border color */
+}
+
+.command-box {
     margin: 10px 0;
-    border: 1px solid #666;
-  }
-  
-  .box-header {
-    background-color: #333;
+    border: 1px solid rgba(0, 0, 0, 0.4); /* Semi-transparent black */
+}
+
+.box-header {
+    background-color: rgba(0, 0, 0, 0.2); /* Lighter transparent black */
     padding: 8px;
     cursor: pointer;
-  }
-  
-  .box-content {
-    background-color: #555;
+}
+
+.box-content {
+    background-color: rgba(0, 0, 0, 0.6); /* Darker transparent black */
     padding: 8px;
-  }
+}
   
   .input-group,
   .radio-group {
