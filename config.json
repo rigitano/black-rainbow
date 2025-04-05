@@ -1,0 +1,537 @@
+{
+"infrastructure": {
+
+    "echo hello world !": {
+      "ok_button": "clipboard_hello_world"
+    },
+    "os version": {
+      "ok_button": "clipboard_os_version"
+    },
+    "available RAM and CPU": {
+        "ok_button": "clipboard_running_processes"
+    },
+    "ip and mac": {
+      "ok_button": "clipboard_ip_and_mac"
+    },
+
+    "execute": {
+      "droplist": ["choose...",
+                     "------local------",
+                     "bash (./)", 
+                     "nextflow (nextflow run)", 
+                     "docker (docker run -d)",
+                     "------cluster------",
+                     "slurm (sbatch)",
+                     "torque (qsub)",
+                     "moab on top of torque (msub)",
+                     "kubernetes (kubectl apply -f)",
+                     "yarn-hadoop (yarn jar)",
+                     "spark on top of yarn-hadoop (spark-submit --master yarn)"],
+      "ok_button": "clipboard_running_processes"
+    },
+
+    "whats being executed": {
+      "droplist": ["choose...",
+                    "------local------",
+                    "bash (top)", 
+                    "nextflow (nextflow log)", 
+                    "docker (docker ps)",
+                    "------cluster------",
+                    "slurm (squeue)",
+                    "torque (qstat)",
+                    "moab on top of torque (showq)",
+                    "kubernetes (kubectl get pods)",
+                    "yarn-hadoop (yarn application -list)",
+                    "spark on top of yarn-hadoop (use UI!)"],
+      "ok_button": "clipboard_running_processes"
+    },
+
+    "cancel execution": {
+
+      "droplist": ["choose...",
+                    "------local------",
+                    "bash (kill)", 
+                    "nextflow (nextflow kill)", 
+                    "docker (docker stop)",
+                    "------cluster------",
+                    "slurm (scancel)",
+                    "torque (qdel)",
+                    "moab on top of torque (mjobctl -c)",
+                    "kubernetes (kubectl delet pod)",
+                    "yarn-hadoop (yarn application -kill)",
+                    "spark on top of yarn-hadoop (yarn application -kill)"],
+
+      "ok_button": "clipboard_running_processes"
+    }
+
+},
+
+"coding environment": {
+
+    "python location": {
+      "ok_button": "clipboard_python_location"
+    },
+    "modules location": {
+      "ok_button": "clipboard_modules_location"
+    },
+    "see PATH content": {
+      "ok_button": "clipboard_see_PATH_content"
+    },
+    "add to PATH": {
+        "ok_button": "clipboard_add_to_PATH"
+      },
+    "see all conda environments": {
+      "ok_button": "clipboard_see_all_conda_environments"
+    },
+    "create conda environment (...)": {
+      "inputbox1": "environment name",
+      "ok_button": "create_conda_environment"
+    }
+},
+
+
+"GIT": {
+
+    "init": {
+      "inputbox1": "xxxxx",
+      "inputbox2": "xxxxx",
+      "radiobutton1": "xxxxx",
+      "radiobutton2": "xxxxx",
+      "ok_button": "xxxxx"
+    },
+    "clone": {
+      "inputbox1": "Email",
+      "inputbox2": "Phone",
+      "ok_button": "xxxxx"
+    },
+    "pull": {
+        "inputbox1": "xxxxx",
+        "inputbox2": "xxxxx",
+        "radiobutton1": "xxxxx",
+        "radiobutton2": "xxxxx",
+        "ok_button": "xxxxx"
+      },
+      "add, commit": {
+        "inputbox1": "xxxxx",
+        "inputbox2": "xxxxx",
+        "radiobutton1": "xxxxx",
+        "radiobutton2": "xxxxx",
+        "ok_button": "xxxxx"
+      },
+      "push": {
+        "inputbox1": "xxxxx",
+        "inputbox2": "xxxxx",
+        "radiobutton1": "xxxxx",
+        "radiobutton2": "xxxxx",
+        "ok_button": "xxxxx"
+      },
+      "reset": {
+        "inputbox1": "xxxxx",
+        "inputbox2": "xxxxx",
+        "radiobutton1": "xxxxx",
+        "radiobutton2": "xxxxx",
+        "ok_button": "xxxxx"
+      },
+      "see all branches": {
+        "inputbox1": "xxxxx",
+        "inputbox2": "xxxxx",
+        "radiobutton1": "xxxxx",
+        "radiobutton2": "xxxxx",
+        "ok_button": "xxxxx"
+      },
+      "change branch": {
+        "inputbox1": "xxxxx",
+        "inputbox2": "xxxxx",
+        "radiobutton1": "xxxxx",
+        "radiobutton2": "xxxxx",
+        "ok_button": "xxxxx"
+      },
+      "merge": {
+        "inputbox1": "xxxxx",
+        "inputbox2": "xxxxx",
+        "radiobutton1": "xxxxx",
+        "radiobutton2": "xxxxx",
+        "ok_button": "xxxxx"
+      }
+},
+
+
+
+"search filesystem": {
+
+    "ls enhanced": {
+      "ok_button": "xxxxx"
+    },
+    "search": {
+        "radiobutton1": "by name",
+        "radiobutton2": "by path",
+        "radiobutton3": "by content",
+        "inputbox1": "by content",
+      "ok_button": "xxxxx"
+    }
+
+},
+
+"search words in .txt": {
+
+    "find ": {
+      "plaintext": "grep -n 'henrique' logfile.txt",
+      "ok_button": "xxxxx"
+    },
+
+    "replace": {
+      "plaintext": "sed 's/old_value/new_value/g' file.csv > newfile.csv",
+      "ok_button": "xxxxx"
+    }
+},
+
+
+
+"data science": {
+
+
+
+    "filter table": {
+      "plaintext": "awk -F',' '$2=='value'' file.csv",
+      "ok_button": "xxxxx"
+    },
+    "sort table": {
+      "plaintext": "sort -t, -k2 file.csv",
+      "ok_button": "xxxxx"
+    },
+    "unique": {
+      "plaintext": "sort data.txt | uniq",
+      "ok_button": "xxxxx"
+    }
+
+
+
+
+},
+
+"data science2": {
+
+
+    "filter table": {
+      "plaintext": "df.query('column1 == value1 and column2 == value2')",
+      "ok_button": "xxxxx"
+    },
+
+    "sort table": {
+      "plaintext": "df.sort_values(by='column1', ascending=True, inplace=True)",
+      "ok_button": "xxxxx"
+    },
+    "unique": {
+      "plaintext": "df['column1'].unique()",
+      "ok_button": "xxxxx"
+    },
+    "groupby": {
+      "plaintext": "df.groupby('column').agg({'another_column': 'sum'})",
+      "ok_button": "xxxxx"
+    },
+    "merge": {
+      "plaintext": "pd.merge(df1, df2, left_on='column1', right_on='column2')",
+      "ok_button": "xxxxx"
+    },
+    "concat": {
+      "plaintext": "pd.concat([df1, df2], ignore_index=True)",
+      "ok_button": "xxxxx"
+    },
+    "map": {
+      "plaintext": "df.map{'hi':'oi','bye':'tchau'}",
+      "ok_button": "xxxxx"
+    },
+    "apply": {
+      "plaintext": "df.apply(lambda x: x + 1)",
+      "ok_button": "xxxxx"
+    },
+
+    "describe": {
+      "plaintext": "df.describe()",
+      "ok_button": "xxxxx"
+    },
+    "fillna": {
+      "plaintext": "df.fillna(0, inplace=True)",
+      "ok_button": "xxxxx"
+    },
+    "change type": {
+      "plaintext": "df['col'].astype(int)",
+      "plaintext2": "int float str bool 'category'",
+      "ok_button": "xxxxx"
+    }
+
+
+
+},
+
+
+
+
+
+"construct molecules": {
+
+    "download and clean pdb": {
+      "ok_button": "xxxxx"
+    },
+    "create peptide": {
+      "ok_button": "xxxxx"
+    },
+    "create truss": {
+        "ok_button": "xxxxx"
+    },
+    "create tape": {
+        "ok_button": "xxxxx"
+    },
+    "create sphere": {
+        "ok_button": "xxxxx"
+    },
+    "create tube": {
+        "ok_button": "xxxxx"
+    },
+    "delete region": {
+        "ok_button": "xxxxx"
+    }
+},
+
+
+
+"construct system": {
+
+    "molecule in solvent box": {
+      "ok_button": "xxxxx"
+    },
+    "molecule in membrane": {
+      "ok_button": "xxxxx"
+    },
+    "fill box with the same molecule": {
+        "ok_button": "xxxxx"
+      }
+
+
+},
+
+"restrict system": {
+    "position": {
+        "ok_button": "xxxxx"
+      },
+    "phi and psi dihedrals": {
+      "ok_button": "xxxxx"
+    }
+
+},
+
+
+"inspect system": {
+    "get global id of atom": {
+        "ok_button": "xxxxx"
+    },
+    "molecules basic info": {
+        "ok_button": "xxxxx"
+    },
+    "parse directive": {
+        "ok_button": "xxxxx"
+    },
+    "parse molecules": {
+        "ok_button": "xxxxx"
+    },
+    "include everything into a single top": {
+        "ok_button": "xxxxx"
+    },
+    "decompose molecules into separate itps": {
+        "ok_button": "xxxxx"
+    }
+
+},
+
+"run": {
+    "make realistic": {
+        "ok_button": "xxxxx"
+      },
+    "benchmark": {
+        "ok_button": "xxxxx"
+      },
+    "run": {
+      "ok_button": "xxxxx"
+    },
+    "run FEP": {
+      "inputbox1": "molecule to vanish",
+      "ok_button": "xxxxx"
+    }
+
+},
+
+
+"analysis over timeline": {
+
+    "Ramachandran": {
+      "ok_button": "xxxxx"
+    },
+    "DSSP": {
+      "ok_button": "xxxxx"
+    },
+    "H bonds": {
+        "ok_button": "xxxxx"
+      },
+    "Distance between 2 atoms": {
+      "ok_button": "xxxxx"
+    },
+    "phi and psi": {
+      "ok_button": "xxxxx"
+    },
+    "RMSD from reference": {
+      "ok_button": "xxxxx"
+    },
+    "Gyration radius": {
+      "ok_button": "xxxxx"
+    },
+    "SASA": {
+      "ok_button": "xxxxx"
+    },
+    "Quadrupole": {
+      "ok_button": "xxxxx"
+    }
+
+},
+
+"analysis over delta E": {
+    "check convergence": {
+        "ok_button": "xxxxx"
+    },
+    "whats the delta E": {
+      "ok_button": "xxxxx"
+    },
+    "draw termodinamic cycle": {
+      "inputbox1": "molecule to vanish",
+      "ok_button": "xxxxx"
+    }
+
+},
+
+"vmd visualisation": {
+
+    "LAUNCH VMD WITH SOCKET": {
+      "ok_button": "xxxxx"
+    },
+    "Cartoon with licorice": {
+      "ok_button": "xxxxx"
+    },
+    "Goodsell": {
+      "ok_button": "xxxxx"
+    },
+    "Secondary Structure": {
+      "ok_button": "xxxxx"
+    },
+    "Elostatic potential": {
+      "ok_button": "xxxxx"
+    },
+    "Hydrophilic x Hydrophobic": {
+      "ok_button": "xxxxx"
+    },
+    "H bonds near protein": {
+      "ok_button": "xxxxx"
+    },
+    "Gromacs Topology": {
+      "ok_button": "xxxxx"
+    },
+    "Forces": {
+      "ok_button": "xxxxx"
+    },
+    "Specific id": {
+      "ok_button": "xxxxx"
+    }
+
+},
+
+
+"read QC": {
+
+    "fastqc": {
+      "inputbox1": "xxxxx",
+      "ok_button": "xxxxx"
+    }
+},
+
+
+"alignment": {
+    "BLAST - search of 1 query into database": {
+        "ok_button": "xxxxx"
+    },
+    "MUSCLE - simultaneous multiple comparisson, e.g. hemogobin of all animals": {
+      "ok_button": "xxxxx"
+    },
+    "Bowtie2 - mapping of DNA reads into dna, e.g. my full genome seq or Chipseq": {
+      "inputbox1": "xxxxx",
+      "ok_button": "xxxxx"
+    },
+    "Hisat2 - mapping of RNA reads into dna": {
+        "inputbox1": "xxxxx",
+        "ok_button": "xxxxx"
+      }
+},
+
+"mapped DNA analysis - my full genome seq": {
+    "Picard - PCR replicas removal": {
+        "ok_button": "xxxxx"
+    },
+    "Picard - correct and sort pairs": {
+        "ok_button": "xxxxx"
+    },
+    "Picard - add group info": {
+        "ok_button": "xxxxx"
+    },
+    "Picard - index BAM": {
+        "ok_button": "xxxxx"
+    },
+    "GATK - create dictionary": {
+        "ok_button": "xxxxx"
+    },
+    "GATK - variant calling": {
+        "ok_button": "xxxxx"
+    },
+    "BCF Tools - filter variants of my interest": {
+        "ok_button": "xxxxx"
+    }
+},
+
+"mapped DNA analysis - Chipseq": {
+    "Macs2 callpeak to fing points of atachment": {
+        "ok_button": "xxxxx"
+    },
+    "generate motif": {
+        "ok_button": "xxxxx"
+    }
+},
+"mapped RNA analysis ": {
+    "FeatureCounts to find table per gene": {
+        "ok_button": "xxxxx"
+    },
+    "Desec2 to find differential expression of genes": {
+        "ok_button": "xxxxx"
+    }
+},
+"SC analysis ": {
+    "cell and gene QC": {
+        "ok_button": "xxxxx"
+    },
+    "Normalization": {
+        "ok_button": "xxxxx"
+    },
+    "Log transformation": {
+        "ok_button": "xxxxx"
+    },
+    "Feature Selection and Dimentionality reduction": {
+        "ok_button": "xxxxx"
+    },
+    "Clusterization": {
+        "ok_button": "xxxxx"
+    },
+    "Trajectory": {
+        "ok_button": "xxxxx"
+    },
+    "Velocity": {
+        "ok_button": "xxxxx"
+    }
+}
+
+  }
+  
