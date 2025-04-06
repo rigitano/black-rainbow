@@ -6,6 +6,8 @@
 "search words in .txt": "#444",
 "data science1": "#444",
 "data science2": "#496f85",
+"ML": "#496f85",
+"Statistical tests": "#496f85",
 "construct molecules": "#b77575",
 "construct system": "#b77575",
 "restrict system": "#b77575",
@@ -19,7 +21,8 @@
 "mapped DNA analysis (new individual)": "#a9a9a9",
 "mapped DNA analysis (chipseq)": "#a9a9a9",
 "mapped *RNA* analysis": "#a9a9a9",
-"SC analysis ": "#553076"
+"SC analysis": "#553076"
+
 
   }
   

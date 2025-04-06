@@ -265,8 +265,81 @@
 },
 
 
+"ML":{
 
 
+  "Prepair": {
+    "radiobutton1": "Dummization",
+    "radiobutton2": "Normalization",
+    "radiobutton3": "Feature selection",
+      "ok_button": "xxxx"
+  },
+
+  "Train test split": {
+    "radiobutton1": "xxxx",
+    "radiobutton2": "xxxx",
+      "ok_button": "xxxx"
+  },
+
+  "Fit model": {
+    "radiobutton1": "XGBoost",
+    "radiobutton6": "Decision Tree",
+    "radiobutton7": "Naive Bayes",
+    "radiobutton8": "Neural Network",
+    "radiobutton9": "Linear Regression",
+      "ok_button": "xxxx"
+  },
+
+  "Evaluate": {
+    "radiobutton1": "cross validation",
+    "radiobutton2": "confusion matrix",
+    "radiobutton3": "classification report",
+    "radiobutton4": "ROC AUC",
+    "radiobutton5": "feature importance",
+      "ok_button": "xxxx"
+  }
+
+
+},
+
+
+"Statistical tests":{
+
+
+  "Difference between groups": {
+    "radiobutton1": "t-test",
+    "radiobutton2": "ANOVA",
+    "radiobutton3": "Kruskal-Wallis",
+    "radiobutton4": "Mann-Whitney",
+    "radiobutton5": "Wilcoxon",
+    "radiobutton6": "Chi-square",
+    "radiobutton7": "Fisher's exact test",
+    "radiobutton8": "Cohen's d",
+    "radiobutton9": "Hedges' g",
+    "radiobutton10": "Cliff's delta",
+    "radiobutton11": "Cramér's V",
+    "radiobutton12": "Phi coefficient",
+    "radiobutton13": "Kendall's tau",
+    "radiobutton14": "Spearman's rank correlation",
+    "radiobutton15": "Pearson's correlation",
+    "radiobutton16": "Point-biserial correlation",
+
+      "ok_button": "xxxx"
+  },
+
+  "Correlation": {
+    "radiobutton1": "Pearson",
+    "radiobutton2": "Spearman",
+    "radiobutton3": "Kendall",
+    "radiobutton4": "Point-biserial",
+
+      "ok_button": "xxxx"
+  }
+
+
+
+
+},
 
 "construct molecules": {
 
@@ -500,7 +573,7 @@
        "plaintext":"fing points of atachment of protein in DNA",
         "ok_button": "xxxxx"
     },
-    "generate motif": {
+    "Generate motif": {
         "ok_button": "xxxxx"
     }
 },
@@ -514,17 +587,23 @@
         "ok_button": "xxxxx"
     }
 },
-"SC analysis ": {
-    "cell and gene QC": {
-      "radiobutton1": "count x genes plot",
-      "radiobutton2": "mitocondrial violin",
+"SC analysis": {
+  "Load data": {
+    "radiobutton1": "one sample",
+    "radiobutton2": "several samples",
+      "ok_button": "xxxxx"
+  },
+    "Cell and gene QC": {
+      "radiobutton1": "plot count x genes",
+      "radiobutton2": "plot mitocondrial violin",
+        "radiobutton3": "filters",
         "ok_button": "xxxxx"
     },
     "Normalization": {
       "plaintext1":"DIVIDE PER TOTAL",
-      "radiobutton1": "per total count",
-      "radiobutton2": "per total genes",
-      "radiobutton3": "mmmmm",
+      "radiobutton1": "counts",
+      "radiobutton2": "genes",
+      "radiobutton3": "xxxxx",
       "plaintext2":"NON LINEAR TRANSFORM",
       "radiobutton4": "log",
       "radiobutton5": "sqrt",
@@ -532,24 +611,36 @@
       "ok_button": "xxxxx"
     },
     "Dimentionality reduction": {
-      "radiobutton1": "PCA",
-      "radiobutton2": "UMAP",
-      "radiobutton3": "t-SNE",
-        "ok_button": "xxxxx"
+      "radiobutton1": "PCA;UMAP;t-SNE",
+      "ok_button": "xxxxx"
     },
     "Clusterization": {
       "radiobutton1": "leiden <- best",
       "radiobutton2": "louvain",
+      "radiobutton3": "plot",
+      "radiobutton4": "plot by sample",
         "ok_button": "xxxxx"
     },
-    "Find marker": {
+    "Calculate marker": {
       "radiobutton1": "sc.tl.rank_genes_groups",
       "radiobutton2": "deseq2",
+      "radiobutton3": "plot importance",
+      "radiobutton4": "plot volcanos",
+      "radiobutton5": "plot dots",
       "ok_button": "xxxxx"
     },
     "Enrichment": {
+      "radiobutton1": "go biological process",
+      "radiobutton2": "kegg",
+      "radiobutton3": "plot bars",
     "ok_button": "xxxxx"
     },
+    "Insert external markers": {
+      "radiobutton1": "load data",
+      "radiobutton3": "plot external markers",
+    "ok_button": "xxxxx"
+    },
+
     "Trajectory": {
         "ok_button": "xxxxx"
     },
