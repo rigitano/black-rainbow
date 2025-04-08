@@ -13,7 +13,6 @@
     "ip and mac": {
       "ok_button": "clipboard_ip_and_mac"
     },
-
     "execute": {
       "droplist": ["choose...",
                      "------local------",
@@ -74,6 +73,11 @@
     "modules location": {
       "ok_button": "clipboard_modules_location"
     },
+    "make code executable": {
+      "radiobutton1": "shebang",
+      "radiobutton2": "chmod",
+      "ok_button": "xxxxx"
+    },
     "see PATH content": {
       "ok_button": "clipboard_see_PATH_content"
     },
@@ -132,6 +136,13 @@
         "radiobutton2": "xxxxx",
         "ok_button": "xxxxx"
       },
+      "stash": {
+        "inputbox1": "xxxxx",
+        "inputbox2": "xxxxx",
+        "radiobutton1": "xxxxx",
+        "radiobutton2": "xxxxx",
+        "ok_button": "xxxxx"
+      },
       "see all branches": {
         "inputbox1": "xxxxx",
         "inputbox2": "xxxxx",
@@ -157,7 +168,7 @@
 
 
 
-"search filesystem": {
+"filesystem": {
 
     "ls enhanced": {
       "ok_button": "xxxxx"
@@ -168,11 +179,24 @@
         "radiobutton3": "by content",
         "inputbox1": "by content",
       "ok_button": "xxxxx"
+    },
+
+    "compression": {
+      "plaintext1": "extract folder",
+      "radiobutton1": "tar -xzvf archive.tar.gz",
+      "radiobutton2": "tar -xjvf archive.tar.bz2",
+      "radiobutton3": "tar -xJvf archive.tar.xz",
+      "plaintext2": "extract file",
+      "radiobutton4": "gunzip filename.gz",
+      "radiobutton5": "bunzip2 filename.bz2",
+      "radiobutton6": "unxz filename.xz",
+      "ok_button": "xxxxx"
+
     }
 
 },
 
-"search words in .txt": {
+"search words in document": {
 
     "find ": {
       "plaintext": "grep -n 'henrique' logfile.txt",
@@ -653,4 +677,4 @@
 }
 
   }
-  
+
