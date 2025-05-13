@@ -133,7 +133,16 @@ def clipboard_make_executable(s_etapa):
     return sent + " sent to clipboard"
 
 
+def clipboard_see_content_of_path_variable():
+    """This function sends 'echo "$PATH" | tr ':' '\n'' to the clipboard."""
+    
+    # Copy text to the clipboard
+    pyperclip.copy("echo \"$PATH\" | tr ':' '\\n'")
 
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
 
 
 def clipboard_create_conda_environment(s_env_name,s_python_version):

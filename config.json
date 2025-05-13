@@ -21,71 +21,84 @@
     },
     "ip and mac": {
       "ok_button": "clipboard_ip_and_mac"
-    },
-
-    "make executable": {
-      "droplist": ["choose...",
-                     "shebang - interpreter will be bash",
-                     "shebang - interpreter will be python",
-                     "chmod - make executable",
-                     "export - add folder to PATH to call it directly"], 
-      "ok_button": "clipboard_make_executable"
-    },
-
-
-    "execute file": {
-      "droplist": ["choose...",
-                     "------local------",
-                     "bash (./)", 
-                     "nextflow (nextflow run)", 
-                     "docker (docker run -d)",
-                     "------cluster------",
-                     "slurm (sbatch)",
-                     "torque (qsub)",
-                     "moab on top of torque (msub)",
-                     "kubernetes (kubectl apply -f)",
-                     "yarn-hadoop (yarn jar)",
-                     "spark on top of yarn-hadoop (spark-submit --master yarn)"],
-      "ok_button": "clipboard_running_processes"
-    },
-
-    "whats being executed": {
-      "droplist": ["choose...",
-                    "------local------",
-                    "bash (top)", 
-                    "nextflow (nextflow log)", 
-                    "docker (docker ps)",
-                    "------cluster------",
-                    "slurm (squeue)",
-                    "torque (qstat)",
-                    "moab on top of torque (showq)",
-                    "kubernetes (kubectl get pods)",
-                    "yarn-hadoop (yarn application -list)",
-                    "spark on top of yarn-hadoop (use UI!)"],
-      "ok_button": "clipboard_running_processes"
-    },
-
-    "cancel execution": {
-
-      "droplist": ["choose...",
-                    "------local------",
-                    "bash (kill)", 
-                    "nextflow (nextflow kill)", 
-                    "docker (docker stop)",
-                    "------cluster------",
-                    "slurm (scancel)",
-                    "torque (qdel)",
-                    "moab on top of torque (mjobctl -c)",
-                    "kubernetes (kubectl delet pod)",
-                    "yarn-hadoop (yarn application -kill)",
-                    "spark on top of yarn-hadoop (yarn application -kill)"],
-
-      "ok_button": "clipboard_running_processes"
     }
+
+
 
 },
 
-"code environment": {
+
+"execution": {
+
+
+"make executable": {
+  "droplist": ["choose...",
+                 "shebang - interpreter will be bash",
+                 "shebang - interpreter will be python",
+                 "chmod - make executable",
+                 "export - add folder to PATH to call it directly"], 
+  "ok_button": "clipboard_make_executable"
+},
+
+"see content of the path variable": {
+  "ok_button": "clipboard_see_content_of_path_variable"
+},
+
+
+"execute file": {
+  "droplist": ["choose...",
+                 "------local------",
+                 "bash (./)", 
+                 "nextflow (nextflow run)", 
+                 "docker (docker run -d)",
+                 "------cluster------",
+                 "slurm (sbatch)",
+                 "torque (qsub)",
+                 "moab on top of torque (msub)",
+                 "kubernetes (kubectl apply -f)",
+                 "yarn-hadoop (yarn jar)",
+                 "spark on top of yarn-hadoop (spark-submit --master yarn)"],
+  "ok_button": "clipboard_running_processes"
+},
+
+"whats being executed": {
+  "droplist": ["choose...",
+                "------local------",
+                "bash (top)", 
+                "nextflow (nextflow log)", 
+                "docker (docker ps)",
+                "------cluster------",
+                "slurm (squeue)",
+                "torque (qstat)",
+                "moab on top of torque (showq)",
+                "kubernetes (kubectl get pods)",
+                "yarn-hadoop (yarn application -list)",
+                "spark on top of yarn-hadoop (use UI!)"],
+  "ok_button": "clipboard_running_processes"
+},
+
+"cancel execution": {
+
+  "droplist": ["choose...",
+                "------local------",
+                "bash (kill)", 
+                "nextflow (nextflow kill)", 
+                "docker (docker stop)",
+                "------cluster------",
+                "slurm (scancel)",
+                "torque (qdel)",
+                "moab on top of torque (mjobctl -c)",
+                "kubernetes (kubectl delet pod)",
+                "yarn-hadoop (yarn application -kill)",
+                "spark on top of yarn-hadoop (yarn application -kill)"],
+
+  "ok_button": "clipboard_running_processes"
+}
+
+},
+
+
+"coding environment": {
 
     "python location": {
       "ok_button": "clipboard_python_location"
@@ -97,10 +110,10 @@
     "see all conda environments": {
       "ok_button": "clipboard_see_all_conda_environments"
     },
-    "create conda environment (...)": {
+    "create conda environment": {
       "inputbox1": "environment name",
       "inputbox2": "python version",
-      "ok_button": "create_conda_environment"
+      "ok_button": "clipboard_create_conda_environment"
     }
 },
 
@@ -190,12 +203,12 @@
     "ls enhanced": {
       "ok_button": "xxxxx"
     },
-    "search": {
+    "search for file": {
         "plaintext": "where is the text to be searched?",
-        "radiobutton1": "file name",
+        "radiobutton1": "in the file name",
         "radiobutton2": "entire path+name",
-        "radiobutton3": "file content",
-        "inputbox1": "search this",
+        "radiobutton3": "in the file content",
+        "inputbox1": "search this text",
       "ok_button": "clipboard_search_filesystem"
     },
 
