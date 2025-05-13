@@ -134,6 +134,46 @@ def clipboard_make_executable(s_etapa):
 
 
 
+
+
+def clipboard_create_conda_environment(s_env_name,s_python_version):
+    """This function sends 'conda create --name nomeDoAmbiente python=3.9' to the clipboard."""
+    
+    # Copy text to the clipboard
+    pyperclip.copy(f"conda create --name {s_env_name} python={s_python_version}")
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
+
+
+
+def clipboard_search_filesystem(s_by_what,s_search_for_this):
+    """This function sends codes to the clipboard, depending on the choice made on a droplist."""
+    
+    # Copy text to the clipboard, depending on the value of s_by_what
+    if s_by_what == "file name":
+        pyperclip.copy(rf"find . -type f -printf '%p\t%f\n' | awk -v pat='{s_search_for_this}' -F '\t' '$2 ~ pat {{print $1}}'")
+
+    elif s_by_what == "entire path+name":
+        pyperclip.copy(f"find . -type f -regextype posix-extended -regex \"{s_search_for_this}\"")
+
+    elif s_by_what == "file content":
+        pyperclip.copy(f"find . -type f -print | xargs egrep \"{s_search_for_this}\"")
+
+    else:
+        raise ValueError("Invalid value for s_by_what")
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
+
+
+
 def clipboard_xxxxx():
     """This function sends 'xxxxxxx' to the clipboard."""
     

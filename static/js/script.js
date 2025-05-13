@@ -7,30 +7,24 @@ $(document).ready(function() {
 
 // Function called when an OK button is clicked.
 function submitForm(functionCall, button) {
-  // Locate the parent command box container.
   var commandBox = $(button).closest('.command-box');
   var valuesList = [];
 
-  // Iterate over all input elements in the command box in DOM order.
-  commandBox.find('input').each(function() {
-    var type = $(this).attr('type');
-    var name = $(this).attr('name');
-    if (type === 'text') {
-      // For text inputs, push their value.
-      valuesList.push($(this).val());
-    } else if (type === 'radio') {
-      // For radio buttons, push the value only if it is checked.
-      if ($(this).is(':checked')) {
-        valuesList.push($(this).val());
-      }
-    } else if (name === 'droplist') {
-      // For dropdowns, push the selected value.
-      var selectedValue = $(this).find('option:selected').val();
-      alert(selectedValue);
-      if (selectedValue) {
-        valuesList.push(selectedValue);
-      }
+  // This will grab inputs *and* selects
+  commandBox.find('input, select').each(function() {
+    var $el = $(this);
 
+    // text inputs:
+    if ($el.is('input[type="text"]')) {
+      valuesList.push( $el.val() );
+
+    // checked radios:
+    } else if ($el.is('input[type="radio"]:checked')) {
+      valuesList.push( $el.val() );
+
+    // any <select>:
+    } else if ($el.is('select')) {
+      valuesList.push( $el.val() );
     }
   });
 

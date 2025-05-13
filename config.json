@@ -93,22 +93,13 @@
     "modules location": {
       "ok_button": "clipboard_modules_location"
     },
-    "make code executable": {
-      "radiobutton1": "shebang",
-      "radiobutton2": "chmod",
-      "ok_button": "xxxxx"
-    },
-    "see PATH content": {
-      "ok_button": "clipboard_see_PATH_content"
-    },
-    "add to PATH": {
-        "ok_button": "clipboard_add_to_PATH"
-      },
+
     "see all conda environments": {
       "ok_button": "clipboard_see_all_conda_environments"
     },
     "create conda environment (...)": {
       "inputbox1": "environment name",
+      "inputbox2": "python version",
       "ok_button": "create_conda_environment"
     }
 },
@@ -200,11 +191,12 @@
       "ok_button": "xxxxx"
     },
     "search": {
-        "radiobutton1": "by name",
-        "radiobutton2": "by path",
-        "radiobutton3": "by content",
-        "inputbox1": "by content",
-      "ok_button": "xxxxx"
+        "plaintext": "where is the text to be searched?",
+        "radiobutton1": "file name",
+        "radiobutton2": "entire path+name",
+        "radiobutton3": "file content",
+        "inputbox1": "search this",
+      "ok_button": "clipboard_search_filesystem"
     },
 
     "compression": {
