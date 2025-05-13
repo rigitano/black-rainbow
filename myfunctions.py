@@ -145,6 +145,50 @@ def clipboard_see_content_of_path_variable():
     return sent + " sent to clipboard"
 
 
+
+# xxx execute, monitor execution, kill execution
+
+
+
+
+def clipboard_python_location():
+    """This function sends 'which python' to the clipboard."""
+    
+    # Copy text to the clipboard
+    pyperclip.copy("which python")
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
+
+def clipboard_modules_location():
+    """This function sends to the clipboard a huge coomand to see modules are instaled to and imported from ."""
+    
+    # Copy text to the clipboard
+    pyperclip.copy("python -c \"import sys,sysconfig; print('\\nINSTALL\\n\\n',sysconfig.get_paths()['purelib']); print('\\nIMPORT'); print('\\n'.join(sys.path))\"")
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
+
+
+def clipboard_see_all_conda_environments():
+    """This function sends 'conda env list' to the clipboard."""
+    
+    # Copy text to the clipboard
+    pyperclip.copy("conda env list")
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
+
+
 def clipboard_create_conda_environment(s_env_name,s_python_version):
     """This function sends 'conda create --name nomeDoAmbiente python=3.9' to the clipboard."""
     
