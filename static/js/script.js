@@ -14,6 +14,7 @@ function submitForm(functionCall, button) {
   // Iterate over all input elements in the command box in DOM order.
   commandBox.find('input').each(function() {
     var type = $(this).attr('type');
+    var name = $(this).attr('name');
     if (type === 'text') {
       // For text inputs, push their value.
       valuesList.push($(this).val());
@@ -22,6 +23,14 @@ function submitForm(functionCall, button) {
       if ($(this).is(':checked')) {
         valuesList.push($(this).val());
       }
+    } else if (name === 'droplist') {
+      // For dropdowns, push the selected value.
+      var selectedValue = $(this).find('option:selected').val();
+      alert(selectedValue);
+      if (selectedValue) {
+        valuesList.push(selectedValue);
+      }
+
     }
   });
 

@@ -4,16 +4,36 @@
     "echo hello world !": {
       "ok_button": "clipboard_hello_world"
     },
-    "os version": {
-      "ok_button": "clipboard_os_version"
+    "os info": {
+      "ok_button": "clipboard_os_info"
     },
-    "available RAM and CPU": {
-        "ok_button": "clipboard_running_processes"
+    "cpu info": {
+        "ok_button": "clipboard_cpu_info"
+    },
+    "available ram": {
+      "ok_button": "clipboard_avalable_ram"
+  },
+    "filesystems and disk space": {
+      "ok_button": "clipboard_filesystems_and_disk_space"
+    },
+    "folders and disk space": {
+      "ok_button": "clipboard_folders_and_disk_space"
     },
     "ip and mac": {
       "ok_button": "clipboard_ip_and_mac"
     },
-    "execute": {
+
+    "make executable": {
+      "droplist": ["choose...",
+                     "shebang - interpreter will be bash",
+                     "shebang - interpreter will be python",
+                     "chmod - make executable",
+                     "export - add folder to PATH to call it directly"], 
+      "ok_button": "clipboard_make_executable"
+    },
+
+
+    "execute file": {
       "droplist": ["choose...",
                      "------local------",
                      "bash (./)", 
@@ -95,7 +115,13 @@
 
 
 "GIT": {
-
+    "keygen": {
+      "inputbox1": "xxxxx",
+      "inputbox2": "xxxxx",
+      "radiobutton1": "xxxxx",
+      "radiobutton2": "xxxxx",
+      "ok_button": "xxxxx"
+    },
     "init": {
       "inputbox1": "xxxxx",
       "inputbox2": "xxxxx",
@@ -198,7 +224,7 @@
 
 "search words in document": {
 
-    "find ": {
+    "find / filter lines": {
       "plaintext": "grep -n 'henrique' logfile.txt",
       "ok_button": "xxxxx"
     },
