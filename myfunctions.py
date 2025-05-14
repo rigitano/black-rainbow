@@ -203,17 +203,59 @@ def clipboard_create_conda_environment(s_env_name,s_python_version):
 
 
 
+
+
+
+def clipboard_xxxxx():
+    """This function sends 'xxxxxxx' to the clipboard."""
+    
+    # Copy text to the clipboard
+    pyperclip.copy("xxxxxxx")
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
+
+
+def clipboard_xxxxx():
+    """This function sends 'xxxxxxx' to the clipboard."""
+    
+    # Copy text to the clipboard
+    pyperclip.copy("xxxxxxx")
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
+
+
+
+def clipboard_list_enhanced():
+    """This function sends 'ls -alhF --time-style=long-iso --color=auto' to the clipboard."""
+    
+    # Copy text to the clipboard
+    pyperclip.copy("ls -alhF --time-style=long-iso --color=auto")
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
+
 def clipboard_search_filesystem(s_by_what,s_search_for_this):
     """This function sends codes to the clipboard, depending on the choice made on a droplist."""
     
     # Copy text to the clipboard, depending on the value of s_by_what
-    if s_by_what == "file name":
+    if s_by_what == "in the file name":
         pyperclip.copy(rf"find . -type f -printf '%p\t%f\n' | awk -v pat='{s_search_for_this}' -F '\t' '$2 ~ pat {{print $1}}'")
 
     elif s_by_what == "entire path+name":
         pyperclip.copy(f"find . -type f -regextype posix-extended -regex \"{s_search_for_this}\"")
 
-    elif s_by_what == "file content":
+    elif s_by_what == "in the file content":
         pyperclip.copy(f"find . -type f -print | xargs egrep \"{s_search_for_this}\"")
 
     else:
@@ -225,6 +267,36 @@ def clipboard_search_filesystem(s_by_what,s_search_for_this):
     return sent + " sent to clipboard"
 
 
+def clipboard_compression(s_choice,s_file_name):
+    """This function sends a command to the clipboard depending on s_file_name."""
+    
+    # Copy text to the clipboard, depending on the value of s_by_what
+    if s_choice == ".tar.gz":
+        pyperclip.copy(f"tar -xzvf {s_file_name}.tar.gz")
+
+    elif s_choice == ".tar.bz2":
+        pyperclip.copy(f"tar -xjvf {s_file_name}.tar.bz2")
+
+    elif s_choice == ".tar.xz":
+        pyperclip.copy(f"tar -xJvf {s_file_name}.tar.xz")
+
+    elif s_choice == ".gz":
+        pyperclip.copy(f"gunzip {s_file_name}.gz")
+
+    elif s_choice == ".bz2":
+        pyperclip.copy(f"bunzip2 {s_file_name}.bz2")
+
+    elif s_choice == ".xz":
+        pyperclip.copy(f"unxz {s_file_name}.xz")
+
+
+    else:
+        raise ValueError("Invalid value for s_choice")
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
 
 
 def clipboard_xxxxx():
