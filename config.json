@@ -120,79 +120,76 @@
 
 "GIT": {
     "keygen": {
-      "inputbox1": "xxxxx",
-      "inputbox2": "xxxxx",
-      "radiobutton1": "xxxxx",
-      "radiobutton2": "xxxxx",
-      "ok_button": "xxxxx"
+      "radiobutton1": "see",
+      "radiobutton2": "generate",
+      "droplist": ["Ed25519 (modern)",
+                   "RSA (older systems)"],
+      "ok_button": "clipboard_keygen"
     },
-    "init": {
-      "inputbox1": "xxxxx",
-      "inputbox2": "xxxxx",
-      "radiobutton1": "xxxxx",
-      "radiobutton2": "xxxxx",
-      "ok_button": "xxxxx"
+    "init or clone": {
+      "radiobutton1": "init (project started localy)",
+      "plaintext1": "action required: go to github and create a new repository with the same name as the project folder ",
+
+      "radiobutton2": "clone (project started at github)",
+      "plaintext3": "action required: go to github and get the link",
+      "inputbox1": "link",
+
+      "ok_button": "clipboard_init_or_clone"
     },
-    "clone": {
-      "inputbox1": "Email",
-      "inputbox2": "Phone",
-      "ok_button": "xxxxx"
-    },
+
     "pull": {
-        "inputbox1": "xxxxx",
-        "inputbox2": "xxxxx",
-        "radiobutton1": "xxxxx",
-        "radiobutton2": "xxxxx",
-        "ok_button": "xxxxx"
+        "ok_button": "clipboard_pull"
       },
       "add, commit": {
-        "inputbox1": "xxxxx",
-        "inputbox2": "xxxxx",
-        "radiobutton1": "xxxxx",
-        "radiobutton2": "xxxxx",
-        "ok_button": "xxxxx"
+        "inputbox1": "commit message",
+        "ok_button": "clipboard_add_commit"
+      },
+      "add, commit (to new branch, so I can explore a crazy idea)": {
+        "inputbox1": "insert the new branch name",
+        "inputbox2": "commit message",
+        "ok_button": "clipboard_add_commit_new_branch"
       },
       "push": {
         "inputbox1": "xxxxx",
         "inputbox2": "xxxxx",
         "radiobutton1": "xxxxx",
         "radiobutton2": "xxxxx",
-        "ok_button": "xxxxx"
+        "ok_button": "clipboard_push"
       },
       "reset": {
         "inputbox1": "xxxxx",
         "inputbox2": "xxxxx",
         "radiobutton1": "xxxxx",
         "radiobutton2": "xxxxx",
-        "ok_button": "xxxxx"
+        "ok_button": "clipboard_reset"
       },
       "stash": {
         "inputbox1": "xxxxx",
         "inputbox2": "xxxxx",
         "radiobutton1": "xxxxx",
         "radiobutton2": "xxxxx",
-        "ok_button": "xxxxx"
+        "ok_button": "clipboard_stash"
       },
       "see all branches": {
         "inputbox1": "xxxxx",
         "inputbox2": "xxxxx",
         "radiobutton1": "xxxxx",
         "radiobutton2": "xxxxx",
-        "ok_button": "xxxxx"
+        "ok_button": "clipboard_see_all_branches"
       },
       "change branch": {
         "inputbox1": "xxxxx",
         "inputbox2": "xxxxx",
         "radiobutton1": "xxxxx",
         "radiobutton2": "xxxxx",
-        "ok_button": "xxxxx"
+        "ok_button": "clipboard_change_branch"
       },
       "merge": {
         "inputbox1": "xxxxx",
         "inputbox2": "xxxxx",
         "radiobutton1": "xxxxx",
         "radiobutton2": "xxxxx",
-        "ok_button": "xxxxx"
+        "ok_button": "clipboard_merge"
       }
 },
 

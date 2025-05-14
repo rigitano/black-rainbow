@@ -206,7 +206,118 @@ def clipboard_create_conda_environment(s_env_name,s_python_version):
 
 
 
-def clipboard_xxxxx():
+def clipboard_keygen(s_chosen_action,s_chosen_protocol):
+    """This function sends a comand to the clipboard, depending on s_chosen_action and s_chosen_protocol.
+    
+    # Ed25519 (modern, shorter keys, more secure)
+    cat ~/.ssh/id_ed25519.pub
+    ssh-keygen -t ed25519 -f ~/.ssh/id_ed25519
+
+    # OR, RSA 4096-bit (older systems / some services still require RSA)
+    cat ~/.ssh/id_rsa.pub
+    ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa
+    
+    
+    """
+    
+    # Copy text to the clipboard, depending on the value of s_chosen_action and s_chosen_protocol
+    if s_chosen_action == "see":
+
+        if s_chosen_protocol == "Ed25519 (modern)":
+            pyperclip.copy(f"cat ~/.ssh/id_ed25519.pub")
+
+        elif s_chosen_protocol == "RSA (older systems)":
+            pyperclip.copy(f"cat ~/.ssh/id_rsa.pub")
+        else:
+            raise ValueError("Invalid value for s_chosen_protocol")
+
+    elif s_chosen_action == "generate":
+
+        if s_chosen_protocol == "Ed25519 (modern)":
+            pyperclip.copy(f"ssh-keygen -t ed25519 -f ~/.ssh/id_ed25519")
+
+        elif s_chosen_protocol == "RSA (older systems)":
+            pyperclip.copy(f"ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa")
+
+        else:
+            raise ValueError("Invalid value for s_chosen_protocol")
+
+    else:
+        raise ValueError("Invalid value for s_chosen_action")
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
+
+
+def clipboard_init_or_clone(s_chosen_action,s_repo_link):
+    """This function sends a big commant to the clipboard. depending on the value of s_chosen_action."""
+    
+
+
+
+    # Copy text to the clipboard, depending on the value of s_chosen_action and s_chosen_action
+    if s_chosen_action == "init (project started localy)":
+        pyperclip.copy("git init --initial-branch=main && git remote add origin git@github.com:rigitano/$(basename \"$PWD\").git && git push -u origin main")
+
+    elif s_chosen_action == "clone (project started at github)":
+        pyperclip.copy(f"git clone {s_repo_link}")
+
+    else:
+        raise ValueError("Invalid value for s_chosen_action")
+
+
+
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
+
+
+def clipboard_pull():
+    """This function sends 'git pull origin main' to the clipboard."""
+    
+    # Copy text to the clipboard
+    pyperclip.copy("git pull origin main")
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
+
+def clipboard_add_commit(s_message):
+    """This function sends git add . && git commit -m 'xxx' to the clipboard."""
+    
+    # Copy text to the clipboard
+    pyperclip.copy(f"git add . && git commit -m '{s_message}'")
+
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
+
+def clipboard_add_commit_new_branch(s_new_branch_name,s_message):
+    """This function sends git checkout -b 'xxx' && git add . && git commit -m 'xxx' to the clipboard."""
+    
+    # Copy text to the clipboard
+    pyperclip.copy(f"git checkout -b '{s_new_branch_name}' && git add . && git commit -m '{s_message}'")
+
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
+
+
+def clipboard_push():
     """This function sends 'xxxxxxx' to the clipboard."""
     
     # Copy text to the clipboard
@@ -218,8 +329,7 @@ def clipboard_xxxxx():
     return sent + " sent to clipboard"
 
 
-
-def clipboard_xxxxx():
+def clipboard_reset():
     """This function sends 'xxxxxxx' to the clipboard."""
     
     # Copy text to the clipboard
@@ -229,6 +339,56 @@ def clipboard_xxxxx():
     sent = pyperclip.paste()
 
     return sent + " sent to clipboard"
+
+
+def clipboard_stash():
+    """This function sends 'xxxxxxx' to the clipboard."""
+    
+    # Copy text to the clipboard
+    pyperclip.copy("xxxxxxx")
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
+
+def clipboard_see_all_branches():
+    """This function sends 'xxxxxxx' to the clipboard."""
+    
+    # Copy text to the clipboard
+    pyperclip.copy("xxxxxxx")
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
+
+def clipboard_change_branch():
+    """This function sends 'xxxxxxx' to the clipboard."""
+    
+    # Copy text to the clipboard
+    pyperclip.copy("xxxxxxx")
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
+
+def clipboard_merge():
+    """This function sends 'xxxxxxx' to the clipboard."""
+    
+    # Copy text to the clipboard
+    pyperclip.copy("xxxxxxx")
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
+
 
 
 
