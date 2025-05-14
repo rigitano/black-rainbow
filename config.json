@@ -150,45 +150,31 @@
         "ok_button": "clipboard_add_commit_new_branch"
       },
       "push": {
-        "inputbox1": "xxxxx",
-        "inputbox2": "xxxxx",
-        "radiobutton1": "xxxxx",
-        "radiobutton2": "xxxxx",
         "ok_button": "clipboard_push"
       },
-      "reset": {
-        "inputbox1": "xxxxx",
-        "inputbox2": "xxxxx",
-        "radiobutton1": "xxxxx",
-        "radiobutton2": "xxxxx",
-        "ok_button": "clipboard_reset"
+      "go back to a previous commit": {
+        "inputbox1": "go back to this commit",
+        "radiobutton1": "reset --hard (DANGER: all posterior changes and commits will be deleted!)",
+        "radiobutton2": "revert (posterior commits will be kept, a new commit will be created with the same code as the chosen commit)",
+
+        "ok_button": "clipboard_go_back"
       },
       "stash": {
-        "inputbox1": "xxxxx",
-        "inputbox2": "xxxxx",
-        "radiobutton1": "xxxxx",
-        "radiobutton2": "xxxxx",
+        "inputbox1": "stash message",
         "ok_button": "clipboard_stash"
       },
       "see all branches": {
-        "inputbox1": "xxxxx",
-        "inputbox2": "xxxxx",
-        "radiobutton1": "xxxxx",
-        "radiobutton2": "xxxxx",
+
         "ok_button": "clipboard_see_all_branches"
       },
       "change branch": {
-        "inputbox1": "xxxxx",
-        "inputbox2": "xxxxx",
-        "radiobutton1": "xxxxx",
-        "radiobutton2": "xxxxx",
+        "inputbox1": "destination branch",
+        "plaintext1": "ATTENTION: its mandatory to commit or stash all changes before changing branch",
         "ok_button": "clipboard_change_branch"
       },
       "merge": {
-        "inputbox1": "xxxxx",
-        "inputbox2": "xxxxx",
-        "radiobutton1": "xxxxx",
-        "radiobutton2": "xxxxx",
+        "inputbox1": "sorce branch with extra code",
+        "inputbox2": "destination branch, with the production code to be updated",
         "ok_button": "clipboard_merge"
       }
 },

@@ -318,10 +318,10 @@ def clipboard_add_commit_new_branch(s_new_branch_name,s_message):
 
 
 def clipboard_push():
-    """This function sends 'xxxxxxx' to the clipboard."""
+    """This function sends 'git push origin main' to the clipboard."""
     
     # Copy text to the clipboard
-    pyperclip.copy("xxxxxxx")
+    pyperclip.copy("git push origin main")
 
     # Retrieve text from the clipboard
     sent = pyperclip.paste()
@@ -329,11 +329,19 @@ def clipboard_push():
     return sent + " sent to clipboard"
 
 
-def clipboard_reset():
-    """This function sends 'xxxxxxx' to the clipboard."""
+def clipboard_go_back(s_commit_hash,s_option):
+    """This function goes back to a commit, it will erase the ones after it or not depending on the value of s_option."""
     
-    # Copy text to the clipboard
-    pyperclip.copy("xxxxxxx")
+    # Copy text to the clipboard, depending on the value of s_option
+    if s_option == "reset --hard (DANGER: all posterior changes and commits will be deleted!)":
+        pyperclip.copy(f"git reset --hard '{s_commit_hash}'")
+
+    elif s_option == "revert (posterior commits will be kept, a new commit will be created with the same code as the chosen commit)":
+        pyperclip.copy(f"git revert '{s_commit_hash}'..HEAD")
+
+    else:
+        raise ValueError("Invalid value for s_option")
+
 
     # Retrieve text from the clipboard
     sent = pyperclip.paste()
@@ -341,11 +349,11 @@ def clipboard_reset():
     return sent + " sent to clipboard"
 
 
-def clipboard_stash():
-    """This function sends 'xxxxxxx' to the clipboard."""
+def clipboard_stash(s_message):
+    """This function sends git stash push -m 'xxxxxx' to the clipboard."""
     
     # Copy text to the clipboard
-    pyperclip.copy("xxxxxxx")
+    pyperclip.copy(f"git stash push -m '{s_message}'")
 
     # Retrieve text from the clipboard
     sent = pyperclip.paste()
@@ -354,10 +362,10 @@ def clipboard_stash():
 
 
 def clipboard_see_all_branches():
-    """This function sends 'xxxxxxx' to the clipboard."""
+    """This function sends 'git branch' to the clipboard."""
     
     # Copy text to the clipboard
-    pyperclip.copy("xxxxxxx")
+    pyperclip.copy("git branch")
 
     # Retrieve text from the clipboard
     sent = pyperclip.paste()
@@ -365,11 +373,11 @@ def clipboard_see_all_branches():
     return sent + " sent to clipboard"
 
 
-def clipboard_change_branch():
-    """This function sends 'xxxxxxx' to the clipboard."""
+def clipboard_change_branch(s_branch_name):
+    """This function sends 'git branch xxxx' to the clipboard."""
     
     # Copy text to the clipboard
-    pyperclip.copy("xxxxxxx")
+    pyperclip.copy(f"git branch {s_branch_name}")
 
     # Retrieve text from the clipboard
     sent = pyperclip.paste()
@@ -377,11 +385,11 @@ def clipboard_change_branch():
     return sent + " sent to clipboard"
 
 
-def clipboard_merge():
-    """This function sends 'xxxxxxx' to the clipboard."""
+def clipboard_merge(s_source_branch_with_extra_code,s_destination_branch):
+    """This function sends 'git checkout xxx && git merge xxx --no-ff' to the clipboard."""
     
     # Copy text to the clipboard
-    pyperclip.copy("xxxxxxx")
+    pyperclip.copy(f"git checkout {s_destination_branch} && git merge {s_source_branch_with_extra_code} --no-ff")
 
     # Retrieve text from the clipboard
     sent = pyperclip.paste()
