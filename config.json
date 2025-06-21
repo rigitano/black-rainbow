@@ -291,7 +291,7 @@
       "plaintext": "df.sort_values(by='column1', ascending=True, inplace=True)",
       "ok_button": "xxxxx"
     },
-    "unique": {
+    "unique lines": {
       "plaintext": "df['column1'].unique()",
       "ok_button": "xxxxx"
     },
