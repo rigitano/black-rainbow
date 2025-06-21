@@ -438,7 +438,7 @@ def clipboard_search_filesystem(s_by_what,s_search_for_this):
 def clipboard_compression(s_choice,s_file_name):
     """This function sends a command to the clipboard depending on s_file_name."""
     
-    # Copy text to the clipboard, depending on the value of s_by_what
+    # Copy text to the clipboard, depending on the value of s_choice
     if s_choice == ".tar.gz":
         pyperclip.copy(f"tar -xzvf {s_file_name}.tar.gz")
 
@@ -465,6 +465,153 @@ def clipboard_compression(s_choice,s_file_name):
     sent = pyperclip.paste()
 
     return sent + " sent to clipboard"
+
+
+
+
+
+def clipboard_execute(s_choice):
+    """This function sends a coomand to the clipboard depending on the choice on the dropbox."""
+
+    # Copy text to the clipboard, depending on the value of s_choice
+    if s_choice == "bash (./)":
+        pyperclip.copy(f"./")
+
+    elif s_choice == "nextflow (nextflow run)":
+        pyperclip.copy(f"nextflow run ")
+
+    elif s_choice == "docker (docker run -d)":
+        pyperclip.copy(f"docker run -d ")
+
+    elif s_choice == "slurm (sbatch)":
+        pyperclip.copy(f"sbatch ")
+
+    elif s_choice == "torque (qsub)":
+        pyperclip.copy(f"qsub ")
+
+    elif s_choice == "moab on top of torque (msub)":
+        pyperclip.copy(f"msub ")
+
+    elif s_choice == "kubernetes (kubectl apply -f)":
+        pyperclip.copy(f"kubectl apply -f ") 
+
+    elif s_choice == "yarn-hadoop (yarn jar)":
+        pyperclip.copy(f"yarn jar ") 
+
+    elif s_choice == "spark on top of yarn-hadoop (spark-submit --master yarn)":
+        pyperclip.copy(f"spark-submit --master yarn ") 
+
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
+
+def clipboard_see_running_processes(s_choice):
+    """This function sends a coomand to the clipboard depending on the choice on the dropbox."""
+    
+
+
+    # Copy text to the clipboard, depending on the value of s_choice
+    if s_choice == "bash (top)":
+        pyperclip.copy(f"top")
+
+    elif s_choice == "nextflow (nextflow log)":
+        pyperclip.copy(f"nextflow log")
+
+    elif s_choice == "docker (docker ps)":
+        pyperclip.copy(f"docker ps")
+
+    elif s_choice == "slurm (squeue)":
+        pyperclip.copy(f"squeue")
+
+    elif s_choice == "torque (qstat)":
+        pyperclip.copy(f"qstat")
+
+    elif s_choice == "moab on top of torque (showq)":
+        pyperclip.copy(f"showq")
+
+    elif s_choice == "kubernetes (kubectl get pods)":
+        pyperclip.copy(f"kubectl get pods") 
+
+    elif s_choice == "yarn-hadoop (yarn application -list)":
+        pyperclip.copy(f"yarn application -list") 
+
+    elif s_choice == "spark on top of yarn-hadoop (use UI!)":
+        pyperclip.copy(f"use UI!") 
+
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
+
+def clipboard_cancel_execution(s_choice):
+    """This function sends a coomand to the clipboard depending on the choice on the dropbox."""
+    
+
+
+    # Copy text to the clipboard, depending on the value of s_choice
+    if s_choice == "bash (kill)":
+        pyperclip.copy(f"kill ")
+
+    elif s_choice == "nextflow (nextflow kill)":
+        pyperclip.copy(f"nextflow kill ")
+
+    elif s_choice == "docker (docker stop)":
+        pyperclip.copy(f"docker stop ")
+
+    elif s_choice == "slurm (scancel)":
+        pyperclip.copy(f"scancel ")
+
+    elif s_choice == "torque (qdel)":
+        pyperclip.copy(f"qdel ")
+
+    elif s_choice == "moab on top of torque (mjobctl -c)":
+        pyperclip.copy(f"mjobctl -c ")
+
+    elif s_choice == "kubernetes (kubectl delet pod)":
+        pyperclip.copy(f"kubectl delet pod ") 
+
+    elif s_choice == "yarn-hadoop (yarn application -kill)":
+        pyperclip.copy(f"yarn application -kill ") 
+
+    elif s_choice == "spark on top of yarn-hadoop (yarn application -kill)":
+        pyperclip.copy(f"yarn application -kill ") 
+
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
+
+
+def clipboard_xxxxx():
+    """This function sends 'xxxxxxx' to the clipboard."""
+    
+    # Copy text to the clipboard
+    pyperclip.copy("xxxxxxx")
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
+
+def clipboard_xxxxx():
+    """This function sends 'xxxxxxx' to the clipboard."""
+    
+    # Copy text to the clipboard
+    pyperclip.copy("xxxxxxx")
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
 
 
 def clipboard_xxxxx():

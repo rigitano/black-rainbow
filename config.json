@@ -58,7 +58,7 @@
                  "kubernetes (kubectl apply -f)",
                  "yarn-hadoop (yarn jar)",
                  "spark on top of yarn-hadoop (spark-submit --master yarn)"],
-  "ok_button": "clipboard_running_processes"
+  "ok_button": "clipboard_execute"
 },
 
 "whats being executed": {
@@ -74,7 +74,7 @@
                 "kubernetes (kubectl get pods)",
                 "yarn-hadoop (yarn application -list)",
                 "spark on top of yarn-hadoop (use UI!)"],
-  "ok_button": "clipboard_running_processes"
+  "ok_button": "clipboard_see_running_processes"
 },
 
 "cancel execution": {
@@ -92,7 +92,7 @@
                 "yarn-hadoop (yarn application -kill)",
                 "spark on top of yarn-hadoop (yarn application -kill)"],
 
-  "ok_button": "clipboard_running_processes"
+  "ok_button": "clipboard_cancel_execution"
 }
 
 },
