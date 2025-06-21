@@ -421,7 +421,7 @@ def clipboard_search_filesystem(s_by_what,s_search_for_this):
         pyperclip.copy(rf"find . -type f -printf '%p\t%f\n' | awk -v pat='{s_search_for_this}' -F '\t' '$2 ~ pat {{print $1}}'")
 
     elif s_by_what == "entire path+name":
-        pyperclip.copy(f"find . -type f -regextype posix-extended -regex \"{s_search_for_this}\"")
+        pyperclip.copy(f"find . -type f -regextype posix-extended -regex \".*{s_search_for_this}.*\"")
 
     elif s_by_what == "in the file content":
         pyperclip.copy(f"find . -type f -print | xargs egrep \"{s_search_for_this}\"")
@@ -435,7 +435,7 @@ def clipboard_search_filesystem(s_by_what,s_search_for_this):
     return sent + " sent to clipboard"
 
 
-def clipboard_compression(s_choice,s_file_name):
+def clipboard_extraction(s_choice,s_file_name):
     """This function sends a command to the clipboard depending on s_file_name."""
     
     # Copy text to the clipboard, depending on the value of s_choice

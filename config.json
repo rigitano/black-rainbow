@@ -208,7 +208,7 @@
       "plaintext15": "{n,} (n-infinite of the preceding)"
     },
 
-    "compression": {
+    "extraction": {
       "plaintext1": "folder extension:",
       "radiobutton1": ".tar.gz",
       "radiobutton2": ".tar.bz2",
@@ -218,7 +218,7 @@
       "radiobutton5": ".bz2",
       "radiobutton6": ".xz",
       "inputbox1": "name without extension",
-      "ok_button": "clipboard_compression"
+      "ok_button": "clipboard_extraction"
 
     }
 
