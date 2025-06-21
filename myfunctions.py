@@ -589,11 +589,11 @@ def clipboard_cancel_execution(s_choice):
 
 
 
-def clipboard_xxxxx():
-    """This function sends 'xxxxxxx' to the clipboard."""
+def clipboard_find(s_word_to_find,s_file_to_be_searched):
+    """This function sends 'grep -n 'henrique' file.txt' to the clipboard."""
     
     # Copy text to the clipboard
-    pyperclip.copy("xxxxxxx")
+    pyperclip.copy(f"grep -n '{s_word_to_find}' {s_file_to_be_searched}")
 
     # Retrieve text from the clipboard
     sent = pyperclip.paste()
@@ -601,11 +601,11 @@ def clipboard_xxxxx():
     return sent + " sent to clipboard"
 
 
-def clipboard_xxxxx():
-    """This function sends 'xxxxxxx' to the clipboard."""
+def clipboard_replace(s_old_value,s_new_value,s_file_with_text,s_new_file_name):
+    """This function sends 'sed 's/old_value/new_value/g' file.txt > newfile.txt' to the clipboard."""
     
     # Copy text to the clipboard
-    pyperclip.copy("xxxxxxx")
+    pyperclip.copy(f"sed 's/{s_old_value}/{s_new_value}/g' {s_file_with_text} > {s_new_file_name}")
 
     # Retrieve text from the clipboard
     sent = pyperclip.paste()
@@ -613,6 +613,43 @@ def clipboard_xxxxx():
     return sent + " sent to clipboard"
 
 
+
+def clipboard_fiter_table_bash(s_value_to_be_filtered, s_file_name,s_column):
+    """This function sends 'awk '$2=="value"' file.csv' to the clipboard."""
+    
+    # Copy text to the clipboard
+    pyperclip.copy(f"awk '${s_column} == \"{s_value_to_be_filtered}\"' {s_file_name}")
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
+def clipboard_sort_table_bash(s_file_name,s_column):
+    """This function sends 'sort -k2 file.csv' to the clipboard."""
+    
+    # Copy text to the clipboard
+    pyperclip.copy(f"sort -k{s_column} {s_file_name}")
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
+
+
+
+
+def clipboard_unique_lines_bash(s_file_name):
+    """This function sends 'sort data.txt | uniq' to the clipboard."""
+    
+    # Copy text to the clipboard
+    pyperclip.copy(f"sort {s_file_name} | uniq")
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
 
 def clipboard_xxxxx():
     """This function sends 'xxxxxxx' to the clipboard."""

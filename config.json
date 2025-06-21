@@ -224,36 +224,54 @@
 
 },
 
-"search words in document": {
+"text": {
 
-    "find / filter lines": {
-      "plaintext": "grep -n 'henrique' logfile.txt",
-      "ok_button": "xxxxx"
+    "find (grep)": {
+      
+      "inputbox1": "word to be found. ex: henrique",
+      "inputbox2": "file to be searched. ex: file.txt",
+      "ok_button": "clipboard_find"
+
+
     },
 
-    "replace": {
-      "plaintext": "sed 's/old_value/new_value/g' file.csv > newfile.csv",
-      "ok_button": "xxxxx"
+    "replace (sed)": {
+
+      
+      "inputbox1": "old value",
+      "inputbox2": "new value",
+      "inputbox3": "file to be modified. ex: file.txt",
+      "inputbox4": "new file name. ex: newfile.txt",
+
+      "ok_button": "clipboard_replace"
+
     }
 },
 
 
 
-"data science1": {
+"table (bash)": {
 
 
 
     "filter table": {
-      "plaintext": "awk -F',' '$2=='value'' file.csv",
-      "ok_button": "xxxxx"
+      "inputbox1": "value to be found. ex: CA",
+      "inputbox2": "file to be filtered. ex: ffbonded.itp",
+      "inputbox3": "column id. ex: 1 (for column A)",
+      "plaintext1": "ps1: if the separator is some character instead of spaces or tabs, add the -F flag. ex: -F';'",
+      "plaintext2": "ps2: to filter by multiple columns or multiple values, use the -e flag. ex: -e 'column1 == value1' -e 'column2 == value2'",
+      "ok_button": "clipboard_fiter_table_bash"
     },
     "sort table": {
-      "plaintext": "sort -t, -k2 file.csv",
-      "ok_button": "xxxxx"
+      "inputbox1": "file with table to be sorted. ex: file.csv",
+      "inputbox2": "column id. ex: 1 (for column A)",
+      "plaintext": "ps: if the separator is some character instead of spaces or tabs, add the -t flag. ex: -t;",
+      "ok_button": "clipboard_sort_table_bash"
     },
-    "unique": {
-      "plaintext": "sort data.txt | uniq",
-      "ok_button": "xxxxx"
+    "unique lines": {
+      "inputbox1": "file with table",
+      "plaintext": "ps: if the separator is some character instead of spaces or tabs, add the -t flag. ex: -t;",
+      "ok_button": "clipboard_unique_lines_bash"
     }
 
 
@@ -261,7 +279,7 @@
 
 },
 
-"data science2": {
+"table (python)": {
 
 
     "filter table": {
