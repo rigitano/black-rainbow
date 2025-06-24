@@ -180,7 +180,6 @@
 },
 
 
-
 "filesystem": {
 
     "ls enhanced": {
@@ -224,6 +223,7 @@
 
 },
 
+
 "text": {
 
     "find (grep)": {
@@ -247,7 +247,6 @@
 
     }
 },
-
 
 
 "table (bash)": {
@@ -278,6 +277,7 @@
 
 
 },
+
 
 "table (python)": {
 
@@ -411,6 +411,7 @@
 
 },
 
+
 "construct molecules": {
 
     "download and clean pdb": {
@@ -437,7 +438,6 @@
 },
 
 
-
 "construct system": {
 
     "molecule in solvent box": {
@@ -453,13 +453,39 @@
 
 },
 
+
 "restrict system": {
-    "position": {
+    "positions": {
+        "droplist": ["harmonic potential - [position_restraints] type 1",
+                     "flat bottom potential - [position_restraints] type 2"],
         "ok_button": "xxxxx"
       },
-    "phi and psi dihedrals": {
+    "dihedrals": {
+      "plaintext1": "potential similar to improper dihedral - [ dihedral_restraints ] type 1",
+      "plaintext2": "action required on mdp: dihre=yes dihre_fc=1000",
+      "radiobutton1": "all",
+      "radiobutton2": "just phi and psi of protein",
       "ok_button": "xxxxx"
-    }
+    },
+    "angles": {
+        "plaintext1": "potential similar to proper dihedral - [ angle_restraints ] type 1",
+        "ok_button": "xxxxx"
+      },
+    "distances": {
+
+        "radiobutton1": "potential",
+        "droplist1": ["harmonic potential - [bonds] type 6",
+                     "flat bottom potential - [bonds] type 10"],
+        "plaintext1": "action required on mdp: disre=simple disre_fc=1000", 
+
+        "radiobutton2": "rigid by algorithic renforcement",
+        "droplist2": ["apply exclusions - [constraints] type 1",
+                      "no exclusions - [constraints] type 2"],
+        "plaintext2": "action required on mdp: constraint_algorithm=lincs",
+                     
+        "ok_button": "xxxxx"
+      }
+  
 
 },
 
@@ -496,10 +522,26 @@
     "run": {
       "ok_button": "xxxxx"
     },
-    "run FEP": {
+    "run FEP-moff": {
       "inputbox1": "molecule to vanish",
       "ok_button": "xxxxx"
+    },
+    "run FEP-switchpot": {
+      "inputbox1": "top with extra columns",
+      "ok_button": "xxxxx"
+    },
+    "run FEP-moffwo": {
+      "inputbox1": "molecule to vanish",
+      "ok_button": "xxxxx"
+    },
+    "run STEERED": {
+      "ok_button": "xxxxx"
+    },
+    "run UMBRELLAS": {
+      "ok_button": "xxxxx"
     }
+
+
 
 },
 
