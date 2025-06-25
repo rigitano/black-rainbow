@@ -209,6 +209,7 @@
 
     "extraction": {
       "plaintext1": "folder extension:",
+      "radiobutton0": ".tar",
       "radiobutton1": ".tar.gz",
       "radiobutton2": ".tar.bz2",
       "radiobutton3": ".tar.xz",
@@ -216,7 +217,7 @@
       "radiobutton4": ".gz",
       "radiobutton5": ".bz2",
       "radiobutton6": ".xz",
-      "inputbox1": "name without extension",
+      "inputbox1": "file name. ex: proteins.tar.gz",
       "ok_button": "clipboard_extraction"
 
     }
@@ -490,7 +491,7 @@
 },
 
 
-"inspect system": {
+"manipulate system": {
     "get global id of atom": {
         "ok_button": "xxxxx"
     },
@@ -503,7 +504,7 @@
     "parse molecules": {
         "ok_button": "xxxxx"
     },
-    "include everything into a single top": {
+    "include all itps into a single top": {
         "ok_button": "xxxxx"
     },
     "decompose molecules into separate itps": {
@@ -522,22 +523,22 @@
     "run": {
       "ok_button": "xxxxx"
     },
-    "run FEP-moff": {
-      "inputbox1": "molecule to vanish",
+    "run_FEP_turnoffmolecule": {
+      "inputbox1": "molecule to turn off",
       "ok_button": "xxxxx"
     },
-    "run FEP-switchpot": {
+    "run_FEP_switchpotential": {
       "inputbox1": "top with extra columns",
       "ok_button": "xxxxx"
     },
-    "run FEP-moffwo": {
+    "run_FEP_turnoffmolecule_WO": {
       "inputbox1": "molecule to vanish",
       "ok_button": "xxxxx"
     },
-    "run STEERED": {
+    "run_STEERED": {
       "ok_button": "xxxxx"
     },
-    "run UMBRELLAS": {
+    "run_UMBRELLAS": {
       "ok_button": "xxxxx"
     }
 

@@ -439,23 +439,26 @@ def clipboard_extraction(s_choice,s_file_name):
     """This function sends a command to the clipboard depending on s_file_name."""
     
     # Copy text to the clipboard, depending on the value of s_choice
-    if s_choice == ".tar.gz":
-        pyperclip.copy(f"tar -xzvf {s_file_name}.tar.gz")
+    if s_choice == ".tar":
+        pyperclip.copy(f"tar -xvf {s_file_name}")
+
+    elif s_choice == ".tar.gz":
+        pyperclip.copy(f"tar -xzvf {s_file_name}")
 
     elif s_choice == ".tar.bz2":
-        pyperclip.copy(f"tar -xjvf {s_file_name}.tar.bz2")
+        pyperclip.copy(f"tar -xjvf {s_file_name}")
 
     elif s_choice == ".tar.xz":
-        pyperclip.copy(f"tar -xJvf {s_file_name}.tar.xz")
+        pyperclip.copy(f"tar -xJvf {s_file_name}")
 
     elif s_choice == ".gz":
-        pyperclip.copy(f"gunzip {s_file_name}.gz")
+        pyperclip.copy(f"gunzip {s_file_name}")
 
     elif s_choice == ".bz2":
-        pyperclip.copy(f"bunzip2 {s_file_name}.bz2")
+        pyperclip.copy(f"bunzip2 {s_file_name}")
 
     elif s_choice == ".xz":
-        pyperclip.copy(f"unxz {s_file_name}.xz")
+        pyperclip.copy(f"unxz {s_file_name}")
 
 
     else:
