@@ -515,6 +515,9 @@
 
 "run": {
     "make realistic": {
+            "droplist": ["local *",
+                   "oxygen (torque)",
+                   "rome (moab on top of torque)"],
         "inputbox0": "cpr (here, cp will make grompp just for energy minimization)",
         "inputbox1": "system folder. ex: 'hemoglobin_in_water'",
         "inputbox2": "groups to monitor. ex: 'Protein Non-Protein'",
@@ -523,10 +526,16 @@
         "plaintext0": "I should choose a gro and top instead of the syste folder to avoid filename problems. I should not choose the temperature"
       },
     "benchmark": {
+            "droplist": ["local",
+                   "oxygen (torque)",
+                   "rome (moab on top of torque) *"],
         "inputbox1": "tpr file. ex: 'prod.tpr'",
         "ok_button": "xxxxx"
       },
-    "run": {
+    "runPROD": {
+      "droplist": ["local",
+                   "oxygen (torque)",
+                   "rome (moab on top of torque)"],
       "inputbox0": "cpr",
       "inputbox1": "out folder name. ex: '4_PROD'",
       "inputbox2": "gro file",
@@ -535,6 +544,9 @@
       "ok_button": "xxxxx"
     },
     "runFEPoff": {
+      "droplist": ["local *",
+                   "oxygen (torque) *",
+                   "rome (moab on top of torque)"],
       "inputbox0": "cpr",
       "inputbox1": "out folder name. ex: '4_FEPoff'",
       "inputbox2": "gro file",
@@ -544,6 +556,9 @@
       "ok_button": "xxxxx"
     },
     "runFEPswitch": {
+      "droplist": ["local",
+                   "oxygen (torque)",
+                   "rome (moab on top of torque)"],
       "inputbox0": "cpr",
       "inputbox1": "out folder name",
       "inputbox2": "gro file WITH EXTRA COLUMNS",
@@ -553,16 +568,33 @@
     },
 
     "runSTEERED": {
+      "droplist": ["local",
+                   "oxygen (torque)",
+                   "rome (moab on top of torque)"],
+                   "radiobutton1": "target mol pulled from anchor mol",
+                   "radiobutton2": "target mol pulled using a magic force",
       "ok_button": "xxxxx"
     },
     "runUMBRELLAS": {
+      "droplist": ["local",
+                   "oxygen (torque)",
+                   "rome (moab on top of torque)"],
       "ok_button": "xxxxx"
     },
     "mdrun_all_tprs": {
-      "inputbox0": "-dd. ex: 3 3 3",
-      "inputbox1": "-ntomp. ex: 16 ",
-      "inputbox2": "-ntmpi. ex: 1",
-      "inputbox3": "-dlb. ex: yes",
+      "droplist": ["local",
+                   "oxygen (torque)",
+                   "rome (moab on top of torque) *"],
+
+      "radiobutton1": "paralelize in a simple way",
+      "inputbox1": "-nt. ex: 8 ",
+      "radiobutton2": "paralelize via openMP and MPI",
+      "inputbox2": "openMP (-ntomp or OMP_NUM_THREADS=). ex: 1 ",
+      "inputbox3": "MPI (-ntmpi or #MSUB -n). ex: 16",
+      "radiobutton3": "paralelize via domain decomposition",
+      "inputbox4": "-dd. ex: 3 3 3",
+      "inputbox5": "-npme. ex: 1",
+      "inputbox6": "-dlb. ex: yes",
       "ok_button": "xxxxx"
     }
 
@@ -680,6 +712,7 @@
       }
 },
 
+
 "mapped DNA analysis (new individual)": {
     "Picard - remove PCR replicas": {
         "ok_button": "xxxxx"
@@ -704,6 +737,7 @@
     }
 },
 
+
 "mapped DNA analysis (chipseq)": {
     "Macs2 callpeak": {
        "plaintext":"fing points of atachment of protein in DNA",
@@ -713,6 +747,8 @@
         "ok_button": "xxxxx"
     }
 },
+
+
 "mapped *RNA* analysis": {
     "FeatureCounts": {
         "plaintext":"generate read table per gene",
@@ -723,6 +759,8 @@
         "ok_button": "xxxxx"
     }
 },
+
+
 "SC analysis": {
   "Load data": {
     "radiobutton1": "one sample",
