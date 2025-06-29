@@ -515,33 +515,56 @@
 
 "run": {
     "make realistic": {
-        "ok_button": "xxxxx"
+        "inputbox0": "cpr (here, cp will make grompp just for energy minimization)",
+        "inputbox1": "system folder. ex: 'hemoglobin_in_water'",
+        "inputbox2": "groups to monitor. ex: 'Protein Non-Protein'",
+        "inputbox3": "temperature (K). ex: '300'",
+        "ok_button": "xxxxx",
+        "plaintext0": "I should choose a gro and top instead of the syste folder to avoid filename problems. I should not choose the temperature"
       },
     "benchmark": {
+        "inputbox1": "tpr file. ex: 'prod.tpr'",
         "ok_button": "xxxxx"
       },
     "run": {
+      "inputbox0": "cpr",
+      "inputbox1": "out folder name. ex: '4_PROD'",
+      "inputbox2": "gro file",
+      "inputbox3": "top file",
+      "inputbox4": "duration (ns)",
       "ok_button": "xxxxx"
     },
-    "run_FEP_turnoffmolecule": {
-      "inputbox1": "molecule to turn off",
+    "runFEPoff": {
+      "inputbox0": "cpr",
+      "inputbox1": "out folder name. ex: '4_FEPoff'",
+      "inputbox2": "gro file",
+      "inputbox3": "top file",
+      "inputbox4": "duration (ns)",
+      "inputbox5": "MOLECULE TO TURN OFF. ex: 'Protein'",
       "ok_button": "xxxxx"
     },
-    "run_FEP_switchpotential": {
-      "inputbox1": "top with extra columns",
+    "runFEPswitch": {
+      "inputbox0": "cpr",
+      "inputbox1": "out folder name",
+      "inputbox2": "gro file WITH EXTRA COLUMNS",
+      "inputbox3": "top file",
+      "inputbox4": "duration (ns)",
       "ok_button": "xxxxx"
     },
-    "run_FEP_turnoffmolecule_WO": {
-      "inputbox1": "molecule to vanish",
+
+    "runSTEERED": {
       "ok_button": "xxxxx"
     },
-    "run_STEERED": {
+    "runUMBRELLAS": {
       "ok_button": "xxxxx"
     },
-    "run_UMBRELLAS": {
+    "mdrun_all_tprs": {
+      "inputbox0": "-dd. ex: 3 3 3",
+      "inputbox1": "-ntomp. ex: 16 ",
+      "inputbox2": "-ntmpi. ex: 1",
+      "inputbox3": "-dlb. ex: yes",
       "ok_button": "xxxxx"
     }
-
 
 
 },
