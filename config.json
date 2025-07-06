@@ -515,16 +515,17 @@
 
 "run": {
     "make realistic": {
-            "droplist": ["local *",
+        "droplist": ["local",
                    "oxygen (torque)",
                    "rome (moab on top of torque)"],
-        "inputbox0": "cpr (here, cp will make grompp just for energy minimization)",
-        "inputbox1": "system folder. ex: 'hemoglobin_in_water'",
-        "inputbox2": "groups to monitor. ex: 'Protein Non-Protein'",
-        "inputbox3": "temperature (K). ex: '300'",
-        "ok_button": "xxxxx",
-        "plaintext0": "I should choose a gro and top instead of the syste folder to avoid filename problems. I should not choose the temperature"
+
+        "inputbox1": "gro. ex: 'hemoglobin_in_water.gro'",
+        "inputbox2": "top. ex: 'hemoglobin_in_water.top'",
+        "inputbox3": "groups to monitor. ex: 'Protein Non-Protein'",
+        "ok_button": "clipboard_make_realistic",
+        "plaintext0": "GROUPS TO MONITOR NOT IMPLEMENTED YET"
       },
+
     "benchmark": {
             "droplist": ["local",
                    "oxygen (torque)",
@@ -532,16 +533,18 @@
         "inputbox1": "tpr file. ex: 'prod.tpr'",
         "ok_button": "xxxxx"
       },
+
     "runPROD": {
       "droplist": ["local",
                    "oxygen (torque)",
                    "rome (moab on top of torque)"],
-      "inputbox0": "cpr",
-      "inputbox1": "out folder name. ex: '4_PROD'",
-      "inputbox2": "gro file",
-      "inputbox3": "top file",
+
+      "inputbox1": "gro. ex: 'hemoglobin_in_water.gro'",
+      "inputbox2": "top. ex: 'hemoglobin_in_water.top'",
       "inputbox4": "duration (ns)",
-      "ok_button": "xxxxx"
+      "inputbox3": "groups to monitor. ex: 'Protein Non-Protein'",
+      "ok_button": "clipboard_run_prod",
+      "plaintext0": "GROUPS TO MONITOR NOT IMPLEMENTED YET"
     },
     "runFEPoff": {
       "droplist": ["local *",

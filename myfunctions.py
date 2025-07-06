@@ -654,6 +654,56 @@ def clipboard_unique_lines_bash(s_file_name):
 
     return sent + " sent to clipboard"
 
+
+
+def clipboard_make_realistic(s_machine, s_gro, s_top, s_groups):
+    """This function sends codes to the clipboard, depending on the choice made on a droplist."""
+    
+    # Copy text to the clipboard, depending on the value of s_by_what
+    if s_machine == "local":
+        pyperclip.copy(f"./runALL.sh cpr cpr cpr n {s_gro} {s_top} 0 \"{s_groups}\"")
+
+    elif s_machine == "oxygen (torque)":
+        pyperclip.copy(f"xxxxx")
+
+    elif s_machine == "rome (moab on top of torque)":
+        pyperclip.copy(f"xxxxx")
+
+    else:
+        raise ValueError("Invalid value for s_machine")
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
+
+
+def clipboard_run_prod(s_machine, s_gro, s_top, s_time, s_groups):
+    """This function sends codes to the clipboard, depending on the choice made on a droplist."""
+    
+    # Copy text to the clipboard, depending on the value of s_by_what
+    if s_machine == "local":
+        pyperclip.copy(f"./runALL.sh n n n cpr {s_gro} {s_top} {s_time} \"{s_groups}\"")
+
+    elif s_machine == "oxygen (torque)":
+        pyperclip.copy(f"xxxxx")
+
+    elif s_machine == "rome (moab on top of torque)":
+        pyperclip.copy(f"xxxxx")
+
+    else:
+        raise ValueError("Invalid value for s_machine")
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
+
+
+
+
 def clipboard_xxxxx():
     """This function sends 'xxxxxxx' to the clipboard."""
     
