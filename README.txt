@@ -20,3 +20,12 @@ be sure to set the arguments properly in the function definition so to match wha
 
 
 
+"inputbox1": "xxx",
+"droplist1": ["xxx",
+              "xxx",
+              "xxx"],
+"radiobutton1": "xxx",
+"plaintext1": "xxx",
+
+
+

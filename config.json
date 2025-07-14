@@ -501,8 +501,10 @@
     "parse directive": {
         "ok_button": "xxxxx"
     },
-    "parse molecules": {
-        "ok_button": "xxxxx"
+    "parse directives in all molecules OK": {
+        "inputbox1": "top file. ex: molecule_in_water.top",
+        "ok_button": "clipboard_parse_all_mols",
+        "plaintext1": "output example: {'Protein_chain_A': {'[ atoms ]': [[]]} ..."
     },
     "include all itps into a single top": {
         "ok_button": "xxxxx"
