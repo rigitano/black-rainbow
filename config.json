@@ -492,16 +492,24 @@
 
 
 "inspect system": {
-    "get global id of atom OK": {
+    "get atom info (global id, using characteristics) OK": {
         "inputbox1": "top file. ex: molecule_in_water.top",
         "inputbox2": "molecule name. ex: Protein_chain_A",
         "inputbox3": "molecule instantiation. ex: 1",
         "inputbox4": "residue number. ex: 4",
         "inputbox5": "atom name. ex: CA",
 
-        "ok_button": "clipboard_get_atom_global_id"
+        "ok_button": "clipboard_get_atom_global_id",
+        "plaintext1": "output example: 315"
     },
-    "molecules basic info OK": {
+    "get atom info (characteristics, using global id) NOT IMPLEMENTED": {
+        "inputbox1": "top file. ex: molecule_in_water.top",
+        "inputbox2": "atom global id",
+
+        "ok_button": "clipboard_get_atom_infos_from_global_id",
+        "plaintext1": "output example: {'mol_name':'Protein_chain_A','instantiation':1,'residue':4,'name':'CA'}}"
+},
+    "get basic infos if molecules OK": {
        "inputbox1": "top file. ex: molecule_in_water.top",
         "ok_button": "clipboard_basic_infos_of_molecules",
         "plaintext1": "output example: {'Protein_chain_A': {'count': 1, 'qt_atoms': 81, 'first_id': 1}, 'Support_chain_B': {'count': 1, 'qt_atoms': 24, 'first_id': 82}, 'SOL': {'count': 845, 'qt_atoms': 3, 'first_id': 106}}"
