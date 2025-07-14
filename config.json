@@ -492,7 +492,7 @@
 
 
 "inspect system": {
-    "get atom info (global id, using characteristics) OK": {
+    "get atom id (using characteristics) OK": {
         "inputbox1": "top file. ex: molecule_in_water.top",
         "inputbox2": "molecule name. ex: Protein_chain_A",
         "inputbox3": "molecule instantiation. ex: 1",
@@ -500,11 +500,12 @@
         "inputbox5": "atom name. ex: CA",
 
         "ok_button": "clipboard_get_atom_global_id",
-        "plaintext1": "output example: 315"
+        "plaintext1": "the output is the GLOBAL id as a integer. example: 315"
     },
-    "get atom info (characteristics, using global id) NOT IMPLEMENTED": {
+    "get atom characteristics (using id) NOT IMPLEMENTED": {
         "inputbox1": "top file. ex: molecule_in_water.top",
-        "inputbox2": "atom global id",
+
+        "inputbox2": "atom GLOBAL id",
 
         "ok_button": "clipboard_get_atom_infos_from_global_id",
         "plaintext1": "output example: {'mol_name':'Protein_chain_A','instantiation':1,'residue':4,'name':'CA'}}"
@@ -532,6 +533,17 @@
     }
 
 },
+
+"edit system": {
+  "insert text after directive": {
+        "inputbox1": "xxx",
+        "ok_button": "clipboard_xxx",
+        "plaintext1": "xxx"
+  }
+
+
+},
+
 
 "run": {
     "make realistic": {
