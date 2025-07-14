@@ -897,7 +897,7 @@ def clipboard_replaceWordInsideDirective(top_filename, target_directive, old_wor
     """This function sends a cleanpipe function with arguments to the clipboard."""
     
     # Copy text to the clipboard
-    pyperclip.copy(f"cl.clipboard_replaceWordInsideDirective(\"{top_filename}\", \"{target_directive}\", \"{old_word}\", \"{new_word}\")")
+    pyperclip.copy(f"cl.replaceWordInsideDirective(\"{top_filename}\", \"{target_directive}\", \"{old_word}\", \"{new_word}\")")
 
     # Retrieve text from the clipboard
     sent = pyperclip.paste()
