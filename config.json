@@ -492,8 +492,14 @@
 
 
 "inspect system": {
-    "get global id of atom": {
-        "ok_button": "xxxxx"
+    "get global id of atom OK": {
+        "inputbox1": "top file. ex: molecule_in_water.top",
+        "inputbox2": "molecule name. ex: Protein_chain_A",
+        "inputbox3": "molecule instantiation. ex: 1",
+        "inputbox4": "residue number. ex: 4",
+        "inputbox5": "atom name. ex: CA",
+
+        "ok_button": "clipboard_get_atom_global_id"
     },
     "molecules basic info OK": {
        "inputbox1": "top file. ex: molecule_in_water.top",

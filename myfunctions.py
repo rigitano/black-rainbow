@@ -701,6 +701,20 @@ def clipboard_run_prod(s_machine, s_gro, s_top, s_time, s_groups):
     return sent + " sent to clipboard"
 
 
+def clipboard_get_atom_global_id(s_top_file, s_molecule_name, n_molecule_instantiation, n_residue, s_atom):
+    """This function sends a cleanpipe function with arguments to the clipboard."""
+    
+    # Copy text to the clipboard
+    pyperclip.copy(f"id_atom = cl.get_atom_global_id(\"{s_top_file}\", \"{s_molecule_name}\", {n_molecule_instantiation}, {n_residue}, \"{s_atom}\")")
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
+
+
+
 def clipboard_basic_infos_of_molecules(s_top):
     """This function sends a cleanpipe function with arguments to the clipboard."""
     
