@@ -728,6 +728,30 @@ def clipboard_basic_infos_of_molecules(s_top):
 
 
 
+def clipboard_getMoleculeName(s_top, n_order):
+    """This function sends a cleanpipe function with arguments to the clipboard."""
+    
+    # Copy text to the clipboard
+    pyperclip.copy(f"s_mol_name = cl.getMoleculeName(\"{s_top}\", order={n_order})")
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
+
+def clipboard_getSystemName(s_top):
+    """This function sends a cleanpipe function with arguments to the clipboard."""
+    
+    # Copy text to the clipboard
+    pyperclip.copy(f"s_system_name = cl.getSystemName(\"{s_top}\")")
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
+
 
 
 def clipboard_parse_directive(s_top, s_directive_name):

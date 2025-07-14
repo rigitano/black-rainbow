@@ -510,23 +510,37 @@
         "ok_button": "clipboard_get_atom_infos_from_global_id",
         "plaintext1": "output example: {'mol_name':'Protein_chain_A','instantiation':1,'residue':4,'name':'CA'}}"
 },
-    "get basic infos if molecules": {
+    "get basic infos of all molecules": {
        "inputbox1": "top file. ex: molecule_in_water.top",
         "ok_button": "clipboard_basic_infos_of_molecules",
         "plaintext1": "output example: {'Protein_chain_A': {'count': 1, 'qt_atoms': 81, 'first_id': 1}, 'Support_chain_B': {'count': 1, 'qt_atoms': 24, 'first_id': 82}, 'SOL': {'count': 845, 'qt_atoms': 3, 'first_id': 106}}"
     },
-    "parse directive": {
+
+    "get a molecule name": {
+       "inputbox1": "top file. ex: molecule_in_water.top",
+       "inputbox2": "order of molecule, starting at 1. ex: 1",
+        "ok_button": "clipboard_getMoleculeName",
+        "plaintext1": "output example: 'Protein_chain_A'"
+    },
+    "get the system name": {
+       "inputbox1": "top file. ex: molecule_in_water.top",
+        "ok_button": "clipboard_getSystemName",
+        "plaintext1": "output example: 'octane in water'"
+    },
+
+
+    "parse a directive": {
         "inputbox1": "top/itp file. ex: molecule_in_water.top",
         "inputbox2": "directive name. ex: [ bonds ]",
         "ok_button": "clipboard_parse_directive",
         "plaintext1": "output example: [['1', '2', '1'], ['1', '4', '1'], ..."
     },
-    "parse directives in all molecules": {
+    "parse all directives in all molecules": {
         "inputbox1": "top/itp file. ex: molecule_in_water.top",
         "ok_button": "clipboard_parse_directives_inside_each_and_every_molecule",
         "plaintext1": "output example: {'Protein_chain_A': {'[ atoms ]': [[]]} ..."
     },
-    "parse directives in intermolecular interactions": {
+    "parse all directives in intermolecular interactions": {
         "inputbox1": "top/itp file. ex: molecule_in_water.top",
         "ok_button": "clipboard_parse_directives_inside_intermolecular_interactions",
         "plaintext1": "output example: {'intermolecular_interactions': {'[ atoms ]': [[]]} ..."
@@ -570,17 +584,24 @@
   },
 
 
-  "change the name of a molecule in the top": {
+  "change name of a molecule": {
         "inputbox1": "xxx",
         "ok_button": "clipboard_xxx",
         "plaintext1": "xxx"
   },
 
-  "change the quantity of a molecule in the top summary": {
+  "change quantity of a molecule in the top summary": {
         "inputbox1": "xxx",
         "ok_button": "clipboard_xxx",
         "plaintext1": "xxx"
   },
+
+  "change system name": {
+        "inputbox1": "xxx",
+        "ok_button": "clipboard_xxx",
+        "plaintext1": "xxx"
+  },
+
 
     "replace a word inside a specific directive": {
         "inputbox1": "xxx",
