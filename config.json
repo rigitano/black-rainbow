@@ -495,22 +495,26 @@
     "get global id of atom": {
         "ok_button": "xxxxx"
     },
-    "molecules basic info": {
-        "ok_button": "xxxxx"
+    "molecules basic info OK": {
+       "inputbox1": "top file. ex: molecule_in_water.top",
+        "ok_button": "clipboard_basic_infos_of_molecules",
+        "plaintext1": "output example: {'Protein_chain_A': {'count': 1, 'qt_atoms': 81, 'first_id': 1}, 'Support_chain_B': {'count': 1, 'qt_atoms': 24, 'first_id': 82}, 'SOL': {'count': 845, 'qt_atoms': 3, 'first_id': 106}}"
     },
     "parse directive": {
         "ok_button": "xxxxx"
     },
     "parse directives in all molecules OK": {
         "inputbox1": "top file. ex: molecule_in_water.top",
-        "ok_button": "clipboard_parse_all_mols",
+        "ok_button": "clipboard_parse_directives_inside_each_and_every_molecule",
         "plaintext1": "output example: {'Protein_chain_A': {'[ atoms ]': [[]]} ..."
     },
     "include all itps into a single top": {
         "ok_button": "xxxxx"
     },
-    "decompose molecules into separate itps": {
-        "ok_button": "xxxxx"
+    "decompose molecules into separate itps OK": {
+        "inputbox1": "top file. ex: molecule_in_water.top",
+        "ok_button": "clipboard_deconstruct_top_into_molecules",
+        "plaintext1": "several itps appear in the temp folder, and the infos are returned like for example: {'Protein_chain_A': 'C:\\Users\\Henrique\\AppData\\Local\\Temp\\tmplrzjpaxr.itp', 'Support_chain_B': 'C:\\Users\\Henrique\\AppData\\Local\\Temp\\tmpiarjc86s.itp', 'SOL': 'C:\\Users\\Henrique\\AppData\\Local\\Temp\\tmp05dvn9xp.itp'}"
     }
 
 },
