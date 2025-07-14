@@ -461,12 +461,24 @@
                      "[position_restraints] type 2 (flat bottom potential)"],
         "ok_button": "xxxxx"
       },
+
     "dihedrals": {
       "droplist": ["[ dihedral_restraints ] type 1 (a potential similar to improper dihedral)"],
       "plaintext2": "action required on mdp: dihre=yes dihre_fc=1000",
+
+      "inputbox1": "gro file. ex: protein_in_water.gro",
+      "inputbox2": "top/itp file with the list of dihedrals. ex: protein_in_water.top",
+
+      "inputbox3": "restraining force. ex: 5000",
+
+      "inputbox4": "name of molecule be be restricted. ex: Protein_chain_A",
+
+      "inputbox5": "top/itp with directive to be edited. ex: protein_in_water.top",
+      "inputbox6": "top/itp output file name. ex: protein_in_water_with_restrictions.top",
+
       "radiobutton1": "all <<NOT IMPLEMENTED YET>>",
       "radiobutton2": "just phi and psi of protein",
-      "ok_button": "clipboard_restric_dihedrals"
+      "ok_button": "clipboard_freeze_dihedrals"
     },
     "angles <<NOT IMPLEMENTED YET>>": {
         "droplist": ["[ angle_restraints ] type 1 (a potential similar to proper dihedral)"],

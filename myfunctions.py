@@ -701,6 +701,25 @@ def clipboard_run_prod(s_machine, s_gro, s_top, s_time, s_groups):
     return sent + " sent to clipboard"
 
 
+def clipboard_freeze_dihedrals(s_potential_option, s_gro_file,s_top_file, restraining_force, s_molename, s_file_to_be_edited, s_out_file_name, s_which_dihedrals_option):
+    """This function sends a cleanpipe function with arguments to the clipboard"""
+    
+    # Copy text to the clipboard, depending on the value of s_by_what
+    if s_which_dihedrals_option == "all":
+        pyperclip.copy(f"xxxx")
+
+    elif s_which_dihedrals_option == "just phi and psi of protein":
+        pyperclip.copy(f"cl.freeze_phi_psi_dihedrals(\"{s_gro_file}\", \"{s_top_file}\", {restraining_force}, \"{s_molename}\", \"{s_file_to_be_edited}\", \"{s_out_file_name}\")")
+
+    else:
+        raise ValueError("Invalid value for s_option")
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
+
 def clipboard_get_atom_global_id(s_top_file, s_molecule_name, n_molecule_instantiation, n_residue, s_atom):
     """This function sends a cleanpipe function with arguments to the clipboard."""
     
