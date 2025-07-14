@@ -456,32 +456,32 @@
 
 
 "restrict system": {
-    "positions": {
-        "droplist": ["harmonic potential - [position_restraints] type 1",
-                     "flat bottom potential - [position_restraints] type 2"],
+    "positions <<NOT IMPLEMENTED YET>>": {
+        "droplist": ["[position_restraints] type 1 (harmonic potential)",
+                     "[position_restraints] type 2 (flat bottom potential)"],
         "ok_button": "xxxxx"
       },
     "dihedrals": {
-      "plaintext1": "potential similar to improper dihedral - [ dihedral_restraints ] type 1",
+      "droplist": ["[ dihedral_restraints ] type 1 (a potential similar to improper dihedral)"],
       "plaintext2": "action required on mdp: dihre=yes dihre_fc=1000",
-      "radiobutton1": "all",
+      "radiobutton1": "all <<NOT IMPLEMENTED YET>>",
       "radiobutton2": "just phi and psi of protein",
-      "ok_button": "xxxxx"
+      "ok_button": "clipboard_restric_dihedrals"
     },
-    "angles": {
-        "plaintext1": "potential similar to proper dihedral - [ angle_restraints ] type 1",
+    "angles <<NOT IMPLEMENTED YET>>": {
+        "droplist": ["[ angle_restraints ] type 1 (a potential similar to proper dihedral)"],
         "ok_button": "xxxxx"
       },
-    "distances": {
+    "distances <<NOT IMPLEMENTED YET>>": {
 
-        "radiobutton1": "potential",
-        "droplist1": ["harmonic potential - [bonds] type 6",
-                     "flat bottom potential - [bonds] type 10"],
+        "radiobutton1": "option 1: using potentials",
+        "droplist1": ["[bonds] type 6 (harmonic potential)",
+                      "[bonds] type 10 (flat bottom potential)"],
         "plaintext1": "action required on mdp: disre=simple disre_fc=1000", 
 
-        "radiobutton2": "rigid by algorithic renforcement",
-        "droplist2": ["apply exclusions - [constraints] type 1",
-                      "no exclusions - [constraints] type 2"],
+        "radiobutton2": "option 2: making unmovable by algorithic renforcement",
+        "droplist2": ["[constraints] type 1 (will apply exclusions)",
+                      "[constraints] type 2 (wont apply exclusions)"],
         "plaintext2": "action required on mdp: constraint_algorithm=lincs",
                      
         "ok_button": "xxxxx"
@@ -502,7 +502,7 @@
         "ok_button": "clipboard_get_atom_global_id",
         "plaintext1": "the output is the GLOBAL id as a integer. example: 315"
     },
-    "get atom characteristics (using id) NOT IMPLEMENTED. JUST MOL NAME": {
+    "get atom characteristics (using id) <<NOT IMPLEMENTED YET. JUST MOL NAME>>": {
         "inputbox1": "top file. ex: molecule_in_water.top",
 
         "inputbox2": "atom GLOBAL id",
@@ -557,21 +557,21 @@
 
   "insert text before directive": {
         "inputbox1": "xxx",
-        "ok_button": "clipboard_xxx",
+        "ok_button": "clipboard_insert_text_before_directive(s_file_path, s_text_to_insert, s_directive)",
         "plaintext1": "xxx"
   },
 
 
   "replace entire directive content": {
         "inputbox1": "xxx",
-        "ok_button": "clipboard_xxx",
+        "ok_button": "clipboard_replace_all_lines_of_directive(s_top_file,s_top_file_out, s_directive, ll_lines_to_add, directive_position='first')",
         "plaintext1": "xxx"
   },
 
 
   "insert text inside a directive, after last line": {
         "inputbox1": "xxx",
-        "ok_button": "clipboard_xxx",
+        "ok_button": "clipboard_add_lines_at_the_end_of_directive(s_top_file,s_top_file_out, s_directive, ll_lines_to_add, directive_position='first')",
         "plaintext1": "xxx"
   },
 
@@ -579,33 +579,33 @@
 
   "replace parameters of a directive, for specific atoms": {
         "inputbox1": "xxx",
-        "ok_button": "clipboard_xxx",
+        "ok_button": "clipboard_put_lines_at_the_proper_place_of_directive(ll_original, s_directive, ll_replacement)",
         "plaintext1": "xxx"
   },
 
 
   "change name of a molecule": {
         "inputbox1": "xxx",
-        "ok_button": "clipboard_xxx",
+        "ok_button": "clipboard_replaceMoleculeName(top_filename, old_molecule_name, new_molecule_name)",
         "plaintext1": "xxx"
   },
 
   "change quantity of a molecule in the top summary": {
         "inputbox1": "xxx",
-        "ok_button": "clipboard_xxx",
+        "ok_button": "clipboard_update_molecule_quantity(top_file, molecule_name, new_quantity)",
         "plaintext1": "xxx"
   },
 
   "change system name": {
         "inputbox1": "xxx",
-        "ok_button": "clipboard_xxx",
+        "ok_button": "clipboard_setSystemName(top_filename, new_system_name)",
         "plaintext1": "xxx"
   },
 
 
     "replace a word inside a specific directive": {
         "inputbox1": "xxx",
-        "ok_button": "clipboard_xxx",
+        "ok_button": "clipboard_replaceWordInsideDirective(top_filename, target_directive, old_word, new_word)",
         "plaintext1": "xxx"
   },
 
@@ -616,6 +616,7 @@
         "ok_button": "clipboard_include_all_itps"
     },
     "decompose molecules into separate itps": {
+        "plaintext0": "SHIT, I made two funcions that do the same. I think one is used by other functions, the other is better. here I call the better one",
         "inputbox1": "top file. ex: molecule_in_water.top",
         "ok_button": "clipboard_deconstruct_top_into_molecules",
         "plaintext1": "several itps appear in the temp folder, and the infos are returned like for example: {'Protein_chain_A': 'C:\\Users\\Henrique\\AppData\\Local\\Temp\\tmplrzjpaxr.itp', 'Support_chain_B': 'C:\\Users\\Henrique\\AppData\\Local\\Temp\\tmpiarjc86s.itp', 'SOL': 'C:\\Users\\Henrique\\AppData\\Local\\Temp\\tmp05dvn9xp.itp'}"
