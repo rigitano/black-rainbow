@@ -809,6 +809,105 @@ def clipboard_parse_directives_inside_intermolecular_interactions(s_top):
     return sent + " sent to clipboard"
 
 
+def clipboard_insert_text_before_directive(s_file_path, s_text_to_insert, s_directive):
+    """This function sends a cleanpipe function with arguments to the clipboard."""
+    
+    # Copy text to the clipboard
+    pyperclip.copy(f"cl.insert_text_before_directive(\"{s_file_path}\", \"{s_text_to_insert}\", \"{s_directive}\")")
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
+
+def clipboard_replace_all_lines_of_directive(s_top_file, s_top_file_out, s_directive, ll_lines_to_add):
+    """This function sends a cleanpipe function with arguments to the clipboard."""
+    
+    # Copy text to the clipboard
+    pyperclip.copy(f"cl.replace_all_lines_of_directive(\"{s_top_file}\", \"{s_top_file_out}\", \"{s_directive}\", {ll_lines_to_add}, directive_position='first')")
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
+
+def clipboard_add_lines_at_the_end_of_directive(s_top_file,s_top_file_out, s_directive, ll_lines_to_add):
+    """This function sends a cleanpipe function with arguments to the clipboard."""
+    
+    # Copy text to the clipboard
+    pyperclip.copy(f"cl.add_lines_at_the_end_of_directive(\"{s_top_file}\", \"{s_top_file_out}\", \"{s_directive}\", {ll_lines_to_add}, directive_position='first')")
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
+
+def clipboard_put_lines_at_the_proper_place_of_directive(s_file_to_be_edited, s_out_file_name, s_directive, ll_replacement):
+    """This function sends a cleanpipe function with arguments to the clipboard."""
+    
+    # Copy text to the clipboard
+    pyperclip.copy(f"cl.put_lines_at_the_proper_place_of_directive(\"{s_file_to_be_edited}\", \"{s_out_file_name}\", \"{s_directive}\", {ll_replacement})")
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
+
+def clipboard_replaceMoleculeName(top_filename, old_molecule_name, new_molecule_name):
+    """This function sends a cleanpipe function with arguments to the clipboard."""
+    
+    # Copy text to the clipboard
+    pyperclip.copy(f"cl.replaceMoleculeName(\"{top_filename}\", \"{old_molecule_name}\", \"{new_molecule_name}\")")
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
+
+def clipboard_update_molecule_quantity(top_file, molecule_name, new_quantity):
+    """This function sends a cleanpipe function with arguments to the clipboard."""
+    
+    # Copy text to the clipboard
+    pyperclip.copy(f"cl.update_molecule_quantity(\"{top_file}\", \"{molecule_name}\", {new_quantity})")
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
+
+def clipboard_setSystemName(top_filename, new_system_name):
+    """This function sends a cleanpipe function with arguments to the clipboard."""
+    
+    # Copy text to the clipboard
+    pyperclip.copy(f"cl.setSystemName(\"{top_filename}\", \"{new_system_name}\")")
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
+
+def clipboard_replaceWordInsideDirective(top_filename, target_directive, old_word, new_word):
+    """This function sends a cleanpipe function with arguments to the clipboard."""
+    
+    # Copy text to the clipboard
+    pyperclip.copy(f"cl.clipboard_replaceWordInsideDirective(\"{top_filename}\", \"{target_directive}\", \"{old_word}\", \"{new_word}\")")
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
+
+
+
+
 
 
 def clipboard_include_all_itps(s_top, s_option):

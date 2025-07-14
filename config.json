@@ -569,7 +569,7 @@
         "inputbox1": "top/itp file. ex: protein_in_water.top",
         "inputbox2": "text to insert. ex: ;this is a comment",
         "inputbox3": "directive name. ex: [ atoms ]",
-        "ok_button": "clipboard_insert_text_before_directive(s_file_path, s_text_to_insert, s_directive)",
+        "ok_button": "clipboard_insert_text_before_directive",
         "plaintext1": "the file will be modified in place"
   },
 
@@ -578,9 +578,8 @@
         "inputbox1": "top/itp file with the directive to be replaced. ex: protein_in_water.top",
         "inputbox2": "name of the output file. ex: protein_in_water_out.top",
         "inputbox3": "target directive. ex: [ atoms ]",
-        "inputbox4": "list of lists with the new content. ex: [['1', '2', '1'], ['1', '4', '1'], ...]",
-        "inputbox5": "if there are more than one directives with tha same name you have to choose 'first' or 'last'. ex: 'first'",
-        "ok_button": "clipboard_replace_all_lines_of_directive(s_top_file, s_top_file_out, s_directive, ll_lines_to_add, directive_position='first')",
+        "inputbox4": "list of lists with the new content. ex: variable ll_lines containing [['1', '2', '1'], ['1', '4', '1'], ...]",
+        "ok_button": "clipboard_replace_all_lines_of_directive",
         "plaintext1": "a new file will be created with the new content, the original file will not be modified"
   },
 
@@ -589,9 +588,9 @@
         "inputbox1": "top/itp file with the directive to be complemented. ex: protein_in_water.top",
         "inputbox2": "name of the output file. ex: protein_in_water_out.top",
         "inputbox3": "target directive. ex: [ atoms ]",
-        "inputbox4": "list of lists with content to be added. ex: [['1', '2', '1'], ['1', '4', '1'], ...]",
-        "inputbox5": "if there are more than one directives with tha same name you have to choose 'first' or 'last'. ex: 'first'",
-        "ok_button": "clipboard_add_lines_at_the_end_of_directive(s_top_file,s_top_file_out, s_directive, ll_lines_to_add, directive_position='first')",
+        "inputbox4": "list of lists with content to be added. ex: variable ll_lines containing [['1', '2', '1'], ['1', '4', '1'], ...]",
+
+        "ok_button": "clipboard_add_lines_at_the_end_of_directive",
         "plaintext1": "a new file will be created with the new content, the original file will not be modified"
   },
 
@@ -601,8 +600,8 @@
         "inputbox1": "top/itp file with the directive to be edited. ex: protein_in_water.top",
         "inputbox2": "name of the output file. ex: protein_in_water_out.top",
         "inputbox3": "target directive. ex: [ atoms ]",
-        "inputbox4": "list of lists with content to be edited. the ones not found will be added. ex: [['1', '2', '1'], ['1', '4', '1'], ...]",
-        "ok_button": "clipboard_put_lines_at_the_proper_place_of_directive(ll_original, s_directive, ll_replacement)",
+        "inputbox4": "list of lists with content to be edited. the ones not found will be added. ex: variable ll_lines containing [['1', '2', '1'], ['1', '4', '1'], ...]",
+        "ok_button": "clipboard_put_lines_at_the_proper_place_of_directive",
         "plaintext1": "a new file will be created with the new content, the original file will not be modified"
         
   },
@@ -612,7 +611,7 @@
         "inputbox1": "top/itp file with the directive to be edited. ex: protein_in_water.top",
         "inputbox2": "old molecule name. ex: Protein_chain_A",
         "inputbox3": "new molecule name. ex: Hemoglobin",
-        "ok_button": "clipboard_replaceMoleculeName(top_filename, old_molecule_name, new_molecule_name)",
+        "ok_button": "clipboard_replaceMoleculeName",
         "plaintext1": "the file will be modified in place"
   },
 
@@ -620,24 +619,24 @@
         "inputbox1": "top/itp file with the directive to be edited. ex: protein_in_water.top",
         "inputbox2": "molecule to change quantity. ex: Protein_chain_A",
         "inputbox3": "new quantity. ex: 342",
-        "ok_button": "clipboard_update_molecule_quantity(top_file, molecule_name, new_quantity)",
+        "ok_button": "clipboard_update_molecule_quantity",
         "plaintext1": "the file will be modified in place"
   },
 
   "change system name": {
         "inputbox1": "top/itp file of system. ex: protein_in_water.top",
         "inputbox2": "new name of the system. ex: hemoglobin in water",
-        "ok_button": "clipboard_setSystemName(top_filename, new_system_name)",
+        "ok_button": "clipboard_setSystemName",
         "plaintext1": "the file will be modified in place"
   },
 
 
     "replace a word inside a specific directive": {
         "inputbox1": "top/itp file of system. ex: protein_in_water.top",
-        "inputbox3": "target directive. ex: [ atoms ]",
-        "inputbox4": "word to be replaced. ex: foo",
-        "inputbox5": "new word. ex: bar",
-        "ok_button": "clipboard_replaceWordInsideDirective(top_filename, target_directive, old_word, new_word)",
+        "inputbox2": "target directive. ex: [ atoms ]",
+        "inputbox3": "word to be replaced. ex: foo",
+        "inputbox4": "new word. ex: bar",
+        "ok_button": "clipboard_replaceWordInsideDirective",
         "plaintext1": "the file will be modified in place"
   },
 
