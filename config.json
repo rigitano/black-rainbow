@@ -515,14 +515,23 @@
         "ok_button": "clipboard_basic_infos_of_molecules",
         "plaintext1": "output example: {'Protein_chain_A': {'count': 1, 'qt_atoms': 81, 'first_id': 1}, 'Support_chain_B': {'count': 1, 'qt_atoms': 24, 'first_id': 82}, 'SOL': {'count': 845, 'qt_atoms': 3, 'first_id': 106}}"
     },
-    "parse directive": {
-        "ok_button": "xxxxx"
+    "parse directive OK": {
+        "inputbox1": "top/itp file. ex: molecule_in_water.top",
+        "inputbox2": "directive name. ex: [ bonds ]",
+        "ok_button": "clipboard_parse_directive",
+        "plaintext1": "output example: [['1', '2', '1'], ['1', '4', '1'], ..."
     },
     "parse directives in all molecules OK": {
-        "inputbox1": "top file. ex: molecule_in_water.top",
+        "inputbox1": "top/itp file. ex: molecule_in_water.top",
         "ok_button": "clipboard_parse_directives_inside_each_and_every_molecule",
         "plaintext1": "output example: {'Protein_chain_A': {'[ atoms ]': [[]]} ..."
     },
+    "parse directives in intermolecular interactions OK": {
+        "inputbox1": "top/itp file. ex: molecule_in_water.top",
+        "ok_button": "clipboard_parse_directives_inside_intermolecular_interactions",
+        "plaintext1": "output example: {'intermolecular_interactions': {'[ atoms ]': [[]]} ..."
+    },
+
     "include all itps into a single top": {
         "ok_button": "xxxxx"
     },

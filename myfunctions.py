@@ -727,6 +727,21 @@ def clipboard_basic_infos_of_molecules(s_top):
     return sent + " sent to clipboard"
 
 
+
+
+
+def clipboard_parse_directive(s_top, s_directive_name):
+    """This function sends a cleanpipe function with arguments to the clipboard."""
+    
+    # Copy text to the clipboard
+    pyperclip.copy(f"ll_parsed_directive = cl.parse_directive(\"{s_top}\", \"{s_directive_name}\")")
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
+
 def clipboard_parse_directives_inside_each_and_every_molecule(s_top):
     """This function sends a cleanpipe function with arguments to the clipboard."""
     
@@ -737,6 +752,20 @@ def clipboard_parse_directives_inside_each_and_every_molecule(s_top):
     sent = pyperclip.paste()
 
     return sent + " sent to clipboard"
+
+
+def clipboard_parse_directives_inside_intermolecular_interactions(s_top):
+    """This function sends a cleanpipe function with arguments to the clipboard."""
+    
+    # Copy text to the clipboard
+    pyperclip.copy(f"dd_intermol = cl.parse_directives_inside_intermolecular_interactions(\"{s_top}\")")
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
+
 
 
 def clipboard_deconstruct_top_into_molecules(s_top):
