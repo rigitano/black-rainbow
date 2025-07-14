@@ -768,6 +768,25 @@ def clipboard_parse_directives_inside_intermolecular_interactions(s_top):
 
 
 
+def clipboard_include_all_itps(s_top, s_option):
+    """This function sends a cleanpipe function with arguments to the clipboard."""
+    
+    # Copy text to the clipboard, depending on option
+    if s_option == "option 1: text output":
+        pyperclip.copy(f"s_expanded_includes = cl.expand_includes(\"{s_top}\")")
+    elif s_option == "option 2: temp file output":
+        pyperclip.copy(f"s_temp_file_name = cl.expand_includes_to_temp_file(\"{s_top}\")")
+    else:
+        raise ValueError("Invalid value for s_option")
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
+
+
+
 def clipboard_deconstruct_top_into_molecules(s_top):
     """This function sends a cleanpipe function with arguments to the clipboard."""
     

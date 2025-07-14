@@ -492,7 +492,7 @@
 
 
 "inspect system": {
-    "get atom id (using characteristics) OK": {
+    "get atom id (using characteristics)": {
         "inputbox1": "top file. ex: molecule_in_water.top",
         "inputbox2": "molecule name. ex: Protein_chain_A",
         "inputbox3": "molecule instantiation. ex: 1",
@@ -502,7 +502,7 @@
         "ok_button": "clipboard_get_atom_global_id",
         "plaintext1": "the output is the GLOBAL id as a integer. example: 315"
     },
-    "get atom characteristics (using id) NOT IMPLEMENTED": {
+    "get atom characteristics (using id) NOT IMPLEMENTED. JUST MOL NAME": {
         "inputbox1": "top file. ex: molecule_in_water.top",
 
         "inputbox2": "atom GLOBAL id",
@@ -510,35 +510,26 @@
         "ok_button": "clipboard_get_atom_infos_from_global_id",
         "plaintext1": "output example: {'mol_name':'Protein_chain_A','instantiation':1,'residue':4,'name':'CA'}}"
 },
-    "get basic infos if molecules OK": {
+    "get basic infos if molecules": {
        "inputbox1": "top file. ex: molecule_in_water.top",
         "ok_button": "clipboard_basic_infos_of_molecules",
         "plaintext1": "output example: {'Protein_chain_A': {'count': 1, 'qt_atoms': 81, 'first_id': 1}, 'Support_chain_B': {'count': 1, 'qt_atoms': 24, 'first_id': 82}, 'SOL': {'count': 845, 'qt_atoms': 3, 'first_id': 106}}"
     },
-    "parse directive OK": {
+    "parse directive": {
         "inputbox1": "top/itp file. ex: molecule_in_water.top",
         "inputbox2": "directive name. ex: [ bonds ]",
         "ok_button": "clipboard_parse_directive",
         "plaintext1": "output example: [['1', '2', '1'], ['1', '4', '1'], ..."
     },
-    "parse directives in all molecules OK": {
+    "parse directives in all molecules": {
         "inputbox1": "top/itp file. ex: molecule_in_water.top",
         "ok_button": "clipboard_parse_directives_inside_each_and_every_molecule",
         "plaintext1": "output example: {'Protein_chain_A': {'[ atoms ]': [[]]} ..."
     },
-    "parse directives in intermolecular interactions OK": {
+    "parse directives in intermolecular interactions": {
         "inputbox1": "top/itp file. ex: molecule_in_water.top",
         "ok_button": "clipboard_parse_directives_inside_intermolecular_interactions",
         "plaintext1": "output example: {'intermolecular_interactions': {'[ atoms ]': [[]]} ..."
-    },
-
-    "include all itps into a single top": {
-        "ok_button": "xxxxx"
-    },
-    "decompose molecules into separate itps OK": {
-        "inputbox1": "top file. ex: molecule_in_water.top",
-        "ok_button": "clipboard_deconstruct_top_into_molecules",
-        "plaintext1": "several itps appear in the temp folder, and the infos are returned like for example: {'Protein_chain_A': 'C:\\Users\\Henrique\\AppData\\Local\\Temp\\tmplrzjpaxr.itp', 'Support_chain_B': 'C:\\Users\\Henrique\\AppData\\Local\\Temp\\tmpiarjc86s.itp', 'SOL': 'C:\\Users\\Henrique\\AppData\\Local\\Temp\\tmp05dvn9xp.itp'}"
     }
 
 },
@@ -549,6 +540,13 @@
         "ok_button": "clipboard_xxx",
         "plaintext1": "xxx"
   },
+
+  "insert text before directive": {
+        "inputbox1": "xxx",
+        "ok_button": "clipboard_xxx",
+        "plaintext1": "xxx"
+  },
+
 
   "replace entire directive content": {
         "inputbox1": "xxx",
@@ -569,7 +567,39 @@
         "inputbox1": "xxx",
         "ok_button": "clipboard_xxx",
         "plaintext1": "xxx"
-  }
+  },
+
+
+  "change the name of a molecule in the top": {
+        "inputbox1": "xxx",
+        "ok_button": "clipboard_xxx",
+        "plaintext1": "xxx"
+  },
+
+  "change the quantity of a molecule in the top summary": {
+        "inputbox1": "xxx",
+        "ok_button": "clipboard_xxx",
+        "plaintext1": "xxx"
+  },
+
+    "replace a word inside a specific directive": {
+        "inputbox1": "xxx",
+        "ok_button": "clipboard_xxx",
+        "plaintext1": "xxx"
+  },
+
+    "include all itps": {
+        "inputbox1": "top/itp file. ex: molecule_in_water.top",
+        "droplist1": ["option 1: text output",
+                      "option 2: temp file output"],
+        "ok_button": "clipboard_include_all_itps"
+    },
+    "decompose molecules into separate itps": {
+        "inputbox1": "top file. ex: molecule_in_water.top",
+        "ok_button": "clipboard_deconstruct_top_into_molecules",
+        "plaintext1": "several itps appear in the temp folder, and the infos are returned like for example: {'Protein_chain_A': 'C:\\Users\\Henrique\\AppData\\Local\\Temp\\tmplrzjpaxr.itp', 'Support_chain_B': 'C:\\Users\\Henrique\\AppData\\Local\\Temp\\tmpiarjc86s.itp', 'SOL': 'C:\\Users\\Henrique\\AppData\\Local\\Temp\\tmp05dvn9xp.itp'}"
+    }
+
 
 },
 
