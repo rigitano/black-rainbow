@@ -539,8 +539,28 @@
         "inputbox1": "xxx",
         "ok_button": "clipboard_xxx",
         "plaintext1": "xxx"
-  }
+  },
 
+  "replace entire directive content": {
+        "inputbox1": "xxx",
+        "ok_button": "clipboard_xxx",
+        "plaintext1": "xxx"
+  },
+
+
+  "insert text inside a directive, after last line": {
+        "inputbox1": "xxx",
+        "ok_button": "clipboard_xxx",
+        "plaintext1": "xxx"
+  },
+
+
+
+  "replace parameters of a directive, for specific atoms": {
+        "inputbox1": "xxx",
+        "ok_button": "clipboard_xxx",
+        "plaintext1": "xxx"
+  }
 
 },
 
