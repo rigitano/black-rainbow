@@ -416,11 +416,31 @@
 "construct molecules": {
 
     "download and clean pdb": {
-      "ok_button": "xxxxx"
+      "inputbox1": "molecule name on pdb. ex: '1aki'",
+      "ok_button": "clipboard_download_and_clean_pdb"
     },
     "create peptide": {
-      "ok_button": "xxxxx"
+      "inputbox1": "list of aminoacids. ex: 'AAAAAA'",
+      "inputbox2": "list of phi. ex: [-57.8,-57.8,-57.8,-57.8,-57.8,-57.8]",
+      "inputbox3": "list of psi. ex: [-47.0,-47.0,-47.0,-47.0,-47.0,-47.0]",
+      "inputbox4": "N cap. ex: 'acyl' or ''",
+      "inputbox5": "C cap. ex: 'amide' or ''",
+      "inputbox6": "out file name. ex: 'peptide.pdb'",
+      "ok_button": "clipboard_create_peptide"
     },
+
+    "add another molecule": {
+        "ok_button": "xxxxx"
+    },
+
+    "insert residue into chain": {
+        "ok_button": "xxxxx"
+    },
+
+    "insert atom into residue": {
+        "ok_button": "xxxxx"
+    },
+
     "create truss": {
         "ok_button": "xxxxx"
     },

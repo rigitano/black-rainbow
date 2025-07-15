@@ -701,6 +701,44 @@ def clipboard_run_prod(s_machine, s_gro, s_top, s_time, s_groups):
     return sent + " sent to clipboard"
 
 
+
+def clipboard_download_and_clean_pdb(s_molecule_name):
+    """This function sends a python function with arguments to the clipboard."""
+    
+    # Copy text to the clipboard
+    pyperclip.copy(f"cl.download_and_clean_pdb({s_molecule_name})")
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
+def clipboard_create_peptide(s_aminoacids, l_phi, l_psi_im1, s_nTerminusCAP, s_cTerminusCAP, s_outName ):
+    """This function sends a python function with arguments to the clipboard."""
+    
+    # Copy text to the clipboard
+    pyperclip.copy(f"cl.create_peptide({s_outName}, {s_aminoacids}, {l_phi}, {l_psi_im1}, {s_nTerminusCAP}, {s_cTerminusCAP} )")
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
+def clipboard_xxxx(xxx):
+    """This function sends a python function with arguments to the clipboard."""
+    
+    # Copy text to the clipboard
+    pyperclip.copy(f"xxxxx")
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
+
+
+
+
 def clipboard_freeze_dihedrals(s_potential_option, s_gro_file,s_top_file, restraining_force, s_molename, s_file_to_be_edited, s_out_file_name, s_which_dihedrals_option):
     """This function sends a cleanpipe function with arguments to the clipboard"""
     
