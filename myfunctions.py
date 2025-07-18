@@ -904,7 +904,7 @@ def clipboard_replace_all_lines_of_directive(s_top_file, s_directive, ll_lines_t
     """This function sends a cleanpipe function with arguments to the clipboard."""
     
     # Copy text to the clipboard
-    pyperclip.copy(f"cl.replace_all_lines_of_directive({s_top_file}, {s_top_file_out}, {s_directive}, {ll_lines_to_add}, {directive_position}")
+    pyperclip.copy(f"cl.replace_all_lines_of_directive({s_top_file}, {s_top_file_out}, {s_directive}, {ll_lines_to_add}, {directive_position})")
 
     # Retrieve text from the clipboard
     sent = pyperclip.paste()
