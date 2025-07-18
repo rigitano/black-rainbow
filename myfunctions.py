@@ -724,11 +724,49 @@ def clipboard_create_peptide(s_aminoacids, l_phi, l_psi_im1, s_nTerminusCAP, s_c
 
     return sent + " sent to clipboard"
 
-def clipboard_xxxx(xxx):
+
+
+def clipboard_insert_new_molecule_into_pdb(input_pdb, new_molecule_atoms, output_pdb):
     """This function sends a python function with arguments to the clipboard."""
     
     # Copy text to the clipboard
-    pyperclip.copy(f"xxxxx")
+    pyperclip.copy(f"cl.insert_new_molecule_into_pdb({input_pdb}, {output_pdb}, {new_molecule_atoms})")
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
+
+def clipboard_insert_residue_into_chain(s_input_pdb_file,s_chain,n_residue,s_new_residue_name, d_new_residue_atoms,s_replace_or_displace,s_output_pdb_file):
+    """This function sends a python function with arguments to the clipboard."""
+    
+    # Copy text to the clipboard
+    pyperclip.copy(f"cl.insert_residue_into_chain({s_input_pdb_file},{s_output_pdb_file},{s_chain},{n_residue},{s_new_residue_name}, {d_new_residue_atoms},{s_replace_or_displace})")
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
+
+def clipboard_insert_atom_into_residue(s_input_pdb_file,s_chain,n_residue,s_atom_structural_name,s_atom_element_name,l_coord,s_output_pdb_file):
+    """This function sends a python function with arguments to the clipboard."""
+    
+    # Copy text to the clipboard
+    pyperclip.copy(f"cl.insert_atom_into_residue({s_input_pdb_file}, {s_output_pdb_file}, {s_chain}, {n_residue}, {s_atom_structural_name}, {s_atom_element_name}, {l_coord})")
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
+
+def clipboard_add_truss(s_pdb_file, p1, p2, n_square_size, s_out_pdb_file):
+    """This function sends a python function with arguments to the clipboard."""
+    
+    # Copy text to the clipboard
+    pyperclip.copy(f"cl.add_truss({s_pdb_file}, {s_out_pdb_file}, {p1}, {p2}, {n_square_size})")
 
     # Retrieve text from the clipboard
     sent = pyperclip.paste()
@@ -740,7 +778,10 @@ def clipboard_xxxx(xxx):
 
 
 def clipboard_freeze_dihedrals(s_potential_option, s_gro_file,s_top_file, restraining_force, s_molename, s_file_to_be_edited, s_out_file_name, s_which_dihedrals_option):
-    """This function sends a cleanpipe function with arguments to the clipboard"""
+    """This function sends a cleanpipe function with arguments to the clipboard
+    s_potential_option is not used because here there are no choices, actually. the dropbox has only one possible choice
+    
+    """
     
     # Copy text to the clipboard, depending on the value of s_by_what
     if s_which_dihedrals_option == "all":

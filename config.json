@@ -419,7 +419,7 @@
       "inputbox1": "molecule name on pdb. ex: '1aki'",
       "ok_button": "clipboard_download_and_clean_pdb"
     },
-    "create peptide": {
+    "create peptide as pdb": {
       "inputbox1": "list of aminoacids. ex: 'AAAAAA'",
       "inputbox2": "list of phi. ex: [-57.8,-57.8,-57.8,-57.8,-57.8,-57.8]",
       "inputbox3": "list of psi. ex: [-47.0,-47.0,-47.0,-47.0,-47.0,-47.0]",
@@ -429,33 +429,49 @@
       "ok_button": "clipboard_create_peptide"
     },
 
-    "add another molecule": {
-        "ok_button": "xxxxx"
+
+    "insert residue in chain": {
+        "inputbox1": "input pdb. ex: 'protein.pdb'",
+        "inputbox2": "variable containing a list of dicts representing the molecule. see the doctring for more info. ex: ld_residue",
+        "inputbox3": "chain id. ex: 'A'",
+        "inputbox4": "residue number. ex: 3",
+        "inputbox5": "residue name. ex: 'BOB'",
+        "inputbox6": "how to insert. ex: 'displace' or 'replace'",
+        "inputbox7": "output file name. ex: 'modified_protein.pdb'",
+        "ok_button": "clipboard_insert_residue_into_chain"
     },
 
-    "insert residue into chain": {
-        "ok_button": "xxxxx"
+    "insert atom in residue": {
+        "inputbox1": "input pdb. ex: 'protein.pdb'",
+        "inputbox2": "chain id. ex: 'A'",
+        "inputbox3": "residue number. ex: 3",
+        "inputbox4": "atom name (structural). ex: 'CA'",
+        "inputbox5": "atom name (periodic table). ex: 'AU'",
+        "inputbox6": "atom coordinates. ex: [1,1,1]",
+        "inputbox7": "output file name. ex: 'modified_protein.pdb'",
+        "ok_button": "clipboard_insert_atom_into_residue"
     },
 
-    "insert atom into residue": {
-        "ok_button": "xxxxx"
+    "add another molecule to pdb": {
+        "inputbox1": "input pdb. ex: 'protein.pdb'",
+        "inputbox2": "variable containing a list of dicts representing the molecule. see the doctring for more info. ex: ld_new_molecule_atoms",
+        "inputbox3": "output file name. ex: 'modified_protein.pdb'",
+        "ok_button": "clipboard_insert_new_molecule_into_pdb"
     },
 
-    "create truss": {
-        "ok_button": "xxxxx"
+    "add a truss to pdb": {
+        "inputbox1": "input pdb. ex: 'protein.pdb'",
+        "inputbox2": "tip coordinates. ex: [0,0,0]",
+        "inputbox3": "other tip coordinates. ex: [10,10,10]",
+        "inputbox4": "square size. ex: 3",
+        "inputbox5": "output file name. ex: 'protein_with_truss.pdb'",
+        "ok_button": "clipboard_add_truss"
     },
-    "create tape": {
-        "ok_button": "xxxxx"
-    },
-    "create sphere": {
-        "ok_button": "xxxxx"
-    },
-    "create tube": {
-        "ok_button": "xxxxx"
-    },
-    "delete region": {
+
+    "add a plane to pdb <NOT IMPLEMENTED YET>": {
         "ok_button": "xxxxx"
     }
+
 },
 
 
