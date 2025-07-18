@@ -477,15 +477,45 @@
 
 "construct system": {
 
-    "molecule in solvent box": {
+    "molecule in a solvent box": {
+        "inputbox1": "file with molecule that will fill the box. ex: '1aki.pdb'",
+        "inputbox2": "out system's name. ex: '1aki_in_water'",
+        "inputbox3": "solvent (standard water name, or system ofbox full of solvent). ex: 'tip3p' or 'box_full_of_octn'",
+        "inputbox4": "forcefield. ex: 'charmm36-jul2022'",
+        "inputbox5": "box size. ex: '3 3 3'",
+      "ok_button": "clipboard_pdb2molecule_in_solvent"
+    },
+
+    "molecule in 2 solvent boxes (water and octane) <NOT IMPLEMENTED YET>": {
+      "plaintext1": " this is usefull to calculate FEPtransfer",
       "ok_button": "xxxxx"
     },
-    "molecule in membrane": {
+
+    "molecule in membrane <NOT IMPLEMENTED YET>": {
       "ok_button": "xxxxx"
     },
-    "fill box with the same molecule": {
+
+    "box filled with the same molecule": {
+        "inputbox1": "file with molecule that will fill the box. ex: 'octn.pdb'",
+        "inputbox2": "forcefield. ex: 'charmm36-jul2022'",
+        "inputbox3": "box size. ex: '5 5 5'",
+        "inputbox4": "max number of particles. ex: 1000",
+
+
+        "ok_button": "clipboard_pdb2box_full_of_that"
+    },
+
+    "tube of lipids <NOT IMPLEMENTED YET>": {
         "ok_button": "xxxxx"
-      }
+    },
+
+    "sphere of lipids <NOT IMPLEMENTED YET>": {
+        "ok_button": "xxxxx"
+    },
+
+    "plane of lipids <NOT IMPLEMENTED YET>": {
+        "ok_button": "xxxxx"
+    }
 
 
 },

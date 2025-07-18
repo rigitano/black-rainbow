@@ -655,6 +655,32 @@ def clipboard_unique_lines_bash(s_file_name):
     return sent + " sent to clipboard"
 
 
+def clipboard_pdb2molecule_in_solvent(s_pdbfile, s_outSytemName, s_solvent, s_forceField, s_boxSize):
+    """This function sends a python function with arguments to the clipboard."""
+    
+    # Copy text to the clipboard
+    pyperclip.copy(f"cl.pdb2molecule_in_solvent({s_pdbfile}, {s_outSytemName}, {s_solvent}, {s_forceField}, {s_boxSize})")
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
+
+
+def clipboard_pdb2box_full_of_that(s_pdbfile, s_forceField, s_box_size, n_mol):
+    """This function sends a python function with arguments to the clipboard."""
+    
+    # Copy text to the clipboard
+    pyperclip.copy(f"cl.pdb2box_full_of_that({s_pdbfile}, {s_forceField}, {s_box_size}, {n_mol})")
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
+
+
 
 def clipboard_make_realistic(s_machine, s_gro, s_top, s_groups):
     """This function sends codes to the clipboard, depending on the choice made on a droplist."""
