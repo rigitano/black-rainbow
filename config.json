@@ -486,12 +486,12 @@
       "ok_button": "clipboard_pdb2molecule_in_solvent"
     },
 
-    "molecule in 2 solvent boxes (water and octane) <NOT IMPLEMENTED YET>": {
+    "molecule in 2 solvent boxes (water and octane) <NOT IMPLEMENTED>": {
       "plaintext1": " this is usefull to calculate FEPtransfer",
       "ok_button": "xxxxx"
     },
 
-    "molecule in membrane <NOT IMPLEMENTED YET>": {
+    "molecule in membrane <NOT IMPLEMENTED>": {
       "ok_button": "xxxxx"
     },
 
@@ -505,15 +505,15 @@
         "ok_button": "clipboard_pdb2box_full_of_that"
     },
 
-    "tube of lipids <NOT IMPLEMENTED YET>": {
+    "tube of lipids <NOT IMPLEMENTED>": {
         "ok_button": "xxxxx"
     },
 
-    "sphere of lipids <NOT IMPLEMENTED YET>": {
+    "sphere of lipids <NOT IMPLEMENTED>": {
         "ok_button": "xxxxx"
     },
 
-    "plane of lipids <NOT IMPLEMENTED YET>": {
+    "plane of lipids <NOT IMPLEMENTED>": {
         "ok_button": "xxxxx"
     }
 
