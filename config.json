@@ -740,9 +740,9 @@
     "benchmark": {
             "droplist": ["local",
                    "oxygen (torque)",
-                   "rome (moab on top of torque) *"],
+                   "rome (moab on top of torque)"],
         "inputbox1": "tpr file. ex: 'prod.tpr'",
-        "ok_button": "xxxxx"
+        "ok_button": "clipboard_run_bench"
       },
 
     "runPROD": {

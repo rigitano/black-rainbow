@@ -687,7 +687,7 @@ def clipboard_make_realistic(s_machine, s_gro, s_top, s_groups):
     
     # Copy text to the clipboard, depending on the value of s_by_what
     if s_machine == "local":
-        pyperclip.copy(f"./runALL.sh cpr cpr cpr n {s_gro} {s_top} 0 \"{s_groups}\"")
+        pyperclip.copy(f"./runALLSTEPS-local.sh cpr cpr cpr n {s_gro} {s_top} 0 \"{s_groups}\"")
 
     elif s_machine == "oxygen (torque)":
         pyperclip.copy(f"xxxxx")
@@ -703,14 +703,33 @@ def clipboard_make_realistic(s_machine, s_gro, s_top, s_groups):
 
     return sent + " sent to clipboard"
 
+def clipboard_run_bench(s_machine, s_tpr):
+    """This function sends codes to the clipboard, depending on the choice made on a droplist."""
+    
+    # Copy text to the clipboard, depending on the value of s_by_what
+    if s_machine == "local":
+        pyperclip.copy(f"./runBENCHMARK-local {s_tpr}")
 
+    elif s_machine == "oxygen (torque)":
+        pyperclip.copy(f"xxxxx")
+
+    elif s_machine == "rome (moab on top of torque)":
+        pyperclip.copy(f"./runBENCHMARK-rome {s_tpr}")
+
+    else:
+        raise ValueError("Invalid value for s_machine")
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
 
 def clipboard_run_prod(s_machine, s_gro, s_top, s_time, s_groups):
     """This function sends codes to the clipboard, depending on the choice made on a droplist."""
     
     # Copy text to the clipboard, depending on the value of s_by_what
     if s_machine == "local":
-        pyperclip.copy(f"./runALL.sh n n n cpr {s_gro} {s_top} {s_time} \"{s_groups}\"")
+        pyperclip.copy(f"./runALLSTEPS-local.sh n n n cpr {s_gro} {s_top} {s_time} \"{s_groups}\"")
 
     elif s_machine == "oxygen (torque)":
         pyperclip.copy(f"xxxxx")
