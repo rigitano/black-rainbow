@@ -725,7 +725,7 @@
 
 
 "run": {
-    "make realistic": {
+    "runMAKEREALISTIC": {
         "droplist": ["local",
                    "oxygen (torque)",
                    "rome (moab on top of torque)"],
@@ -772,6 +772,18 @@
     },
 
     "runFEPswitch": {
+      "droplist": ["local",
+                   "oxygen (torque)",
+                   "rome (moab on top of torque)"],
+      "inputbox0": "cpr",
+      "inputbox1": "out folder name",
+      "inputbox2": "gro file WITH EXTRA COLUMNS",
+      "inputbox3": "top file",
+      "inputbox4": "duration (ns)",
+      "ok_button": "xxxxx"
+    },
+
+    "runFEPtransfer": {
       "droplist": ["local",
                    "oxygen (torque)",
                    "rome (moab on top of torque)"],
