@@ -468,7 +468,7 @@
         "ok_button": "clipboard_add_truss"
     },
 
-    "add a plane to pdb <NOT IMPLEMENTED YET>": {
+    "add a plane to pdb <NOT IMPLEMENTED>": {
         "ok_button": "xxxxx"
     }
 
@@ -492,7 +492,7 @@
 
 
 "restrict system": {
-    "positions <<NOT IMPLEMENTED YET>>": {
+    "positions <NOT IMPLEMENTED>": {
         "droplist": ["[position_restraints] type 1 (harmonic potential)",
                      "[position_restraints] type 2 (flat bottom potential)"],
         "ok_button": "xxxxx"
@@ -502,26 +502,26 @@
       "droplist": ["[ dihedral_restraints ] type 1 (a potential similar to improper dihedral)"],
       "plaintext2": "action required on mdp: dihre=yes dihre_fc=1000",
 
-      "inputbox1": "gro file. ex: protein_in_water.gro",
-      "inputbox2": "top/itp file with the list of dihedrals. ex: protein_in_water.top",
+      "inputbox1": "gro file. ex: 'protein_in_water.gro'",
+      "inputbox2": "top/itp file with the list of dihedrals. ex: 'protein_in_water.top'",
 
       "inputbox3": "restraining force. ex: 5000",
 
-      "inputbox4": "name of molecule be be restricted. ex: Protein_chain_A",
+      "inputbox4": "name of molecule be be restricted. ex: 'Protein_chain_A'",
 
-      "inputbox5": "top/itp with directive to be edited. ex: protein_in_water.top",
-      "inputbox6": "name of output file with modifications. ex: protein_in_water_with_restrictions.top",
+      "inputbox5": "top/itp with directive to be edited. ex: 'protein_in_water.top'",
+      "inputbox6": "name of output file with modifications. ex: 'protein_in_water_with_restrictions.top'",
 
-      "radiobutton1": "all <<NOT IMPLEMENTED YET>>",
+      "radiobutton1": "all <NOT IMPLEMENTED>",
       "radiobutton2": "just phi and psi of protein",
       "ok_button": "clipboard_freeze_dihedrals",
       "plaintext1": "a new file will be created with the new content, the original file will not be modified"
     },
-    "angles <<NOT IMPLEMENTED YET>>": {
+    "angles <NOT IMPLEMENTED>": {
         "droplist": ["[ angle_restraints ] type 1 (a potential similar to proper dihedral)"],
         "ok_button": "xxxxx"
       },
-    "distances <<NOT IMPLEMENTED YET>>": {
+    "distances <NOT IMPLEMENTED>": {
 
         "radiobutton1": "option 1: using potentials",
         "droplist1": ["[bonds] type 6 (harmonic potential)",
@@ -542,16 +542,16 @@
 
 "inspect system": {
     "get atom id (using characteristics)": {
-        "inputbox1": "top file. ex: molecule_in_water.top",
-        "inputbox2": "molecule name. ex: Protein_chain_A",
+        "inputbox1": "top file. ex: 'molecule_in_water.top'",
+        "inputbox2": "molecule name. ex: 'Protein_chain_A'",
         "inputbox3": "molecule instantiation. ex: 1",
         "inputbox4": "residue number. ex: 4",
-        "inputbox5": "atom name. ex: CA",
+        "inputbox5": "atom name. ex: 'CA'",
 
         "ok_button": "clipboard_get_atom_global_id",
         "plaintext1": "the output is the GLOBAL id as a integer. example: 315"
     },
-    "get atom characteristics (using id) <<NOT IMPLEMENTED YET. JUST MOL NAME>>": {
+    "get atom characteristics (using id) <NOT IMPLEMENTED. JUST MOL NAME>": {
         "inputbox1": "top file. ex: molecule_in_water.top",
 
         "inputbox2": "atom GLOBAL id",
@@ -560,37 +560,37 @@
         "plaintext1": "output example: {'mol_name':'Protein_chain_A','instantiation':1,'residue':4,'name':'CA'}}"
 },
     "get basic infos of all molecules": {
-       "inputbox1": "top file. ex: molecule_in_water.top",
+       "inputbox1": "top file. ex: 'molecule_in_water.top'",
         "ok_button": "clipboard_basic_infos_of_molecules",
         "plaintext1": "output example: {'Protein_chain_A': {'count': 1, 'qt_atoms': 81, 'first_id': 1}, 'Support_chain_B': {'count': 1, 'qt_atoms': 24, 'first_id': 82}, 'SOL': {'count': 845, 'qt_atoms': 3, 'first_id': 106}}"
     },
 
     "get a molecule name": {
-       "inputbox1": "top file. ex: molecule_in_water.top",
+       "inputbox1": "top file. ex: 'molecule_in_water.top'",
        "inputbox2": "order of molecule, starting at 1. ex: 1",
         "ok_button": "clipboard_getMoleculeName",
         "plaintext1": "output example: 'Protein_chain_A'"
     },
     "get the system name": {
-       "inputbox1": "top file. ex: molecule_in_water.top",
+       "inputbox1": "top file. ex: 'molecule_in_water.top'",
         "ok_button": "clipboard_getSystemName",
         "plaintext1": "output example: 'octane in water'"
     },
 
 
     "parse a directive": {
-        "inputbox1": "top/itp file. ex: molecule_in_water.top",
-        "inputbox2": "directive name. ex: [ bonds ]",
+        "inputbox1": "top/itp file. ex: 'molecule_in_water.top'",
+        "inputbox2": "directive name. ex: '[ bonds ]'",
         "ok_button": "clipboard_parse_directive",
         "plaintext1": "output example: [['1', '2', '1'], ['1', '4', '1'], ..."
     },
     "parse all directives in all molecules": {
-        "inputbox1": "top/itp file. ex: molecule_in_water.top",
+        "inputbox1": "top/itp file. ex: 'molecule_in_water.top'",
         "ok_button": "clipboard_parse_directives_inside_each_and_every_molecule",
         "plaintext1": "output example: {'Protein_chain_A': {'[ atoms ]': [[]]} ..."
     },
     "parse all directives in intermolecular interactions": {
-        "inputbox1": "top/itp file. ex: molecule_in_water.top",
+        "inputbox1": "top/itp file. ex: 'molecule_in_water.top'",
         "ok_button": "clipboard_parse_directives_inside_intermolecular_interactions",
         "plaintext1": "output example: {'intermolecular_interactions': {'[ atoms ]': [[]]} ..."
     }
@@ -602,30 +602,31 @@
 
 
   "insert text before directive": {
-        "inputbox1": "top/itp file. ex: protein_in_water.top",
-        "inputbox2": "text to insert. ex: ;this is a comment",
-        "inputbox3": "directive name. ex: [ atoms ]",
+        "inputbox1": "top/itp file. ex: 'protein_in_water.top'",
+        "inputbox2": "text to insert. ex: ';this is a comment'",
+        "inputbox3": "directive name. ex: '[ atoms ]'",
         "ok_button": "clipboard_insert_text_before_directive",
         "plaintext1": "the file will be modified in place"
   },
 
 
   "replace entire directive content": {
-        "inputbox1": "top/itp file with the directive to be replaced. ex: protein_in_water.top",
-        "inputbox2": "name of the output file. ex: protein_in_water_out.top",
-        "inputbox3": "target directive. ex: [ atoms ]",
+        "inputbox1": "top/itp file with the directive to be replaced. ex: 'protein_in_water.top'",
+        "inputbox3": "target directive. ex: '[ atoms ]'",
         "inputbox4": "list of lists with the new content. ex: variable ll_lines containing [['1', '2', '1'], ['1', '4', '1'], ...]",
+        "inputbox5": "if there are several. specify which. ex: 'first' or 'last'",
+        "inputbox2": "name of the output file. ex: 'protein_in_water_out.top'",
         "ok_button": "clipboard_replace_all_lines_of_directive",
         "plaintext1": "a new file will be created with the new content, the original file will not be modified"
   },
 
 
   "insert text inside a directive, after last line": {
-        "inputbox1": "top/itp file with the directive to be complemented. ex: protein_in_water.top",
-        "inputbox2": "name of the output file. ex: protein_in_water_out.top",
-        "inputbox3": "target directive. ex: [ atoms ]",
+        "inputbox1": "top/itp file with the directive to be complemented. ex: 'protein_in_water.top'",
+        "inputbox3": "target directive. ex: '[ atoms ]'",
         "inputbox4": "list of lists with content to be added. ex: variable ll_lines containing [['1', '2', '1'], ['1', '4', '1'], ...]",
-
+        "inputbox5": "if there are several. specify which. ex: 'first' or 'last'",
+        "inputbox2": "name of the output file. ex: 'protein_in_water_out.top'",
         "ok_button": "clipboard_add_lines_at_the_end_of_directive",
         "plaintext1": "a new file will be created with the new content, the original file will not be modified"
   },
@@ -633,10 +634,10 @@
 
 
   "replace parameters of a directive, for specific atoms": {
-        "inputbox1": "top/itp file with the directive to be edited. ex: protein_in_water.top",
-        "inputbox2": "name of the output file. ex: protein_in_water_out.top",
-        "inputbox3": "target directive. ex: [ atoms ]",
+        "inputbox1": "top/itp file with the directive to be edited. ex: 'protein_in_water.top'",
+        "inputbox3": "target directive. ex: '[ atoms ]'",
         "inputbox4": "list of lists with content to be edited. the ones not found will be added. ex: variable ll_lines containing [['1', '2', '1'], ['1', '4', '1'], ...]",
+        "inputbox2": "name of the output file. ex: 'protein_in_water_out.top'",
         "ok_button": "clipboard_put_lines_at_the_proper_place_of_directive",
         "plaintext1": "a new file will be created with the new content, the original file will not be modified"
         
@@ -644,47 +645,47 @@
 
 
   "change name of a molecule": {
-        "inputbox1": "top/itp file with the directive to be edited. ex: protein_in_water.top",
-        "inputbox2": "old molecule name. ex: Protein_chain_A",
-        "inputbox3": "new molecule name. ex: Hemoglobin",
+        "inputbox1": "top/itp file with the directive to be edited. ex: 'protein_in_water.top'",
+        "inputbox2": "old molecule name. ex: 'Protein_chain_A'",
+        "inputbox3": "new molecule name. ex: 'Hemoglobin'",
         "ok_button": "clipboard_replaceMoleculeName",
         "plaintext1": "the file will be modified in place"
   },
 
   "change quantity of a molecule in the top summary": {
-        "inputbox1": "top/itp file with the directive to be edited. ex: protein_in_water.top",
-        "inputbox2": "molecule to change quantity. ex: Protein_chain_A",
+        "inputbox1": "top/itp file with the directive to be edited. ex: 'protein_in_water.top'",
+        "inputbox2": "molecule to change quantity. ex: 'Protein_chain_A'",
         "inputbox3": "new quantity. ex: 342",
         "ok_button": "clipboard_update_molecule_quantity",
         "plaintext1": "the file will be modified in place"
   },
 
   "change system name": {
-        "inputbox1": "top/itp file of system. ex: protein_in_water.top",
-        "inputbox2": "new name of the system. ex: hemoglobin in water",
+        "inputbox1": "top/itp file of system. ex: 'protein_in_water.top'",
+        "inputbox2": "new name of the system. ex: 'hemoglobin in water'",
         "ok_button": "clipboard_setSystemName",
         "plaintext1": "the file will be modified in place"
   },
 
 
     "replace a word inside a specific directive": {
-        "inputbox1": "top/itp file of system. ex: protein_in_water.top",
-        "inputbox2": "target directive. ex: [ atoms ]",
-        "inputbox3": "word to be replaced. ex: foo",
-        "inputbox4": "new word. ex: bar",
+        "inputbox1": "top/itp file of system. ex: 'protein_in_water.top'",
+        "inputbox2": "target directive. ex: '[ atoms ]'",
+        "inputbox3": "word to be replaced. ex: 'foo'",
+        "inputbox4": "new word. ex: 'bar'",
         "ok_button": "clipboard_replaceWordInsideDirective",
         "plaintext1": "the file will be modified in place"
   },
 
     "include all itps": {
-        "inputbox1": "top/itp file. ex: molecule_in_water.top",
+        "inputbox1": "top/itp file. ex: 'molecule_in_water.top'",
         "droplist1": ["option 1: text output",
                       "option 2: temp file output"],
         "ok_button": "clipboard_include_all_itps"
     },
     "decompose molecules into separate itps": {
         "plaintext0": "XXX SHIT, I made two funcions that do the same. I think one is used by other functions, the other is better. here I call the better one",
-        "inputbox1": "top file. ex: molecule_in_water.top",
+        "inputbox1": "top file. ex: 'molecule_in_water.top'",
         "ok_button": "clipboard_deconstruct_top_into_molecules",
         "plaintext1": "several itps appear in the temp folder, and the infos are returned like for example: {'Protein_chain_A': 'C:\\Users\\Henrique\\AppData\\Local\\Temp\\tmplrzjpaxr.itp', 'Support_chain_B': 'C:\\Users\\Henrique\\AppData\\Local\\Temp\\tmpiarjc86s.itp', 'SOL': 'C:\\Users\\Henrique\\AppData\\Local\\Temp\\tmp05dvn9xp.itp'}"
     }
