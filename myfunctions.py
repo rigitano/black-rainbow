@@ -682,12 +682,12 @@ def clipboard_pdb2box_full_of_that(s_pdbfile, s_forceField, s_box_size, n_mol):
 
 
 
-def clipboard_make_realistic(s_machine, s_gro, s_top, s_groups):
+def clipboard_make_realistic(s_machine, s_gro, s_top, s_groups,n_temperature):
     """This function sends codes to the clipboard, depending on the choice made on a droplist."""
     
     # Copy text to the clipboard, depending on the value of s_by_what
     if s_machine == "local":
-        pyperclip.copy(f"./runALLSTEPS-local.sh cpr cpr cpr n {s_gro} {s_top} 0 \"{s_groups}\"")
+        pyperclip.copy(f"./runTRAJ-local.sh 123 {s_gro} {s_top} 1 {s_groups} {n_temperature}")
 
     elif s_machine == "oxygen (torque)":
         pyperclip.copy(f"xxxxx")
@@ -724,18 +724,33 @@ def clipboard_run_bench(s_machine, s_tpr):
 
     return sent + " sent to clipboard"
 
-def clipboard_run_prod(s_machine, s_gro, s_top, s_time, s_groups):
+def clipboard_run_prod(s_procedure_option, s_machine_option, s_gro, s_top, s_time, s_groups, n_temperature):
     """This function sends codes to the clipboard, depending on the choice made on a droplist."""
     
     # Copy text to the clipboard, depending on the value of s_by_what
-    if s_machine == "local":
-        pyperclip.copy(f"./runALLSTEPS-local.sh n n n cpr {s_gro} {s_top} {s_time} \"{s_groups}\"")
+    if s_machine_option == "local":
+        if s_procedure_option == "from scratch (MAKEREALISTIC and PROD)":
+            pyperclip.copy(f"./runTRAJ-local.sh 1234 {s_gro} {s_top} {s_time} {s_groups} {n_temperature}")
+        elif s_procedure_option == "from realistic (just PROD)":
+            pyperclip.copy(f"./runTRAJ-local.sh 4 {s_gro} {s_top} {s_time} {s_groups} {n_temperature}")
+        else:
+            raise ValueError("Invalid value for s_procedure_option")
+        
+    elif s_machine_option == "oxygen (torque)":
+        if s_procedure_option == "from scratch (MAKEREALISTIC and PROD)":
+            pyperclip.copy(f"./xxxxxxxx.sh 1234 {s_gro} {s_top} {s_time} {s_groups} {n_temperature}")
+        elif s_procedure_option == "from realistic (just PROD)":
+            pyperclip.copy(f"./xxxxxxxx.sh 4 {s_gro} {s_top} {s_time} {s_groups} {n_temperature}")
+        else:
+            raise ValueError("Invalid value for s_procedure_option")
 
-    elif s_machine == "oxygen (torque)":
-        pyperclip.copy(f"xxxxx")
-
-    elif s_machine == "rome (moab on top of torque)":
-        pyperclip.copy(f"xxxxx")
+    elif s_machine_option == "rome (moab on top of torque)":
+        if s_procedure_option == "from scratch (MAKEREALISTIC and PROD)":
+            pyperclip.copy(f"./xxxxxxxx.sh 1234 {s_gro} {s_top} {s_time} {s_groups} {n_temperature}")
+        elif s_procedure_option == "from realistic (just PROD)":
+            pyperclip.copy(f"./xxxxxxxx.sh 4 {s_gro} {s_top} {s_time} {s_groups} {n_temperature}")
+        else:
+            raise ValueError("Invalid value for s_procedure_option")
 
     else:
         raise ValueError("Invalid value for s_machine")

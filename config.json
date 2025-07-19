@@ -733,11 +733,12 @@
         "inputbox1": "gro. ex: 'hemoglobin_in_water.gro'",
         "inputbox2": "top. ex: 'hemoglobin_in_water.top'",
         "inputbox3": "groups to monitor. ex: 'Protein Non-Protein' or 'System'",
+        "inputbox4": "temperature (K). ex: 298",
         "ok_button": "clipboard_make_realistic"
         
       },
 
-    "benchmark": {
+    "runBENCHMARK": {
             "droplist": ["local",
                    "oxygen (torque)",
                    "rome (moab on top of torque)"],
@@ -745,7 +746,9 @@
         "ok_button": "clipboard_run_bench"
       },
 
-    "runPROD": {
+    "runTRAJ": {
+      "radiobutton1": "from scratch (MAKEREALISTIC and PRODTRAJ)",
+      "radiobutton2": "from realistic (just PRODTRAJ)",
       "droplist": ["local",
                    "oxygen (torque)",
                    "rome (moab on top of torque)"],
@@ -754,6 +757,7 @@
       "inputbox2": "top. ex: 'hemoglobin_in_water.top'",
       "inputbox3": "duration (ns)",
       "inputbox4": "groups to monitor. ex: 'Protein Non-Protein' or 'System'",
+      "inputbox5": "temperature (K). ex: 298",
       "ok_button": "clipboard_run_prod"
     },
 
