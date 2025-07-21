@@ -1,6 +1,22 @@
-run this in the terminal: python app.py
+# run this in the terminal: 
+python app.py
 
-then a cool website with several ok buttons will be loaded
+# then a cool webapp with several OK buttons will be loaded
+
+
+########################## installation #################################
+
+# install whats needed
+pip install -r requerements.txt
+
+# if your are using linux:
+sudo apt install xclip
+
+
+
+
+
+##################### what can the OK buttons do ########################
 
 acording to you creativity, here are examples of things the OK button can do: 
  1 copy commands to be pasted in some terminal or script
@@ -8,7 +24,7 @@ acording to you creativity, here are examples of things the OK button can do:
  3 send tcl script to execution by vmd, ( but that only works if the vmd has been oppended with a socket)
 
 
-to add a new ok button you do this:
+########### to add a new ok button in the webapp, you do this: ##########
 
 1-create a function on myfuncions.py
 2-define the page structure in config.json
