@@ -1,5 +1,12 @@
 import pyperclip
 
+try:
+    pyperclip.set_clipboard("xclip")
+except pyperclip.PyperclipException:
+    print("xclip not available — trying default clipboard method.")
+
+
+
 def bunda(a, b, c):
     """This function concatenates a, b and c and sends the result to the clipboard."""
 

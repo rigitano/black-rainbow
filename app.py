@@ -43,8 +43,8 @@ def submit():
                 else:
                     raise TypeError(f"Expected 'arguments' to be a dictionary or list, got {type(arguments).__name__}.")
                 
-                print("Function called:", f"{function_name}({arguments})")
-                print("Function result:", result)
+                #print("Function called:", f"{function_name}({arguments})")
+                print("Function result:\n", result)
             except TypeError as e:
                 raise TypeError(f"Error calling function '{function_name}': {e}")
         else:
