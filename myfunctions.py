@@ -1,4 +1,5 @@
 import pyperclip
+import cleanpipe
 
 try:
     pyperclip.set_clipboard("xclip")
@@ -1085,6 +1086,33 @@ def clipboard_deconstruct_top_into_molecules(s_top):
     sent = pyperclip.paste()
 
     return sent + " sent to clipboard"
+
+
+
+def call_open_vmd_with_socket():
+    """This function calls a function in cleanpipe directly"""
+    
+    # call function
+    cl.open_vmd_with_socket()
+
+
+    return "cl.open_vmd_with_socket() was called directly"
+
+def call_open_vmd_with_socket():
+    """This function calls a function in cleanpipe directly"""
+    
+    # call function
+    cl.open_vmd_with_socket()
+
+
+    return "cl.open_vmd_with_socket() was called directly"
+
+
+
+
+
+
+
 
 
 

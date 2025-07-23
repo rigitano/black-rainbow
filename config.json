@@ -885,7 +885,7 @@
 "vmd visualisation": {
 
     "LAUNCH VMD WITH SOCKET": {
-      "ok_button": "xxxxx"
+      "ok_button": "call_open_vmd_with_socket"
     },
     "Cartoon with licorice": {
       "ok_button": "xxxxx"
