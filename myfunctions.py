@@ -1094,8 +1094,6 @@ def clipboard_deconstruct_top_into_molecules(s_top):
 def call_open_vmd_with_socket():
     """This function calls a function in cleanpipe directly"""
     
-    import getpass
-    print(f"Flask user: {getpass.getuser()}")
 
     # call function
     cl.open_vmd_with_socket()
@@ -1248,7 +1246,8 @@ def send_tcl_to_VMD_hbond_between_proteins_and_solvent():
 
 
 #top connections
-
+def call_xxxxx():
+    #xxxxx
 
 
 #trr forces
@@ -1303,23 +1302,3 @@ def send_tcl_to_VMD_inspect_file():
 
 
 
-def send_tcl_to_VMD_xxxxxxx():
-    """This function sends a tcl script to a VMD with open socket"""
-    
-    script_name = "xxxxxxx"
-
-    #get where cleanpipe is, because the scripts are in a folder there
-    module_path = Path(cl.__file__)
-    module_dir = module_path.parent
-    #cuild the script full path
-    script_path = module_dir / "tcl" / script_name
-    # Convert path to a string with OS-specific formatting (safe for both Windows and Linux)
-    script_path_str = str(script_path)
-    # convert to POSIX-style (slashes). good for windows. VMD accepts both styles but prefers forward slashes
-    script_path_str = script_path.as_posix()
-
-    # Send to VMD
-    final_command = f'source "{script_path_str}"'
-    cl.send_command_to_vmd(final_command)
-
-    return f'command "{final_command}" sent to VMD'
