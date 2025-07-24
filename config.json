@@ -888,21 +888,27 @@
       "ok_button": "call_open_vmd_with_socket"
     },
     "Cartoon with licorice": {
+      "plaintext1": "only proteins are shown",
       "ok_button": "send_tcl_to_VMD_default_cartoon_and_licorice"
     },
     "Goodsell": {
+      "plaintext1": "only proteins are shown",
       "ok_button": "send_tcl_to_VMD_goodsell_blob"
     },
     "Secondary Structure": {
+      "plaintext1": "only proteins are shown",
       "ok_button": "send_tcl_to_VMD_secondary_structure"
     },
     "Elostatic potential": {
+      "plaintext1": "only proteins are shown",
       "ok_button": "send_tcl_to_VMD_eletrostatic_surface_using_just_aminoacid_info"
     },
     "Hydrophilic x Hydrophobic": {
+      "plaintext1": "only proteins are shown",
       "ok_button": "send_tcl_to_VMD_fobic_are_yellow_and_philic_are_purple"
     },
-    "H bonds near protein": {
+    "H bonds in neighborhood": {
+      "plaintext1": "only proteins are shown",
       "ok_button": "send_tcl_to_VMD_hbond_between_proteins_and_solvent"
     },
     "connections as in .top ": {
@@ -912,6 +918,7 @@
       "ok_button": "xxxxx"
     },
     "highlight what I want": {
+      "plaintext1": "only proteins are shown",
       "plaintext1": "for now, highlight is hardcoded: (resname PRO CYS) or (name CA) or (element S) or (index 1 2 3)",
       "ok_button": "send_tcl_to_VMD_selection_highlight"
     },
