@@ -899,7 +899,7 @@
       "plaintext1": "only proteins are shown",
       "ok_button": "send_tcl_to_VMD_secondary_structure"
     },
-    "Elostatic potential": {
+    "Eletrostatic potential": {
       "plaintext1": "only proteins are shown",
       "ok_button": "send_tcl_to_VMD_eletrostatic_surface_using_just_aminoacid_info"
     },
