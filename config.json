@@ -912,7 +912,10 @@
       "ok_button": "send_tcl_to_VMD_hbond_between_proteins_and_solvent"
     },
     "connections as in .top ": {
-      "ok_button": "xxxxx"
+      "inputbox1": ".top file where the connections are (without quotes). ex: /data1/alaHW.top",
+      "inputbox2": ".gro file where the edges coordinates are (without quotes). ex: /data1/alaHW.gro",
+      "inputbox3": "molecule to be shown (without quotes). ex: Protein_chain_A",
+      "ok_button": "call_see_interactions"
     },
     "forces as in .trr": {
       "ok_button": "xxxxx"

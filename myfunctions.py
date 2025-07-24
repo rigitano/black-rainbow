@@ -1245,9 +1245,14 @@ def send_tcl_to_VMD_hbond_between_proteins_and_solvent():
     return f'command "{final_command}" sent to VMD'
 
 
-#top connections
-def call_xxxxx():
-    #xxxxx
+
+def call_see_interactions(s_top, s_gro, s_mol_name):
+    """This function calls a function in cleanpipe directly"""
+    
+    # call function
+    cl.see_interactions(s_top, s_gro, s_mol_name)
+
+    return f"cl.see_interactions({s_top}, {s_gro}, {s_mol_name}) was called directly"
 
 
 #trr forces
