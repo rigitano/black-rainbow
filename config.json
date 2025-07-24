@@ -888,7 +888,7 @@
       "ok_button": "call_open_vmd_with_socket"
     },
     "Cartoon with licorice": {
-      "ok_button": "xxxxx"
+      "ok_button": "send_tcl_to_VMD_default_cartoon_and_licorice"
     },
     "Goodsell": {
       "ok_button": "xxxxx"
