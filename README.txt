@@ -68,7 +68,7 @@ def send_tcl_to_VMD_xxxxxxx():
 
 
 
-    def call_xxxxx():
+def call_xxxxx():
     """This function calls a function in cleanpipe directly"""
     
     # call function
