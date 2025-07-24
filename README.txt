@@ -78,7 +78,7 @@ def send_tcl_to_VMD_xxxxxxx():
 
 
 
-def clipboard_xxxxxxx(s_top):
+def clipboard_xxxxxxx():
     """This function sends xxxxxxx to the clipboard."""
     
     # Copy text to the clipboard
