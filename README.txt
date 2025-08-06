@@ -47,6 +47,8 @@ be sure to set the arguments properly in the function definition so to match wha
 
 def send_tcl_to_VMD_xxxxxxx():
     """This function sends a tcl script to a VMD with open socket"""
+
+    import cleanpipe as cl
     
     script_name = "xxxxxxx"
 
@@ -70,6 +72,8 @@ def send_tcl_to_VMD_xxxxxxx():
 
 def call_xxxxx():
     """This function calls a function in cleanpipe directly"""
+
+    import cleanpipe as cl
     
     # call function
     cl.xxxxx()
@@ -79,7 +83,7 @@ def call_xxxxx():
 
 
 def clipboard_xxxxxxx():
-    """This function sends xxxxxxx to the clipboard."""
+    """This function sends a text to the clipboard."""
     
     # Copy text to the clipboard
     pyperclip.copy(f"xxxxxxx")

@@ -1,5 +1,4 @@
 import pyperclip
-import cleanpipe as cl
 import os
 from pathlib import Path
 
@@ -89,7 +88,8 @@ def clipboard_folders_and_disk_space():
     """This function sends 'du -hd1 .' to the clipboard."""
     
     # Copy text to the clipboard
-    pyperclip.copy("du -hd1 .")
+    pyperclip.copy("du -hd1 . | sort -hr")
+
 
     # Retrieve text from the clipboard
     sent = pyperclip.paste()
@@ -772,6 +772,18 @@ def clipboard_run_prod(s_procedure_option, s_machine_option, s_gro, s_top, s_tim
 
 
 
+def clipboard_livestream():
+    """This function sends a text to the clipboard."""
+    
+    # Copy text to the clipboard
+    pyperclip.copy(f"ssh rome 'tail -c +0 -f vis.xtc' | vmd -e visualize.vmd")
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
+
 def clipboard_download_and_clean_pdb(s_molecule_name):
     """This function sends a python function with arguments to the clipboard."""
     
@@ -1093,7 +1105,7 @@ def clipboard_deconstruct_top_into_molecules(s_top):
 
 def call_open_vmd_with_socket():
     """This function calls a function in cleanpipe directly"""
-    
+    import cleanpipe as cl
 
     # call function
     cl.open_vmd_with_socket()
@@ -1114,6 +1126,8 @@ def call_open_vmd_with_socket():
 
 def send_tcl_to_VMD_default_cartoon_and_licorice():
     """This function sends a tcl script to a VMD with open socket"""
+
+    import cleanpipe as cl
     
     script_name = "default_cartoon_and_licorice.tcl"
 
@@ -1136,6 +1150,8 @@ def send_tcl_to_VMD_default_cartoon_and_licorice():
 
 def send_tcl_to_VMD_goodsell_blob():
     """This function sends a tcl script to a VMD with open socket"""
+
+    import cleanpipe as cl
     
     script_name = "goodsell_blob.tcl"
 
@@ -1159,6 +1175,8 @@ def send_tcl_to_VMD_goodsell_blob():
 
 def send_tcl_to_VMD_secondary_structure():
     """This function sends a tcl script to a VMD with open socket"""
+
+    import cleanpipe as cl
     
     script_name = "secondary_structure.tcl"
 
@@ -1181,6 +1199,8 @@ def send_tcl_to_VMD_secondary_structure():
 
 def send_tcl_to_VMD_eletrostatic_surface_using_just_aminoacid_info():
     """This function sends a tcl script to a VMD with open socket"""
+
+    import cleanpipe as cl
     
     script_name = "eletrostatic_surface_using_just_aminoacid_info.tcl"
 
@@ -1203,6 +1223,8 @@ def send_tcl_to_VMD_eletrostatic_surface_using_just_aminoacid_info():
 
 def send_tcl_to_VMD_fobic_are_yellow_and_philic_are_purple():
     """This function sends a tcl script to a VMD with open socket"""
+
+    import cleanpipe as cl
     
     script_name = "fobic_are_yellow_and_philic_are_purple.tcl"
 
@@ -1225,6 +1247,8 @@ def send_tcl_to_VMD_fobic_are_yellow_and_philic_are_purple():
 
 def send_tcl_to_VMD_hbond_between_proteins_and_solvent():
     """This function sends a tcl script to a VMD with open socket"""
+
+    import cleanpipe as cl
     
     script_name = "hbond_between_proteins_and_solvent.tcl"
 
@@ -1248,6 +1272,8 @@ def send_tcl_to_VMD_hbond_between_proteins_and_solvent():
 
 def call_see_interactions(s_top, s_gro, s_mol_name):
     """This function calls a function in cleanpipe directly"""
+
+    import cleanpipe as cl
     
     # call function
     cl.see_interactions(s_top, s_gro, s_mol_name)
@@ -1263,6 +1289,8 @@ def call_see_interactions(s_top, s_gro, s_mol_name):
 
 def send_tcl_to_VMD_selection_highlight():
     """This function sends a tcl script to a VMD with open socket"""
+
+    import cleanpipe as cl
     
     script_name = "selection_highlight.tcl"
 
@@ -1286,6 +1314,8 @@ def send_tcl_to_VMD_selection_highlight():
 
 def send_tcl_to_VMD_inspect_file():
     """This function sends a tcl script to a VMD with open socket"""
+
+    import cleanpipe as cl
     
     script_name = "inspect_file.tcl"
 

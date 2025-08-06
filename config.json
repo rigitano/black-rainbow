@@ -803,8 +803,8 @@
       "droplist": ["local",
                    "oxygen (torque)",
                    "rome (moab on top of torque)"],
-                   "radiobutton1": "target mol pulled from anchor mol",
-                   "radiobutton2": "target mol pulled using a magic force",
+      "radiobutton1": "target mol pulled from anchor mol",
+      "radiobutton2": "target mol pulled using a magic force",
       "ok_button": "xxxxx"
     },
 
@@ -814,6 +814,44 @@
                    "rome (moab on top of torque)"],
       "ok_button": "xxxxx"
     },
+
+    "runREPLICAS": {
+      "droplist": ["local",
+                   "oxygen (torque)",
+                   "rome (moab on top of torque)"],
+      "droplist2": ["different temperatures (requires different mdps)",
+                    "different force fields (requires different tops)"],
+      "radiobutton1": "try to swap",
+      "radiobutton2": "dont swap",
+
+      "ok_button": "xxx build code that create forders for each replica, put different mdps or differt tops, grumpp, and run: gmx mdrun -multidir repl1 repl2 -replex 1000"
+    },
+
+
+
+
+
+    "runHYBRIDqmmm": {
+      "droplist": ["local",
+                   "oxygen (torque)",
+                   "rome (moab on top of torque)"],
+      "ok_button": "xxx setup mdp file (qmmm=yes qmmm-group=QM qm-theory=DFTB qm-program=cp2k) gmx make_ndx selecting atoms (10 |20) and setting their name (name 19 QM), then gmx mdrun -s topol.tpr -qmmm cp2k -qmcore 8"
+    },
+
+    "runHYBRIDcgaa": {
+      "droplist": ["local",
+                   "oxygen (torque)",
+                   "rome (moab on top of torque)"],
+      "ok_button": "xxxxx"
+    },
+
+    "runLIGANDSCREENING": {
+      "droplist": ["local",
+                   "oxygen (torque)",
+                   "rome (moab on top of torque)"],
+      "ok_button": "xxx #SBATCH --array=1-500\nsrun gmx_mpi mdrun -s lig${SLURM_ARRAY_TASK_ID}.tpr -deffnm lig${SLURM_ARRAY_TASK_ID} -cpi lig${SLURM_ARRAY_TASK_ID}.cpt -cpo lig${SLURM_ARRAY_TASK_ID}.cpt -v"
+    },
+
 
     "mdrun_all_tprs": {
       "droplist": ["local",
@@ -830,7 +868,15 @@
       "inputbox5": "-npme. ex: 1",
       "inputbox6": "-dlb. ex: yes",
       "ok_button": "xxxxx"
+    },
+
+
+    "watch run in live stream": {
+      "plaintext1": "this was the run example. probably some flag is necessary: run example: gmx_mpi -s virus.tpr -e vis.xtc -xvg none -nsteps 1000000000",
+
+      "ok_button": "clipboard_livestream"
     }
+
 
 
 },
