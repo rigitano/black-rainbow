@@ -1,12 +1,13 @@
 import pyperclip
 import os
 from pathlib import Path
+import platform
 
-try:
-    pyperclip.set_clipboard("xclip")
-except pyperclip.PyperclipException:
-    print("xclip not available — trying default clipboard method.")
 
+if platform.system() == "Windows":
+    pass
+else:
+    pyperclip.set_clipboard("xclip") #please notice that in linux, xclip must be installed
 
 
 def bunda(a, b, c):
