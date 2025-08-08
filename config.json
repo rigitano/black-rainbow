@@ -54,7 +54,7 @@
                  "------cluster------",
                  "slurm (sbatch)",
                  "torque (qsub)",
-                 "moab on top of torque (msub)",
+                 "moab (msub)",
                  "kubernetes (kubectl apply -f)",
                  "yarn-hadoop (yarn jar)",
                  "spark on top of yarn-hadoop (spark-submit --master yarn)"],
@@ -70,7 +70,7 @@
                 "------cluster------",
                 "slurm (squeue)",
                 "torque (qstat)",
-                "moab on top of torque (showq)",
+                "moab (showq)",
                 "kubernetes (kubectl get pods)",
                 "yarn-hadoop (yarn application -list)",
                 "spark on top of yarn-hadoop (use UI!)"],
@@ -87,11 +87,10 @@
                 "------cluster------",
                 "slurm (scancel)",
                 "torque (qdel)",
-                "moab on top of torque (mjobctl -c)",
+                "moab(mjobctl -c)",
                 "kubernetes (kubectl delet pod)",
                 "yarn-hadoop (yarn application -kill)",
                 "spark on top of yarn-hadoop (yarn application -kill)"],
-
   "ok_button": "clipboard_cancel_execution"
 }
 
@@ -726,9 +725,9 @@
 
 "run": {
     "runMAKEREALISTIC": {
-        "droplist": ["local",
-                   "oxygen (torque)",
-                   "rome (moab on top of torque)"],
+      "droplist": ["local",
+                   "slurm <NOT IMPLEMENTED>",
+                   "rome (moab wrapper with time limit) <NOT IMPLEMENTED>"],
 
         "inputbox1": "gro. ex: 'hemoglobin_in_water.gro'",
         "inputbox2": "top. ex: 'hemoglobin_in_water.top'",
@@ -739,9 +738,9 @@
       },
 
     "runBENCHMARK": {
-            "droplist": ["local",
-                   "oxygen (torque)",
-                   "rome (moab on top of torque)"],
+      "droplist": ["local",
+                   "slurm  <NOT IMPLEMENTED>",
+                   "rome (moab wrapper with time limit)"],
         "inputbox1": "tpr file. ex: 'prod.tpr'",
         "ok_button": "clipboard_run_bench"
       },
@@ -750,21 +749,21 @@
       "radiobutton1": "from scratch (MAKEREALISTIC and PRODTRAJ)",
       "radiobutton2": "from realistic (just PRODTRAJ)",
       "droplist": ["local",
-                   "oxygen (torque)",
-                   "rome (moab on top of torque)"],
+                   "slurm  <NOT IMPLEMENTED>",
+                   "rome (moab wrapper with time limit) <NOT IMPLEMENTED>"],
 
       "inputbox1": "gro. ex: 'hemoglobin_in_water.gro'",
       "inputbox2": "top. ex: 'hemoglobin_in_water.top'",
       "inputbox3": "duration (ns)",
       "inputbox4": "groups to monitor. ex: 'Protein Non-Protein' or 'System'",
       "inputbox5": "temperature (K). ex: 298",
-      "ok_button": "clipboard_run_prod"
+      "ok_button": "clipboard_run_traj"
     },
 
     "runFEPoff": {
-      "droplist": ["local *",
-                   "oxygen (torque) *",
-                   "rome (moab on top of torque)"],
+      "droplist": ["local <NOT IMPLEMENTED>",
+                   "slurm <imperfect>",
+                   "rome (moab wrapper with time limit) <piece of shit>"],
       "inputbox0": "cpr",
       "inputbox1": "out folder name. ex: '4_FEPoff'",
       "inputbox2": "gro file",
@@ -776,9 +775,9 @@
     },
 
     "runFEPswitch": {
-      "droplist": ["local",
-                   "oxygen (torque)",
-                   "rome (moab on top of torque)"],
+      "droplist": ["local <NOT IMPLEMENTED>",
+                   "slurm <NOT IMPLEMENTED>",
+                   "rome (moab wrapper with time limit) <NOT IMPLEMENTED>"],
       "inputbox0": "cpr",
       "inputbox1": "out folder name",
       "inputbox2": "gro file WITH EXTRA COLUMNS",
@@ -788,9 +787,9 @@
     },
 
     "runFEPtransfer": {
-      "droplist": ["local",
-                   "oxygen (torque)",
-                   "rome (moab on top of torque)"],
+      "droplist": ["local <NOT IMPLEMENTED>",
+                   "slurm <NOT IMPLEMENTED>",
+                   "rome (moab wrapper with time limit) <NOT IMPLEMENTED>"],
       "inputbox0": "cpr",
       "inputbox1": "out folder name",
       "inputbox2": "gro file WITH EXTRA COLUMNS",
@@ -800,25 +799,25 @@
     },
 
     "runSTEERED": {
-      "droplist": ["local",
-                   "oxygen (torque)",
-                   "rome (moab on top of torque)"],
+      "droplist": ["local <NOT IMPLEMENTED>",
+                   "slurm <NOT IMPLEMENTED>",
+                   "rome (moab wrapper with time limit) <NOT IMPLEMENTED>"],
       "radiobutton1": "target mol pulled from anchor mol",
       "radiobutton2": "target mol pulled using a magic force",
       "ok_button": "xxxxx"
     },
 
     "runUMBRELLAS": {
-      "droplist": ["local",
-                   "oxygen (torque)",
-                   "rome (moab on top of torque)"],
+      "droplist": ["local <NOT IMPLEMENTED>",
+                   "slurm <NOT IMPLEMENTED>",
+                   "rome (moab wrapper with time limit) <NOT IMPLEMENTED>"],
       "ok_button": "xxxxx"
     },
 
     "runREPLICAS": {
-      "droplist": ["local",
-                   "oxygen (torque)",
-                   "rome (moab on top of torque)"],
+      "droplist": ["local <NOT IMPLEMENTED>",
+                   "slurm <NOT IMPLEMENTED>",
+                   "rome (moab wrapper with time limit) <NOT IMPLEMENTED>"],
       "droplist2": ["different temperatures (requires different mdps)",
                     "different force fields (requires different tops)"],
       "radiobutton1": "try to swap",
@@ -832,31 +831,31 @@
 
 
     "runHYBRIDqmmm": {
-      "droplist": ["local",
-                   "oxygen (torque)",
-                   "rome (moab on top of torque)"],
+      "droplist": ["local <NOT IMPLEMENTED>",
+                   "slurm <NOT IMPLEMENTED>",
+                   "rome (moab wrapper with time limit) <NOT IMPLEMENTED>"],
       "ok_button": "xxx setup mdp file (qmmm=yes qmmm-group=QM qm-theory=DFTB qm-program=cp2k) gmx make_ndx selecting atoms (10 |20) and setting their name (name 19 QM), then gmx mdrun -s topol.tpr -qmmm cp2k -qmcore 8"
     },
 
     "runHYBRIDcgaa": {
-      "droplist": ["local",
-                   "oxygen (torque)",
-                   "rome (moab on top of torque)"],
+      "droplist": ["local <NOT IMPLEMENTED>",
+                   "slurm <NOT IMPLEMENTED>",
+                   "rome (moab wrapper with time limit) <NOT IMPLEMENTED>"],
       "ok_button": "xxxxx"
     },
 
     "runLIGANDSCREENING": {
-      "droplist": ["local",
-                   "oxygen (torque)",
-                   "rome (moab on top of torque)"],
-      "ok_button": "xxx #SBATCH --array=1-500\nsrun gmx_mpi mdrun -s lig${SLURM_ARRAY_TASK_ID}.tpr -deffnm lig${SLURM_ARRAY_TASK_ID} -cpi lig${SLURM_ARRAY_TASK_ID}.cpt -cpo lig${SLURM_ARRAY_TASK_ID}.cpt -v"
+      "droplist": ["local <NOT IMPLEMENTED>",
+                   "slurm <imperfect>",
+                   "rome (moab wrapper with time limit) <NOT IMPLEMENTED>"],
+      "ok_button": "xxx runLIGANDSCREENING-slurm.sh"
     },
 
 
     "mdrun_all_tprs": {
-      "droplist": ["local",
-                   "oxygen (torque)",
-                   "rome (moab on top of torque) *"],
+      "droplist": ["local <NOT IMPLEMENTED>",
+                   "slurm <NOT IMPLEMENTED>",
+                   "rome (moab wrapper with time limit) <imperfect>"],
 
       "radiobutton1": "paralelize in a simple way",
       "inputbox1": "-nt. ex: 8 ",
