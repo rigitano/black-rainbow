@@ -98,12 +98,24 @@ def clipboard_folders_and_disk_space():
     return sent + " sent to clipboard"
 
 
-def clipboard_ip_and_mac():
+def clipboard_ip():
     """This function sends 'echo -------Who am I on the network?------- && ip a && echo -------How do I reach other machines/networks?------- && ip route' to the clipboard."""
     
     # Copy text to the clipboard
-    pyperclip.copy("echo -------Who am I on the network?------- && ip a && echo -------How do I reach other machines/networks?------- && ip route")
+    pyperclip.copy(r"""echo "";PUB="$((curl -4 -fsS icanhazip.com || curl -4 -fsS ifconfig.co || curl -4 -fsS api.ipify.org) | grep -Eo '([0-9]{1,3}\.){3}[0-9]{1,3}' | head -n1)"; [ -z "$PUB" ] && PUB="(unknown)"; printf "Public IP        : %s\n" "$PUB"; ip -o -4 addr show up scope global | while read -r _ IF _ IPCIDR _; do IP="${IPCIDR%/*}"; PFX="${IPCIDR#*/}"; NM="$(awk -v p="$PFX" 'BEGIN{split("0 128 192 224 240 248 252 254 255",A," ");k1=p;k1=(k1>8?8:(k1<0?0:k1));k2=p-8;k2=(k2>8?8:(k2<0?0:k2));k3=p-16;k3=(k3>8?8:(k3<0?0:k3));k4=p-24;k4=(k4>8?8:(k4<0?0:k4));print A[k1]"."A[k2]"."A[k3]"."A[k4]}')"; GW="$(ip -4 route get 1.1.1.1 from "$IP" 2>/dev/null | awk '/via/ {for(i=1;i<=NF;i++) if($i=="via"){print $(i+1); exit}}')"; [ -z "$GW" ] && GW="$(ip -4 route show default dev "$IF" 2>/dev/null | awk '/^default/ {print $3; exit}')" ; [ -z "$GW" ] && GW="(none)"; printf "Local IP (%s): %s  mask %s (/%s)  gateway %s\n" "$IF" "$IP" "$NM" "$PFX" "$GW"; done""")
+    
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
 
+    return sent + " sent to clipboard"
+
+
+def clipboard_ips_to_ssh():
+    """This function sends 'echo -------Who am I on the network?------- && ip a && echo -------How do I reach other machines/networks?------- && ip route' to the clipboard."""
+    
+    # Copy text to the clipboard
+    pyperclip.copy(r"""echo "";while read -r ipcidr; do ip=${ipcidr%/*}; pfx=${ipcidr#*/}; IFS=. read -r a b c d <<<"$ip"; ipi=$(( (a<<24)+(b<<16)+(c<<8)+d )); mask=$(( pfx==0 ? 0 : (0xFFFFFFFF << (32-pfx)) & 0xFFFFFFFF )); net=$(( ipi & mask )); bcast=$(( net | (~mask & 0xFFFFFFFF) )); for ((n=net+1; n<bcast; n++)); do A=$(( (n>>24)&255 )); B=$(( (n>>16)&255 )); C=$(( (n>>8)&255 )); D=$(( n&255 )); tgt="$A.$B.$C.$D"; (echo >/dev/tcp/$tgt/22) >/dev/null 2>&1 && { hn=$(getent hosts "$tgt" | awk '{print $2}' | head -n1); printf "%-15s\t%s\n" "$tgt" "${hn:--}"; }; done; done < <(ip -o -4 addr show scope global | awk '{print $4}')""")
+    
     # Retrieve text from the clipboard
     sent = pyperclip.paste()
 
@@ -625,6 +637,32 @@ def clipboard_replace(s_old_value,s_new_value,s_file_with_text,s_new_file_name):
     sent = pyperclip.paste()
 
     return sent + " sent to clipboard"
+
+
+
+def clipboard_find_vim(s_word_to_find):
+    """This function sends a text to the clipboard."""
+    
+    # Copy text to the clipboard
+    pyperclip.copy(f"/{s_word_to_find}")
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
+
+def clipboard_replace_vim(s_old_value,s_new_value):
+    """This function sends a text  to the clipboard."""
+    
+    # Copy text to the clipboard
+    pyperclip.copy(f"%s/{s_old_value}/{s_new_value}/gc")
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
 
 
 

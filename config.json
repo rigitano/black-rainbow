@@ -4,25 +4,27 @@
     "echo hello world !": {
       "ok_button": "clipboard_hello_world"
     },
-    "os info": {
+    "os": {
       "ok_button": "clipboard_os_info"
     },
-    "cpu info": {
+    "cpu": {
         "ok_button": "clipboard_cpu_info"
     },
-    "available ram": {
+    "ram": {
       "ok_button": "clipboard_avalable_ram"
   },
-    "filesystems and disk space": {
+    "mounted filesystems": {
       "ok_button": "clipboard_filesystems_and_disk_space"
     },
-    "folders and disk space": {
+    "disk space used": {
       "ok_button": "clipboard_folders_and_disk_space"
     },
-    "ip and mac": {
-      "ok_button": "clipboard_ip_and_mac"
+    "my ip": {
+      "ok_button": "clipboard_ip"
+    },
+    "all ips available for ssh": {
+      "ok_button": "clipboard_ips_to_ssh"
     }
-
 
 
 },
@@ -179,7 +181,7 @@
 },
 
 
-"filesystem": {
+"files": {
 
     "ls enhanced": {
       "ok_button": "clipboard_list_enhanced"
@@ -224,7 +226,7 @@
 },
 
 
-"text": {
+"text in files": {
 
     "find (grep)": {
       
@@ -248,6 +250,28 @@
     }
 },
 
+"vim": {
+
+    "find (/)": {
+      
+      "inputbox1": "word to be found. ex: henrique",
+      "ok_button": "clipboard_find_vim",
+      "plaintext1": "after pasting, hit 'enter'. then 'n' to see next"
+
+
+    },
+
+    "replace (%s///gc)": {
+
+      
+      "inputbox1": "old value",
+      "inputbox2": "new value",
+
+      "ok_button": "clipboard_replace_vim",
+      "plaintext1": "after pasting, hit 'enter'. then 'y' to replace and see next"
+
+    }
+},
 
 "table (bash)": {
 
