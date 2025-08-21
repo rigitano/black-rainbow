@@ -29,7 +29,6 @@
 
 },
 
-
 "execution": {
 
 
@@ -98,7 +97,6 @@
 
 },
 
-
 "coding environment": {
 
     "python location": {
@@ -117,6 +115,9 @@
       "ok_button": "clipboard_create_conda_environment"
     }
 },
+
+
+
 
 
 "GIT": {
@@ -181,6 +182,9 @@
 },
 
 
+
+
+
 "files": {
 
     "ls enhanced": {
@@ -224,7 +228,6 @@
     }
 
 },
-
 
 "text in files": {
 
@@ -272,6 +275,9 @@
 
     }
 },
+
+
+
 
 "table (bash)": {
 
@@ -359,81 +365,7 @@
 },
 
 
-"ML":{
 
-
-  "Prepair": {
-    "radiobutton1": "Dummization",
-    "radiobutton2": "Normalization",
-    "radiobutton3": "Feature selection",
-      "ok_button": "xxxx"
-  },
-
-  "Train test split": {
-    "radiobutton1": "xxxx",
-    "radiobutton2": "xxxx",
-      "ok_button": "xxxx"
-  },
-
-  "Fit model": {
-    "radiobutton1": "XGBoost",
-    "radiobutton6": "Decision Tree",
-    "radiobutton7": "Naive Bayes",
-    "radiobutton8": "Neural Network",
-    "radiobutton9": "Linear Regression",
-      "ok_button": "xxxx"
-  },
-
-  "Evaluate": {
-    "radiobutton1": "cross validation",
-    "radiobutton2": "confusion matrix",
-    "radiobutton3": "classification report",
-    "radiobutton4": "ROC AUC",
-    "radiobutton5": "feature importance",
-      "ok_button": "xxxx"
-  }
-
-
-},
-
-
-"Statistical tests":{
-
-
-  "Difference between groups": {
-    "radiobutton1": "t-test",
-    "radiobutton2": "ANOVA",
-    "radiobutton3": "Kruskal-Wallis",
-    "radiobutton4": "Mann-Whitney",
-    "radiobutton5": "Wilcoxon",
-    "radiobutton6": "Chi-square",
-    "radiobutton7": "Fisher's exact test",
-    "radiobutton8": "Cohen's d",
-    "radiobutton9": "Hedges' g",
-    "radiobutton10": "Cliff's delta",
-    "radiobutton11": "Cramér's V",
-    "radiobutton12": "Phi coefficient",
-    "radiobutton13": "Kendall's tau",
-    "radiobutton14": "Spearman's rank correlation",
-    "radiobutton15": "Pearson's correlation",
-    "radiobutton16": "Point-biserial correlation",
-
-      "ok_button": "xxxx"
-  },
-
-  "Correlation": {
-    "radiobutton1": "Pearson",
-    "radiobutton2": "Spearman",
-    "radiobutton3": "Kendall",
-    "radiobutton4": "Point-biserial",
-
-      "ok_button": "xxxx"
-  }
-
-
-
-
-},
 
 
 "construct molecules": {
@@ -497,7 +429,6 @@
 
 },
 
-
 "construct system": {
 
     "molecule in a solvent box": {
@@ -542,7 +473,6 @@
 
 
 },
-
 
 "restrict system": {
     "positions <NOT IMPLEMENTED>": {
@@ -591,7 +521,6 @@
   
 
 },
-
 
 "inspect system": {
     "get atom id (using characteristics)": {
@@ -649,7 +578,6 @@
     }
 
 },
-
 
 "edit system": {
 
@@ -745,7 +673,6 @@
 
 
 },
-
 
 "run": {
     "runMAKEREALISTIC": {
@@ -904,7 +831,6 @@
 
 },
 
-
 "analysis over timeline": {
 
     "Ramachandran": {
@@ -1001,6 +927,89 @@
 },
 
 
+
+
+
+"ML":{
+
+
+  "Prepair": {
+    "radiobutton1": "Dummization",
+    "radiobutton2": "Normalization",
+    "radiobutton3": "Feature selection",
+      "ok_button": "xxxx"
+  },
+
+  "Train test split": {
+    "radiobutton1": "xxxx",
+    "radiobutton2": "xxxx",
+      "ok_button": "xxxx"
+  },
+
+  "Fit model": {
+    "radiobutton1": "XGBoost",
+    "radiobutton6": "Decision Tree",
+    "radiobutton7": "Naive Bayes",
+    "radiobutton8": "Neural Network",
+    "radiobutton9": "Linear Regression",
+      "ok_button": "xxxx"
+  },
+
+  "Evaluate": {
+    "radiobutton1": "cross validation",
+    "radiobutton2": "confusion matrix",
+    "radiobutton3": "classification report",
+    "radiobutton4": "ROC AUC",
+    "radiobutton5": "feature importance",
+      "ok_button": "xxxx"
+  }
+
+
+},
+
+"Statistical tests":{
+
+
+  "Difference between groups": {
+    "radiobutton1": "t-test",
+    "radiobutton2": "ANOVA",
+    "radiobutton3": "Kruskal-Wallis",
+    "radiobutton4": "Mann-Whitney",
+    "radiobutton5": "Wilcoxon",
+    "radiobutton6": "Chi-square",
+    "radiobutton7": "Fisher's exact test",
+    "radiobutton8": "Cohen's d",
+    "radiobutton9": "Hedges' g",
+    "radiobutton10": "Cliff's delta",
+    "radiobutton11": "Cramér's V",
+    "radiobutton12": "Phi coefficient",
+    "radiobutton13": "Kendall's tau",
+    "radiobutton14": "Spearman's rank correlation",
+    "radiobutton15": "Pearson's correlation",
+    "radiobutton16": "Point-biserial correlation",
+
+      "ok_button": "xxxx"
+  },
+
+  "Correlation": {
+    "radiobutton1": "Pearson",
+    "radiobutton2": "Spearman",
+    "radiobutton3": "Kendall",
+    "radiobutton4": "Point-biserial",
+
+      "ok_button": "xxxx"
+  }
+
+
+
+
+},
+
+
+
+
+
+
 "QC of reads": {
 
     "fastqc": {
@@ -1008,7 +1017,6 @@
       "ok_button": "xxxxx"
     }
 },
-
 
 "alignment": {
     "Blast": {
@@ -1028,7 +1036,6 @@
         "ok_button": "xxxxx"
       }
 },
-
 
 "mapped DNA analysis (new individual)": {
     "Picard - remove PCR replicas": {
@@ -1054,7 +1061,6 @@
     }
 },
 
-
 "mapped DNA analysis (chipseq)": {
     "Macs2 callpeak": {
        "plaintext":"fing points of atachment of protein in DNA",
@@ -1064,7 +1070,6 @@
         "ok_button": "xxxxx"
     }
 },
-
 
 "mapped *RNA* analysis": {
     "FeatureCounts": {
@@ -1076,6 +1081,10 @@
         "ok_button": "xxxxx"
     }
 },
+
+
+
+
 
 
 "SC analysis": {
