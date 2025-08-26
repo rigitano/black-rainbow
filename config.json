@@ -478,26 +478,34 @@
 
 "restrict system": {
     "positions <NOT IMPLEMENTED>": {
-        "droplist": ["[position_restraints] type 1 (harmonic potential)",
-                     "[position_restraints] type 2 (flat bottom potential)"],
+        "droplist": [
+                     "[position_restraints] type 1 (harmonic potential)",
+                     "[position_restraints] type 2 (flat bottom potential)"
+                    ],
         "ok_button": "xxxxx"
       },
 
     "dihedrals": {
-      "droplist": ["[ dihedral_restraints ] type 1 (a potential similar to improper dihedral)"],
-      "plaintext2": "action required on mdp: dihre=yes dihre_fc=1000",
+      "droplist": [
+                   "[ dihedrals ] type 2 (improper dihedral harmonic)",
+                   "[ dihedrals ] type 4 (improper dihedral periodic)<NOT IMPLEMENTED>",
+                   "[ dihedral_restraints ] type 1 (a potential similar to improper dihedral)<NOT IMPLEMENTED>"
+                  ],
 
-      "inputbox1": "gro file. ex: 'protein_in_water.gro'",
-      "inputbox2": "top/itp file with the list of dihedrals. ex: 'protein_in_water.top'",
+
+      "plaintext2": "action required on mdp just for [ dihedral_restraints ]: dihre=yes dihre_fc=1000 (xxx )",
+
+      "inputbox1": "gro file where real diherals are. ex: 'protein_in_water.gro'",
+      "inputbox2": "top file to understand how many molecules there are. ex: 'protein_in_water.top'",
 
       "inputbox3": "restraining force. ex: 5000",
 
       "inputbox4": "name of molecule be be restricted. ex: 'Protein_chain_A'",
 
-      "inputbox5": "top/itp with directive to be edited. ex: 'protein_in_water.top'",
-      "inputbox6": "name of output file with modifications. ex: 'protein_in_water_with_restrictions.top'",
+      "inputbox5": "itp containing the [ dihedral_restraints ] to be edited. ex: 'Protein_chain_A.itp'",
+      "inputbox6": "output name. ex: 'Protein_chain_A_restricted.itp'",
 
-      "radiobutton1": "all <NOT IMPLEMENTED>",
+      "radiobutton1": "all<NOT IMPLEMENTED>",
       "radiobutton2": "just phi and psi of protein",
       "ok_button": "clipboard_freeze_dihedrals",
       "plaintext1": "a new file will be created with the new content, the original file will not be modified"

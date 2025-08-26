@@ -900,19 +900,31 @@ def clipboard_add_truss(s_pdb_file, p1, p2, n_square_size, s_out_pdb_file):
 
 def clipboard_freeze_dihedrals(s_potential_option, s_gro_file,s_top_file, restraining_force, s_molename, s_file_to_be_edited, s_out_file_name, s_which_dihedrals_option):
     """This function sends a cleanpipe function with arguments to the clipboard
-    s_potential_option is not used because here there are no choices, actually. the dropbox has only one possible choice
+    
     
     """
     
-    # Copy text to the clipboard, depending on the value of s_by_what
-    if s_which_dihedrals_option == "all":
+    # Copy text to the clipboard, depending on the value of s_potential_option and s_which_dihedrals_option
+    if s_potential_option == "[ dihedrals ] type 2 (improper dihedral harmonic)" and s_which_dihedrals_option == "all":
         pyperclip.copy(f"xxxx")
 
-    elif s_which_dihedrals_option == "just phi and psi of protein":
+    elif s_potential_option == "[ dihedrals ] type 2 (improper dihedral harmonic)" and s_which_dihedrals_option == "just phi and psi of protein":
         pyperclip.copy(f"cl.freeze_phi_psi_dihedrals({s_gro_file}, {s_top_file}, {restraining_force}, {s_molename}, {s_file_to_be_edited}, {s_out_file_name})")
 
+    elif s_potential_option == "[ dihedrals ] type 4 (improper dihedral periodic)" and s_which_dihedrals_option == "all":
+        pyperclip.copy(f"xxxx")
+
+    elif s_potential_option == "[ dihedrals ] type 4 (improper dihedral periodic)" and s_which_dihedrals_option == "just phi and psi of protein":
+        pyperclip.copy(f"xxxx")
+
+    elif s_potential_option == "[ dihedral_restraints ] type 1 (a potential similar to improper dihedral)" and s_which_dihedrals_option == "all":
+        pyperclip.copy(f"xxxx")
+
+    elif s_potential_option == "[ dihedral_restraints ] type 1 (a potential similar to improper dihedral)" and s_which_dihedrals_option == "just phi and psi of protein":
+        pyperclip.copy(f"xxxx")
+
     else:
-        raise ValueError("Invalid value for s_option")
+        raise ValueError("Invalid values of s_potential_option or s_which_dihedrals_option")
 
     # Retrieve text from the clipboard
     sent = pyperclip.paste()
