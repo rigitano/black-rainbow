@@ -197,19 +197,20 @@
         "radiobutton3": "in the file content",
         "inputbox1": "search this text",
       "ok_button": "clipboard_search_filesystem",
+      "plaintext1": "________what________",
       "plaintext2": ". (any character)",
       "plaintext3": "[abc] (a, b or c)",
-      "plaintext4": "[a-zA-Z] (a to z)",
-      "plaintext5": "[a-zA-Z0-9] (all alphanumeric)",
-      "plaintext6": "   ",
+      "plaintext4": "[a-zA-Z] (letters)",
+      "plaintext5": "[a-zA-Z0-9] (letters and numbers)",
+      "plaintext6": "____________________",
       "plaintext7": "^ (start of line)",
       "plaintext8": "$ (end of line)",
-      "plaintext9": "   ",
-      "plaintext11": "* (0-infinite of the preceding)",
-      "plaintext12": "+ (1-infinite of the preceding)",
-      "plaintext13": "{n} (exactly n of the preceding)",
-      "plaintext14": "{n,m} (between n and m of the preceding)",
-      "plaintext15": "{n,} (n-infinite of the preceding)"
+      "plaintext9": "______quantity______",
+      "plaintext11": "* (0-infinite)",
+      "plaintext12": "+ (1-infinite)",
+      "plaintext13": "{n} (exactly n)",
+      "plaintext14": "{n,m} (between n and m)",
+      "plaintext15": "{n,} (n-infinite)"
     },
 
     "extraction": {
@@ -274,6 +275,7 @@
       "plaintext1": "after pasting, hit 'enter'. then 'y' to replace and see next"
 
     }
+
 },
 
 
