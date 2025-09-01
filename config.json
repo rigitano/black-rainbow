@@ -841,6 +841,69 @@
 
 },
 
+"plain gromacs": {
+
+
+  "gmx pdb2gmx": {
+
+    "ok_button": "clipboard_pdb2gmx"
+
+  },
+
+
+  "gmx editconf": {
+
+    "ok_button": "clipboard_editconf"
+
+  },
+
+
+  "gmx solvate": {
+
+    "ok_button": "clipboard_solvate"
+
+  },
+
+
+  "gmx grompp": {
+
+    "ok_button": "clipboard_grompp"
+
+  },
+
+
+  "gmx mdrun": {
+
+    "ok_button": "clipboard_mdrun"
+
+  },
+
+
+  "gmx trjconv -center": {
+
+    "ok_button": "clipboard_center"
+
+  },
+
+
+  "gmx trjconv -fit": {
+
+    "ok_button": "clipboard_fit"
+
+  },
+
+
+  "gmx energy": {
+
+    "ok_button": "clipboard_energy"
+
+  }
+
+
+},
+
+
+
 "analysis over timeline": {
 
     "Ramachandran": {

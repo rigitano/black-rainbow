@@ -730,6 +730,99 @@ def clipboard_pdb2box_full_of_that(s_pdbfile, s_forceField, s_box_size, n_mol):
 
 
 
+def clipboard_pdb2gmx():
+    """This function sends a python function with arguments to the clipboard."""
+    
+    # Copy text to the clipboard
+    pyperclip.copy(f"gmx pdb2gmx -f .pdb -o .gro -p .top -missing -ter -ignh -water none -ff ../charmm36-jul2022")
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
+def clipboard_editconf():
+    """This function sends a python function with arguments to the clipboard."""
+    
+    # Copy text to the clipboard
+    pyperclip.copy(f'gmx editconf -f .gro -o .gro -c -box "3 3 3" -bt cubic')
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
+def clipboard_solvate():
+    """This function sends a python function with arguments to the clipboard."""
+    
+    # Copy text to the clipboard
+    pyperclip.copy(f"gmx solvate -cp .gro -cs spc216.gro -maxsol 123 -p .top -o .gro")
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
+def clipboard_grompp():
+    """This function sends a python function with arguments to the clipboard."""
+    
+    # Copy text to the clipboard
+    pyperclip.copy(f"gmx grompp -f .mdp -c .gro -r .gro -p .top -o .tpr -maxwarn 1")
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
+
+def clipboard_mdrun():
+    """This function sends a python function with arguments to the clipboard."""
+    
+    # Copy text to the clipboard
+    pyperclip.copy(f"gmx mdrun -v -deffnm ")
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
+def clipboard_center():
+    """This function sends a python function with arguments to the clipboard."""
+    
+    # Copy text to the clipboard
+    pyperclip.copy(f"gmx trjconv -s .tpr -f .xtc -o .centered.xtc -center -pbc mol")
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
+def clipboard_fit():
+    """This function sends a python function with arguments to the clipboard."""
+    
+    # Copy text to the clipboard
+    pyperclip.copy(f"gmx trjconv -s .tpr -f .centered.xtc -o .fitted.xtc -fit progressive")
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
+def clipboard_energy():
+    """This function sends a python function with arguments to the clipboard."""
+    
+    # Copy text to the clipboard
+    pyperclip.copy(f"gmx energy -f .edr -o .xvg")
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
+
+
+
+
 
 def clipboard_make_realistic(s_machine, s_gro, s_top, s_groups,n_temperature):
     """This function sends codes to the clipboard, depending on the choice made on a droplist."""
