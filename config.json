@@ -1008,6 +1008,9 @@
       "ok_button": "send_tcl_to_VMD_MARTINI_technical"
     },
 
+   "MARTINI cg_bonds-v5": {
+      "ok_button": "send_tcl_to_VMD_MARTINI_cg_bonds"
+    },
 
     "highlight what I want": {
       "plaintext1": "only proteins are shown",

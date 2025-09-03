@@ -1524,7 +1524,35 @@ def send_tcl_to_VMD_MARTINI_technical():
 
 
 
+def send_tcl_to_VMD_MARTINI_cg_bonds():
+    """This function sends a tcl script to a VMD with open socket"""
 
+    import cleanpipe as cl
+    
+    script_name = "MARTINI_cg_bonds-v5.tcl"
+
+    #get where cleanpipe is, because the scripts are in a folder there
+    module_path = Path(cl.__file__)
+    module_dir = module_path.parent
+    #cuild the script full path
+    script_path = module_dir / "tcl" / script_name
+    # Convert path to a string with OS-specific formatting (safe for both Windows and Linux)
+    script_path_str = str(script_path)
+    # convert to POSIX-style (slashes). good for windows. VMD accepts both styles but prefers forward slashes
+    script_path_str = script_path.as_posix()
+
+    # Send to VMD
+    final_command = f'source "{script_path_str}"'
+    cl.send_command_to_vmd(final_command)
+
+    #############################################################################
+    # after sourcing, Ill send some commands that are particular to that script #
+    #############################################################################
+
+    cl.send_command_to_vmd(r"cg_bonds -tpr /data1/henrique/martinitutorial/bilayer-lipidome-tutorial-I/minimal/spontaneous-assembly/dspc-md.tpr -gmx /home/hrigitano/miniconda3/envs/bio/bin.AVX2_256/gmx")
+
+
+    return f'a couple of commands were sent to VMD'
 
 def send_tcl_to_VMD_selection_highlight():
     """This function sends a tcl script to a VMD with open socket"""
