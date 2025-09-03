@@ -956,28 +956,32 @@
       "ok_button": "call_open_vmd_with_socket"
     },
     "Cartoon with licorice": {
-      "plaintext1": "only proteins are shown",
-      "ok_button": "send_tcl_to_VMD_default_cartoon_and_licorice"
+      "ok_button": "send_tcl_to_VMD_default_cartoon_and_licorice",
+      "plaintext1": "(only proteins are shown)"
     },
     "Goodsell": {
-      "plaintext1": "only proteins are shown",
-      "ok_button": "send_tcl_to_VMD_goodsell_blob"
+      "ok_button": "send_tcl_to_VMD_goodsell_blob",
+      "plaintext1": "(only proteins are shown)"
+    },
+    "Chewing gum": {
+      "ok_button": "send_tcl_to_VMD_chewing_gum",
+      "plaintext1": "(only proteins are shown)"
     },
     "Secondary Structure": {
-      "plaintext1": "only proteins are shown",
-      "ok_button": "send_tcl_to_VMD_secondary_structure"
+      "ok_button": "send_tcl_to_VMD_secondary_structure",
+      "plaintext1": "(only proteins are shown)"
     },
     "Eletrostatic potential": {
-      "plaintext1": "only proteins are shown",
-      "ok_button": "send_tcl_to_VMD_eletrostatic_surface_using_just_aminoacid_info"
+      "ok_button": "send_tcl_to_VMD_eletrostatic_surface_using_just_aminoacid_info",
+      "plaintext1": "(only proteins are shown)"
     },
     "Hydrophilic x Hydrophobic": {
-      "plaintext1": "only proteins are shown",
-      "ok_button": "send_tcl_to_VMD_fobic_are_yellow_and_philic_are_purple"
+      "ok_button": "send_tcl_to_VMD_fobic_are_yellow_and_philic_are_purple",
+      "plaintext1": "(only proteins are shown)"
     },
     "H bonds in neighborhood": {
-      "plaintext1": "only proteins are shown",
-      "ok_button": "send_tcl_to_VMD_hbond_between_proteins_and_solvent"
+      "ok_button": "send_tcl_to_VMD_hbond_between_proteins_and_solvent",
+      "plaintext1": "(only proteins are shown)"
     },
     "connections as in .top ": {
       "inputbox1": ".top file where the connections are (without quotes). ex: /data1/alaHW.top",
@@ -988,9 +992,26 @@
     "forces as in .trr": {
       "ok_button": "xxxxx"
     },
+
+
+   "MARTINI beautiful 1": {
+      "ok_button": "send_tcl_to_VMD_MARTINI_beautiful1",
+      "plaintext1": "(only proteins are shown)"
+    },
+
+   "MARTINI beautiful 2": {
+      "ok_button": "send_tcl_to_VMD_MARTINI_beautiful2",
+      "plaintext1": "(only proteins are shown)"
+    },
+
+   "MARTINI technical": {
+      "ok_button": "send_tcl_to_VMD_MARTINI_technical"
+    },
+
+
     "highlight what I want": {
       "plaintext1": "only proteins are shown",
-      "plaintext1": "for now, highlight is hardcoded: (resname PRO CYS) or (name CA) or (element S) or (index 1 2 3)",
+      "plaintext2": "for now, highlight is hardcoded: (resname PRO CYS) or (name CA) or (element S) or (index 1 2 3)",
       "ok_button": "send_tcl_to_VMD_selection_highlight"
     },
     "inspect file, generating textual infos": {
