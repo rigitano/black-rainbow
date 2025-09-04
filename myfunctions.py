@@ -1597,14 +1597,14 @@ def send_tcl_to_VMD_MARTINI_cg_bonds():
 
     cl.send_command_to_vmd(r"pwd")
 
-    cl.send_command_to_vmd(r"cd /data1/henrique/martinitutorial/bilayer-lipidome-tutorial-I/minimal/spontaneous-assembly")
+    cl.send_command_to_vmd(r"cd /data1/henrique/martinitutorial/bilayer-lipidome-tutorial-II/worked/complex-bilayers")
 
 
     # cg_bonds -top ./dspc.top -topoltype "elastic"
-    cl.send_command_to_vmd(r"cg_bonds -top ./dspc.top -topoltype \"elastic\"")
+    cl.send_command_to_vmd(r"cg_bonds -top ./topol.top -topoltype \"elastic\"")
 
     # cg_bonds -gmx /home/hrigitano/miniconda3/envs/bio/bin.AVX2_256/gmx -tpr ./dspc-md.tpr -net "elastic" -cutoff 12.0 -color "orange" -mat "AOChalky" -res 12 -rad 0.1 -topoltype "elastic"
-    cl.send_command_to_vmd(r"cg_bonds -tpr /data1/henrique/martinitutorial/bilayer-lipidome-tutorial-I/minimal/spontaneous-assembly/dspc-md.tpr -gmx /home/hrigitano/miniconda3/envs/bio/bin.AVX2_256/gmx")
+    cl.send_command_to_vmd(r"cg_bonds -tpr /data1/henrique/martinitutorial/bilayer-lipidome-tutorial-I/minimal/spontaneous-assembly/phase_sep.tpr -gmx /home/hrigitano/miniconda3/envs/bio/bin.AVX2_256/gmx")
 
     # these are not normal representations. to delete them, use:
     # cg_delete_all_graphics
