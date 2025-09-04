@@ -1450,12 +1450,12 @@ def call_see_interactions(s_top, s_gro, s_mol_name):
 
 
 
-def send_tcl_to_VMD_MARTINI_beautiful1():
+def send_tcl_to_VMD_MARTINI_jackson():
     """This function sends a tcl script to a VMD with open socket"""
 
     import cleanpipe as cl
     
-    script_name = "MARTINI_beautiful1.tcl"
+    script_name = "MARTINI_jackson.tcl"
 
     #get where cleanpipe is, because the scripts are in a folder there
     module_path = Path(cl.__file__)
@@ -1475,12 +1475,12 @@ def send_tcl_to_VMD_MARTINI_beautiful1():
 
 
 
-def send_tcl_to_VMD_MARTINI_beautiful2():
+def send_tcl_to_VMD_MARTINI_henrique():
     """This function sends a tcl script to a VMD with open socket"""
 
     import cleanpipe as cl
     
-    script_name = "MARTINI_beautiful2.tcl"
+    script_name = "MARTINI_henrique.tcl"
 
     #get where cleanpipe is, because the scripts are in a folder there
     module_path = Path(cl.__file__)
@@ -1498,6 +1498,52 @@ def send_tcl_to_VMD_MARTINI_beautiful2():
 
     return f'command "{final_command}" sent to VMD'
 
+def send_tcl_to_VMD_MARTINI_brasnett():
+    """This function sends a tcl script to a VMD with open socket"""
+
+    import cleanpipe as cl
+    
+    script_name = "MARTINI_brasnett.tcl"
+
+    #get where cleanpipe is, because the scripts are in a folder there
+    module_path = Path(cl.__file__)
+    module_dir = module_path.parent
+    #cuild the script full path
+    script_path = module_dir / "tcl" / script_name
+    # Convert path to a string with OS-specific formatting (safe for both Windows and Linux)
+    script_path_str = str(script_path)
+    # convert to POSIX-style (slashes). good for windows. VMD accepts both styles but prefers forward slashes
+    script_path_str = script_path.as_posix()
+
+    # Send to VMD
+    final_command = f'source "{script_path_str}"'
+    cl.send_command_to_vmd(final_command)
+
+    return f'command "{final_command}" sent to VMD'
+
+
+def send_tcl_to_VMD_MARTINI_bylipidtype():
+    """This function sends a tcl script to a VMD with open socket"""
+
+    import cleanpipe as cl
+    
+    script_name = "MARTINI_bylipidtype.tcl"
+
+    #get where cleanpipe is, because the scripts are in a folder there
+    module_path = Path(cl.__file__)
+    module_dir = module_path.parent
+    #cuild the script full path
+    script_path = module_dir / "tcl" / script_name
+    # Convert path to a string with OS-specific formatting (safe for both Windows and Linux)
+    script_path_str = str(script_path)
+    # convert to POSIX-style (slashes). good for windows. VMD accepts both styles but prefers forward slashes
+    script_path_str = script_path.as_posix()
+
+    # Send to VMD
+    final_command = f'source "{script_path_str}"'
+    cl.send_command_to_vmd(final_command)
+
+    return f'command "{final_command}" sent to VMD'
 
 def send_tcl_to_VMD_MARTINI_technical():
     """This function sends a tcl script to a VMD with open socket"""
@@ -1529,7 +1575,7 @@ def send_tcl_to_VMD_MARTINI_cg_bonds():
 
     import cleanpipe as cl
     
-    script_name = "MARTINI_cg_bonds-v5.tcl"
+    script_name = "cg_bonds-v6.tcl"
 
     #get where cleanpipe is, because the scripts are in a folder there
     module_path = Path(cl.__file__)
@@ -1549,10 +1595,38 @@ def send_tcl_to_VMD_MARTINI_cg_bonds():
     # after sourcing, Ill send some commands that are particular to that script #
     #############################################################################
 
+    cl.send_command_to_vmd(r"pwd")
+
+    cl.send_command_to_vmd(r"cd /data1/henrique/martinitutorial/bilayer-lipidome-tutorial-I/minimal/spontaneous-assembly")
+
+
+    # cg_bonds -top ./dspc.top -topoltype "elastic"
+    cl.send_command_to_vmd(r"cg_bonds -top ./dspc.top -topoltype \"elastic\"")
+
+    # cg_bonds -gmx /home/hrigitano/miniconda3/envs/bio/bin.AVX2_256/gmx -tpr ./dspc-md.tpr -net "elastic" -cutoff 12.0 -color "orange" -mat "AOChalky" -res 12 -rad 0.1 -topoltype "elastic"
     cl.send_command_to_vmd(r"cg_bonds -tpr /data1/henrique/martinitutorial/bilayer-lipidome-tutorial-I/minimal/spontaneous-assembly/dspc-md.tpr -gmx /home/hrigitano/miniconda3/envs/bio/bin.AVX2_256/gmx")
+
+    # these are not normal representations. to delete them, use:
+    # cg_delete_all_graphics
+
+    return f'a couple of commands were sent to VMD'
+
+
+
+def send_tcl_to_VMD_MARTINI_cg_bonds_delete():
+    """This function sends a tcl script to a VMD with open socket"""
+
+    import cleanpipe as cl
+    
+
+    final_command = f'cg_delete_all_graphics'
+    cl.send_command_to_vmd(final_command)
+
 
 
     return f'a couple of commands were sent to VMD'
+
+
 
 def send_tcl_to_VMD_selection_highlight():
     """This function sends a tcl script to a VMD with open socket"""

@@ -994,13 +994,23 @@
     },
 
 
-   "MARTINI beautiful 1": {
-      "ok_button": "send_tcl_to_VMD_MARTINI_beautiful1",
+   "MARTINI jackson": {
+      "ok_button": "send_tcl_to_VMD_MARTINI_jackson",
       "plaintext1": "(only proteins are shown)"
     },
 
-   "MARTINI beautiful 2": {
-      "ok_button": "send_tcl_to_VMD_MARTINI_beautiful2",
+   "MARTINI henrique": {
+      "ok_button": "send_tcl_to_VMD_MARTINI_henrique",
+      "plaintext1": "(only proteins are shown)"
+    },
+
+   "MARTINI brasnett": {
+      "ok_button": "send_tcl_to_VMD_MARTINI_brasnett",
+      "plaintext1": "(only proteins are shown)"
+    },
+
+   "MARTINI by lipid type": {
+      "ok_button": "send_tcl_to_VMD_MARTINI_bylipidtype",
       "plaintext1": "(only proteins are shown)"
     },
 
@@ -1008,8 +1018,14 @@
       "ok_button": "send_tcl_to_VMD_MARTINI_technical"
     },
 
-   "MARTINI cg_bonds-v5": {
-      "ok_button": "send_tcl_to_VMD_MARTINI_cg_bonds"
+   "MARTINI cg_bonds-v6": {
+      "ok_button": "send_tcl_to_VMD_MARTINI_cg_bonds",
+      "plaintext1": "(the connections will magicaly appear. and never disapear!!!)"
+    },
+
+   "MARTINI cg_bonds-v6 delete": {
+      "ok_button": "send_tcl_to_VMD_MARTINI_cg_bonds_delete",
+      "plaintext1": "(this doesnt work!!!)"
     },
 
     "highlight what I want": {
