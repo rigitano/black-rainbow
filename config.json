@@ -904,51 +904,6 @@
 
 
 
-"analysis over timeline": {
-
-    "Ramachandran": {
-      "ok_button": "xxxxx"
-    },
-    "DSSP": {
-      "ok_button": "xxxxx"
-    },
-    "H bonds": {
-        "ok_button": "xxxxx"
-      },
-    "Distance between 2 atoms": {
-      "ok_button": "xxxxx"
-    },
-    "phi and psi": {
-      "ok_button": "xxxxx"
-    },
-    "RMSD from reference": {
-      "ok_button": "xxxxx"
-    },
-    "Gyration radius": {
-      "ok_button": "xxxxx"
-    },
-    "SASA": {
-      "ok_button": "xxxxx"
-    },
-    "Quadrupole": {
-      "ok_button": "xxxxx"
-    }
-
-},
-
-"analysis over delta E": {
-    "check convergence": {
-        "ok_button": "xxxxx"
-    },
-    "whats the delta E": {
-      "ok_button": "xxxxx"
-    },
-    "draw termodinamic cycle": {
-      "inputbox1": "molecule to vanish",
-      "ok_button": "xxxxx"
-    }
-
-},
 
 "vmd visualisation": {
 
@@ -996,23 +951,39 @@
 
    "MARTINI jackson": {
       "ok_button": "send_tcl_to_VMD_MARTINI_jackson",
-      "plaintext1": "(only proteins are shown)"
+      "plaintext1": "(only lipids are shown)"
     },
 
    "MARTINI henrique": {
       "ok_button": "send_tcl_to_VMD_MARTINI_henrique",
-      "plaintext1": "(only proteins are shown)"
+      "plaintext1": "(only lipids are shown)"
     },
 
    "MARTINI brasnett": {
       "ok_button": "send_tcl_to_VMD_MARTINI_brasnett",
-      "plaintext1": "(only proteins are shown)"
+      "plaintext1": "(only lipids are shown)"
     },
 
-   "MARTINI by lipid type": {
+   "MARTINI - lipid (resname)": {
       "ok_button": "send_tcl_to_VMD_MARTINI_bylipidtype",
-      "plaintext1": "(only proteins are shown)"
+      "plaintext1": "(only lipids are shown)"
     },
+
+  "MARTINI - lipid (red or blue)": {
+      "ok_button": "send_tcl_to_VMD_MARTINI_bylipid_blue_red",
+      "plaintext1": "(only lipids are shown)"
+    },
+
+   "MARTINI - lipid (big head x small head)": {
+      "ok_button": "send_tcl_to_VMD_MARTINI_bylipid_bighead_smallhead",
+      "plaintext1": "(only lipids are shown) big headed are purble, smallheaded are pink"
+    },
+
+  "MARTINI - lipid (solid x liquid)": {
+      "ok_button": "send_tcl_to_VMD_MARTINI_bylipid_solid_liquid",
+      "plaintext1": "(only lipids are shown) unsaturated are yellow, saturated are brown"
+    },
+
 
    "MARTINI technical": {
       "ok_button": "send_tcl_to_VMD_MARTINI_technical"
@@ -1035,6 +1006,55 @@
     },
     "inspect file, generating textual infos": {
       "ok_button": "send_tcl_to_VMD_inspect_file"
+    }
+
+},
+
+
+
+
+"analysis over timeline": {
+
+    "Ramachandran": {
+      "ok_button": "xxxxx"
+    },
+    "DSSP": {
+      "ok_button": "xxxxx"
+    },
+    "H bonds": {
+        "ok_button": "xxxxx"
+      },
+    "Distance between 2 atoms": {
+      "ok_button": "xxxxx"
+    },
+    "phi and psi": {
+      "ok_button": "xxxxx"
+    },
+    "RMSD from reference": {
+      "ok_button": "xxxxx"
+    },
+    "Gyration radius": {
+      "ok_button": "xxxxx"
+    },
+    "SASA": {
+      "ok_button": "xxxxx"
+    },
+    "Quadrupole": {
+      "ok_button": "xxxxx"
+    }
+
+},
+
+"analysis over delta E": {
+    "check convergence": {
+        "ok_button": "xxxxx"
+    },
+    "whats the delta E": {
+      "ok_button": "xxxxx"
+    },
+    "draw termodinamic cycle": {
+      "inputbox1": "molecule to vanish",
+      "ok_button": "xxxxx"
     }
 
 },
