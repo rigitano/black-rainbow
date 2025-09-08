@@ -989,7 +989,8 @@
       "ok_button": "send_tcl_to_VMD_MARTINI_technical"
     },
 
-   "MARTINI cg_bonds-v6": {
+   "MARTINI see conections using cg_bonds-v6": {
+      "inputbox1": ".top file where the connections are (full path without quotes). ex: /data1/alaHW.top",
       "ok_button": "send_tcl_to_VMD_MARTINI_cg_bonds",
       "plaintext1": "(the connections will magicaly appear. and never disapear!!!)"
     },

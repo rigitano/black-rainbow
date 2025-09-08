@@ -1642,7 +1642,7 @@ def send_tcl_to_VMD_MARTINI_technical():
 
 
 
-def send_tcl_to_VMD_MARTINI_cg_bonds():
+def send_tcl_to_VMD_MARTINI_cg_bonds(s_top_full_path):
     """This function sends a tcl script to a VMD with open socket"""
 
     import cleanpipe as cl
@@ -1667,21 +1667,26 @@ def send_tcl_to_VMD_MARTINI_cg_bonds():
     # after sourcing, Ill send some commands that are particular to that script #
     #############################################################################
 
-    cl.send_command_to_vmd(r"pwd")
+    s_base = cl.get_file_location(s_top_full_path)
+    s_name = cl.get_filename_with_extension(s_top_full_path)
 
-    cl.send_command_to_vmd(r"cd /data1/henrique/martinitutorial/bilayer-lipidome-tutorial-II/worked/complex-bilayers")
+
+    cl.send_command_to_vmd(r"pwd")
+    cl.send_command_to_vmd(f"cd {s_base}")
+    cl.send_command_to_vmd(r"pwd")
 
 
     # cg_bonds -top ./dspc.top -topoltype "elastic"
-    cl.send_command_to_vmd(r"cg_bonds -top ./topol.top -topoltype \"elastic\"")
+    cl.send_command_to_vmd(f"cg_bonds -top ./{s_name} -topoltype \"elastic\"")
 
+    # alternative that makes it beautiful, but it requires a tpr and I have my ways of making it beautiful
     # cg_bonds -gmx /home/hrigitano/miniconda3/envs/bio/bin.AVX2_256/gmx -tpr ./dspc-md.tpr -net "elastic" -cutoff 12.0 -color "orange" -mat "AOChalky" -res 12 -rad 0.1 -topoltype "elastic"
-    cl.send_command_to_vmd(r"cg_bonds -tpr /data1/henrique/martinitutorial/bilayer-lipidome-tutorial-I/minimal/spontaneous-assembly/phase_sep.tpr -gmx /home/hrigitano/miniconda3/envs/bio/bin.AVX2_256/gmx")
+    #cl.send_command_to_vmd(r"cg_bonds -tpr /data1/henrique/martinitutorial/bilayer-lipidome-tutorial-I/minimal/spontaneous-assembly/phase_sep.tpr -gmx /home/hrigitano/miniconda3/envs/bio/bin.AVX2_256/gmx")
 
     # these are not normal representations. to delete them, use:
     # cg_delete_all_graphics
 
-    return f'a couple of commands were sent to VMD'
+    return f'a tcl script and some commands were sent to VMD'
 
 
 
