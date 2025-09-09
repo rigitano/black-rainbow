@@ -944,44 +944,39 @@
       "inputbox3": "molecule to be shown (without quotes). ex: Protein_chain_A",
       "ok_button": "call_see_interactions"
     },
-    "forces as in .trr": {
+    "forces as in .trr <NOT IMPLEMENTED.": {
       "ok_button": "xxxxx"
     },
 
 
-   "MARTINI jackson": {
-      "ok_button": "send_tcl_to_VMD_MARTINI_jackson",
-      "plaintext1": "(only lipids are shown)"
+  "MARTINI henrique": {
+      "ok_button": "send_tcl_to_VMD_MARTINI_henrique"
     },
 
-   "MARTINI henrique": {
-      "ok_button": "send_tcl_to_VMD_MARTINI_henrique",
-      "plaintext1": "(only lipids are shown)"
+   "MARTINI jackson": {
+      "ok_button": "send_tcl_to_VMD_MARTINI_jackson"
     },
 
    "MARTINI brasnett": {
-      "ok_button": "send_tcl_to_VMD_MARTINI_brasnett",
-      "plaintext1": "(only lipids are shown)"
+      "ok_button": "send_tcl_to_VMD_MARTINI_brasnett"
     },
 
    "MARTINI - lipid (resname)": {
-      "ok_button": "send_tcl_to_VMD_MARTINI_bylipidtype",
-      "plaintext1": "(only lipids are shown)"
+      "ok_button": "send_tcl_to_VMD_MARTINI_bylipidtype"
     },
 
   "MARTINI - lipid (red or blue)": {
-      "ok_button": "send_tcl_to_VMD_MARTINI_bylipid_blue_red",
-      "plaintext1": "(only lipids are shown)"
+      "ok_button": "send_tcl_to_VMD_MARTINI_bylipid_blue_red"
     },
 
    "MARTINI - lipid (big head x small head)": {
       "ok_button": "send_tcl_to_VMD_MARTINI_bylipid_bighead_smallhead",
-      "plaintext1": "(only lipids are shown) big headed are purble, smallheaded are pink"
+      "plaintext1": "big=purple, small=pink"
     },
 
   "MARTINI - lipid (solid x liquid)": {
       "ok_button": "send_tcl_to_VMD_MARTINI_bylipid_solid_liquid",
-      "plaintext1": "(only lipids are shown) unsaturated are yellow, saturated are brown"
+      "plaintext1": "solid saturated=brown, liquid unsaturated=yellow"
     },
 
 
