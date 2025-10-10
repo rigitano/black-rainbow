@@ -912,31 +912,31 @@
     },
     "Cartoon with licorice": {
       "ok_button": "send_tcl_to_VMD_default_cartoon_and_licorice",
-      "plaintext1": "(only proteins are shown)"
+      "plaintext1": "(water is not shown)"
     },
     "Goodsell": {
       "ok_button": "send_tcl_to_VMD_goodsell_blob",
-      "plaintext1": "(only proteins are shown)"
+      "plaintext1": "(water is not shown)"
     },
     "Chewing gum": {
       "ok_button": "send_tcl_to_VMD_chewing_gum",
-      "plaintext1": "(only proteins are shown)"
+      "plaintext1": "(water is not shown)"
     },
     "Secondary Structure": {
       "ok_button": "send_tcl_to_VMD_secondary_structure",
-      "plaintext1": "(only proteins are shown)"
+      "plaintext1": "(water is not shown)"
     },
     "Eletrostatic potential": {
       "ok_button": "send_tcl_to_VMD_eletrostatic_surface_using_just_aminoacid_info",
-      "plaintext1": "(only proteins are shown)"
+      "plaintext1": "(water is not shown)"
     },
     "Hydrophilic x Hydrophobic": {
       "ok_button": "send_tcl_to_VMD_fobic_are_yellow_and_philic_are_purple",
-      "plaintext1": "(only proteins are shown)"
+      "plaintext1": "(water is not shown)"
     },
     "H bonds in neighborhood": {
       "ok_button": "send_tcl_to_VMD_hbond_between_proteins_and_solvent",
-      "plaintext1": "(only proteins are shown)"
+      "plaintext1": "(water is not shown)"
     },
     "connections as in .top ": {
       "inputbox1": ".top file where the connections are (without quotes). ex: /data1/alaHW.top",
@@ -954,7 +954,8 @@
     },
 
    "MARTINI jackson": {
-      "ok_button": "send_tcl_to_VMD_MARTINI_jackson"
+      "ok_button": "send_tcl_to_VMD_MARTINI_jackson",
+      "plaintext1": "(water is not shown)"
     },
 
    "MARTINI brasnett": {
