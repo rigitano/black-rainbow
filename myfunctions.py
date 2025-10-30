@@ -1546,26 +1546,42 @@ def send_tcl_to_VMD_MARTINI_bylipidtype():
     return f'command "{final_command}" sent to VMD'
 
 
-def send_tcl_to_VMD_MARTINI_bylipid_blue_red():
+def send_tcl_to_VMD_MARTINI_bylipid_blue_red(s_users_choice):
     """This function sends a tcl script to a VMD with open socket"""
 
     import cleanpipe as cl
+    import subprocess
     
     script_name = "MARTINI_bylipid_blue_red.tcl"
 
     #get where cleanpipe is, because the scripts are in a folder there
     module_path = Path(cl.__file__)
     module_dir = module_path.parent
-    #cuild the script full path
+    #build the script full path
     script_path = module_dir / "tcl" / script_name
     # Convert path to a string with OS-specific formatting (safe for both Windows and Linux)
     script_path_str = str(script_path)
     # convert to POSIX-style (slashes). good for windows. VMD accepts both styles but prefers forward slashes
     script_path_str = script_path.as_posix()
 
+
+
+
+
+    # define the fill path and name of a temporary script, that will be created in the same directory
+    dir_name = os.path.dirname(script_path_str)
+    tmp_script_path_str = os.path.join(dir_name, f"MARTINI_bylipid_blue_red-temp_script_with_substituition_.tcl")
+
+
+    # Run sed to change the keyword replace_this
+    subprocess.run(f"sed 's/SED_WILL_REPLACE_THIS/{s_users_choice}/g' {script_path_str} > {tmp_script_path_str}", shell=True, check=True)
+
     # Send to VMD
-    final_command = f'source "{script_path_str}"'
+    final_command = f'source "{tmp_script_path_str}"'
     cl.send_command_to_vmd(final_command)
+
+    #remove temporary script with the substituted keyword
+    os.remove(tmp_script_path_str)
 
     return f'command "{final_command}" sent to VMD'
 
