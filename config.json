@@ -368,6 +368,174 @@
 
 
 
+"vmd visualisation": {
+
+    "LAUNCH VMD WITH SOCKET": {
+      "ok_button": "call_open_vmd_with_socket"
+    },
+    "Cartoon with licorice": {
+      "ok_button": "send_tcl_to_VMD_default_cartoon_and_licorice",
+      "plaintext1": "(water is not shown)"
+    },
+    "Goodsell": {
+      "ok_button": "send_tcl_to_VMD_goodsell_blob",
+      "plaintext1": "(water is not shown)"
+    },
+    "Chewing gum": {
+      "ok_button": "send_tcl_to_VMD_chewing_gum",
+      "plaintext1": "(water is not shown)"
+    },
+    "Secondary Structure": {
+      "ok_button": "send_tcl_to_VMD_secondary_structure",
+      "plaintext1": "(water is not shown)"
+    },
+    "Eletrostatic potential": {
+      "ok_button": "send_tcl_to_VMD_eletrostatic_surface_using_just_aminoacid_info",
+      "plaintext1": "(water is not shown)"
+    },
+    "Hydrophilic x Hydrophobic": {
+      "ok_button": "send_tcl_to_VMD_fobic_are_yellow_and_philic_are_purple",
+      "plaintext1": "(water is not shown)"
+    },
+    "H bonds in neighborhood": {
+      "ok_button": "send_tcl_to_VMD_hbond_between_proteins_and_solvent",
+      "plaintext1": "(water is not shown)"
+    },
+    "connections as in .top ": {
+      "inputbox1": ".top file where the connections are (without quotes). ex: /data1/alaHW.top",
+      "inputbox2": ".gro file where the edges coordinates are (without quotes). ex: /data1/alaHW.gro",
+      "inputbox3": "molecule to be shown (without quotes). ex: Protein_chain_A",
+      "ok_button": "call_see_interactions"
+    },
+    "forces as in .trr <NOT IMPLEMENTED.": {
+      "ok_button": "xxxxx"
+    },
+
+
+  "MARTINI henrique": {
+      "ok_button": "send_tcl_to_VMD_MARTINI_henrique"
+    },
+
+   "MARTINI jackson": {
+      "ok_button": "send_tcl_to_VMD_MARTINI_jackson",
+      "plaintext1": "(water is not shown)"
+    },
+
+   "MARTINI brasnett": {
+      "ok_button": "send_tcl_to_VMD_MARTINI_brasnett"
+    },
+
+   "MARTINI - lipid (resname)": {
+      "ok_button": "send_tcl_to_VMD_MARTINI_bylipidtype"
+    },
+
+  "MARTINI - lipid (red or blue)": {
+      "ok_button": "send_tcl_to_VMD_MARTINI_bylipid_blue_red"
+    },
+
+   "MARTINI - lipid (big head x small head)": {
+      "ok_button": "send_tcl_to_VMD_MARTINI_bylipid_bighead_smallhead",
+      "plaintext1": "big=purple, small=pink"
+    },
+
+  "MARTINI - lipid (solid x liquid)": {
+      "ok_button": "send_tcl_to_VMD_MARTINI_bylipid_solid_liquid",
+      "plaintext1": "solid saturated=brown, liquid unsaturated=yellow"
+    },
+
+
+   "MARTINI technical": {
+      "ok_button": "send_tcl_to_VMD_MARTINI_technical"
+    },
+
+   "MARTINI see conections using cg_bonds-v6": {
+      "inputbox1": ".top file where the connections are (full path without quotes). ex: /data1/alaHW.top",
+      "ok_button": "send_tcl_to_VMD_MARTINI_cg_bonds",
+      "plaintext1": "(the connections will magicaly appear. and never disapear!!!)"
+    },
+
+   "MARTINI cg_bonds-v6 delete": {
+      "ok_button": "send_tcl_to_VMD_MARTINI_cg_bonds_delete",
+      "plaintext1": "(this doesnt work!!!)"
+    },
+
+    "highlight what I want": {
+      "plaintext1": "only proteins are shown",
+      "plaintext2": "for now, highlight is hardcoded: (resname PRO CYS) or (name CA) or (element S) or (index 1 2 3)",
+      "ok_button": "send_tcl_to_VMD_selection_highlight"
+    },
+    "inspect file, generating textual infos": {
+      "ok_button": "send_tcl_to_VMD_inspect_file"
+    }
+
+},
+
+"plain gromacs": {
+
+
+  "gmx pdb2gmx": {
+
+    "ok_button": "clipboard_pdb2gmx"
+
+  },
+
+
+  "gmx editconf": {
+
+    "ok_button": "clipboard_editconf"
+
+  },
+
+
+  "gmx solvate": {
+
+    "ok_button": "clipboard_solvate"
+
+  },
+
+
+  "gmx grompp": {
+
+    "ok_button": "clipboard_grompp"
+
+  },
+
+
+  "gmx mdrun": {
+
+    "ok_button": "clipboard_mdrun"
+
+  },
+
+
+  "gmx trjconv -center": {
+
+    "ok_button": "clipboard_center"
+
+  },
+
+
+  "gmx trjconv -fit": {
+
+    "ok_button": "clipboard_fit"
+
+  },
+
+
+  "gmx energy": {
+
+    "ok_button": "clipboard_energy"
+
+  }
+
+
+},
+
+
+
+
+
+
 
 
 "construct molecules": {
@@ -840,173 +1008,6 @@
 
 
 },
-
-"plain gromacs": {
-
-
-  "gmx pdb2gmx": {
-
-    "ok_button": "clipboard_pdb2gmx"
-
-  },
-
-
-  "gmx editconf": {
-
-    "ok_button": "clipboard_editconf"
-
-  },
-
-
-  "gmx solvate": {
-
-    "ok_button": "clipboard_solvate"
-
-  },
-
-
-  "gmx grompp": {
-
-    "ok_button": "clipboard_grompp"
-
-  },
-
-
-  "gmx mdrun": {
-
-    "ok_button": "clipboard_mdrun"
-
-  },
-
-
-  "gmx trjconv -center": {
-
-    "ok_button": "clipboard_center"
-
-  },
-
-
-  "gmx trjconv -fit": {
-
-    "ok_button": "clipboard_fit"
-
-  },
-
-
-  "gmx energy": {
-
-    "ok_button": "clipboard_energy"
-
-  }
-
-
-},
-
-
-
-
-"vmd visualisation": {
-
-    "LAUNCH VMD WITH SOCKET": {
-      "ok_button": "call_open_vmd_with_socket"
-    },
-    "Cartoon with licorice": {
-      "ok_button": "send_tcl_to_VMD_default_cartoon_and_licorice",
-      "plaintext1": "(water is not shown)"
-    },
-    "Goodsell": {
-      "ok_button": "send_tcl_to_VMD_goodsell_blob",
-      "plaintext1": "(water is not shown)"
-    },
-    "Chewing gum": {
-      "ok_button": "send_tcl_to_VMD_chewing_gum",
-      "plaintext1": "(water is not shown)"
-    },
-    "Secondary Structure": {
-      "ok_button": "send_tcl_to_VMD_secondary_structure",
-      "plaintext1": "(water is not shown)"
-    },
-    "Eletrostatic potential": {
-      "ok_button": "send_tcl_to_VMD_eletrostatic_surface_using_just_aminoacid_info",
-      "plaintext1": "(water is not shown)"
-    },
-    "Hydrophilic x Hydrophobic": {
-      "ok_button": "send_tcl_to_VMD_fobic_are_yellow_and_philic_are_purple",
-      "plaintext1": "(water is not shown)"
-    },
-    "H bonds in neighborhood": {
-      "ok_button": "send_tcl_to_VMD_hbond_between_proteins_and_solvent",
-      "plaintext1": "(water is not shown)"
-    },
-    "connections as in .top ": {
-      "inputbox1": ".top file where the connections are (without quotes). ex: /data1/alaHW.top",
-      "inputbox2": ".gro file where the edges coordinates are (without quotes). ex: /data1/alaHW.gro",
-      "inputbox3": "molecule to be shown (without quotes). ex: Protein_chain_A",
-      "ok_button": "call_see_interactions"
-    },
-    "forces as in .trr <NOT IMPLEMENTED.": {
-      "ok_button": "xxxxx"
-    },
-
-
-  "MARTINI henrique": {
-      "ok_button": "send_tcl_to_VMD_MARTINI_henrique"
-    },
-
-   "MARTINI jackson": {
-      "ok_button": "send_tcl_to_VMD_MARTINI_jackson",
-      "plaintext1": "(water is not shown)"
-    },
-
-   "MARTINI brasnett": {
-      "ok_button": "send_tcl_to_VMD_MARTINI_brasnett"
-    },
-
-   "MARTINI - lipid (resname)": {
-      "ok_button": "send_tcl_to_VMD_MARTINI_bylipidtype"
-    },
-
-  "MARTINI - lipid (red or blue)": {
-      "ok_button": "send_tcl_to_VMD_MARTINI_bylipid_blue_red"
-    },
-
-   "MARTINI - lipid (big head x small head)": {
-      "ok_button": "send_tcl_to_VMD_MARTINI_bylipid_bighead_smallhead",
-      "plaintext1": "big=purple, small=pink"
-    },
-
-  "MARTINI - lipid (solid x liquid)": {
-      "ok_button": "send_tcl_to_VMD_MARTINI_bylipid_solid_liquid",
-      "plaintext1": "solid saturated=brown, liquid unsaturated=yellow"
-    },
-
-
-   "MARTINI technical": {
-      "ok_button": "send_tcl_to_VMD_MARTINI_technical"
-    },
-
-   "MARTINI see conections using cg_bonds-v6": {
-      "inputbox1": ".top file where the connections are (full path without quotes). ex: /data1/alaHW.top",
-      "ok_button": "send_tcl_to_VMD_MARTINI_cg_bonds",
-      "plaintext1": "(the connections will magicaly appear. and never disapear!!!)"
-    },
-
-   "MARTINI cg_bonds-v6 delete": {
-      "ok_button": "send_tcl_to_VMD_MARTINI_cg_bonds_delete",
-      "plaintext1": "(this doesnt work!!!)"
-    },
-
-    "highlight what I want": {
-      "plaintext1": "only proteins are shown",
-      "plaintext2": "for now, highlight is hardcoded: (resname PRO CYS) or (name CA) or (element S) or (index 1 2 3)",
-      "ok_button": "send_tcl_to_VMD_selection_highlight"
-    },
-    "inspect file, generating textual infos": {
-      "ok_button": "send_tcl_to_VMD_inspect_file"
-    }
-
-},
-
 
 
 
