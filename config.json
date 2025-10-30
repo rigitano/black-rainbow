@@ -466,9 +466,12 @@
 
 
     "highlight what I want": {
-      "plaintext1": "only proteins are shown",
-      "plaintext2": "for now, highlight is hardcoded: (resname PRO CYS) or (name CA) or (element S) or (index 1 2 3)",
-      "ok_button": "send_tcl_to_VMD_selection_highlight"
+      "inputbox1": "resname. ex: PRO CYS POPE",
+      "inputbox2": "name. ex: CA",
+      "inputbox3": "element. ex: S",
+      "inputbox4": "index. ex: 1 2 3",
+      "ok_button": "send_tcl_to_VMD_selection_highlight",
+      "plaintext1": "the things that you chose will be red. everything else will be grey. dont use quotes. If you put several things in a inputbox, it shoud be space separated. "
     },
     "inspect file, generating textual infos": {
       "ok_button": "send_tcl_to_VMD_inspect_file"
