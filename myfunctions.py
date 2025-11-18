@@ -224,10 +224,62 @@ def clipboard_create_conda_environment(s_env_name,s_python_version):
     return sent + " sent to clipboard"
 
 
+def clipboard_hpc_send():
+    """This function sends a string to the clipboard."""
+    
+    # Copy text to the clipboard
+    pyperclip.copy(f"rsync -avz --chmod=Dg+s --chown=:gen13458 folder_without_slash rome:/ccc/work/cont003/gen13458/decarvah/")
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
 
 
+def clipboard_hpc_bring():
+    """This function sends a string to the clipboard."""
+    
+    # Copy text to the clipboard
+    pyperclip.copy(f"rsync -avz rome:/ccc/work/cont003/gen13458/decarvah/folder_without_slash .")
 
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
 
+    return sent + " sent to clipboard"
+
+def clipboard_hpc_see():
+    """This function sends a string to the clipboard."""
+    
+    # Copy text to the clipboard
+    pyperclip.copy(f"ccc_mpp -u decarvah")
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
+def clipboard_hpc_kill():
+    """This function sends a string to the clipboard."""
+    
+    # Copy text to the clipboard
+    pyperclip.copy(f"ccc_mdel $(ccc_mstat | awk -v user=$USER '$3 == user {{print $1}}')"
+)
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
+def clipboard_hpc_hours():
+    """This function sends a string to the clipboard."""
+    
+    # Copy text to the clipboard
+    pyperclip.copy(f"ccc_myproject")
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
 
 def clipboard_keygen(s_chosen_action,s_chosen_protocol):
     """This function sends a comand to the clipboard, depending on s_chosen_action and s_chosen_protocol.

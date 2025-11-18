@@ -117,7 +117,24 @@
 },
 
 
+"HPC": {
 
+    "send": {
+      "ok_button": "clipboard_hpc_send"
+    },
+    "bring": {
+      "ok_button": "clipboard_hpc_bring"
+    },
+    "see my jobs": {
+      "ok_button": "clipboard_hpc_see"
+    },
+    "kill all my jobs": {
+      "ok_button": "clipboard_hpc_kill"
+    },
+    "hours in project": {
+      "ok_button": "clipboard_hpc_hours"
+    }
+},
 
 
 "GIT": {
