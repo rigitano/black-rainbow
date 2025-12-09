@@ -719,7 +719,7 @@ def clipboard_replace_vim(s_old_value,s_new_value):
 
 
 def clipboard_fiter_table_bash(s_value_to_be_filtered, s_file_name,s_column):
-    """This function sends 'awk '$2=="value"' file.csv' to the clipboard."""
+    """This function sends a command to the clipboard."""
     
     # Copy text to the clipboard
     pyperclip.copy(f"awk '${s_column} == \"{s_value_to_be_filtered}\"' {s_file_name}")
@@ -729,18 +729,21 @@ def clipboard_fiter_table_bash(s_value_to_be_filtered, s_file_name,s_column):
 
     return sent + " sent to clipboard"
 
-def clipboard_sort_table_bash(s_file_name,s_column):
-    """This function sends 'sort -k2 file.csv' to the clipboard."""
+def clipboard_sort_table_bash(s_file_name,s_column,s_type):
+    """This function sends a command to the clipboard."""
     
     # Copy text to the clipboard
-    pyperclip.copy(f"sort -k{s_column} {s_file_name}")
+    if s_type == 'lexical':
+        pyperclip.copy(f"sort -k{s_column},{s_column} {s_file_name}")
+    elif s_type == 'numerical':
+        pyperclip.copy(f"sort -k{s_column},{s_column}n {s_file_name}")
+    else:
+        print('choice doesnt exist')
 
     # Retrieve text from the clipboard
     sent = pyperclip.paste()
 
     return sent + " sent to clipboard"
-
-
 
 
 
@@ -754,6 +757,21 @@ def clipboard_unique_lines_bash(s_file_name):
     sent = pyperclip.paste()
 
     return sent + " sent to clipboard"
+
+
+
+def clipboard_parse_bash(s_regex,s_column_setup):
+    """This function sends 'sort data.txt | uniq' to the clipboard."""
+    
+    # Copy text to the clipboard
+    pyperclip.copy(f"sed -E 's#{s_regex}#{s_column_setup} #'")
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
+
 
 
 def clipboard_pdb2molecule_in_solvent(s_pdbfile, s_outSytemName, s_solvent, s_forceField, s_boxSize):
