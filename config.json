@@ -234,7 +234,7 @@
 
 "doc (bash)": {
 
-    "find - spit a list": {
+    "find-> spit a list": {
       "plaintext1": "grep 'foo'",
       "inputbox1": "word to be found. ex: henrique",
       "inputbox2": "file to be searched. ex: file.txt",
@@ -243,7 +243,7 @@
 
     },
 
-    "replace ": {
+    "replace-> all at once": {
       "plaintext1": "sed 's/foo/bar/g'",
       "inputbox1": "old value",
       "inputbox2": "new value",
@@ -272,7 +272,7 @@
 
 "doc (vim)": {
 
-    "find - highlight": {
+    "find-> highlight": {
       "plaintext0": "/foo",
       "inputbox1": "word to be found. ex: henrique",
       "ok_button": "clipboard_find_vim",
@@ -281,7 +281,7 @@
 
     },
 
-    "replace - highlight and ask": {
+    "replace -> highlight and ask": {
 
       "plaintext0": ":%s/x/y/gc",
       "inputbox1": "old value",
@@ -326,7 +326,21 @@
     "parse": {
       "inputbox1": "regex putting parenthesis on the stuff to go to columns, for example: .*_([0-9]+)\\.(.*)",
       "inputbox2": "which selection goes to each column. \\number represent a selection, & represents the entire pattern. for example: \\2 \\1 &",
-      "ok_button": "clipboard_parse_bash"
+      "ok_button": "clipboard_parse_bash",
+      "plaintext1": "________what________",
+      "plaintext2": ". (any character)",
+      "plaintext3": "[abc] (a, b or c)",
+      "plaintext4": "[a-zA-Z] (letters)",
+      "plaintext5": "[a-zA-Z0-9] (letters and numbers)",
+      "plaintext6": "____________________",
+      "plaintext7": "^ (start of line)",
+      "plaintext8": "$ (end of line)",
+      "plaintext9": "______quantity______",
+      "plaintext11": "* (0-infinite)",
+      "plaintext12": "+ (1-infinite)",
+      "plaintext13": "{n} (exactly n)",
+      "plaintext14": "{n,m} (between n and m)",
+      "plaintext15": "{n,} (n-infinite)"
     }
 
 
