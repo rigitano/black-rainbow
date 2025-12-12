@@ -255,12 +255,13 @@
     },
 
     "extraction": {
-      "plaintext1": "folder extension:",
+      "plaintext1": "select the algorithm, you discover that looking at the extension:",
+      "plaintext2": "___folders___",
       "radiobutton0": ".tar",
       "radiobutton1": ".tar.gz",
       "radiobutton2": ".tar.bz2",
       "radiobutton3": ".tar.xz",
-      "plaintext2": "file extension:",
+      "plaintext3": "___files___",
       "radiobutton4": ".gz",
       "radiobutton5": ".bz2",
       "radiobutton6": ".xz",
@@ -463,7 +464,8 @@
 
 
   "MARTINI henrique": {
-      "ok_button": "send_tcl_to_VMD_MARTINI_henrique"
+      "ok_button": "send_tcl_to_VMD_MARTINI_henrique",
+      "plaintext1": "water are blue dots"
     },
 
    "MARTINI jackson": {
@@ -472,32 +474,38 @@
     },
 
    "MARTINI brasnett": {
-      "ok_button": "send_tcl_to_VMD_MARTINI_brasnett"
+      "ok_button": "send_tcl_to_VMD_MARTINI_brasnett",
+      "plaintext1": "(water are bubbles)"
     },
 
    "MARTINI 12 common lipids": {
       "ok_button": "send_tcl_to_VMD_MARTINI_bylipidtype",
-      "plaintext1": "CHOL=purple, POPC=cyan, DPPC=orange, POPE=lightblue, etc..."
+      "plaintext1": "CHOL=purple, POPC=cyan, DPPC=orange, POPE=lightblue, etc...",
+      "plaintext2": "(water is not shown)"
     },
 
   "MARTINI red or blue": {
       "inputbox1": "resname to be red. ex: CHOL",
-      "ok_button": "send_tcl_to_VMD_MARTINI_bylipid_blue_red"
+      "ok_button": "send_tcl_to_VMD_MARTINI_bylipid_blue_red",
+      "plaintext2": "(water is not shown)"
     },
 
    "MARTINI big head x small head": {
       "ok_button": "send_tcl_to_VMD_MARTINI_bylipid_bighead_smallhead",
-      "plaintext1": "big=purple, small=pink"
+      "plaintext1": "big=purple, small=pink",
+      "plaintext2": "(water is not shown)"
     },
 
   "MARTINI saturated x unsaturated": {
       "ok_button": "send_tcl_to_VMD_MARTINI_bylipid_solid_liquid",
-      "plaintext1": "saturated=brown, unsaturated=yellow"
+      "plaintext1": "saturated=brown, unsaturated=yellow",
+      "plaintext2": "(water is not shown)"
     },
 
 
    "MARTINI technical": {
-      "ok_button": "send_tcl_to_VMD_MARTINI_technical"
+      "ok_button": "send_tcl_to_VMD_MARTINI_technical",
+      "plaintext1": "(water are bubbles)"
     },
 
 
