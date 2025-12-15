@@ -1116,8 +1116,15 @@
     "check convergence": {
         "ok_button": "xxxxx"
     },
-    "whats the delta E": {
-      "ok_button": "xxxxx"
+    "whats the delta E off": {
+      "inputbox1": "folder containing one FEPoff result, it must have the bartint file inside",
+      "ok_button": "clipboard_Delta_E_off",
+      "plaintext1": "the code will look for one barint file. Take the value on the last line and convert from kt to kJ/mol"
+    },
+    "whats the delta E transfer from Octane to Water": {
+      "inputbox1": "folder containing two FEPoff results, each one must contain their own barint calculation",
+      "ok_button": "clipboard_Delta_E_Transfer_OtoW",
+      "plaintext1": "the code will look for two barint files. The first in a folder with 'O' in the name, and another with W in the name. It will see the last line in both. convert kt to kJ/mol, and subtract"
     },
     "draw termodinamic cycle": {
       "inputbox1": "molecule to vanish",

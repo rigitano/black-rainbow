@@ -1863,4 +1863,28 @@ def send_tcl_to_VMD_inspect_file():
     return f'command "{final_command}" sent to VMD'
 
 
+def clipboard_Delta_E_off(s_folder):
+    """This function sends a text to the clipboard."""
+    
+    # Copy text to the clipboard
+    pyperclip.copy(f'DIR="{s_folder}"; find "$DIR" -type f -name \'*barint*.xvg\' -path \'*bar*\' -print0 | while IFS= read -r -d \'\' f; do awk \'END{{if($1==20) printf "%s  %.6f\\n", FILENAME, $2*-2.47}}\' "$f"; done')
+
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
+def clipboard_Delta_E_Transfer_OtoW(s_folder):
+    """This function sends a text to the clipboard."""
+    
+    # Copy text to the clipboard
+    pyperclip.copy(f"DIR=\"{s_folder}\"; O=$(find \"$DIR\" -type f -name '*barint*.xvg' -path '*O*' -print -quit | xargs tail -n1 | awk '$1==20{{print $2}}'); W=$(find \"$DIR\" -type f -name '*barint*.xvg' -path '*W*' -print -quit | xargs tail -n1 | awk '$1==20{{print $2}}'); awk -v O=\"$O\" -v W=\"$W\" 'BEGIN {{ print W*-2.47 - O*-2.47 }}'")
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
+
 
