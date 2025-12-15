@@ -464,22 +464,37 @@
 
 
   "MARTINI henrique": {
+
       "ok_button": "send_tcl_to_VMD_MARTINI_henrique",
+      "plaintext3": "by name:",
+      "plaintext0": "C and D =yellow, NC3=bluish, PO4=redish, GL=iceblue, CHOL=orange", 
       "plaintext1": "water are blue dots"
     },
 
    "MARTINI jackson": {
       "ok_button": "send_tcl_to_VMD_MARTINI_jackson",
+      "plaintext3": "by name:",
+      "plaintext0": "C and D =green3, NC3=black, PO4=green2, GL=iceblue, CHOL=orange", 
       "plaintext1": "(water is not shown)"
     },
 
    "MARTINI brasnett": {
       "ok_button": "send_tcl_to_VMD_MARTINI_brasnett",
+      "plaintext3": "by name:",
+      "plaintext0": "C and D =green3, NC3 and PO4=bluish, GL=yellow, CHOL=orange", 
       "plaintext1": "(water are bubbles)"
+    },
+
+   "MARTINI technical": {
+      "ok_button": "send_tcl_to_VMD_MARTINI_technical",
+      "plaintext3": "by name:",
+      "plaintext1": "C and D =yellow, NC3=blue, PO4=red, GL=iceblue, CHOL=violet", 
+      "plaintext2": "(water are bubbles)"
     },
 
    "MARTINI 12 common lipids": {
       "ok_button": "send_tcl_to_VMD_MARTINI_bylipidtype",
+      "plaintext3": "by resname:",
       "plaintext1": "CHOL=purple, POPC=cyan, DPPC=orange, POPE=lightblue, etc...",
       "plaintext2": "(water is not shown)"
     },
@@ -487,27 +502,26 @@
   "MARTINI red or blue": {
       "inputbox1": "resname to be red. ex: CHOL",
       "ok_button": "send_tcl_to_VMD_MARTINI_bylipid_blue_red",
+      "plaintext3": "by resname: selected is red",
       "plaintext2": "(water is not shown)"
     },
 
    "MARTINI big head x small head": {
       "ok_button": "send_tcl_to_VMD_MARTINI_bylipid_bighead_smallhead",
+      "plaintext3": "by resname suffix:",
       "plaintext1": "big=purple, small=pink",
       "plaintext2": "(water is not shown)"
     },
 
   "MARTINI saturated x unsaturated": {
       "ok_button": "send_tcl_to_VMD_MARTINI_bylipid_solid_liquid",
+      "plaintext3": "by resname prefix:",
       "plaintext1": "saturated=brown, unsaturated=yellow",
       "plaintext2": "(water is not shown)"
     },
 
 
-   "MARTINI technical": {
-      "ok_button": "send_tcl_to_VMD_MARTINI_technical",
-      "plaintext1": "C and D =yellow, NC3=blue, PO4=red, GL=iceblue, CHOL=violet", 
-      "plaintext2": "(water are bubbles)"
-    },
+
 
 
 
