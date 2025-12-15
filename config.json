@@ -505,7 +505,8 @@
 
    "MARTINI technical": {
       "ok_button": "send_tcl_to_VMD_MARTINI_technical",
-      "plaintext1": "(water are bubbles)"
+      "plaintext1": "C and D =yellow, NC3=blue, PO4=red, GL=iceblue, CHOL=violet", 
+      "plaintext2": "(water are bubbles)"
     },
 
 
