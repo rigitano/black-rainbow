@@ -471,6 +471,7 @@
       "plaintext1": "water are blue dots"
     },
 
+ 
    "MARTINI jackson": {
       "ok_button": "send_tcl_to_VMD_MARTINI_jackson",
       "plaintext3": "by name:",
@@ -679,10 +680,16 @@
       "ok_button": "clipboard_pdb2molecule_in_solvent"
     },
 
-    "molecule in 2 solvent boxes (water and octane) <NOT IMPLEMENTED>": {
+    "molecule in 2 solvent boxes (water and octane)": {
       "plaintext1": " this is usefull to calculate FEPtransfer",
-      "ok_button": "xxxxx"
-    },
+        "inputbox1": "file with molecule that will be in both solvents. ex: '1aki.pdb'",
+        "inputbox2": "out system's name. ex: '1aki-transfer'",
+        "inputbox4": "forcefield. ex: 'charmm36-jul2022'",
+        "inputbox5": "box size. ex: '3 3 3'",
+        "inputbox6": "extra parameters to pdb2gmx or martinize2. ex: '-ss HHHHHHHHHHHH' or ''",
+      "ok_button": "clipboard_pdb2molecule_in_water_and_octane"
+    },             
+
 
     "molecule in membrane <NOT IMPLEMENTED>": {
       "ok_button": "xxxxx"
