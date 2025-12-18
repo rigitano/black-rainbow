@@ -929,62 +929,64 @@
 },
 
 "run": {
-    "runMAKEREALISTIC": {
-      "droplist": ["local",
-                   "slurm <NOT IMPLEMENTED>",
-                   "rome (moab wrapper with time limit) <NOT IMPLEMENTED>"],
+    "runREALISTIC": {
 
-        "inputbox1": "gro. ex: 'hemoglobin_in_water.gro'",
-        "inputbox2": "top. ex: 'hemoglobin_in_water.top'",
-        "inputbox3": "groups to monitor. ex: 'Protein Non-Protein' or 'System'",
-        "inputbox4": "temperature (K). ex: 298",
-        "ok_button": "clipboard_make_realistic"
+        "inputbox1": "suffix without quotes after runREALISTIC__ ex: ala_inW",
+        "inputbox2": "gro without quotes. ex: ala_inW.gro",
+        "inputbox3": "top without quotes. ex: ala_inW.top",
+        "inputbox4": "useless prod duration (ns). ex: 1",
+        "inputbox5": "temperature (K). ex: 298",
+        "droplist6": [
+                     "charmm36",
+                     "martini3"
+                    ],
+        "droplist7": [
+                     "pc",
+                     "slurm",
+                     "rome"
+                    ],
+        "inputbox8": "nt OMP. ex: 2",
+        "inputbox9": "nt MPI. ex: 8",
+        "ok_button": "clipboard_runREALISTIC"
         
       },
 
     "runBENCHMARK": {
       "droplist": ["local",
-                   "slurm  <NOT IMPLEMENTED>",
-                   "rome (moab wrapper with time limit)"],
+                   "slurm",
+                   "rome"],
         "inputbox1": "tpr file. ex: 'prod.tpr'",
-        "ok_button": "clipboard_run_bench"
+        "ok_button": "clipboard_runBENCHMARK"
       },
 
-    "runTRAJ": {
-      "radiobutton1": "from scratch (MAKEREALISTIC and PRODTRAJ)",
-      "radiobutton2": "from realistic (just PRODTRAJ)",
-      "droplist": ["local",
-                   "slurm  <NOT IMPLEMENTED>",
-                   "rome (moab wrapper with time limit) <NOT IMPLEMENTED>"],
 
-      "inputbox1": "gro. ex: 'hemoglobin_in_water.gro'",
-      "inputbox2": "top. ex: 'hemoglobin_in_water.top'",
-      "inputbox3": "duration (ns)",
-      "inputbox4": "groups to monitor. ex: 'Protein Non-Protein' or 'System'",
-      "inputbox5": "temperature (K). ex: 298",
-      "ok_button": "clipboard_run_traj"
-    },
 
     "runFEPoff": {
-      "droplist": ["local <NOT IMPLEMENTED>",
-                   "slurm <imperfect>",
-                   "rome (moab wrapper with time limit) <piece of shit>"],
-      "inputbox0": "cpr",
-      "inputbox1": "out folder name. ex: '4_FEPoff'",
-      "inputbox2": "gro file",
-      "inputbox3": "top file",
-      "inputbox4": "duration (ns)",
-      "inputbox5": "groups to monitor. ex: 'Protein Non-Protein' or 'System'",
-      "inputbox6": "MOLECULE TO TURN OFF. ex: 'Protein'",
-      "ok_button": "xxxxx"
+        "inputbox1": "suffix without quotes after runFEPoff__ ex: ala_inW",
+        "inputbox2": "gro without quotes. ex: ala_inW.gro",
+        "inputbox3": "top without quotes. ex: ala_inW.top",
+        "inputbox4": "duration (ns). ex: 100",
+        "inputbox5": "temperature list in quotes (K). ex: '283 298 313' ",
+        "droplist6": [
+                     "charmm36",
+                     "martini3"
+                    ],
+        "droplist7": [
+                     "pc",
+                     "slurm",
+                     "rome"
+                    ],
+        "inputbox8": "molecule to be decoupled. ex: main_molecule_0",
+        "inputbox9": "nt OMP. ex: 2",
+        "inputbox10": "nt MPI. ex: 8",
+      "ok_button": "clipboard_runFEPoff"
     },
 
     "runFEPswitch": {
       "droplist": ["local <NOT IMPLEMENTED>",
                    "slurm <NOT IMPLEMENTED>",
-                   "rome (moab wrapper with time limit) <NOT IMPLEMENTED>"],
-      "inputbox0": "cpr",
-      "inputbox1": "out folder name",
+                   "rome <NOT IMPLEMENTED>"],
+      "inputbox0": "suffix",
       "inputbox2": "gro file WITH EXTRA COLUMNS",
       "inputbox3": "top file",
       "inputbox4": "duration (ns)",
@@ -994,11 +996,10 @@
     "runFEPtransfer": {
       "droplist": ["local <NOT IMPLEMENTED>",
                    "slurm <NOT IMPLEMENTED>",
-                   "rome (moab wrapper with time limit) <NOT IMPLEMENTED>"],
-      "inputbox0": "cpr",
-      "inputbox1": "out folder name",
-      "inputbox2": "gro file WITH EXTRA COLUMNS",
-      "inputbox3": "top file",
+                   "rome <NOT IMPLEMENTED>"],
+      "inputbox0": "suffix",
+      "inputbox2": "gro",
+      "inputbox3": "top",
       "inputbox4": "duration (ns)",
       "ok_button": "xxxxx"
     },

@@ -903,28 +903,19 @@ def clipboard_energy():
 
 
 
-def clipboard_make_realistic(s_machine, s_gro, s_top, s_groups,n_temperature):
+def clipboard_runREALISTIC(s_suffix, s_gro, s_top, s_time, n_temperature, s_ff, s_machine, s_ntOMP, ntMPI ):
     """This function sends codes to the clipboard, depending on the choice made on a droplist."""
     
-    # Copy text to the clipboard, depending on the value of s_by_what
-    if s_machine == "local":
-        pyperclip.copy(f"./runTRAJ-local.sh 123 {s_gro} {s_top} 1 {s_groups} {n_temperature}")
 
-    elif s_machine == "slurm":
-        pyperclip.copy(f"xxxxx")
-
-    elif s_machine == "rome (moab wrapper with time limit)":
-        pyperclip.copy(f"xxxxx")
-
-    else:
-        raise ValueError("Invalid value for s_machine")
+    pyperclip.copy(f"./runREALISTIC.sh {s_suffix} {s_gro} {s_top} {s_time} {n_temperature} {s_ff} {s_machine} {s_ntOMP} {ntMPI}")
 
     # Retrieve text from the clipboard
     sent = pyperclip.paste()
 
     return sent + " sent to clipboard"
 
-def clipboard_run_bench(s_machine, s_tpr):
+
+def clipboard_runBENCHMARK(s_machine, s_tpr):
     """This function sends codes to the clipboard, depending on the choice made on a droplist."""
     
     # Copy text to the clipboard, depending on the value of s_by_what
@@ -945,36 +936,11 @@ def clipboard_run_bench(s_machine, s_tpr):
 
     return sent + " sent to clipboard"
 
-def clipboard_run_traj(s_procedure_option, s_machine_option, s_gro, s_top, s_time, s_groups, n_temperature):
+
+def clipboard_runFEPoff(s_suffix, s_gro, s_top, s_time, n_temperatures, s_ff, s_machine, s_molecule_to_decouple, s_ntOMP, ntMPI ):
     """This function sends codes to the clipboard, depending on the choice made on a droplist."""
     
-    # Copy text to the clipboard, depending on the value of s_by_what
-    if s_machine_option == "local":
-        if s_procedure_option == "from scratch (MAKEREALISTIC and PROD)":
-            pyperclip.copy(f"./runTRAJ-local.sh 1234 {s_gro} {s_top} {s_time} {s_groups} {n_temperature}")
-        elif s_procedure_option == "from realistic (just PROD)":
-            pyperclip.copy(f"./runTRAJ-local.sh 4 {s_gro} {s_top} {s_time} {s_groups} {n_temperature}")
-        else:
-            raise ValueError("Invalid value for s_procedure_option")
-        
-    elif s_machine_option == "slurm":
-        if s_procedure_option == "from scratch (MAKEREALISTIC and PROD)":
-            pyperclip.copy(f"./xxxxxxxx.sh 1234 {s_gro} {s_top} {s_time} {s_groups} {n_temperature}")
-        elif s_procedure_option == "from realistic (just PROD)":
-            pyperclip.copy(f"./xxxxxxxx.sh 4 {s_gro} {s_top} {s_time} {s_groups} {n_temperature}")
-        else:
-            raise ValueError("Invalid value for s_procedure_option")
-
-    elif s_machine_option == "rome (moab wrapper with time limit)":
-        if s_procedure_option == "from scratch (MAKEREALISTIC and PROD)":
-            pyperclip.copy(f"./xxxxxxxx.sh 1234 {s_gro} {s_top} {s_time} {s_groups} {n_temperature}")
-        elif s_procedure_option == "from realistic (just PROD)":
-            pyperclip.copy(f"./xxxxxxxx.sh 4 {s_gro} {s_top} {s_time} {s_groups} {n_temperature}")
-        else:
-            raise ValueError("Invalid value for s_procedure_option")
-
-    else:
-        raise ValueError("Invalid value for s_machine")
+    pyperclip.copy(f"./runFEPoff.sh {s_suffix} {s_gro} {s_top} {s_time} {n_temperatures} {s_ff} {s_machine} {s_molecule_to_decouple} {s_ntOMP} {ntMPI}")
 
     # Retrieve text from the clipboard
     sent = pyperclip.paste()
