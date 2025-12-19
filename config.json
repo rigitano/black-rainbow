@@ -1174,10 +1174,8 @@
       "ok_button": "xxxx"
   },
 
-  "Train test split": {
-    "radiobutton1": "xxxx",
-    "radiobutton2": "xxxx",
-      "ok_button": "xxxx"
+  "Train test split <ok>": {
+      "ok_button": "clipboard_train_test_plit"
   },
 
   "Fit model": {

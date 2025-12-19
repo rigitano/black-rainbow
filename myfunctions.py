@@ -1929,4 +1929,14 @@ def clipboard_Delta_E_Transfer_OtoW(s_folder):
     return sent + " sent to clipboard"
 
 
+def clipboard_train_test_plit():
+    """This function sends a text to the clipboard."""
+    
+    pyperclip.copy(
+        f"""x_df = df.loc[:, df.columns != 'Name of target column']
+y_df = df['Name of target column']
+x_train, x_test, y_train, y_test = train_test_split(x_df,y_df, random_state=7, test_size=0.3)"""
+    )
 
+    sent = pyperclip.paste()
+    return sent + " sent to clipboard"
