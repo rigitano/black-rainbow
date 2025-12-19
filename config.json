@@ -627,7 +627,7 @@
 
 
 
-"construct molecules": {
+"construct molecules as pdb": {
 
     "download and clean pdb": {
       "inputbox1": "molecule name on pdb. ex: '1aki'",
@@ -948,7 +948,7 @@
 },
 
 "run": {
-    "runREALISTIC": {
+    "runREALISTIC <ok>": {
 
         "inputbox1": "suffix without quotes after runREALISTIC__ ex: ala_inW",
         "inputbox2": "gro without quotes. ex: ala_inW.gro",
@@ -980,7 +980,7 @@
 
 
 
-    "runFEPoff": {
+    "runFEPoff <ok>": {
         "inputbox1": "suffix without quotes after runFEPoff__ ex: ala_inW",
         "inputbox2": "gro without quotes. ex: ala_inW.gro",
         "inputbox3": "top without quotes. ex: ala_inW.top",
@@ -1140,7 +1140,7 @@
 },
 
 "analysis over delta E": {
-    "check convergence": {
+    "check convergence <NOT IMPLEMENTED>": {
         "ok_button": "xxxxx"
     },
     "whats the delta E off": {
@@ -1153,7 +1153,7 @@
       "ok_button": "clipboard_Delta_E_Transfer_OtoW",
       "plaintext1": "the code will look for two barint files. The first in a folder with 'O' in the name, and another with W in the name. It will see the last line in both. convert kt to kJ/mol, and subtract"
     },
-    "draw termodinamic cycle": {
+    "draw termodinamic cycle <NOT IMPLEMENTED>": {
       "inputbox1": "molecule to vanish",
       "ok_button": "xxxxx"
     }
