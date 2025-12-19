@@ -234,7 +234,7 @@
 
 "doc (bash)": {
 
-    "find-> spit a list": {
+    "find (spit a list)": {
       "plaintext1": "grep 'foo'",
       "inputbox1": "word to be found. ex: henrique",
       "inputbox2": "file to be searched. ex: file.txt",
@@ -243,7 +243,7 @@
 
     },
 
-    "replace-> all at once": {
+    "replace (all at once)": {
       "plaintext1": "sed 's/foo/bar/g'",
       "inputbox1": "old value",
       "inputbox2": "new value",
@@ -255,7 +255,8 @@
     },
 
     "extraction": {
-      "plaintext1": "select the algorithm, you discover that looking at the extension:",
+      "inputbox1": "input file name. ex: foo.tar.gz",
+      "plaintext1": "select the extraction algorithm. you can discover the right one looking at the extension:",
       "plaintext2": "___folders___",
       "radiobutton0": ".tar",
       "radiobutton1": ".tar.gz",
@@ -265,15 +266,33 @@
       "radiobutton4": ".gz",
       "radiobutton5": ".bz2",
       "radiobutton6": ".xz",
-      "inputbox1": "file name. ex: proteins.tar.gz",
+      
       "ok_button": "clipboard_extraction"
 
+    },
+
+    "compression": {
+      "inputbox1": "input file or folder name. ex: foo",
+      "plaintext1": "select the compresion algorithm. the proper extension will be created:",
+      "plaintext2": "___folders___",
+      "radiobutton0": ".tar",
+      "radiobutton1": ".tar.gz",
+      "radiobutton2": ".tar.bz2",
+      "radiobutton3": ".tar.xz",
+      "plaintext3": "___files___",
+      "radiobutton4": ".gz",
+      "radiobutton5": ".bz2",
+      "radiobutton6": ".xz",
+      
+      "ok_button": "clipboard_compression"
+
     }
+
 },
 
 "doc (vim)": {
 
-    "find-> highlight": {
+    "find (highlight)": {
       "plaintext0": "/foo",
       "inputbox1": "word to be found. ex: henrique",
       "ok_button": "clipboard_find_vim",
@@ -282,7 +301,7 @@
 
     },
 
-    "replace -> highlight and ask": {
+    "replace (highlight and ask)": {
 
       "plaintext0": ":%s/x/y/gc",
       "inputbox1": "old value",

@@ -510,7 +510,7 @@ def clipboard_search_filesystem(s_by_what,s_search_for_this):
     return sent + " sent to clipboard"
 
 
-def clipboard_extraction(s_choice,s_file_name):
+def clipboard_extraction(s_file_name,s_choice,):
     """This function sends a command to the clipboard depending on s_file_name."""
     
     # Copy text to the clipboard, depending on the value of s_choice
@@ -527,13 +527,13 @@ def clipboard_extraction(s_choice,s_file_name):
         pyperclip.copy(f"tar -xJvf {s_file_name}")
 
     elif s_choice == ".gz":
-        pyperclip.copy(f"gunzip {s_file_name}")
+        pyperclip.copy(f"gunzip -k {s_file_name}")
 
     elif s_choice == ".bz2":
-        pyperclip.copy(f"bunzip2 {s_file_name}")
+        pyperclip.copy(f"bunzip2 -k {s_file_name}")
 
     elif s_choice == ".xz":
-        pyperclip.copy(f"unxz {s_file_name}")
+        pyperclip.copy(f"unxz -k {s_file_name}")
 
 
     else:
@@ -545,6 +545,73 @@ def clipboard_extraction(s_choice,s_file_name):
     return sent + " sent to clipboard"
 
 
+def clipboard_compression(s_in_file_name, s_choice):
+    """This function sends a command to the clipboard depending on s_file_name."""
+    
+    # Copy text to the clipboard, depending on the value of s_choice
+    if s_choice == ".tar":
+        pyperclip.copy(
+            f'dir="{s_in_file_name}"; '
+            'dir="${dir/#\\~/$HOME}"; '
+            'dir_resolved=$(cd "$dir" 2>/dev/null && pwd -P) || exit 1; '
+            'name=$(basename "$dir_resolved"); '
+            'pwd_resolved=$(pwd -P); '
+            'exclude=(); '
+            '[[ "$dir_resolved" == "$pwd_resolved" ]] && exclude=(--exclude="$name.tar"); '
+            'tar -cf "$name.tar" "$dir" "${exclude[@]}"'
+        )
+
+    elif s_choice == ".tar.gz":
+        pyperclip.copy(
+            f'dir="{s_in_file_name}"; '
+            'dir="${dir/#\\~/$HOME}"; '
+            'dir_resolved=$(cd "$dir" 2>/dev/null && pwd -P) || exit 1; '
+            'name=$(basename "$dir_resolved"); '
+            'pwd_resolved=$(pwd -P); '
+            'exclude=(); '
+            '[[ "$dir_resolved" == "$pwd_resolved" ]] && exclude=(--exclude="$name.tar.gz"); '
+            'tar -czf "$name.tar.gz" "$dir" "${exclude[@]}"'
+        )
+
+    elif s_choice == ".tar.bz2":
+        pyperclip.copy(
+            f'dir="{s_in_file_name}"; '
+            'dir="${dir/#\\~/$HOME}"; '
+            'dir_resolved=$(cd "$dir" 2>/dev/null && pwd -P) || exit 1; '
+            'name=$(basename "$dir_resolved"); '
+            'pwd_resolved=$(pwd -P); '
+            'exclude=(); '
+            '[[ "$dir_resolved" == "$pwd_resolved" ]] && exclude=(--exclude="$name.tar.bz2"); '
+            'tar -cjf "$name.tar.bz2" "$dir" "${exclude[@]}"'
+        )
+
+    elif s_choice == ".tar.xz":
+        pyperclip.copy(
+            f'dir="{s_in_file_name}"; '
+            'dir="${dir/#\\~/$HOME}"; '
+            'dir_resolved=$(cd "$dir" 2>/dev/null && pwd -P) || exit 1; '
+            'name=$(basename "$dir_resolved"); '
+            'pwd_resolved=$(pwd -P); '
+            'exclude=(); '
+            '[[ "$dir_resolved" == "$pwd_resolved" ]] && exclude=(--exclude="$name.tar.xz"); '
+            'tar -cJf "$name.tar.xz" "$dir" "${exclude[@]}"'
+        )
+
+    elif s_choice == ".gz":
+        pyperclip.copy(f"gzip -k {s_in_file_name}")
+
+    elif s_choice == ".bz2":
+        pyperclip.copy(f"bzip2 -k {s_in_file_name}")
+
+    elif s_choice == ".xz":
+        pyperclip.copy(f"xz -k {s_in_file_name}")
+
+
+    else:
+        raise ValueError("Invalid value for s_choice")
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
 
 
 
