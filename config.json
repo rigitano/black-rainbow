@@ -1120,6 +1120,11 @@
       "radiobutton2": "plot",
       "ok_button": "clipboard_dssp"
     },
+    "SASA": {
+      "radiobutton1": "calculate",
+      "radiobutton2": "plot",
+      "ok_button": "clipboard_sasa"
+    },
     "H bonds": {
       "radiobutton1": "calculate",
       "radiobutton2": "plot",
@@ -1145,11 +1150,7 @@
       "radiobutton2": "plot",
       "ok_button": "xxxxx"
     },
-    "SASA": {
-      "radiobutton1": "calculate",
-      "radiobutton2": "plot",
-      "ok_button": "xxxxx"
-    },
+
     "Quadrupole": {
       "radiobutton1": "calculate",
       "radiobutton2": "plot",
