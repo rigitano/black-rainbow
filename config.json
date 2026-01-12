@@ -1110,30 +1110,49 @@
 "analysis over timeline": {
 
     "Ramachandran": {
-      "ok_button": "xxxxx"
+      "radiobutton1": "calculate",
+      "radiobutton2": "plot",
+
+      "ok_button": "clipboard_rama"
     },
     "DSSP": {
-      "ok_button": "xxxxx"
+      "radiobutton1": "calculate",
+      "radiobutton2": "plot",
+      "ok_button": "clipboard_dssp"
     },
     "H bonds": {
+      "radiobutton1": "calculate",
+      "radiobutton2": "plot",
         "ok_button": "xxxxx"
       },
     "Distance between 2 atoms": {
+      "radiobutton1": "calculate",
+      "radiobutton2": "plot",
       "ok_button": "xxxxx"
     },
     "phi and psi": {
+      "radiobutton1": "calculate",
+      "radiobutton2": "plot",
       "ok_button": "xxxxx"
     },
     "RMSD from reference": {
+      "radiobutton1": "calculate",
+      "radiobutton2": "plot",
       "ok_button": "xxxxx"
     },
     "Gyration radius": {
+      "radiobutton1": "calculate",
+      "radiobutton2": "plot",
       "ok_button": "xxxxx"
     },
     "SASA": {
+      "radiobutton1": "calculate",
+      "radiobutton2": "plot",
       "ok_button": "xxxxx"
     },
     "Quadrupole": {
+      "radiobutton1": "calculate",
+      "radiobutton2": "plot",
       "ok_button": "xxxxx"
     }
 

@@ -1929,6 +1929,36 @@ def clipboard_Delta_E_Transfer_OtoW(s_folder):
     return sent + " sent to clipboard"
 
 
+def clipboard_rama(s_option):
+    """This function sends a text to the clipboard."""
+    
+    if s_option == "calculate":
+        pyperclip.copy(f'cl.calc_rama("xtcs/lC_inW_prod_298_00.all.xtc", "../collected_tprs/lC_inW_prod_298_00.tpr","lC_inW_rama",b_overwrite=True)')
+    elif s_option == "plot":
+        pyperclip.copy(f'cl.plot_rama("rama/lC_inW_rama.csv","peptide in water")')
+        
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
+def clipboard_dssp(s_option):
+    """This function sends a text to the clipboard."""
+    
+    if s_option == "calculate":
+        pyperclip.copy(f'cl.calc_dssp("xtcs/lC_inO_prod_298_00.all.xtc", "../lC_inO__runFEP/t298/Lambda_00/3_NPT/lC_inO_npt.gro", "lC_inO_dssp_298_00",b_overwrite=True)')
+    elif s_option == "plot":
+        pyperclip.copy(f'cl.plot_dssp("dssp/lC_inO_dssp_298_00.dat","peptide in octane")')
+        
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
+
+
+
+
 def clipboard_train_test_plit():
     """This function sends a text to the clipboard."""
     
