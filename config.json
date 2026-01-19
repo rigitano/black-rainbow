@@ -458,13 +458,21 @@
       "ok_button": "send_tcl_to_VMD_hbond_between_proteins_and_solvent",
       "plaintext1": "(water is not shown)"
     },
-    "connections as in .top ": {
+
+    "[directive reader] Connections from ITP or TOP": {
       "inputbox1": ".top file where the connections are (without quotes). ex: /data1/alaHW.top",
       "inputbox2": ".gro file where the edges coordinates are (without quotes). ex: /data1/alaHW.gro",
       "inputbox3": "molecule to be shown (without quotes). ex: Protein_chain_A",
       "ok_button": "call_see_interactions"
     },
-    "forces as in .trr <NOT IMPLEMENTED.": {
+    
+    "[directive reader] Partial charges from ITP or TOP": {
+      "inputbox1": ".top file where the partial charges are (without quotes). ex: /data2/henrique/qm/CHYO_lipid.itp",
+      "inputbox2": ".gro file where the coordinates are (without quotes). ex: /data2/henrique/qm/CHYO.gro",
+      "ok_button": "call_see_partial_charges",
+      "plaintext1": "ATENTION: unlike other visualisations. this will create a pdb and load it as a new molecule"
+    },
+    "Forces from TRR <NOT IMPLEMENTED>": {
       "ok_button": "xxxxx"
     },
 

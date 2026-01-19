@@ -1547,6 +1547,7 @@ def send_tcl_to_VMD_hbond_between_proteins_and_solvent():
 
 
 
+
 def call_see_interactions(s_top, s_gro, s_mol_name):
     """This function calls a function in cleanpipe directly"""
 
@@ -1558,7 +1559,18 @@ def call_see_interactions(s_top, s_gro, s_mol_name):
     return f"cl.see_interactions({s_top}, {s_gro}, {s_mol_name}) was called directly"
 
 
-#trr forces
+def call_see_partial_charges(s_itp, s_gro):
+    """This function calls a function in cleanpipe directly"""
+
+    import cleanpipe as cl
+    
+    # call function
+    cl.see_partial_charges_from_itp(s_gro, s_itp)
+
+    return f"cl.see_partial_charges_from_itp({s_gro}, {s_itp}) was called directly"
+
+
+#def forces_in_trr():
 
 
 
