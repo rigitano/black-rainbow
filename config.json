@@ -1199,8 +1199,38 @@
 },
 
 
+"QM":{
 
+  "energy": {
+    "radiobutton1": "HF",
+    "radiobutton2": "DFT",
+    "radiobutton3": "CCSD(T)",
+    "inputbox1": "basis set without quotes. ex: 6-31G(d)",
+      "ok_button": "xxxx"
+  },
 
+  "energy scan": {
+    "radiobutton1": "bond",
+    "radiobutton2": "angle",
+    "radiobutton3": "dihedral",
+      "ok_button": "xxxx"
+  },
+
+  "check outputed cubes": {
+    "radiobutton1": "check 1 (slices by order)",
+    "radiobutton2": "check 2 (surface)",
+    "radiobutton3": "check 3 (histogram)",
+      "ok_button": "xxxx"
+  },
+
+  "cool visualisation": {
+    "radiobutton1": "cube -> psi  waving",
+    "radiobutton2": "expression -> isosurface",
+    "radiobutton3": "psi4 molecule -> numbered atoms",
+      "ok_button": "xxxx"
+  }
+
+},
 
 "ML":{
 
