@@ -224,11 +224,16 @@ def clipboard_create_conda_environment(s_env_name,s_python_version):
     return sent + " sent to clipboard"
 
 
-def clipboard_hpc_send():
+def clipboard_hpc_send(s_choice):
     """This function sends a string to the clipboard."""
     
     # Copy text to the clipboard
-    pyperclip.copy(f"rsync -avz --chmod=Dg+s --chown=:gen13458 folder_without_slash rome:/ccc/work/cont003/gen13458/decarvah/")
+    if s_choice == "rome":
+        pyperclip.copy(f"rsync -avz --chmod=Dg+s --chown=:gen13458 folder_without_slash rome:/ccc/work/cont003/gen13458/decarvah/")
+    elif s_choice == "adastra":
+        pyperclip.copy(f"rsync -avz folder_without_slash adastra:/scratch/CT7/c1613458/hrigitano/")
+
+
 
     # Retrieve text from the clipboard
     sent = pyperclip.paste()
@@ -236,45 +241,60 @@ def clipboard_hpc_send():
     return sent + " sent to clipboard"
 
 
-def clipboard_hpc_bring():
+def clipboard_hpc_bring(s_choice):
     """This function sends a string to the clipboard."""
     
     # Copy text to the clipboard
-    pyperclip.copy(f"rsync -avz rome:/ccc/work/cont003/gen13458/decarvah/folder_without_slash .")
+    if s_choice == "rome":
+        pyperclip.copy(f"rsync -avz rome:/ccc/work/cont003/gen13458/decarvah/folder_without_slash .")
+    elif s_choice == "adastra":
+        pyperclip.copy(f"rsync -avz adastra:/scratch/CT7/c1613458/hrigitano/folder_whithout_slash .")
+
+
+
 
     # Retrieve text from the clipboard
     sent = pyperclip.paste()
 
     return sent + " sent to clipboard"
 
-def clipboard_hpc_see():
+def clipboard_hpc_see(s_choice):
     """This function sends a string to the clipboard."""
     
     # Copy text to the clipboard
-    pyperclip.copy(f"ccc_mpp -u decarvah")
+    if s_choice == "rome":
+        pyperclip.copy(f"ccc_mpp -u decarvah")
+    elif s_choice == "adastra":
+        pyperclip.copy(f"squeue -u hrigitano")
 
     # Retrieve text from the clipboard
     sent = pyperclip.paste()
 
     return sent + " sent to clipboard"
 
-def clipboard_hpc_kill():
+def clipboard_hpc_kill(s_choice):
     """This function sends a string to the clipboard."""
     
     # Copy text to the clipboard
-    pyperclip.copy(f"ccc_mdel $(ccc_mstat | awk -v user=$USER '$3 == user {{print $1}}')"
-)
+    if s_choice == "rome":
+        pyperclip.copy(f"ccc_mdel $(ccc_mstat | awk -v user=$USER '$3 == user {{print $1}}')")
+    elif s_choice == "adastra":
+        pyperclip.copy(f"xxxxxx")
 
     # Retrieve text from the clipboard
     sent = pyperclip.paste()
 
     return sent + " sent to clipboard"
 
-def clipboard_hpc_hours():
+def clipboard_hpc_hours(s_choice):
     """This function sends a string to the clipboard."""
     
+
     # Copy text to the clipboard
-    pyperclip.copy(f"ccc_myproject")
+    if s_choice == "rome":
+        pyperclip.copy(f"ccc_myproject")
+    elif s_choice == "adastra":
+        pyperclip.copy(f"xxxxxx")
 
     # Retrieve text from the clipboard
     sent = pyperclip.paste()
@@ -1474,12 +1494,12 @@ def send_tcl_to_VMD_secondary_structure():
     return f'command "{final_command}" sent to VMD'
 
 
-def send_tcl_to_VMD_eletrostatic_surface_using_just_aminoacid_info():
+def send_tcl_to_VMD_eletrostatic_surface():
     """This function sends a tcl script to a VMD with open socket"""
 
     import cleanpipe as cl
     
-    script_name = "eletrostatic_surface_using_just_aminoacid_info.tcl"
+    script_name = "eletrostatic_surface.tcl"
 
     #get where cleanpipe is, because the scripts are in a folder there
     module_path = Path(cl.__file__)

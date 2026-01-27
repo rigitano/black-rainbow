@@ -120,18 +120,28 @@
 "HPC": {
 
     "send": {
+        "radiobutton1": "rome",
+        "radiobutton2": "adastra",
       "ok_button": "clipboard_hpc_send"
     },
     "bring": {
+        "radiobutton1": "rome",
+        "radiobutton2": "adastra",
       "ok_button": "clipboard_hpc_bring"
     },
     "see my jobs": {
+        "radiobutton1": "rome",
+        "radiobutton2": "adastra",
       "ok_button": "clipboard_hpc_see"
     },
     "kill all my jobs": {
+        "radiobutton1": "rome",
+        "radiobutton2": "adastra",
       "ok_button": "clipboard_hpc_kill"
     },
     "hours in project": {
+        "radiobutton1": "rome",
+        "radiobutton2": "adastra",
       "ok_button": "clipboard_hpc_hours"
     }
 },
@@ -447,8 +457,8 @@
       "plaintext1": "(water is not shown)"
     },
     "Eletrostatic potential": {
-      "ok_button": "send_tcl_to_VMD_eletrostatic_surface_using_just_aminoacid_info",
-      "plaintext1": "(water is not shown)"
+      "ok_button": "send_tcl_to_VMD_eletrostatic_surface",
+      "plaintext1": "(for now the cube file is hardcoded)"
     },
     "Hydrophilic x Hydrophobic": {
       "ok_button": "send_tcl_to_VMD_fobic_are_yellow_and_philic_are_purple",
@@ -465,7 +475,7 @@
       "inputbox3": "molecule to be shown (without quotes). ex: Protein_chain_A",
       "ok_button": "call_see_interactions"
     },
-    
+
     "[directive reader] Partial charges from ITP or TOP": {
       "inputbox1": ".top file where the partial charges are (without quotes). ex: /data2/henrique/qm/CHYO_lipid.itp",
       "inputbox2": ".gro file where the coordinates are (without quotes). ex: /data2/henrique/qm/CHYO.gro",
