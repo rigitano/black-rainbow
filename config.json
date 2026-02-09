@@ -813,7 +813,7 @@
 
 },
 
-"inspect system": {
+"inspect directives": {
     "get atom id (using characteristics)": {
         "inputbox1": "top file. ex: 'molecule_in_water.top'",
         "inputbox2": "molecule name. ex: 'Protein_chain_A'",
@@ -870,7 +870,7 @@
 
 },
 
-"edit system": {
+"edit directives": {
 
 
   "insert text before directive": {
@@ -949,17 +949,29 @@
         "plaintext1": "the file will be modified in place"
   },
 
-    "include all itps": {
+    "expand includes to the text they point to": {
         "inputbox1": "top/itp file. ex: 'molecule_in_water.top'",
         "droplist1": ["option 1: text output",
                       "option 2: temp file output"],
         "ok_button": "clipboard_include_all_itps"
     },
-    "decompose molecules into separate itps": {
+    "decompose molecules towards separate itps": {
         "plaintext0": "XXX SHIT, I made two funcions that do the same. I think one is used by other functions, the other is better. here I call the better one",
         "inputbox1": "top file. ex: 'molecule_in_water.top'",
         "ok_button": "clipboard_deconstruct_top_into_molecules",
         "plaintext1": "several itps appear in the temp folder, and the infos are returned like for example: {'Protein_chain_A': 'C:\\Users\\Henrique\\AppData\\Local\\Temp\\tmplrzjpaxr.itp', 'Support_chain_B': 'C:\\Users\\Henrique\\AppData\\Local\\Temp\\tmpiarjc86s.itp', 'SOL': 'C:\\Users\\Henrique\\AppData\\Local\\Temp\\tmp05dvn9xp.itp'}"
+    },
+    "delete an atom using its id <NOT>": {
+        "plaintext0": "XXX",
+        "inputbox1": "xxxxx",
+        "ok_button": "clipboard_xxxxx",
+        "plaintext1": "that atom will disapear fro [ atoms ] and lines with that id will be deleted from [ bonds ] [angles ] [ pairs ] and [ dihedrals ]"
+    },
+    "reorder ids that have gaps because of atom deletion <NOT>": {
+        "plaintext0": "XXX",
+        "inputbox1": "xxxxx",
+        "ok_button": "clipboard_xxxxx",
+        "plaintext1": "xxx"
     }
 
 
@@ -1123,7 +1135,16 @@
 
 },
 
+"analysis": {
 
+    "energy <NOT>": {
+      "radiobutton1": "XXX",
+      "radiobutton2": "XXXXX",
+
+      "ok_button": "clipboard_XXXX",
+      "plaintext1": "a folder portential_energy_<gro name> will be created to store the calculations. the final number will be in RESULTS.txt"
+    }
+  },
 
 "analysis over timeline": {
 
