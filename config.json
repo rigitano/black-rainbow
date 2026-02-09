@@ -1222,6 +1222,16 @@
 
 "QM":{
 
+
+  "construct psi4 molecule <NOT>": {
+    "radiobutton1": "hardcode from thin air",
+    "radiobutton2": "bring from gro/top (important if the intention is to edit parameters that exist. bring from gro/itp keep the atom ordering)",
+    "inputbox1": "XXX",
+      "ok_button": "xxxx"
+  },
+
+
+
   "energy": {
     "radiobutton1": "HF",
     "radiobutton2": "DFT",
@@ -1237,10 +1247,16 @@
       "ok_button": "xxxx"
   },
 
-  "check outputed cubes": {
+  "check out cubes": {
     "radiobutton1": "check 1 (slices by order)",
     "radiobutton2": "check 2 (surface)",
     "radiobutton3": "check 3 (histogram)",
+      "ok_button": "xxxx"
+  },
+
+    "reorder atoms of xyz files to match the itp ordering <NOT>": {
+    "radiobutton2": "if the intention is to edit parameters that exist. its easyer to scan if you keep the atom ordering)",
+    "inputbox1": "XXX",
       "ok_button": "xxxx"
   },
 
