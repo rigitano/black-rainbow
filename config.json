@@ -708,12 +708,14 @@
 
 "construct system": {
 
-    "molecule in a solvent box": {
+    "molecule in solvent box": {
         "inputbox1": "file with molecule that will fill the box. ex: '1aki.pdb'",
         "inputbox2": "out system's name. ex: '1aki_in_water'",
         "inputbox3": "solvent (standard water name, or system ofbox full of solvent). ex: 'tip3p' or 'box_full_of_octn'",
-        "inputbox4": "forcefield. ex: 'charmm36-jul2022'",
+        "inputbox4": "forcefield. ex: 'charmm36-jul2022' or martini3001",
         "inputbox5": "box size. ex: '3 3 3'",
+        "inputbox6": "maxsol. ex: '6943' (or '0' if you dont need this)",
+        "inputbox8": "extra parameters to martinize2/pdb2gmx. ex: '-ss HHHHHHHHHHHH' or ''",
       "ok_button": "clipboard_pdb2molecule_in_solvent"
     },
 
@@ -721,9 +723,11 @@
       "plaintext1": " this is usefull to calculate FEPtransfer",
         "inputbox1": "file with molecule that will be in both solvents. ex: '1aki.pdb'",
         "inputbox2": "out system's name. ex: '1aki-transfer'",
-        "inputbox4": "forcefield. ex: 'charmm36-jul2022'",
-        "inputbox5": "box size. ex: '3 3 3'",
-        "inputbox6": "extra parameters to pdb2gmx or martinize2. ex: '-ss HHHHHHHHHHHH' or ''",
+        "inputbox4": "forcefield. ex: 'charmm36-jul2022' or martini3001",
+        "inputbox5": "box size. ex: '6 6 6'",
+        "inputbox6": "water maxsol. ex: '6943'",
+        "inputbox7": "octane maxsol. ex: '712'",
+        "inputbox8": "extra parameters to martinize2/pdb2gmx. ex: '-ss HHHHHHHHHHHH' or ''",
       "ok_button": "clipboard_pdb2molecule_in_water_and_octane"
     },             
 
