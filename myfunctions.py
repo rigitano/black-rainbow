@@ -861,22 +861,22 @@ def clipboard_parse_bash(s_regex,s_column_setup):
 
 
 
-def clipboard_pdb2molecule_in_solvent(s_pdbfile, s_outSytemName, s_solvent, s_forceField, s_boxSize):
+def clipboard_pdb2molecule_in_solvent(s_pdbfile, s_outSytemName, s_solvent, s_forceField, s_boxSize, s_maxsol, s_extra):
     """This function sends a python function with arguments to the clipboard."""
     
     # Copy text to the clipboard
-    pyperclip.copy(f"cl.pdb2molecule_in_solvent({s_pdbfile}, {s_outSytemName}, {s_solvent}, {s_forceField}, {s_boxSize})")
+    pyperclip.copy(f"cl.pdb2molecule_in_solvent({s_pdbfile}, {s_outSytemName}, {s_solvent}, {s_forceField}, {s_boxSize}, {s_maxsol}, {s_extra})")
 
     # Retrieve text from the clipboard
     sent = pyperclip.paste()
 
     return sent + " sent to clipboard"
 
-def clipboard_pdb2molecule_in_water_and_octane(s_pdbfile, s_outSytemName, s_forceField, s_boxSize,s_aditional_arguments):
+def clipboard_pdb2molecule_in_water_and_octane(s_pdbfile, s_outSytemName, s_forceField, s_boxSize,s_maxsolW, s_maxsolO, s_aditional_arguments):
     """This function sends a python function with arguments to the clipboard."""
     
     # Copy text to the clipboard
-    pyperclip.copy(f"cl.pdb2molecule_in_water_and_octane({s_pdbfile}, {s_outSytemName}, {s_forceField}, {s_boxSize}, s_aditional_arguments={s_aditional_arguments})")
+    pyperclip.copy(f"cl.pdb2molecule_in_water_and_octane({s_pdbfile}, {s_outSytemName}, {s_forceField}, {s_boxSize}, {s_maxsolW}, {s_maxsolO}, s_aditional_arguments={s_aditional_arguments})")
 
     # Retrieve text from the clipboard
     sent = pyperclip.paste()
