@@ -708,6 +708,14 @@
 
 "construct system": {
 
+      "paste minimal top": {
+        "inputbox1": "ff inclusion. ex: ~/repos/cleanpipe/cleanpipe/USEFUL_FORCEFIELDS/charmm36-jul2022.ff/forcefield.itp",
+        "inputbox2": "molecule itp inclusion. ex: mymolecule.itp",
+        "inputbox3": "molecule name,as in itp, to go on quantities. ex: mymolecule",
+
+      "ok_button": "clipboard_minimaltop"
+    },
+
     "molecule in solvent box": {
         "inputbox1": "file with molecule that will fill the box. ex: '1aki.pdb'",
         "inputbox2": "out system's name. ex: '1aki_in_water'",

@@ -861,6 +861,33 @@ def clipboard_parse_bash(s_regex,s_column_setup):
 
 
 
+def clipboard_minimaltop(s_ff, s_mol_itp, s_molname):
+    """
+    Creates a minimal GROMACS topology file and sends it to the clipboard.
+    """
+
+    pyperclip.copy(f"""
+
+#include "{s_ff}"
+#include "{s_mol_itp}"
+
+[ system ]
+nice system
+
+[ molecules ]
+; name          qt
+{s_molname}     1
+""")
+
+    sent = pyperclip.paste()
+    return sent + " sent to clipboard"
+
+
+
+
+
+
+
 def clipboard_pdb2molecule_in_solvent(s_pdbfile, s_outSytemName, s_solvent, s_forceField, s_boxSize, s_maxsol, s_extra):
     """This function sends a python function with arguments to the clipboard."""
     
