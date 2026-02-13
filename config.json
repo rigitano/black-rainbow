@@ -456,10 +456,6 @@
       "ok_button": "send_tcl_to_VMD_secondary_structure",
       "plaintext1": "(water is not shown)"
     },
-    "Eletrostatic potential": {
-      "ok_button": "send_tcl_to_VMD_eletrostatic_surface",
-      "plaintext1": "(for now the cube file is hardcoded)"
-    },
     "Hydrophilic x Hydrophobic": {
       "ok_button": "send_tcl_to_VMD_fobic_are_yellow_and_philic_are_purple",
       "plaintext1": "(water is not shown)"
@@ -467,6 +463,18 @@
     "H bonds in neighborhood": {
       "ok_button": "send_tcl_to_VMD_hbond_between_proteins_and_solvent",
       "plaintext1": "(water is not shown)"
+    },
+    "cube - Eletrostatic potential": {
+      "plaintext1": "cube files from qm calculations are required. a new molecule will be loaded",
+      "inputbox1": "cube file with density. ex: /data2/henrique/qm/dihedral_scan/ang000_homo39_Dt.cube",
+      "inputbox2": "cube file with ESP. ex: /data2/henrique/qm/dihedral_scan/ang000_homo39_ESP.cube",
+      "ok_button": "send_tcl_to_VMD_eletrostatic_surface"
+
+    },
+    "cube - Orbital": {
+      "plaintext1": "cube files from qm calculations are required. a new molecule will be loaded",
+      "inputbox1": "cube file with orbital. ex: /data2/henrique/qm/dihedral_scan/ang000_homo39_Psi_a_39_39-A.cube",
+      "ok_button": "send_tcl_to_VMD_orbital"
     },
 
     "[directive reader] Connections from ITP or TOP": {
