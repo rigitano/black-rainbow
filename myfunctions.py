@@ -1555,7 +1555,7 @@ def send_tcl_to_VMD_eletrostatic_surface(s_users_choice_1,s_users_choice_2):
     cl.send_command_to_vmd(final_command)
 
     #remove temporary script with the substituted keyword
-    #os.remove(tmp_script_path_str)
+    os.remove(tmp_script_path_str)
 
     return f'command "{final_command}" sent to VMD'
 
@@ -1592,7 +1592,7 @@ def send_tcl_to_VMD_orbital(s_users_choice_1):
     cl.send_command_to_vmd(final_command)
 
     #remove temporary script with the substituted keyword
-    #os.remove(tmp_script_path_str)
+    os.remove(tmp_script_path_str)
 
     return f'command "{final_command}" sent to VMD'
 
