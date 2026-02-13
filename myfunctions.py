@@ -2041,3 +2041,42 @@ x_train, x_test, y_train, y_test = train_test_split(x_df,y_df, random_state=7, t
 
     sent = pyperclip.paste()
     return sent + " sent to clipboard"
+
+
+
+
+def clipboard_see_psi4_molecule(s_molname):
+    """This function sends a text to the clipboard."""
+    
+    pyperclip.copy(f"cl.see_labeled_molecule({s_molname})")
+
+    sent = pyperclip.paste()
+    return sent + " sent to clipboard"
+
+
+def clipboard_reorder_psi4_molecule(s_molname,s_dictname):
+    """This function sends a text to the clipboard."""
+    
+    pyperclip.copy(f"reordered = cl.reorder_psi4_molecule({s_molname},{s_dictname})")
+
+    sent = pyperclip.paste()
+    return sent + " sent to clipboard"
+
+
+def clipboard_scan(s_option, s_molname, s_ids):
+    """This function sends a text to the clipboard."""
+
+    if s_option == "bond":
+        pyperclip.copy(f"cl.qm_bond_scan({s_molname},{s_ids})")
+    elif s_option == "angle":
+        pyperclip.copy(f"cl.qm_angle_scan({s_molname},{s_ids})")
+    elif s_option == "dihedral":
+        pyperclip.copy(f"cl.qm_dihedral_scan({s_molname},{s_ids})")
+    
+    
+    
+    
+    
+
+    sent = pyperclip.paste()
+    return sent + " sent to clipboard"

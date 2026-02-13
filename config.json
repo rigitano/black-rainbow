@@ -1235,7 +1235,7 @@
 "QM":{
 
 
-  "construct psi4 molecule <NOT>": {
+  "create psi4 molecule <NOT>": {
     "radiobutton1": "hardcode from thin air",
     "radiobutton2": "bring from gro/top (important if the intention is to edit parameters that exist. bring from gro/itp keep the atom ordering)",
     "inputbox1": "XXX",
@@ -1243,6 +1243,16 @@
   },
 
 
+  "see psi4 molecule (labeled)": {
+    "inputbox1": "variable containing psi4 molecule. ex: mymol",
+      "ok_button": "clipboard_see_psi4_molecule"
+  },
+
+  "reorder ids of psi4 molecule to match gro/itp": {
+    "inputbox1": "variable containing psi4 molecule. ex: mymol",
+    "inputbox2": "variable containing psi4 molecule. ex: d_groid_psi4id. it should contain somethink like {1: 3, 2: 11,  3: 5, ...}",
+      "ok_button": "clipboard_reorder_psi4_molecule"
+  },
 
   "energy": {
     "radiobutton1": "HF",
@@ -1253,10 +1263,14 @@
   },
 
   "energy scan": {
-    "radiobutton1": "bond",
-    "radiobutton2": "angle",
+    "radiobutton1": "bond <NOT>",
+    "radiobutton2": "angle <NOT>",
     "radiobutton3": "dihedral",
-      "ok_button": "xxxx"
+    "inputbox1": "variable containing the molecule. ex: mymol",
+    "inputbox2": "ids of the bond/angle/dihedral. ex: [2, 3 ,4, 7]. OBS: SUBTRACT 1, BECAUSE HERE THEY START AT ZERO!",
+
+    "ok_button": "clipboard_scan",
+    "plaintext1": "a folder will be created with all structures and all energy values"
   },
 
   "check out cubes": {
@@ -1273,9 +1287,8 @@
   },
 
   "cool visualisation": {
-    "radiobutton1": "cube -> psi  waving",
+    "radiobutton1": "cube -> psi waving",
     "radiobutton2": "expression -> isosurface",
-    "radiobutton3": "psi4 molecule -> numbered atoms",
       "ok_button": "xxxx"
   }
 
