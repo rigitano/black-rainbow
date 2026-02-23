@@ -24,8 +24,14 @@
     },
     "all ips available for ssh": {
       "ok_button": "clipboard_ips_to_ssh"
+    },
+    "port 5000 processes": {
+      "ok_button": "clipboard_port5000"
     }
 
+
+
+    
 
 },
 

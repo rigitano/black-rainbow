@@ -123,6 +123,18 @@ def clipboard_ips_to_ssh():
     return sent + " sent to clipboard"
 
 
+    
+def clipboard_port5000():
+    """This function sends something to the clipboard."""
+    
+    # Copy text to the clipboard
+    pyperclip.copy(r"""lsof -i :5000""")
+    
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
 def clipboard_make_executable(s_etapa):
     """
     The value of s_etapa was chosen in a dropdown menu in the frontend
