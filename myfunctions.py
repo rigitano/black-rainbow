@@ -1596,8 +1596,14 @@ def send_tcl_to_VMD_orbital(s_users_choice_1):
 
 
     # Run sed to change the keywords
-    subprocess.run(f"sed 's#SED_WILL_REPLACE_THIS_1#{s_users_choice_1}#g' {script_path_str} > {tmp_script_path_str}", shell=True, check=True)
+    #subprocess.run(f"sed 's#SED_WILL_REPLACE_THIS_1#{s_users_choice_1}#g' {script_path_str} > {tmp_script_path_str}", shell=True, check=True)
 
+    # Run sed to change the keywords
+    subprocess.run(
+        ["sed", f"s#SED_WILL_REPLACE_THIS_1#{s_users_choice_1}#g", str(script_path_str)],
+        check=True,
+        stdout=open(tmp_script_path_str, "w"),
+    )
 
     # Send to VMD
     final_command = f'source "{tmp_script_path_str}"'
