@@ -2112,6 +2112,59 @@ x_train, x_test, y_train, y_test = train_test_split(x_df,y_df, random_state=7, t
     return sent + " sent to clipboard"
 
 
+def clipboard_create_psi4_molecule(s_user_choice):
+    """This function sends a text to the clipboard."""
+    
+    if s_user_choice == "hardcode from scratch":
+        pyperclip.copy(f"""
+mymol = psi4.geometry(\"\"\"
+   O        1.16530       -0.83090       -0.09560
+   O        2.30590        0.82840        1.03690
+   C       -0.11050       -0.34740        0.31060
+   C       -0.41500        0.96500       -0.41070
+   C       -1.17480       -1.40610        0.02570
+   C       -1.81480        1.47410       -0.08260
+   C       -2.57460       -0.89720        0.35390
+   C       -2.87820        0.41540       -0.36490
+   C        2.21840        0.01020        0.13140
+   C        3.27830       -0.21150       -0.90470
+   H       -0.08640       -0.17470        1.39510
+   H       -0.31790        0.81940       -1.49470
+   H        0.30560        1.74810       -0.15280
+   H       -0.95860       -2.31360        0.60210
+   H       -1.12360       -1.70550       -1.02920
+   H       -2.02750        2.37460       -0.66970
+   H       -1.85950        1.76330        0.97460
+   H       -2.66420       -0.74880        1.43710
+   H       -3.31720       -1.65210        0.07240
+   H       -3.86060        0.78760       -0.05330
+   H       -2.93300        0.23400       -1.44540
+   H        2.87470        0.00080       -1.89800
+   H        3.64220       -1.24040       -0.84830
+   H        4.11630        0.46580       -0.71700
+\"\"\")   
+        """)
+
+    elif s_user_choice == "convert from gro":
+        pyperclip.copy(f"""
+from pathlib import Path
+
+!obabel octn.gro -O octn.xyz -h          # <-- change filename
+xyz_text = Path("octn.xyz").read_text()  # <-- change filename
+    
+qmol = psi4.driver.qcdb.Molecule.from_string(xyz_text, dtype="xyz")  # parse XYZ
+qmol.set_molecular_charge(0)     # <-- change this
+qmol.set_multiplicity(1)         # <-- change this
+    
+mymol = psi4.geometry(qmol.create_psi4_string_from_molecule())
+        """)
+
+
+    
+
+    sent = pyperclip.paste()
+    return sent + " sent to clipboard"
+
 
 
 def clipboard_see_psi4_molecule(s_molname):
@@ -2132,6 +2185,17 @@ def clipboard_reorder_psi4_molecule(s_molname,s_dictname):
     return sent + " sent to clipboard"
 
 
+def clipboard_qm_energy(s_user_choice,s_basis,s_out_folder):
+    """This function sends a text to the clipboard."""
+    
+    pyperclip.copy(f'energy, wfn = cl.qm_energy(water, "{s_user_choice}", "{s_basis}", "{s_out_folder}", b_optimize=True)')
+
+    sent = pyperclip.paste()
+    return sent + " sent to clipboard"
+
+
+
+
 def clipboard_scan(s_option, s_molname, s_ids):
     """This function sends a text to the clipboard."""
 
@@ -2143,9 +2207,31 @@ def clipboard_scan(s_option, s_molname, s_ids):
         pyperclip.copy(f"cl.qm_dihedral_scan({s_molname},{s_ids})")
     
     
+    sent = pyperclip.paste()
+    return sent + " sent to clipboard"
+
+
+def clipboard_qm_checks(s_option):
+    """This function sends a text to the clipboard."""
+
+    if s_option == "check 1 (psi slices by order)":
+        pyperclip.copy(f'cl.cubes_check1("results/Psi_a_38_38-A.cube")')
+    elif s_option == "check 2 (density isosurface with ESP)":
+        pyperclip.copy(f'cl.cubes_check2("results/Dt.cube", "results/ESP.cube")')
+    elif s_option == "check 3 (ESP histogram)":
+        pyperclip.copy(f'cl.cubes_check3("results/ESP.cube")')
     
     
-    
+    sent = pyperclip.paste()
+    return sent + " sent to clipboard"
+
+
+def clipboard_trim_ESP():
+    """This function sends a text to the clipboard."""
+
+
+    pyperclip.copy(f'cl.trim_cube("results/ESP.cube", "results/ESP_trimmed.cube", vmin=-0.12, vmax=0.05)')
 
     sent = pyperclip.paste()
     return sent + " sent to clipboard"
+

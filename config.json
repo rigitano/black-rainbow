@@ -1249,11 +1249,10 @@
 "QM":{
 
 
-  "create psi4 molecule <NOT>": {
-    "radiobutton1": "hardcode from thin air",
-    "radiobutton2": "bring from gro/top (important if the intention is to edit parameters that exist. bring from gro/itp keep the atom ordering)",
-    "inputbox1": "XXX",
-      "ok_button": "xxxx"
+  "create psi4 molecule": {
+    "radiobutton1": "hardcode from scratch",
+    "radiobutton2": "convert from gro",
+      "ok_button": "clipboard_create_psi4_molecule"
   },
 
 
@@ -1262,7 +1261,7 @@
       "ok_button": "clipboard_see_psi4_molecule"
   },
 
-  "reorder ids of psi4 molecule to match gro/itp": {
+  "reorder ids of psi4 molecule to match gro": {
     "inputbox1": "variable containing psi4 molecule. ex: mymol",
     "inputbox2": "variable containing psi4 molecule. ex: d_groid_psi4id. it should contain somethink like {1: 3, 2: 11,  3: 5, ...}",
       "ok_button": "clipboard_reorder_psi4_molecule"
@@ -1273,7 +1272,8 @@
     "radiobutton2": "DFT",
     "radiobutton3": "CCSD(T)",
     "inputbox1": "basis set without quotes. ex: 6-31G(d)",
-      "ok_button": "xxxx"
+    "inputbox2": "out folder to be created. ex: qm_octn",
+      "ok_button": "clipboard_qm_energy"
   },
 
   "energy scan": {
@@ -1287,20 +1287,21 @@
     "plaintext1": "a folder will be created with all structures and all energy values"
   },
 
-  "check out cubes": {
-    "radiobutton1": "check 1 (slices by order)",
-    "radiobutton2": "check 2 (surface)",
-    "radiobutton3": "check 3 (histogram)",
-      "ok_button": "xxxx"
+  "check cube files": {
+    "radiobutton1": "check 1 (psi slices by order)",
+    "radiobutton2": "check 2 (density isosurface with ESP)",
+    "radiobutton3": "check 3 (ESP histogram)",
+      "ok_button": "clipboard_qm_checks"
   },
 
-    "reorder atoms of xyz files to match the itp ordering <NOT>": {
-    "radiobutton2": "if the intention is to edit parameters that exist. its easyer to scan if you keep the atom ordering)",
-    "inputbox1": "XXX",
-      "ok_button": "xxxx"
+  "trim ESP cube file": {
+      "ok_button": "clipboard_trim_ESP"
   },
 
-  "cool visualisation": {
+
+
+
+  "cool visuals": {
     "radiobutton1": "cube -> psi waving",
     "radiobutton2": "expression -> isosurface",
       "ok_button": "xxxx"
