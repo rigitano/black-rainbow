@@ -1611,7 +1611,7 @@ def send_tcl_to_VMD_orbital():
     cl.send_command_to_vmd(final_command)
 
     #remove temporary script with the substituted keyword
-    os.remove(script_path_str)
+    #os.remove(script_path_str)
 
     return f'command "{final_command}" sent to VMD'
 

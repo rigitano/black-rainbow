@@ -440,12 +440,48 @@
 },
 
 
-
-"vmd visualisation": {
+"vmd tools": {
 
     "LAUNCH VMD WITH SOCKET": {
       "ok_button": "call_open_vmd_with_socket"
     },
+
+    "inspect file, generating textual infos": {
+      "ok_button": "send_tcl_to_VMD_inspect_file"
+    },
+
+    "highlight what I want": {
+      "inputbox1": "resname. ex: PRO CYS POPE",
+      "inputbox2": "name. ex: CA",
+      "inputbox3": "element. ex: S",
+      "inputbox4": "index. ex: 1 2 3",
+      "ok_button": "send_tcl_to_VMD_selection_highlight",
+      "plaintext1": "the things that you chose will be red. everything else will be grey. dont use quotes. If you put several things in a inputbox, it shoud be space separated. "
+    },
+
+    "align frames": {
+      "plaintext1": "first you have to click in the atoms that will be the reference of the alignment",
+      "ok_button": "send_tcl_to_VMD_selection_highlight"
+    },
+
+
+
+    "load multiple molecules as frames": {
+      "ok_button": "call_open_vmd_with_socket"
+    },
+
+    "create gif": {
+      "ok_button": "call_open_vmd_with_socket"
+    }
+
+
+
+
+},
+
+"vmd representations": {
+
+
     "Cartoon with licorice": {
       "ok_button": "send_tcl_to_VMD_default_cartoon_and_licorice",
       "plaintext1": "(water is not shown)"
@@ -497,23 +533,34 @@
     },
     "Forces from TRR <NOT IMPLEMENTED>": {
       "ok_button": "xxxxx"
-    },
+    }
 
 
 
-   "MARTINI cg_bonds-v6 (see conections) ": {
+
+
+
+
+
+},
+
+
+
+"vmd representations MARTINI": {
+
+   "cg_bonds-v6 (see conections) ": {
       "inputbox1": ".top file where the connections are (full path without quotes). ex: /data1/alaHW.top",
       "ok_button": "send_tcl_to_VMD_MARTINI_cg_bonds",
       "plaintext1": "(the connections will magicaly appear. and never disapear!!!)"
     },
 
-   "MARTINI cg_bonds-v6 (delete)": {
+   "cg_bonds-v6 (delete)": {
       "ok_button": "send_tcl_to_VMD_MARTINI_cg_bonds_delete",
       "plaintext1": "(this doesnt work!!!)"
     },
 
 
-  "MARTINI henrique": {
+  "henrique": {
 
       "ok_button": "send_tcl_to_VMD_MARTINI_henrique",
       "plaintext3": "by name:",
@@ -522,71 +569,58 @@
     },
 
  
-   "MARTINI jackson": {
+   "jackson": {
       "ok_button": "send_tcl_to_VMD_MARTINI_jackson",
       "plaintext3": "by name:",
       "plaintext0": "C and D =green3, NC3=black, PO4=green2, GL=iceblue, CHOL=orange", 
       "plaintext1": "(water is not shown)"
     },
 
-   "MARTINI brasnett": {
+   "brasnett": {
       "ok_button": "send_tcl_to_VMD_MARTINI_brasnett",
       "plaintext3": "by name:",
       "plaintext0": "C and D =green3, NC3 and PO4=bluish, GL=yellow, CHOL=orange", 
       "plaintext1": "(water are bubbles)"
     },
 
-   "MARTINI technical": {
+   "technical": {
       "ok_button": "send_tcl_to_VMD_MARTINI_technical",
       "plaintext3": "by name:",
       "plaintext1": "C and D =yellow, NC3=blue, PO4=red, GL=iceblue, CHOL=violet", 
       "plaintext2": "(water are bubbles)"
     },
 
-   "MARTINI 12 common lipids": {
+   "12 common lipids": {
       "ok_button": "send_tcl_to_VMD_MARTINI_bylipidtype",
       "plaintext3": "by resname:",
       "plaintext1": "CHOL=purple, POPC=cyan, DPPC=orange, POPE=lightblue, etc...",
       "plaintext2": "(water is not shown)"
     },
 
-  "MARTINI red or blue": {
+  "red or blue": {
       "inputbox1": "resname to be red. ex: CHOL",
       "ok_button": "send_tcl_to_VMD_MARTINI_bylipid_blue_red",
       "plaintext3": "by resname: selected is red",
       "plaintext2": "(water is not shown)"
     },
 
-   "MARTINI big head x small head": {
+   "big head x small head": {
       "ok_button": "send_tcl_to_VMD_MARTINI_bylipid_bighead_smallhead",
       "plaintext3": "by resname suffix:",
       "plaintext1": "big=purple, small=pink",
       "plaintext2": "(water is not shown)"
     },
 
-  "MARTINI saturated x unsaturated": {
+  "saturated x unsaturated": {
       "ok_button": "send_tcl_to_VMD_MARTINI_bylipid_solid_liquid",
       "plaintext3": "by resname prefix:",
       "plaintext1": "saturated=brown, unsaturated=yellow",
       "plaintext2": "(water is not shown)"
-    },
-
-
-
-
-
-
-    "highlight what I want": {
-      "inputbox1": "resname. ex: PRO CYS POPE",
-      "inputbox2": "name. ex: CA",
-      "inputbox3": "element. ex: S",
-      "inputbox4": "index. ex: 1 2 3",
-      "ok_button": "send_tcl_to_VMD_selection_highlight",
-      "plaintext1": "the things that you chose will be red. everything else will be grey. dont use quotes. If you put several things in a inputbox, it shoud be space separated. "
-    },
-    "inspect file, generating textual infos": {
-      "ok_button": "send_tcl_to_VMD_inspect_file"
     }
+
+
+
+
 
 },
 
@@ -1163,12 +1197,27 @@
 "analysis": {
 
     "energy <NOT>": {
+    "droplist1": ["minimize",
+                  "not minimize"],
+
       "radiobutton1": "XXX",
       "radiobutton2": "XXXXX",
 
       "ok_button": "clipboard_XXXX",
       "plaintext1": "a folder portential_energy_<gro name> will be created to store the calculations. the final number will be in RESULTS.txt"
+    },
+
+    "energy scan <NOT>": {
+        "ok_button": "clipboard_XXXX"
+      },
+
+
+    "collect energy scan results to dictionary <NOT>": {
+      "ok_button": "clipboard_xxxxx"
     }
+
+
+
   },
 
 "analysis over timeline": {
@@ -1224,7 +1273,7 @@
 },
 
 "analysis of delta E": {
-    "check convergence <NOT IMPLEMENTED>": {
+    "check convergence <NOT>": {
         "ok_button": "xxxxx"
     },
     "whats the delta E off": {
@@ -1237,16 +1286,14 @@
       "ok_button": "clipboard_Delta_E_Transfer_OtoW",
       "plaintext1": "the code will look for two barint files. The first in a folder with 'O' in the name, and another with W in the name. It will see the last line in both. convert kt to kJ/mol, and subtract"
     },
-    "draw termodinamic cycle <NOT IMPLEMENTED>": {
+    "draw termodinamic cycle <NOT>": {
       "inputbox1": "molecule to vanish",
       "ok_button": "xxxxx"
     }
 
 },
 
-
-"QM":{
-
+"QM construct molecules as psi4 object":{
 
   "create psi4 molecule": {
     "radiobutton1": "hardcode from scratch",
@@ -1265,6 +1312,26 @@
     "inputbox2": "variable containing psi4 molecule. ex: d_groid_psi4id. it should contain somethink like {1: 3, 2: 11,  3: 5, ...}",
       "ok_button": "clipboard_reorder_psi4_molecule"
   },
+
+  "psi4 -> xyz file": {
+      "ok_button": "clipboard_xxxxx"
+  },
+
+  "xyz file -> psi4": {
+      "ok_button": "clipboard_xxxxx"
+  }
+
+
+
+
+
+
+},
+
+
+"QM analysis":{
+
+
 
   "energy": {
     "radiobutton1": "HF",
@@ -1285,6 +1352,14 @@
     "ok_button": "clipboard_scan",
     "plaintext1": "a folder will be created with all structures and all energy values"
   },
+
+  "collect energy scan results to dictionary": {
+      "ok_button": "clipboard_xxxxx"
+  },
+
+
+
+
 
   "check cube files": {
     "radiobutton1": "check 1 (psi slices by order)",
@@ -1307,6 +1382,20 @@
   }
 
 },
+
+"curve fitting":{
+
+  "Fourrier": {
+      "ok_button": "xxxx"
+  },
+  "dihedral type 9": {
+      "ok_button": "xxxx"
+  }
+
+
+
+},
+
 
 "ML":{
 
