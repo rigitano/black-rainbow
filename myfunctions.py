@@ -1572,7 +1572,7 @@ def send_tcl_to_VMD_eletrostatic_surface(s_users_choice_1,s_users_choice_2):
     return f'command "{final_command}" sent to VMD'
 
 
-def send_tcl_to_VMD_orbital(s_users_choice_1):
+def send_tcl_to_VMD_orbital():
     """This function sends a tcl script to a VMD with open socket"""
 
     import cleanpipe as cl
@@ -1592,25 +1592,26 @@ def send_tcl_to_VMD_orbital(s_users_choice_1):
 
     # define the fill path and name of a temporary script, that will be created in the same directory
     dir_name = os.path.dirname(script_path_str)
-    tmp_script_path_str = os.path.join(dir_name, f"orbital-temp_script_with_substituition_.tcl")
+    #tmp_script_path_str = os.path.join(dir_name, f"orbital-temp_script_with_substituition_.tcl")
+    script_path_str = os.path.join(dir_name, f"orbital.tcl")
 
 
     # Run sed to change the keywords
     #subprocess.run(f"sed 's#SED_WILL_REPLACE_THIS_1#{s_users_choice_1}#g' {script_path_str} > {tmp_script_path_str}", shell=True, check=True)
 
     # Run sed to change the keywords
-    subprocess.run(
-        ["sed", f"s#SED_WILL_REPLACE_THIS_1#{s_users_choice_1}#g", str(script_path_str)],
-        check=True,
-        stdout=open(tmp_script_path_str, "w"),
-    )
+    #subprocess.run(
+    #    ["sed", f"s#SED_WILL_REPLACE_THIS_1#{s_users_choice_1}#g", str(script_path_str)],
+    #    check=True,
+    #    stdout=open(tmp_script_path_str, "w"),
+    #)
 
     # Send to VMD
-    final_command = f'source "{tmp_script_path_str}"'
+    final_command = f'source "{script_path_str}"'
     cl.send_command_to_vmd(final_command)
 
     #remove temporary script with the substituted keyword
-    os.remove(tmp_script_path_str)
+    os.remove(script_path_str)
 
     return f'command "{final_command}" sent to VMD'
 

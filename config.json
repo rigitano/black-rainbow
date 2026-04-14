@@ -478,8 +478,7 @@
 
     },
     "cube - Orbital": {
-      "plaintext1": "cube files from qm calculations are required. a new molecule will be loaded",
-      "inputbox1": "cube file with orbital. ex: /data2/henrique/qm/dihedral_scan/ang000_homo39_Psi_a_39_39-A.cube",
+      "plaintext1": "First you must load a molecule in VMD using a CUBE file that contain psi. ex: ang000_homo39_Psi_a_39_39-A.cube",
       "ok_button": "send_tcl_to_VMD_orbital"
     },
 
