@@ -2058,6 +2058,33 @@ def clipboard_Delta_E_Transfer_OtoW(s_folder):
     return sent + " sent to clipboard"
 
 
+def clipboard_gro_scan(s_option, s_gro, s_top, s_i, s_j, s_k, s_l, s_output_folder):
+    """This function sends a text to the clipboard."""
+
+    pyperclip.copy(f"./optimized_dihedral_scan_gromacs.sh -g {s_gro} -p {s_top} -i {s_i} -j {s_j} -k {s_k} -l {s_l} -o {s_output_folder}")
+
+    
+    sent = pyperclip.paste()
+    return sent + " sent to clipboard"
+
+
+
+def clipboard_collect_optimized_gromacs_scan(s_out_folder_name):
+    """This function sends a text to the clipboard."""
+
+    pyperclip.copy(f"d_gro_scan = cl.collect_optimized_gromacs_scan('{s_out_folder_name}')")
+
+    
+    sent = pyperclip.paste()
+    return sent + " sent to clipboard"
+
+
+
+
+
+
+
+
 def clipboard_rama(s_option):
     """This function sends a text to the clipboard."""
     
@@ -2197,19 +2224,30 @@ def clipboard_qm_energy(s_user_choice,s_basis,s_out_folder):
 
 
 
-def clipboard_scan(s_option, s_molname, s_ids):
+def clipboard_scan(s_option, s_molname, s_ids, s_out_folder_name):
     """This function sends a text to the clipboard."""
 
     if s_option == "bond":
-        pyperclip.copy(f"cl.qm_bond_scan({s_molname},{s_ids})")
+        pyperclip.copy(f"cl.qm_bond_scan({s_molname},{s_ids}, s_out_folder_name='{s_out_folder_name}')")
     elif s_option == "angle":
-        pyperclip.copy(f"cl.qm_angle_scan({s_molname},{s_ids})")
+        pyperclip.copy(f"cl.qm_angle_scan({s_molname},{s_ids}, s_out_folder_name='{s_out_folder_name}')")
     elif s_option == "dihedral":
-        pyperclip.copy(f"cl.qm_dihedral_scan({s_molname},{s_ids})")
+        pyperclip.copy(f"cl.qm_dihedral_scan({s_molname},{s_ids}, s_out_folder_name='{s_out_folder_name}')")
     
     
     sent = pyperclip.paste()
     return sent + " sent to clipboard"
+
+
+def clipboard_collect_optimized_qm_scan(s_out_folder_name):
+    """This function sends a text to the clipboard."""
+
+    pyperclip.copy(f"d_qm_scan = cl.collect_optimized_qm_scan('{s_out_folder_name}')")
+
+    
+    sent = pyperclip.paste()
+    return sent + " sent to clipboard"
+
 
 
 def clipboard_qm_checks(s_option):

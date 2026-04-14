@@ -1207,16 +1207,26 @@
       "plaintext1": "a folder portential_energy_<gro name> will be created to store the calculations. the final number will be in RESULTS.txt"
     },
 
-    "energy scan <NOT>": {
-        "ok_button": "clipboard_XXXX"
-      },
+    "energy scan": {
+      "radiobutton1": "bond <NOT>",
+      "radiobutton2": "angle <NOT>",
+      "radiobutton3": "dihedral",
+      "inputbox0": "gro. ex: proxy_aligned.gro",
+      "inputbox1": "top. ex: CHYO_proxy_complete.top",
+      "inputbox2": "id i. ex: 15. OBS: id like in gromacs, starting at 1",
+      "inputbox3": "id j. ex: 16. OBS: id like in gromacs, starting at 1",
+      "inputbox4": "id k. ex:  1. OBS: id like in gromacs, starting at 1",
+      "inputbox5": "id l. ex: 11. OBS: id like in gromacs, starting at 1",
+      "inputbox6": "out folder name without quotes. ex: scan_gro",
+      "ok_button": "clipboard_gro_scan",
+      "plaintext1": "a folder will be created with all structures and all energy values"
+    },
 
 
-    "collect energy scan results to dictionary <NOT>": {
-      "ok_button": "clipboard_xxxxx"
+    "collect energy scan results to dictionary": {
+      "inputbox3": "folder with energy scan without quotes. ex: scan_gro",
+        "ok_button": "clipboard_collect_optimized_gromacs_scan"
     }
-
-
 
   },
 
@@ -1313,11 +1323,11 @@
       "ok_button": "clipboard_reorder_psi4_molecule"
   },
 
-  "psi4 -> xyz file": {
+  "psi4 -> xyz": {
       "ok_button": "clipboard_xxxxx"
   },
 
-  "xyz file -> psi4": {
+  "xyz -> psi4": {
       "ok_button": "clipboard_xxxxx"
   }
 
@@ -1346,15 +1356,16 @@
     "radiobutton1": "bond <NOT>",
     "radiobutton2": "angle <NOT>",
     "radiobutton3": "dihedral",
-    "inputbox1": "variable containing the molecule. ex: mymol",
+    "inputbox1": "python variable containing the molecule as psi4 object. ex: mymol",
     "inputbox2": "ids of the bond/angle/dihedral. ex: [2, 3 ,4, 7]. OBS: SUBTRACT 1, BECAUSE HERE THEY START AT ZERO!",
-
+    "inputbox3": "out folder name without quotes. ex: scan_qm",
     "ok_button": "clipboard_scan",
     "plaintext1": "a folder will be created with all structures and all energy values"
   },
 
   "collect energy scan results to dictionary": {
-      "ok_button": "clipboard_xxxxx"
+    "inputbox3": "folder with energy scan without quotes. ex: scan_qm",
+      "ok_button": "clipboard_collect_optimized_qm_scan"
   },
 
 
