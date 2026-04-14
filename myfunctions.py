@@ -2061,7 +2061,7 @@ def clipboard_Delta_E_Transfer_OtoW(s_folder):
 def clipboard_gro_scan(s_option, s_gro, s_top, s_i, s_j, s_k, s_l, s_output_folder):
     """This function sends a text to the clipboard."""
 
-    pyperclip.copy(f"./optimized_dihedral_scan_gromacs.sh -g {s_gro} -p {s_top} -i {s_i} -j {s_j} -k {s_k} -l {s_l} -o {s_output_folder}")
+    pyperclip.copy(f"./dihedral_scan_gromacs.sh -g {s_gro} -p {s_top} -i {s_i} -j {s_j} -k {s_k} -l {s_l} -o {s_output_folder}")
 
     
     sent = pyperclip.paste()
