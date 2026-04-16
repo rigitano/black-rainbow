@@ -1716,7 +1716,6 @@ def send_tcl_to_VMD_MARTINI_jackson():
     return f'command "{final_command}" sent to VMD'
 
 
-
 def send_tcl_to_VMD_MARTINI_henrique():
     """This function sends a tcl script to a VMD with open socket"""
 
@@ -1739,6 +1738,7 @@ def send_tcl_to_VMD_MARTINI_henrique():
     cl.send_command_to_vmd(final_command)
 
     return f'command "{final_command}" sent to VMD'
+
 
 def send_tcl_to_VMD_MARTINI_brasnett():
     """This function sends a tcl script to a VMD with open socket"""
@@ -1826,6 +1826,7 @@ def send_tcl_to_VMD_MARTINI_bylipid_blue_red(s_users_choice):
 
     return f'command "{final_command}" sent to VMD'
 
+
 def send_tcl_to_VMD_MARTINI_bylipid_bighead_smallhead():
     """This function sends a tcl script to a VMD with open socket"""
 
@@ -1898,7 +1899,6 @@ def send_tcl_to_VMD_MARTINI_technical():
     return f'command "{final_command}" sent to VMD'
 
 
-
 def send_tcl_to_VMD_MARTINI_cg_bonds(s_top_full_path):
     """This function sends a tcl script to a VMD with open socket"""
 
@@ -1946,7 +1946,6 @@ def send_tcl_to_VMD_MARTINI_cg_bonds(s_top_full_path):
     return f'a tcl script and some commands were sent to VMD'
 
 
-
 def send_tcl_to_VMD_MARTINI_cg_bonds_delete():
     """This function sends a tcl script to a VMD with open socket"""
 
@@ -1959,7 +1958,6 @@ def send_tcl_to_VMD_MARTINI_cg_bonds_delete():
 
 
     return f'a couple of commands were sent to VMD'
-
 
 
 def send_tcl_to_VMD_selection_highlight(s_users_choice_1,s_users_choice_2,s_users_choice_3,s_users_choice_4):
@@ -2009,7 +2007,6 @@ def send_tcl_to_VMD_selection_highlight(s_users_choice_1,s_users_choice_2,s_user
     return f'command "{final_command}" sent to VMD'
 
 
-
 def send_tcl_to_VMD_inspect_file():
     """This function sends a tcl script to a VMD with open socket"""
 
@@ -2046,6 +2043,7 @@ def clipboard_Delta_E_off(s_folder):
 
     return sent + " sent to clipboard"
 
+
 def clipboard_Delta_E_Transfer_OtoW(s_folder):
     """This function sends a text to the clipboard."""
     
@@ -2068,7 +2066,6 @@ def clipboard_gro_scan(s_option, s_gro, s_top, s_i, s_j, s_k, s_l, s_output_fold
     return sent + " sent to clipboard"
 
 
-
 def clipboard_collect_optimized_gromacs_scan(s_out_folder_name):
     """This function sends a text to the clipboard."""
 
@@ -2077,12 +2074,6 @@ def clipboard_collect_optimized_gromacs_scan(s_out_folder_name):
     
     sent = pyperclip.paste()
     return sent + " sent to clipboard"
-
-
-
-
-
-
 
 
 def clipboard_rama(s_option):
@@ -2096,6 +2087,7 @@ def clipboard_rama(s_option):
     sent = pyperclip.paste()
 
     return sent + " sent to clipboard"
+
 
 def clipboard_dssp(s_option):
     """This function sends a text to the clipboard."""
@@ -2111,6 +2103,7 @@ def clipboard_dssp(s_option):
 
     return sent + " sent to clipboard"
 
+
 def clipboard_sasa(s_option):
     """This function sends a text to the clipboard."""
     
@@ -2124,7 +2117,6 @@ def clipboard_sasa(s_option):
     sent = pyperclip.paste()
 
     return sent + " sent to clipboard"
-
 
 
 def clipboard_train_test_plit():
@@ -2213,6 +2205,33 @@ def clipboard_reorder_psi4_molecule(s_molname,s_dictname):
     return sent + " sent to clipboard"
 
 
+def clipboard_psi2xyz(s_input,s_output):
+    """This function sends a text to the clipboard."""
+    
+    pyperclip.copy(f"{s_input}.save_xyz_file('{s_output}', True)")
+
+    sent = pyperclip.paste()
+    return sent + " sent to clipboard"
+
+
+def clipboard_xyz2psi(s_input,s_output):
+    """This function sends a text to the clipboard."""
+    
+    pyperclip.copy(f"{s_output} = cl.xyz2psi4_object('{s_input}')")
+
+    sent = pyperclip.paste()
+    return sent + " sent to clipboard"
+
+
+def clipboard_xyz2GroPdbXyz_WithDefinedDihedral(s_input,s_output,s_dihedral_definition, s_list_of_angles):
+    """This function sends a text to the clipboard."""
+    
+    pyperclip.copy(f"cl.xyz2multiple_formats_with_defined_dihedral('{s_input}', i=17, j=15, k=16, l=1, angles={s_list_of_angles}, out_folder='{s_output}')")
+
+    sent = pyperclip.paste()
+    return sent + " sent to clipboard"
+
+
 def clipboard_qm_energy(s_user_choice,s_basis,s_out_folder):
     """This function sends a text to the clipboard."""
     
@@ -2220,8 +2239,6 @@ def clipboard_qm_energy(s_user_choice,s_basis,s_out_folder):
 
     sent = pyperclip.paste()
     return sent + " sent to clipboard"
-
-
 
 
 def clipboard_scan(s_option, s_molname, s_ids, s_out_folder_name):
@@ -2247,7 +2264,6 @@ def clipboard_collect_optimized_qm_scan(s_out_folder_name):
     
     sent = pyperclip.paste()
     return sent + " sent to clipboard"
-
 
 
 def clipboard_qm_checks(s_option):

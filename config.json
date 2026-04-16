@@ -1318,20 +1318,30 @@
   },
 
   "reorder ids of psi4 molecule to match gro": {
-    "inputbox1": "variable containing psi4 molecule. ex: mymol",
-    "inputbox2": "variable containing psi4 molecule. ex: d_groid_psi4id. it should contain somethink like {1: 3, 2: 11,  3: 5, ...}",
+    "inputbox1": "python variable containing psi4 molecule. ex: mymol",
+    "inputbox2": "python dictionary representing reordering. ex: d_groid_psi4id. it should contain somethink like {1: 3, 2: 11,  3: 5, ...}",
       "ok_button": "clipboard_reorder_psi4_molecule"
   },
 
   "psi4 -> xyz": {
-      "ok_button": "clipboard_xxxxx"
+      "inputbox1": "python variable containing psi4 molecule. ex: mymol",
+      "inputbox2": "name of the file to be outputed.ex: mymol.xyz ",
+      "ok_button": "clipboard_psi2xyz"
   },
 
   "xyz -> psi4": {
-      "ok_button": "clipboard_xxxxx"
+      "inputbox2": "name of the file to be outputed.ex: mymol.xyz ",
+      "inputbox1": "python variable containing psi4 molecule. ex: mymol",
+      "ok_button": "clipboard_xyz2psi"
+  },
+
+  "xyz -> gro,pdb,xyz with defined dihedral": {
+      "inputbox2": "name of the input file.ex: mymol.xyz ",
+      "inputbox3": "name of the output filder file.ex: aligned ",
+      "inputbox4": "whats the dihedral to setup. ex: [17,15,16,1]",
+      "inputbox5": "list of the dihedral angles that will be imposed. the function will create one set of files for each angle. ex: [0] ",
+      "ok_button": "clipboard_xyz2GroPdbXyz_WithDefinedDihedral"
   }
-
-
 
 
 
