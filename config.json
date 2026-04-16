@@ -1323,13 +1323,13 @@
       "ok_button": "clipboard_reorder_psi4_molecule"
   },
 
-  "psi4 -> xyz": {
+  "psi4 object -> xyz": {
       "inputbox1": "python variable containing psi4 molecule. ex: mymol",
       "inputbox2": "name of the file to be outputed.ex: mymol.xyz ",
       "ok_button": "clipboard_psi2xyz"
   },
 
-  "xyz -> psi4": {
+  "xyz -> psi4 object": {
       "inputbox2": "name of the file to be outputed.ex: mymol.xyz ",
       "inputbox1": "python variable containing psi4 molecule. ex: mymol",
       "ok_button": "clipboard_xyz2psi"

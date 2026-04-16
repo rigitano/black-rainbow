@@ -2226,7 +2226,7 @@ def clipboard_xyz2psi(s_input,s_output):
 def clipboard_xyz2GroPdbXyz_WithDefinedDihedral(s_input,s_output,s_dihedral_definition, s_list_of_angles):
     """This function sends a text to the clipboard."""
     
-    pyperclip.copy(f"cl.xyz2multiple_formats_with_defined_dihedral('{s_input}', i=17, j=15, k=16, l=1, angles={s_list_of_angles}, out_folder='{s_output}')")
+    pyperclip.copy(f"cl.xyz2multiple_formats_with_defined_dihedral('{s_input}', {s_dihedral_definition}, angles={s_list_of_angles}, out_folder='{s_output}')")
 
     sent = pyperclip.paste()
     return sent + " sent to clipboard"
