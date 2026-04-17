@@ -2200,19 +2200,12 @@ mymol = psi4.geometry(\"\"\"
 \"\"\")   
         """)
 
-    elif s_user_choice == "convert from gro":
-        pyperclip.copy(f"""
-from pathlib import Path
+    elif s_user_choice == "from gro file":
+        pyperclip.copy(f"mol_object = cl.gro2psi4_object('foo/bar.gro', charge=0, multiplicity=1)")
 
-!obabel octn.gro -O octn.xyz -h          # <-- change filename
-xyz_text = Path("octn.xyz").read_text()  # <-- change filename
-    
-qmol = psi4.driver.qcdb.Molecule.from_string(xyz_text, dtype="xyz")  # parse XYZ
-qmol.set_molecular_charge(0)     # <-- change this
-qmol.set_multiplicity(1)         # <-- change this
-    
-mymol = psi4.geometry(qmol.create_psi4_string_from_molecule())
-        """)
+    elif s_user_choice == "from xyz file":
+        pyperclip.copy(f"mol_object = cl.xyz2psi4_object('foo/bar.xyz', charge=0, multiplicity=1)")
+
 
 
     
@@ -2248,14 +2241,6 @@ def clipboard_psi2xyz(s_input,s_output):
     sent = pyperclip.paste()
     return sent + " sent to clipboard"
 
-
-def clipboard_xyz2psi(s_input,s_output):
-    """This function sends a text to the clipboard."""
-    
-    pyperclip.copy(f"{s_output} = cl.xyz2psi4_object('{s_input}')")
-
-    sent = pyperclip.paste()
-    return sent + " sent to clipboard"
 
 
 def clipboard_xyz2GroPdbXyz_WithDefinedDihedral(s_input,s_output,s_dihedral_definition, s_list_of_angles):

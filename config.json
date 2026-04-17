@@ -1310,7 +1310,8 @@
 
   "create psi4 molecule": {
     "radiobutton1": "hardcode from scratch",
-    "radiobutton2": "convert from gro",
+    "radiobutton2": "from gro file",
+    "radiobutton3": "from xyz file",
       "ok_button": "clipboard_create_psi4_molecule"
   },
 
@@ -1332,11 +1333,6 @@
       "ok_button": "clipboard_psi2xyz"
   },
 
-  "xyz -> psi4 object": {
-      "inputbox2": "name of the file to be outputed.ex: mymol.xyz ",
-      "inputbox1": "python variable containing psi4 molecule. ex: mymol",
-      "ok_button": "clipboard_xyz2psi"
-  },
 
   "xyz -> gro,pdb,xyz with defined dihedral": {
       "inputbox2": "name of the input file.ex: mymol.xyz ",
