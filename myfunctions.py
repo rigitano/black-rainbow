@@ -2031,6 +2031,41 @@ def send_tcl_to_VMD_inspect_file():
     return f'command "{final_command}" sent to VMD'
 
 
+def call_align_using_selected_atoms():
+    """This function calls a function in cleanpipe directly"""
+
+    import cleanpipe as cl
+    
+    # call function
+    cl.align_using_selected_atoms()
+
+    return "cl.align_using_selected_atoms() was called directly"
+
+
+def call_load_files_into_vmd_frames(s_full_path_with_spetial_char):
+    """This function calls a function in cleanpipe directly"""
+
+    import cleanpipe as cl
+    
+    # call function
+    cl.load_files_into_vmd_frames(s_full_path_with_spetial_char.strip())
+
+    return "cl.load_files_into_vmd_frames() was called directly"
+
+
+def call_create_gif_from_vmd_frames(s_out_folder,s_duration):
+    """This function calls a function in cleanpipe directly"""
+
+    import cleanpipe as cl
+
+    n_duration = int(s_duration.strip())
+    
+    # call function
+    cl.create_gif_from_vmd_frames(out_folder="\""+s_out_folder+"\"", duration=n_duration)
+
+    return "cl.create_gif_from_vmd_frames() was called directly"
+
+
 def clipboard_Delta_E_off(s_folder):
     """This function sends a text to the clipboard."""
     

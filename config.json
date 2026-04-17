@@ -461,17 +461,20 @@
 
     "align frames": {
       "plaintext1": "first you have to click in the atoms that will be the reference of the alignment",
-      "ok_button": "send_tcl_to_VMD_selection_highlight"
+      "ok_button": "call_align_using_selected_atoms"
     },
 
 
 
     "load multiple molecules as frames": {
-      "ok_button": "call_open_vmd_with_socket"
+      "inputbox1": "full path with spetial characters. ex: /data2/henrique/qm/proxy_initial_dihedral_scan/all_gros/proxy_initial_dih%03d.gro",
+      "ok_button": "call_load_files_into_vmd_frames"
     },
 
     "create gif": {
-      "ok_button": "call_open_vmd_with_socket"
+      "inputbox1": "out folder. ex: /home/hrigitano/Desktop/vmd_gif",
+      "inputbox2": "duration per frame (ns). ex: 40",
+      "ok_button": "call_create_gif_from_vmd_frames"
     }
 
 
