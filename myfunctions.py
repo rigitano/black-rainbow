@@ -2061,7 +2061,7 @@ def call_create_gif_from_vmd_frames(s_out_folder,s_duration):
     n_duration = int(s_duration.strip())
     
     # call function
-    cl.create_gif_from_vmd_frames(out_folder="\""+s_out_folder+"\"", duration=n_duration)
+    cl.create_gif_from_vmd_frames()
 
     return "cl.create_gif_from_vmd_frames() was called directly"
 

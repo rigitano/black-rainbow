@@ -759,7 +759,7 @@
 "construct system": {
 
       "paste minimal top": {
-        "inputbox1": "ff inclusion. ex: ~/repos/cleanpipe/cleanpipe/USEFUL_FORCEFIELDS/charmm36-jul2022.ff/forcefield.itp",
+        "inputbox1": "ff inclusion. ex: /home/hrigitano/repos/cleanpipe/cleanpipe/USEFUL_FORCEFIELDS/charmm36-jul2022.ff/forcefield.itp",
         "inputbox2": "molecule itp inclusion. ex: mymolecule.itp",
         "inputbox3": "molecule name,as in itp, to go on quantities. ex: mymolecule",
 
@@ -1215,7 +1215,7 @@
       "radiobutton2": "angle <NOT>",
       "radiobutton3": "dihedral",
       "inputbox0": "gro. ex: proxy_aligned.gro",
-      "inputbox1": "top. ex: CHYO_proxy_complete.top",
+      "inputbox1": "top OBS: the itp of the molecule MUST be inside the top, you cannot just include it. ex: CHYO_proxy_complete.top",
       "inputbox2": "id i. ex: 15. OBS: id like in gromacs, starting at 1",
       "inputbox3": "id j. ex: 16. OBS: id like in gromacs, starting at 1",
       "inputbox4": "id k. ex:  1. OBS: id like in gromacs, starting at 1",
