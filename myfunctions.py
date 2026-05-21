@@ -985,12 +985,35 @@ def clipboard_mdrun():
     """This function sends a python function with arguments to the clipboard."""
     
     # Copy text to the clipboard
-    pyperclip.copy(f"gmx mdrun -v -deffnm ")
+    pyperclip.copy(f"gmx mdrun -v -deffnm xxxx")
 
     # Retrieve text from the clipboard
     sent = pyperclip.paste()
 
     return sent + " sent to clipboard"
+
+def clipboard_mdrun_continuation():
+    """This function sends a python function with arguments to the clipboard."""
+    
+    # Copy text to the clipboard
+    pyperclip.copy(f"gmx mdrun -v -deffnm prod -s prod.tpr -cpi prod.cpt -nt 16 -append")
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
+def clipboard_mdrun_extension():
+    """This function sends a python function with arguments to the clipboard."""
+    
+    # Copy text to the clipboard
+    pyperclip.copy(f"gmx convert-tpr -s prod.tpr -extend 100000 -o extended.tpr && gmx mdrun -v -s extended.tpr -cpi prod.cpt -append -deffnm prod")
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
 
 def clipboard_center():
     """This function sends a python function with arguments to the clipboard."""

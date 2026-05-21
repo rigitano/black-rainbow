@@ -630,56 +630,67 @@
 "plain gromacs": {
 
 
-  "gmx pdb2gmx": {
+  "pdb2gmx": {
 
     "ok_button": "clipboard_pdb2gmx"
 
   },
 
 
-  "gmx editconf": {
+  "editconf": {
 
     "ok_button": "clipboard_editconf"
 
   },
 
 
-  "gmx solvate": {
+  "solvate": {
 
     "ok_button": "clipboard_solvate"
 
   },
 
 
-  "gmx grompp": {
+  "grompp": {
 
     "ok_button": "clipboard_grompp"
 
   },
 
 
-  "gmx mdrun": {
+  "mdrun": {
 
     "ok_button": "clipboard_mdrun"
 
   },
 
+  "mdrun (continue)": {
 
-  "gmx trjconv -center": {
+    "ok_button": "clipboard_mdrun_continuation"
+
+  },
+
+  "mdrun (extend)": {
+
+    "ok_button": "clipboard_mdrun_extension"
+
+  },
+
+  "trjconv -center": {
 
     "ok_button": "clipboard_center"
 
   },
 
 
-  "gmx trjconv -fit": {
+  "trjconv -fit": {
 
     "ok_button": "clipboard_fit"
 
   },
 
 
-  "gmx energy": {
+  "energy": {
 
     "ok_button": "clipboard_energy"
 
