@@ -291,8 +291,8 @@ gmx mdrun -s prod.tpr -deffnm prod -cpi prod.cpt -append -ntomp 24 -ntmpi 1 > ou
 #MSUB   -n 1                       # Number of tasks in parallel mode (-ntmpi)
 #MSUB   -c 1                       # Number of cores per parallel task
 #MSUB   -W yes                     # Let multiple jobs sharing same name & user run simultaneously
-#MSUB   -o out.continue.scheduler.%I.mdrun.txt            # Output file
-#MSUB   -e err.continue.scheduler.%I.mdrun.txt            # Output file for errors
+#MSUB   -o out.continue.scheduler.%I.txt            # Output file
+#MSUB   -e err.continue.scheduler.%I.txt            # Output file for errors
 #MSUB   -q rome                    # Partition:    rome        
 #MSUB   -A gen13458                # Project code: gen10138 or spe00017
 #MSUB   -m scratch,work,store      # File system:  scratch,work,store
@@ -313,7 +313,7 @@ export I_MPI_PIN_DOMAIN=auto
 
 OMP_NUM_THREADS=32                  # number of OpenMP threads (-ntomp)
 
-ccc_mprun gmx_mpi mdrun -s prod.tpr -deffnm prod -cpi prod.cpt -append -ntomp 24 -ntmpi 1 > outanderr.continue.txt 2>&1
+ccc_mprun gmx_mpi mdrun -s prod.tpr -deffnm prod -cpi prod.cpt -append > outanderr.continue.txt 2>&1
 
 
 
