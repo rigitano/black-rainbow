@@ -262,7 +262,6 @@ def clipboard_scheduler_header(s_choice):
     if s_choice == "slurm":
 
         pyperclip.copy(f"""
-
 #!/bin/bash
 
 #SBATCH --partition=calcul
@@ -286,7 +285,7 @@ gmx mdrun -s prod.tpr -deffnm prod -cpi prod.cpt -append -ntomp 24 -ntmpi 1 > ou
     elif s_choice == "rome":
 
         pyperclip.copy(f"""
-
+#!/bin/bash
 
 #MSUB   -r mdrun       # Job name
 #MSUB   -n 1                      # Number of tasks in parallel mode (-ntmpi)
