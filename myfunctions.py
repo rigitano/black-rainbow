@@ -267,8 +267,8 @@ def clipboard_scheduler_header(s_choice):
 #SBATCH --partition=calcul
 #SBATCH --cpus-per-task=24
 #SBATCH --gres=gpu:1
-#SBATCH --job-name=mdrun
-#SBATCH --output=outanderr.slurm.txt
+#SBATCH --job-name=continue
+#SBATCH --output=outanderr.continue.slurm.txt
 ##SBATCH --exclude=node-15
 ##SBATCH --time=24:00:00
 
@@ -276,7 +276,7 @@ module purge
 module load cuda/11.8
 module load gromacs/2024.5
 
-gmx mdrun -s prod.tpr -deffnm prod -cpi prod.cpt -append -ntomp 24 -ntmpi 1 > outanderr.mdrun.txt 2>&1
+gmx mdrun -s prod.tpr -deffnm prod -cpi prod.cpt -append -ntomp 24 -ntmpi 1 > outanderr.continue.txt 2>&1
 
 
 
@@ -288,11 +288,11 @@ gmx mdrun -s prod.tpr -deffnm prod -cpi prod.cpt -append -ntomp 24 -ntmpi 1 > ou
 #!/bin/bash
 
 #MSUB   -r mdrun       # Job name
-#MSUB   -n 1                      # Number of tasks in parallel mode (-ntmpi)
+#MSUB   -n 1                       # Number of tasks in parallel mode (-ntmpi)
 #MSUB   -c 1                       # Number of cores per parallel task
 #MSUB   -W yes                     # Let multiple jobs sharing same name & user run simultaneously
-#MSUB   -o out.scheduler.%I.mdrun.txt            # Output file
-#MSUB   -e err.scheduler.%I.mdrun.txt            # Output file for errors
+#MSUB   -o out.continue.scheduler.%I.mdrun.txt            # Output file
+#MSUB   -e err.continue.scheduler.%I.mdrun.txt            # Output file for errors
 #MSUB   -q rome                    # Partition:    rome        
 #MSUB   -A gen13458                # Project code: gen10138 or spe00017
 #MSUB   -m scratch,work,store      # File system:  scratch,work,store
@@ -313,7 +313,7 @@ export I_MPI_PIN_DOMAIN=auto
 
 OMP_NUM_THREADS=32                  # number of OpenMP threads (-ntomp)
 
-ccc_mprun gmx_mpi mdrun -v -deffnm prod -dd 3 3 3 -npme 13 -dlb yes > outanderr.mdrun.txt 2>&1
+ccc_mprun gmx_mpi mdrun -s prod.tpr -deffnm prod -cpi prod.cpt -append -ntomp 24 -ntmpi 1 > outanderr.continue.txt 2>&1
 
 
 
