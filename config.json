@@ -130,6 +130,15 @@
         "radiobutton2": "adastra",
       "ok_button": "clipboard_hpc_send"
     },
+
+    "paste minimal scheduler file": {
+        "radiobutton1": "rome",
+        "radiobutton2": "slurm",
+      "ok_button": "clipboard_scheduler_header"
+    },
+
+
+
     "bring": {
         "radiobutton1": "rome",
         "radiobutton2": "adastra",
