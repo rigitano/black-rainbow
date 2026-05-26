@@ -135,6 +135,20 @@ def clipboard_port5000():
 
     return sent + " sent to clipboard"
 
+
+def clipboard_custer_overview():
+    """This function sends something to the clipboard."""
+    
+    # Copy text to the clipboard
+    pyperclip.copy(r'sinfo -N -o "%20N %15P %8c %12m %20G %10T"')
+    
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
+
+
 def clipboard_make_executable(s_etapa):
     """
     The value of s_etapa was chosen in a dropdown menu in the frontend

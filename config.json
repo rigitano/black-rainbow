@@ -27,6 +27,9 @@
     },
     "port 5000 processes": {
       "ok_button": "clipboard_port5000"
+    },
+    "list cluster nodes (with specs)": {
+      "ok_button": "clipboard_custer_overview"
     }
 
 
