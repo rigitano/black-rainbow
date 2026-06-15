@@ -27,9 +27,6 @@
     },
     "port 5000 processes": {
       "ok_button": "clipboard_port5000"
-    },
-    "list cluster nodes (with specs)": {
-      "ok_button": "clipboard_custer_overview"
     }
 
 
@@ -137,7 +134,7 @@
     "paste minimal scheduler file": {
         "radiobutton1": "rome",
         "radiobutton2": "slurm",
-      "ok_button": "clipboard_scheduler_header"
+      "ok_button": "clipboard_minimal_scheduler_file"
     },
 
 
@@ -161,6 +158,9 @@
         "radiobutton1": "rome",
         "radiobutton2": "adastra",
       "ok_button": "clipboard_hpc_hours"
+    },
+    "list cluster nodes (with specs)": {
+      "ok_button": "clipboard_custer_overview"
     }
 },
 
@@ -1313,13 +1313,22 @@
     "check convergence <NOT>": {
         "ok_button": "xxxxx"
     },
+
+    "see the length of all lambdas":{
+      "inputbox1": "folder containing two FEPoff results, ex: ourTOG-transfer",
+      "ok_button": "clipboard_ns_for_all_lambdas",
+      "plaintext1": "wont work in rome, because gmx must be loaded"
+    },
+
+
+
     "whats the delta E off": {
       "inputbox1": "folder containing one FEPoff result, it must have the bartint file inside",
       "ok_button": "clipboard_Delta_E_off",
       "plaintext1": "the code will look for one barint file. Take the value on the last line and convert from kt to kJ/mol"
     },
     "whats the delta E transfer from Octane to Water": {
-      "inputbox1": "folder containing two FEPoff results, each one must contain their own barint calculation",
+      "inputbox1": "folder containing two FEPoff results, each one must contain their own barint calculation. ex: ourTOG-transfer",
       "ok_button": "clipboard_Delta_E_Transfer_OtoW",
       "plaintext1": "the code will look for two barint files. The first in a folder with 'O' in the name, and another with W in the name. It will see the last line in both. convert kt to kJ/mol, and subtract"
     },

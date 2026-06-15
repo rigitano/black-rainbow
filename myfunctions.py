@@ -269,7 +269,7 @@ def clipboard_hpc_send(s_choice):
 
 
 
-def clipboard_scheduler_header(s_choice):
+def clipboard_minimal_scheduler_file(s_choice):
     """This function sends a string to the clipboard."""
     
     # Copy text to the clipboard
@@ -278,13 +278,20 @@ def clipboard_scheduler_header(s_choice):
         pyperclip.copy(f"""
 #!/bin/bash
 
-#SBATCH --partition=calcul
-#SBATCH --cpus-per-task=24
-#SBATCH --gres=gpu:1
+#SBATCH --partition=calcul 
+#SBATCH --nodes=1
+
+                              #       gmx          #    gmx_mpi (alows for multiple nodes)
+#SBATCH --ntasks=1            #        1           #    must mach: mpirun -np foo gmx_mpi
+#SBATCH --cpus-per-task=24    #   -ntomp x -ntmp   #              -ntomp
+#SBATCH --gres=gpu:1          #        1           #          must match ntasks
+
 #SBATCH --job-name=continue
 #SBATCH --output=outanderr.continue.slurm.txt
+
+##SBATCH --nodelist=node-20
 ##SBATCH --exclude=node-15
-##SBATCH --time=24:00:00
+
 
 module purge
 module load cuda/11.8
@@ -2178,6 +2185,29 @@ def call_create_gif_from_vmd_frames(s_out_folder,s_duration):
     cl.create_gif_from_vmd_frames()
 
     return "cl.create_gif_from_vmd_frames() was called directly"
+
+
+"""
+
+
+"""
+def clipboard_ns_for_all_lambdas(s_folder):
+    """This function sends this text to the clipboard.
+    
+    for i in $(seq -w 0 20); do for LEG in O W; do XTC=( ourTOG-transfer/*${LEG}__runFEP/t*/Lambda_${i}/4_PROD/*${LEG}_prod_*${i}.all.xtc ); if [ ! -f "${XTC[0]}" ]; then printf "Lambda_%-4s %-3s MISSING\n" "${i}" "${LEG}"; else READ=$(LC_ALL=C gmx check -f "${XTC[0]}" 2>&1 | grep "^Step"); FRAMES=$(echo "$READ" | awk '{print $2}'); STEP=$(echo "$READ" | awk '{print $3}'); [ -z "$FRAMES" ] && printf "Lambda_%-4s %-3s ERROR\n" "${i}" "${LEG}" || printf "Lambda_%-4s %-3s %.1f ns\n" "${i}" "${LEG}" "$(LC_ALL=C awk "BEGIN{print $FRAMES*$STEP/1000}")"; fi; done; done
+
+    
+    """
+    
+    # Copy text to the clipboard
+    pyperclip.copy(f'for i in $(seq -w 0 20); do for LEG in O W; do XTC=( {s_folder}/*${{LEG}}__runFEP/t*/Lambda_${{i}}/4_PROD/*${{LEG}}_prod_*${{i}}.all.xtc ); if [ ! -f "${{XTC[0]}}" ]; then printf "Lambda_%-4s %-3s MISSING\\n" "${{i}}" "${{LEG}}"; else READ=$(LC_ALL=C gmx check -f "${{XTC[0]}}" 2>&1 | grep "^Step"); FRAMES=$(echo "$READ" | awk \'{{print $2}}\'); STEP=$(echo "$READ" | awk \'{{print $3}}\'); [ -z "$FRAMES" ] && printf "Lambda_%-4s %-3s ERROR\\n" "${{i}}" "${{LEG}}" || printf "Lambda_%-4s %-3s %.1f ns\\n" "${{i}}" "${{LEG}}" "$(LC_ALL=C awk "BEGIN{{print $FRAMES*$STEP/1000}}")"; fi; done; done')
+
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
 
 
 def clipboard_Delta_E_off(s_folder):
