@@ -62,6 +62,17 @@ def clipboard_cpu_info():
 
     return sent + " sent to clipboard"
 
+def clipboard_gpu_info():
+    """This function sends a command to the clipboard."""
+    
+    # Copy text to the clipboard
+    pyperclip.copy("nvidia-smi")
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
 def clipboard_avalable_ram():
     """This function sends 'free -h' to the clipboard."""
     

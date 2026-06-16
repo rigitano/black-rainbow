@@ -10,15 +10,29 @@
     "cpu": {
         "ok_button": "clipboard_cpu_info"
     },
+   "gpu": {
+        "ok_button": "clipboard_gpu_info"
+    },
     "ram": {
       "ok_button": "clipboard_avalable_ram"
   },
-    "mounted filesystems": {
+    "filesystems usage": {
       "ok_button": "clipboard_filesystems_and_disk_space"
     },
-    "disk space used": {
+    "local files usage": {
       "ok_button": "clipboard_folders_and_disk_space"
-    },
+    }
+
+
+
+
+    
+
+},
+
+
+
+"network": {
     "my ip": {
       "ok_button": "clipboard_ip"
     },
@@ -28,10 +42,6 @@
     "port 5000 processes": {
       "ok_button": "clipboard_port5000"
     }
-
-
-
-    
 
 },
 
