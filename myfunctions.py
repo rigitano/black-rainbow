@@ -135,11 +135,11 @@ def clipboard_ips_to_ssh():
 
 
     
-def clipboard_port5000():
+def clipboard_ports_listening():
     """This function sends something to the clipboard."""
     
     # Copy text to the clipboard
-    pyperclip.copy(r"""lsof -i :5000""")
+    pyperclip.copy(r"""ss -tulpn""")
     
     # Retrieve text from the clipboard
     sent = pyperclip.paste()
