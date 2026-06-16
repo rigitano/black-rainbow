@@ -450,10 +450,10 @@
       "plaintext2": "(water are bubbles)"
     },
 
-   "12 common lipids": {
+   "14 common membrane lipids": {
       "ok_button": "send_tcl_to_VMD_MARTINI_bylipidtype",
       "plaintext3": "by resname:",
-      "plaintext1": "CHOL=purple, POPC=cyan, DPPC=orange, POPE=lightblue, etc...",
+      "plaintext1": "CHOL=purple, POPC=blue, SSM=green, POPE=ochre, DOPS=red, etc...",
       "plaintext2": "(water is not shown)"
     },
 
