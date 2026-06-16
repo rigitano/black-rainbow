@@ -175,66 +175,7 @@
 },
 
 
-"GIT": {
-    "keygen": {
-      "radiobutton1": "see",
-      "radiobutton2": "generate",
-      "droplist": ["Ed25519 (modern)",
-                   "RSA (older systems)"],
-      "ok_button": "clipboard_keygen"
-    },
-    "init or clone": {
-      "radiobutton1": "init (project started localy)",
-      "plaintext1": "action required: go to github and create a new repository with the same name as the project folder ",
 
-      "radiobutton2": "clone (project started at github)",
-      "plaintext3": "action required: go to github and get the link",
-      "inputbox1": "link",
-
-      "ok_button": "clipboard_init_or_clone"
-    },
-
-    "pull": {
-        "ok_button": "clipboard_pull"
-      },
-      "add, commit": {
-        "inputbox1": "commit message",
-        "ok_button": "clipboard_add_commit"
-      },
-      "add, commit (to new branch, so I can explore a crazy idea)": {
-        "inputbox1": "insert the new branch name",
-        "inputbox2": "commit message",
-        "ok_button": "clipboard_add_commit_new_branch"
-      },
-      "push": {
-        "ok_button": "clipboard_push"
-      },
-      "go back to a previous commit": {
-        "inputbox1": "go back to this commit",
-        "radiobutton1": "reset --hard (DANGER: all posterior changes and commits will be deleted!)",
-        "radiobutton2": "revert (posterior commits will be kept, a new commit will be created with the same code as the chosen commit)",
-
-        "ok_button": "clipboard_go_back"
-      },
-      "stash": {
-        "inputbox1": "stash message",
-        "ok_button": "clipboard_stash"
-      },
-      "see all branches": {
-
-        "ok_button": "clipboard_see_all_branches"
-      },
-      "change branch": {
-        "inputbox1": "destination branch",
-        "plaintext1": "ATTENTION: its mandatory to commit or stash all changes before changing branch",
-        "ok_button": "clipboard_change_branch"
-      },
-      "merge": {
-        "inputbox1": "sorce branch with extra code",
-        "inputbox2": "destination branch, with the production code to be updated",
-        "ok_button": "clipboard_merge"
-      }
-},
 
 
 
@@ -354,112 +295,6 @@
 
 
 
-
-"table (bash)": {
-
-
-
-    "filter table": {
-      "inputbox1": "value to be found. ex: CA",
-      "inputbox2": "file to be filtered. ex: ffbonded.itp",
-      "inputbox3": "column id. ex: 1 (for column A)",
-      "plaintext1": "ps1: if the separator is some character instead of spaces or tabs, add the -F flag. ex: -F';'",
-      "plaintext2": "ps2: to filter by multiple columns or multiple values, use the -e flag. ex: -e 'column1 == value1' -e 'column2 == value2'",
-      "ok_button": "clipboard_fiter_table_bash"
-    },
-    "sort table": {
-      "inputbox1": "file with table to be sorted. ex: file.csv",
-      "inputbox2": "column id. ex: 1 (for column A)",
-      "radiobutton4": "lexical",
-      "radiobutton5": "numerical",
-      "plaintext1": "ps1: if the separator is some character instead of spaces or tabs, add the -t flag. ex: -t;",
-      "plaintext2": "ps2: to sort by multiple columns, in a hierarquical way, just repeat the -k flag. ex: sort -k1,1n -k2,2n",
-      "ok_button": "clipboard_sort_table_bash"
-    },
-    "unique lines": {
-      "inputbox1": "file with table",
-      "plaintext1": "ps: if the separator is some character instead of spaces or tabs, add the -t flag. ex: -t;",
-      "ok_button": "clipboard_unique_lines_bash"
-    },
-    "parse": {
-      "inputbox1": "regex putting parenthesis on the stuff to go to columns, for example: .*_([0-9]+)\\.(.*)",
-      "inputbox2": "which selection goes to each column. \\number represent a selection, & represents the entire pattern. for example: \\2 \\1 &",
-      "ok_button": "clipboard_parse_bash",
-      "plaintext1": "________what________",
-      "plaintext2": ". (any character)",
-      "plaintext3": "[abc] (a, b or c)",
-      "plaintext4": "[a-zA-Z] (letters)",
-      "plaintext5": "[a-zA-Z0-9] (letters and numbers)",
-      "plaintext6": "____________________",
-      "plaintext7": "^ (start of line)",
-      "plaintext8": "$ (end of line)",
-      "plaintext9": "______quantity______",
-      "plaintext11": "* (0-infinite)",
-      "plaintext12": "+ (1-infinite)",
-      "plaintext13": "{n} (exactly n)",
-      "plaintext14": "{n,m} (between n and m)",
-      "plaintext15": "{n,} (n-infinite)"
-    }
-
-
-
-},
-
-
-"table (python)": {
-
-
-    "filter table": {
-      "plaintext": "df.query('column1 == value1 and column2 == value2')",
-      "ok_button": "xxxxx"
-    },
-
-    "sort table": {
-      "plaintext": "df.sort_values(by='column1', ascending=True, inplace=True)",
-      "ok_button": "xxxxx"
-    },
-    "unique lines": {
-      "plaintext": "df['column1'].unique()",
-      "ok_button": "xxxxx"
-    },
-    "groupby": {
-      "plaintext": "df.groupby('column').agg({'another_column': 'sum'})",
-      "ok_button": "xxxxx"
-    },
-    "merge": {
-      "plaintext": "pd.merge(df1, df2, left_on='column1', right_on='column2')",
-      "ok_button": "xxxxx"
-    },
-    "concat": {
-      "plaintext": "pd.concat([df1, df2], ignore_index=True)",
-      "ok_button": "xxxxx"
-    },
-    "map": {
-      "plaintext": "df.map{'hi':'oi','bye':'tchau'}",
-      "ok_button": "xxxxx"
-    },
-    "apply": {
-      "plaintext": "df.apply(lambda x: x + 1)",
-      "ok_button": "xxxxx"
-    },
-
-    "describe": {
-      "plaintext": "df.describe()",
-      "ok_button": "xxxxx"
-    },
-    "fillna": {
-      "plaintext": "df.fillna(0, inplace=True)",
-      "ok_button": "xxxxx"
-    },
-    "change type": {
-      "plaintext": "df['col'].astype(int)",
-      "plaintext2": "int float str bool 'category'",
-      "ok_button": "xxxxx"
-    }
-
-
-
-},
 
 
 "vmd tools": {
@@ -1231,7 +1066,7 @@
 
 },
 
-"analysis": {
+"analysis (potential)": {
 
     "energy <NOT>": {
     "droplist1": ["minimize",
@@ -1267,7 +1102,7 @@
 
   },
 
-"analysis over timeline": {
+"analysis (timeline)": {
 
     "Ramachandran": {
       "radiobutton1": "calculate",
@@ -1319,7 +1154,7 @@
 
 },
 
-"analysis of delta E": {
+"analysis (FEP)": {
     "check convergence <NOT>": {
         "ok_button": "xxxxx"
     },
@@ -1445,6 +1280,114 @@
 
 },
 
+
+
+"table (bash)": {
+
+
+
+    "filter table": {
+      "inputbox1": "value to be found. ex: CA",
+      "inputbox2": "file to be filtered. ex: ffbonded.itp",
+      "inputbox3": "column id. ex: 1 (for column A)",
+      "plaintext1": "ps1: if the separator is some character instead of spaces or tabs, add the -F flag. ex: -F';'",
+      "plaintext2": "ps2: to filter by multiple columns or multiple values, use the -e flag. ex: -e 'column1 == value1' -e 'column2 == value2'",
+      "ok_button": "clipboard_fiter_table_bash"
+    },
+    "sort table": {
+      "inputbox1": "file with table to be sorted. ex: file.csv",
+      "inputbox2": "column id. ex: 1 (for column A)",
+      "radiobutton4": "lexical",
+      "radiobutton5": "numerical",
+      "plaintext1": "ps1: if the separator is some character instead of spaces or tabs, add the -t flag. ex: -t;",
+      "plaintext2": "ps2: to sort by multiple columns, in a hierarquical way, just repeat the -k flag. ex: sort -k1,1n -k2,2n",
+      "ok_button": "clipboard_sort_table_bash"
+    },
+    "unique lines": {
+      "inputbox1": "file with table",
+      "plaintext1": "ps: if the separator is some character instead of spaces or tabs, add the -t flag. ex: -t;",
+      "ok_button": "clipboard_unique_lines_bash"
+    },
+    "parse": {
+      "inputbox1": "regex putting parenthesis on the stuff to go to columns, for example: .*_([0-9]+)\\.(.*)",
+      "inputbox2": "which selection goes to each column. \\number represent a selection, & represents the entire pattern. for example: \\2 \\1 &",
+      "ok_button": "clipboard_parse_bash",
+      "plaintext1": "________what________",
+      "plaintext2": ". (any character)",
+      "plaintext3": "[abc] (a, b or c)",
+      "plaintext4": "[a-zA-Z] (letters)",
+      "plaintext5": "[a-zA-Z0-9] (letters and numbers)",
+      "plaintext6": "____________________",
+      "plaintext7": "^ (start of line)",
+      "plaintext8": "$ (end of line)",
+      "plaintext9": "______quantity______",
+      "plaintext11": "* (0-infinite)",
+      "plaintext12": "+ (1-infinite)",
+      "plaintext13": "{n} (exactly n)",
+      "plaintext14": "{n,m} (between n and m)",
+      "plaintext15": "{n,} (n-infinite)"
+    }
+
+
+
+},
+
+
+"table (python)": {
+
+
+    "filter table": {
+      "plaintext": "df.query('column1 == value1 and column2 == value2')",
+      "ok_button": "xxxxx"
+    },
+
+    "sort table": {
+      "plaintext": "df.sort_values(by='column1', ascending=True, inplace=True)",
+      "ok_button": "xxxxx"
+    },
+    "unique lines": {
+      "plaintext": "df['column1'].unique()",
+      "ok_button": "xxxxx"
+    },
+    "groupby": {
+      "plaintext": "df.groupby('column').agg({'another_column': 'sum'})",
+      "ok_button": "xxxxx"
+    },
+    "merge": {
+      "plaintext": "pd.merge(df1, df2, left_on='column1', right_on='column2')",
+      "ok_button": "xxxxx"
+    },
+    "concat": {
+      "plaintext": "pd.concat([df1, df2], ignore_index=True)",
+      "ok_button": "xxxxx"
+    },
+    "map": {
+      "plaintext": "df.map{'hi':'oi','bye':'tchau'}",
+      "ok_button": "xxxxx"
+    },
+    "apply": {
+      "plaintext": "df.apply(lambda x: x + 1)",
+      "ok_button": "xxxxx"
+    },
+
+    "describe": {
+      "plaintext": "df.describe()",
+      "ok_button": "xxxxx"
+    },
+    "fillna": {
+      "plaintext": "df.fillna(0, inplace=True)",
+      "ok_button": "xxxxx"
+    },
+    "change type": {
+      "plaintext": "df['col'].astype(int)",
+      "plaintext2": "int float str bool 'category'",
+      "ok_button": "xxxxx"
+    }
+
+
+
+},
+
 "curve fitting":{
 
   "Fourrier": {
@@ -1457,7 +1400,6 @@
 
 
 },
-
 
 "ML":{
 
@@ -1494,7 +1436,7 @@
 
 },
 
-"Statistical tests":{
+"statistical tests":{
 
 
   "Difference between groups": {
@@ -1677,7 +1619,76 @@
     "GRN inference": {
       "ok_button": "xxxxx"
       }
+},
+
+"GIT": {
+    "keygen": {
+      "radiobutton1": "see",
+      "radiobutton2": "generate",
+      "droplist": ["Ed25519 (modern)",
+                   "RSA (older systems)"],
+      "ok_button": "clipboard_keygen"
+    },
+    "init or clone": {
+      "radiobutton1": "init (project started localy)",
+      "plaintext1": "action required: go to github and create a new repository with the same name as the project folder ",
+
+      "radiobutton2": "clone (project started at github)",
+      "plaintext3": "action required: go to github and get the link",
+      "inputbox1": "link",
+
+      "ok_button": "clipboard_init_or_clone"
+    },
+
+    "pull": {
+        "ok_button": "clipboard_pull"
+      },
+      "add, commit": {
+        "inputbox1": "commit message",
+        "ok_button": "clipboard_add_commit"
+      },
+      "add, commit (to new branch, so I can explore a crazy idea)": {
+        "inputbox1": "insert the new branch name",
+        "inputbox2": "commit message",
+        "ok_button": "clipboard_add_commit_new_branch"
+      },
+      "push": {
+        "ok_button": "clipboard_push"
+      },
+      "go back to a previous commit": {
+        "inputbox1": "go back to this commit",
+        "radiobutton1": "reset --hard (DANGER: all posterior changes and commits will be deleted!)",
+        "radiobutton2": "revert (posterior commits will be kept, a new commit will be created with the same code as the chosen commit)",
+
+        "ok_button": "clipboard_go_back"
+      },
+      "stash": {
+        "inputbox1": "stash message",
+        "ok_button": "clipboard_stash"
+      },
+      "see all branches": {
+
+        "ok_button": "clipboard_see_all_branches"
+      },
+      "change branch": {
+        "inputbox1": "destination branch",
+        "plaintext1": "ATTENTION: its mandatory to commit or stash all changes before changing branch",
+        "ok_button": "clipboard_change_branch"
+      },
+      "merge": {
+        "inputbox1": "sorce branch with extra code",
+        "inputbox2": "destination branch, with the production code to be updated",
+        "ok_button": "clipboard_merge"
+      }
 }
+
+
+
+
+
+
+
+
 
   }
 
