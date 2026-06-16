@@ -1316,8 +1316,7 @@
 
     "see the length of all lambdas":{
       "inputbox1": "folder containing two FEPoff results, ex: ourTOG-transfer",
-      "ok_button": "clipboard_ns_for_all_lambdas",
-      "plaintext1": "wont work in rome, because gmx must be loaded"
+      "ok_button": "clipboard_ns_for_all_lambdas"
     },
 
 

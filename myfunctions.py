@@ -2187,21 +2187,30 @@ def call_create_gif_from_vmd_frames(s_out_folder,s_duration):
     return "cl.create_gif_from_vmd_frames() was called directly"
 
 
-"""
 
-
-"""
 def clipboard_ns_for_all_lambdas(s_folder):
     """This function sends this text to the clipboard.
     
-    for i in $(seq -w 0 20); do for LEG in O W; do XTC=( ourTOG-transfer/*${LEG}__runFEP/t*/Lambda_${i}/4_PROD/*${LEG}_prod_*${i}.all.xtc ); if [ ! -f "${XTC[0]}" ]; then printf "Lambda_%-4s %-3s MISSING\n" "${i}" "${LEG}"; else READ=$(LC_ALL=C gmx check -f "${XTC[0]}" 2>&1 | grep "^Step"); FRAMES=$(echo "$READ" | awk '{print $2}'); STEP=$(echo "$READ" | awk '{print $3}'); [ -z "$FRAMES" ] && printf "Lambda_%-4s %-3s ERROR\n" "${i}" "${LEG}" || printf "Lambda_%-4s %-3s %.1f ns\n" "${i}" "${LEG}" "$(LC_ALL=C awk "BEGIN{print $FRAMES*$STEP/1000}")"; fi; done; done
-
-    
+    for i in $(seq -w 0 20); do for LEG in O W; do XTC=( jayCHYO-transfer/*${LEG}__runFEP/t*/Lambda_${i}/4_PROD/*${LEG}_prod_*${i}.all.xtc ); if [ ! -f "${XTC[0]}" ]; then printf "Lambda_%-4s %-3s MISSING\n" "${i}" "${LEG}"; else LAST=$(python3 -c "
+    import struct, sys
+    f=open('${XTC[0]}','rb')
+    t=0
+    while True:
+        hdr=f.read(92)
+        if len(hdr)<92: break
+        magic,natoms,step=struct.unpack('>iii',hdr[:12])
+        t=struct.unpack('>f',hdr[12:16])[0]
+        size=struct.unpack('>i',hdr[88:92])[0]
+        size=((size+3)//4)*4
+        f.seek(size,1)
+    f.close()
+    print(t)
+    " 2>/dev/null); [ -z "$LAST" ] && printf "Lambda_%-4s %-3s ERROR\n" "${i}" "${LEG}" || printf "Lambda_%-4s %-3s %.1f ns\n" "${i}" "${LEG}" "$(LC_ALL=C awk "BEGIN{print $LAST/1000}")"; fi; done; done
+        
     """
     
     # Copy text to the clipboard
-    pyperclip.copy(f'for i in $(seq -w 0 20); do for LEG in O W; do XTC=( {s_folder}/*${{LEG}}__runFEP/t*/Lambda_${{i}}/4_PROD/*${{LEG}}_prod_*${{i}}.all.xtc ); if [ ! -f "${{XTC[0]}}" ]; then printf "Lambda_%-4s %-3s MISSING\\n" "${{i}}" "${{LEG}}"; else READ=$(LC_ALL=C gmx check -f "${{XTC[0]}}" 2>&1 | grep "^Step"); FRAMES=$(echo "$READ" | awk \'{{print $2}}\'); STEP=$(echo "$READ" | awk \'{{print $3}}\'); [ -z "$FRAMES" ] && printf "Lambda_%-4s %-3s ERROR\\n" "${{i}}" "${{LEG}}" || printf "Lambda_%-4s %-3s %.1f ns\\n" "${{i}}" "${{LEG}}" "$(LC_ALL=C awk "BEGIN{{print $FRAMES*$STEP/1000}}")"; fi; done; done')
-
+    pyperclip.copy(f'for i in $(seq -w 0 20); do for LEG in O W; do XTC=( {s_folder}/*${{LEG}}__runFEP/t*/Lambda_${{i}}/4_PROD/*${{LEG}}_prod_*${{i}}.all.xtc ); if [ ! -f "${{XTC[0]}}" ]; then printf "Lambda_%-4s %-3s MISSING\\n" "${{i}}" "${{LEG}}"; else LAST=$(python3 -c "\nimport struct, sys\nf=open(\'${{XTC[0]}}\',\'rb\')\nt=0\nwhile True:\n    hdr=f.read(92)\n    if len(hdr)<92: break\n    magic,natoms,step=struct.unpack(\'>iii\',hdr[:12])\n    t=struct.unpack(\'>f\',hdr[12:16])[0]\n    size=struct.unpack(\'>i\',hdr[88:92])[0]\n    size=((size+3)//4)*4\n    f.seek(size,1)\nf.close()\nprint(t)\n" 2>/dev/null); [ -z "$LAST" ] && printf "Lambda_%-4s %-3s ERROR\\n" "${{i}}" "${{LEG}}" || printf "Lambda_%-4s %-3s %.1f ns\\n" "${{i}}" "${{LEG}}" "$(LC_ALL=C awk "BEGIN{{print $LAST/1000}}")"; fi; done; done')
 
     # Retrieve text from the clipboard
     sent = pyperclip.paste()
