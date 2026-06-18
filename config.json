@@ -543,6 +543,12 @@
 
   },
 
+    "trjconv (to generate gro, if interrupted)": {
+
+    "ok_button": "clipboard_generatefinalgro"
+
+  },
+
   "trjconv -center": {
 
     "ok_button": "clipboard_center"
@@ -557,11 +563,21 @@
   },
 
 
+    "check (length in ns)": {
+
+    "ok_button": "clipboard_check_lenght"
+
+  },
+
+
   "energy": {
 
     "ok_button": "clipboard_energy"
 
   }
+
+
+
 
 
 },

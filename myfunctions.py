@@ -1157,7 +1157,27 @@ def clipboard_energy():
 
     return sent + " sent to clipboard"
 
+def clipboard_check_lenght():
+    """This function sends a python function with arguments to the clipboard."""
+    
+    # Copy text to the clipboard
+    pyperclip.copy("gmx check -f prod.xtc 2>&1 | awk '/Last frame/{print $NF/1000 \" ns\"}'")
 
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
+def clipboard_generatefinalgro():
+    """This function sends a python function with arguments to the clipboard."""
+    
+    # Copy text to the clipboard
+    pyperclip.copy("LAST=$(gmx check -f prod.xtc 2>&1 | awk '/Last frame/{print $NF}'); echo System | gmx trjconv -s prod.tpr -f prod.xtc -o last_step.gro -dump \"$LAST\"")
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
 
 
 
