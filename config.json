@@ -286,7 +286,7 @@
     },
     "see my jobs": {
         "radiobutton1": "rome",
-        "radiobutton2": "adastra",
+        "radiobutton2": "slurm",
       "ok_button": "clipboard_hpc_see"
     },
     "kill all my jobs": {

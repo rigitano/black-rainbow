@@ -386,8 +386,8 @@ def clipboard_hpc_see(s_choice):
     # Copy text to the clipboard
     if s_choice == "rome":
         pyperclip.copy(f"ccc_mpp -u decarvah")
-    elif s_choice == "adastra":
-        pyperclip.copy(f"squeue -u hrigitano")
+    elif s_choice == "slurm":
+        pyperclip.copy(f"squeue -u $USER -o \"%.18i %.9P %.8j %.8u %.2t %.10M %.6D %R %C %b\"")
 
     # Retrieve text from the clipboard
     sent = pyperclip.paste()
