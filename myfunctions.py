@@ -308,7 +308,55 @@ module purge
 module load cuda/11.8
 module load gromacs/2024.5
 
-gmx mdrun -s prod.tpr -deffnm prod -cpi prod.cpt -append -ntomp 24 -ntmpi 1 > outanderr.continue.txt 2>&1
+
+
+# ---- 48h-wall self-chaining : queue the follow-up job now ----
+# If production is already finished, stop the chain. I'll know this checking for a done.txt file, that is created in the post processing
+if [[ -f "4_PROD/prod.gro" ]]; then
+    echo "Simulation already complete. Exiting."
+    exit 0
+fi
+# Otherwise queue the NEXT copy of this job, to start when THIS one ends OK.
+sbatch "--dependency=afterok:\${SLURM_JOB_ID}" this_script_name.sh
+# --------------------------------------------------------------
+
+cat <<EOT >> "this_script_name.sh"
+
+##### function to check if a simulation reached the planned number of steps #####
+planned_steps_reached() {{
+    local TPR="\$1" CPT="\$2"                                                        # the inputs are the TPR filename, and checkpoint filename.
+
+    [[ -s "\$TPR" && -s "\$CPT" ]] || return 1                                       # Return false if one of the input files is missing or empty.
+
+    local CURRENT_STEP PLANNED_STEPS
+    CURRENT_STEP=\$(gmx dump -cp "\$CPT" 2>/dev/null | awk -F= '/^[[:space:]]*step[[:space:]]*=/{{gsub(/[[:space:]]/,"",\$2); print \$2; exit}}')
+    PLANNED_STEPS=\$(gmx dump -s "\$TPR" 2>/dev/null | awk -F= '/^[[:space:]]*nsteps[[:space:]]*=/{{gsub(/[[:space:]]/,"",\$2); print \$2; exit}}')
+
+    [[ "\$CURRENT_STEP" =~ ^[0-9]+$ && "\$PLANNED_STEPS" =~ ^[0-9]+$ ]] || return 1  # Return false if one of the value is empty or negative 
+    (( CURRENT_STEP >= PLANNED_STEPS ))                                              # Return true if the planned number of steps has been reached.
+}}
+
+
+
+if planned_steps_reached "prod.tpr" "prod.cpt"; then
+    echo "skipping nvt (steps reached)"
+else
+    gmx mdrun -deffnm prod -cpi prod.cpt -ntomp 24 -ntmpi 1 > outanderr.mdrun.txt 2>&1
+fi
+
+EOT
+
+
+
+
+chmod +x this_script_name.sh
+
+ccc_msub this_script_name && echo "job was sent"
+
+
+
+
+
 
 
 
@@ -321,7 +369,7 @@ gmx mdrun -s prod.tpr -deffnm prod -cpi prod.cpt -append -ntomp 24 -ntmpi 1 > ou
 
 #MSUB   -r mdrun       # Job name
 #MSUB   -n 1                       # Number of tasks in parallel mode (-ntmpi)
-#MSUB   -c 1                       # Number of cores per parallel task
+#MSUB   -c 1                       # Number of cores per parallel task (-ntomp) this should also be exported
 #MSUB   -W yes                     # Let multiple jobs sharing same name & user run simultaneously
 #MSUB   -o out.continue.scheduler.%I.txt            # Output file
 #MSUB   -e err.continue.scheduler.%I.txt            # Output file for errors
@@ -343,9 +391,56 @@ export GMX_DISABLE_GPU_DETECTION=1  # prevent GROMACS from using GPUs
 export I_MPI_PIN_CELL=core
 export I_MPI_PIN_DOMAIN=auto
 
-OMP_NUM_THREADS=32                  # number of OpenMP threads (-ntomp)
+export OMP_NUM_THREADS=32                  # number of OpenMP threads (-ntomp)
+export OMP_DYNAMIC=FALSE
 
-ccc_mprun gmx_mpi mdrun -s prod.tpr -deffnm prod -cpi prod.cpt -append > outanderr.continue.txt 2>&1
+
+
+# ---- 24h-wall self-chaining : queue the follow-up job now ----
+# If production is already finished, stop the chain.
+if [[ -f "4_PROD/prod.fitted.xtc" ]]; then
+    echo "Simulation already complete. Exiting."
+    exit 0
+fi
+# Otherwise queue the NEXT copy of this job, to start when THIS one ends OK.
+ccc_msub -E "--dependency=afterok:\\${{BRIDGE_MSUB_JOBID}}" this_script_name.sh
+# --------------------------------------------------------------
+
+
+
+cat <<EOT >> "this_script_name.sh"
+
+##### function to check if a simulation reached the planned number of steps #####
+planned_steps_reached() {{
+    local TPR="\$1" CPT="\$2"                                                        # the inputs are the TPR filename, and checkpoint filename.
+
+    [[ -s "\$TPR" && -s "\$CPT" ]] || return 1                                       # Return false if one of the input files is missing or empty.
+
+    local CURRENT_STEP PLANNED_STEPS
+    CURRENT_STEP=\$(ccc_mprun gmx_mpi dump -cp "\$CPT" 2>/dev/null | awk -F= '/^[[:space:]]*step[[:space:]]*=/{{gsub(/[[:space:]]/,"",\$2); print \$2; exit}}')
+    PLANNED_STEPS=\$(ccc_mprun gmx_mpi dump -s "\$TPR" 2>/dev/null | awk -F= '/^[[:space:]]*nsteps[[:space:]]*=/{{gsub(/[[:space:]]/,"",\$2); print \$2; exit}}')
+
+    [[ "\$CURRENT_STEP" =~ ^[0-9]+$ && "\$PLANNED_STEPS" =~ ^[0-9]+$ ]] || return 1  # Return false if one of the value is empty or negative 
+    (( CURRENT_STEP >= PLANNED_STEPS ))                                              # Return true if the planned number of steps has been reached.
+}}
+
+
+
+if planned_steps_reached "prod.tpr" "prod.cpt"; then
+    echo "skipping nvt (steps reached)"
+else
+    ccc_mprun gmx_mpi mdrun -deffnm prod -cpi > outanderr.mdrun.txt 2>&1
+fi
+
+EOT
+
+
+
+
+chmod +x this_script_name.sh
+
+ccc_msub this_script_name && echo "job was sent"
+
 
 
 
