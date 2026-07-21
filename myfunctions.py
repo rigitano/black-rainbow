@@ -1222,10 +1222,10 @@ def clipboard_runFEPoff(s_suffix, s_gro, s_top, s_time, n_temperatures, s_ff, s_
 
     return sent + " sent to clipboard"
 
-def clipboard_runRE(s_suffix, s_gro, s_top, s_time, s_tmin, s_tmax, s_ff, s_machine, s_ntOMP, ntMPI ):
+def clipboard_runREX(s_suffix, s_gro, s_top, s_time, s_tmin, s_tmax, s_ff, s_machine, s_ntOMP, ntMPI ):
     """This function sends codes to the clipboard, depending on the choice made on a droplist."""
     
-    pyperclip.copy(f"./runRE.sh {s_suffix} {s_gro} {s_top} {s_time} {s_tmin} {s_tmax} {s_ff} {s_machine} {s_ntOMP} {ntMPI}")
+    pyperclip.copy(f"./runREX.sh {s_suffix} {s_gro} {s_top} {s_time} {s_tmin} {s_tmax} {s_ff} {s_machine} {s_ntOMP} {ntMPI}")
 
     # Retrieve text from the clipboard
     sent = pyperclip.paste()

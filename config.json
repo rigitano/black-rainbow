@@ -984,7 +984,7 @@
       "ok_button": "clipboard_runFEPoff"
     },
 
-    "runRE <ok>": {
+    "runREX <ok>": {
         "inputbox1": "suffix without quotes after runFEPoff__ ex: bulk",
         "inputbox2": "gro without quotes. ex: bulk.gro",
         "inputbox3": "top without quotes. ex: bulk.top",
@@ -1004,7 +1004,7 @@
                     ],
         "inputbox9": "nt OMP. ex: 2",
         "inputbox10": "nt MPI. ex: 8",
-      "ok_button": "clipboard_runRE"
+      "ok_button": "clipboard_runREX"
     },
 
 
