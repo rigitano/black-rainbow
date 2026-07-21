@@ -1111,7 +1111,7 @@ def clipboard_mdrun_continuation():
     """This function sends a python function with arguments to the clipboard."""
     
     # Copy text to the clipboard
-    pyperclip.copy(f"gmx mdrun -v -deffnm prod -s prod.tpr -cpi prod.cpt -nt 16 -append")
+    pyperclip.copy(f"gmx mdrun -v -deffnm prod -cpi -nt 16")
 
     # Retrieve text from the clipboard
     sent = pyperclip.paste()
