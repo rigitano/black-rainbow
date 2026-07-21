@@ -962,7 +962,7 @@
 
 
     "runFEPoff <ok>": {
-        "inputbox1": "suffix without quotes after runFEPoff__ ex: ala_inW",
+        "inputbox1": "suffix without quotes after runRE__ ex: ala_inW",
         "inputbox2": "gro without quotes. ex: ala_inW.gro",
         "inputbox3": "top without quotes. ex: ala_inW.top",
         "inputbox4": "duration (ns). ex: 100",
@@ -974,13 +974,39 @@
         "droplist7": [
                      "pc",
                      "slurm",
-                     "rome"
+                     "rome",
+                     "genoa",
+                     "MI250"
                     ],
         "inputbox8": "molecule to be decoupled. ex: main_molecule_0",
         "inputbox9": "nt OMP. ex: 2",
         "inputbox10": "nt MPI. ex: 8",
       "ok_button": "clipboard_runFEPoff"
     },
+
+    "runRE <ok>": {
+        "inputbox1": "suffix without quotes after runFEPoff__ ex: bulk",
+        "inputbox2": "gro without quotes. ex: bulk.gro",
+        "inputbox3": "top without quotes. ex: bulk.top",
+        "inputbox4": "duration (ns). ex: 1000",
+        "inputbox5": "temperature max (K). ex: '313 ",
+        "inputbox6": "temperature max (K). ex: '333 ",
+        "droplist7": [
+                     "charmm36",
+                     "martini3"
+                    ],
+        "droplist8": [
+                     "pc",
+                     "slurm",
+                     "rome",
+                     "genoa",
+                     "MI250"
+                    ],
+        "inputbox9": "nt OMP. ex: 2",
+        "inputbox10": "nt MPI. ex: 8",
+      "ok_button": "clipboard_runRE"
+    },
+
 
     "runFEPswitch": {
       "droplist": ["local <NOT IMPLEMENTED>",

@@ -310,48 +310,6 @@ module load gromacs/2024.5
 
 
 
-# ---- 48h-wall self-chaining : queue the follow-up job now ----
-# If production is already finished, stop the chain. I'll know this checking for a done.txt file, that is created in the post processing
-if [[ -f "4_PROD/prod.gro" ]]; then
-    echo "Simulation already complete. Exiting."
-    exit 0
-fi
-# Otherwise queue the NEXT copy of this job, to start when THIS one ends OK.
-sbatch "--dependency=afterok:\${SLURM_JOB_ID}" this_script_name.sh
-# --------------------------------------------------------------
-
-cat <<EOT >> "this_script_name.sh"
-
-##### function to check if a simulation reached the planned number of steps #####
-planned_steps_reached() {{
-    local TPR="\$1" CPT="\$2"                                                        # the inputs are the TPR filename, and checkpoint filename.
-
-    [[ -s "\$TPR" && -s "\$CPT" ]] || return 1                                       # Return false if one of the input files is missing or empty.
-
-    local CURRENT_STEP PLANNED_STEPS
-    CURRENT_STEP=\$(gmx dump -cp "\$CPT" 2>/dev/null | awk -F= '/^[[:space:]]*step[[:space:]]*=/{{gsub(/[[:space:]]/,"",\$2); print \$2; exit}}')
-    PLANNED_STEPS=\$(gmx dump -s "\$TPR" 2>/dev/null | awk -F= '/^[[:space:]]*nsteps[[:space:]]*=/{{gsub(/[[:space:]]/,"",\$2); print \$2; exit}}')
-
-    [[ "\$CURRENT_STEP" =~ ^[0-9]+$ && "\$PLANNED_STEPS" =~ ^[0-9]+$ ]] || return 1  # Return false if one of the value is empty or negative 
-    (( CURRENT_STEP >= PLANNED_STEPS ))                                              # Return true if the planned number of steps has been reached.
-}}
-
-
-
-if planned_steps_reached "prod.tpr" "prod.cpt"; then
-    echo "skipping nvt (steps reached)"
-else
-    gmx mdrun -deffnm prod -cpi prod.cpt -ntomp 24 -ntmpi 1 > outanderr.mdrun.txt 2>&1
-fi
-
-EOT
-
-
-
-
-chmod +x this_script_name.sh
-
-ccc_msub this_script_name && echo "job was sent"
 
 
 
@@ -393,53 +351,6 @@ export I_MPI_PIN_DOMAIN=auto
 
 export OMP_NUM_THREADS=32                  # number of OpenMP threads (-ntomp)
 export OMP_DYNAMIC=FALSE
-
-
-
-# ---- 24h-wall self-chaining : queue the follow-up job now ----
-# If production is already finished, stop the chain.
-if [[ -f "4_PROD/prod.fitted.xtc" ]]; then
-    echo "Simulation already complete. Exiting."
-    exit 0
-fi
-# Otherwise queue the NEXT copy of this job, to start when THIS one ends OK.
-ccc_msub -E "--dependency=afterok:\\${{BRIDGE_MSUB_JOBID}}" this_script_name.sh
-# --------------------------------------------------------------
-
-
-
-cat <<EOT >> "this_script_name.sh"
-
-##### function to check if a simulation reached the planned number of steps #####
-planned_steps_reached() {{
-    local TPR="\$1" CPT="\$2"                                                        # the inputs are the TPR filename, and checkpoint filename.
-
-    [[ -s "\$TPR" && -s "\$CPT" ]] || return 1                                       # Return false if one of the input files is missing or empty.
-
-    local CURRENT_STEP PLANNED_STEPS
-    CURRENT_STEP=\$(ccc_mprun gmx_mpi dump -cp "\$CPT" 2>/dev/null | awk -F= '/^[[:space:]]*step[[:space:]]*=/{{gsub(/[[:space:]]/,"",\$2); print \$2; exit}}')
-    PLANNED_STEPS=\$(ccc_mprun gmx_mpi dump -s "\$TPR" 2>/dev/null | awk -F= '/^[[:space:]]*nsteps[[:space:]]*=/{{gsub(/[[:space:]]/,"",\$2); print \$2; exit}}')
-
-    [[ "\$CURRENT_STEP" =~ ^[0-9]+$ && "\$PLANNED_STEPS" =~ ^[0-9]+$ ]] || return 1  # Return false if one of the value is empty or negative 
-    (( CURRENT_STEP >= PLANNED_STEPS ))                                              # Return true if the planned number of steps has been reached.
-}}
-
-
-
-if planned_steps_reached "prod.tpr" "prod.cpt"; then
-    echo "skipping nvt (steps reached)"
-else
-    ccc_mprun gmx_mpi mdrun -deffnm prod -cpi > outanderr.mdrun.txt 2>&1
-fi
-
-EOT
-
-
-
-
-chmod +x this_script_name.sh
-
-ccc_msub this_script_name && echo "job was sent"
 
 
 
@@ -725,7 +636,7 @@ def clipboard_list_enhanced():
     return sent + " sent to clipboard"
 
 
-def clipboard_search_filesystem(s_by_what,s_search_for_this):
+def clipboard_search_filesystem(s_by_what, s_search_for_this):
     """This function sends codes to the clipboard, depending on the choice made on a droplist."""
     
     # Copy text to the clipboard, depending on the value of s_by_what
@@ -1310,6 +1221,17 @@ def clipboard_runFEPoff(s_suffix, s_gro, s_top, s_time, n_temperatures, s_ff, s_
     sent = pyperclip.paste()
 
     return sent + " sent to clipboard"
+
+def clipboard_runRE(s_suffix, s_gro, s_top, s_time, s_tmin, s_tmax, s_ff, s_machine, s_ntOMP, ntMPI ):
+    """This function sends codes to the clipboard, depending on the choice made on a droplist."""
+    
+    pyperclip.copy(f"./runRE.sh {s_suffix} {s_gro} {s_top} {s_time} {s_tmin} {s_tmax} {s_ff} {s_machine} {s_ntOMP} {ntMPI}")
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
 
 
 
