@@ -1073,11 +1073,15 @@ def clipboard_editconf():
 
     return sent + " sent to clipboard"
 
-def clipboard_solvate():
+def clipboard_solvate(s_option):
     """This function sends a python function with arguments to the clipboard."""
     
-    # Copy text to the clipboard
-    pyperclip.copy(f"gmx solvate -cp .gro -cs spc216.gro -maxsol 123 -p .top -o .gro")
+    if s_option == "water":
+        # Copy text to the clipboard
+        pyperclip.copy(f"gmx solvate -cp something_in_vacum.gro -cs spc216.gro -maxsol 123 -o output.gro -p throughtput.top")
+    elif s_option == "custom box":
+        pyperclip.copy(f"gmx solvate -cp something_in_vacum.gro -cs custom_box.gro -o output.gro -p throughtput.top")
+
 
     # Retrieve text from the clipboard
     sent = pyperclip.paste()
@@ -1096,33 +1100,16 @@ def clipboard_grompp():
     return sent + " sent to clipboard"
 
 
-def clipboard_mdrun():
+def clipboard_mdrun(s_option):
     """This function sends a python function with arguments to the clipboard."""
     
-    # Copy text to the clipboard
-    pyperclip.copy(f"gmx mdrun -v -deffnm xxxx")
+    if s_option == "normal":
+        pyperclip.copy(f"gmx mdrun -v -deffnm xxxx")
+    elif s_option == "continue":
+        pyperclip.copy(f"gmx mdrun -v -deffnm prod -cpi -nt 16")
+    elif s_option == "extend":
+        pyperclip.copy(f"gmx convert-tpr -s prod.tpr -extend 100000 -o extended.tpr && gmx mdrun -v -s extended.tpr -deffnm prod -cpi ")
 
-    # Retrieve text from the clipboard
-    sent = pyperclip.paste()
-
-    return sent + " sent to clipboard"
-
-def clipboard_mdrun_continuation():
-    """This function sends a python function with arguments to the clipboard."""
-    
-    # Copy text to the clipboard
-    pyperclip.copy(f"gmx mdrun -v -deffnm prod -cpi -nt 16")
-
-    # Retrieve text from the clipboard
-    sent = pyperclip.paste()
-
-    return sent + " sent to clipboard"
-
-def clipboard_mdrun_extension():
-    """This function sends a python function with arguments to the clipboard."""
-    
-    # Copy text to the clipboard
-    pyperclip.copy(f"gmx convert-tpr -s prod.tpr -extend 100000 -o extended.tpr && gmx mdrun -v -s extended.tpr -cpi prod.cpt -append -deffnm prod")
 
     # Retrieve text from the clipboard
     sent = pyperclip.paste()
@@ -1130,22 +1117,31 @@ def clipboard_mdrun_extension():
     return sent + " sent to clipboard"
 
 
-def clipboard_center():
+def clipboard_trjconv(s_option):
     """This function sends a python function with arguments to the clipboard."""
-    
-    # Copy text to the clipboard
-    pyperclip.copy(f"gmx trjconv -s .tpr -f .xtc -o .centered.xtc -center -pbc mol")
+
+    if s_option == "generate last_step.gro":
+        pyperclip.copy(f"gmx trjconv -s prod.tpr -f prod.xtc -o last_step.gro -dump 999999999")
+
+    elif s_option == "center":
+        pyperclip.copy(f"gmx trjconv -s prod.tpr -f prod.xtc -o prod.centered.xtc -center -pbc mol")
+
+    elif s_option == "fit":
+        pyperclip.copy(f"gmx trjconv -s prod.tpr -f prod.centered.xtc -o prod.fitted.xtc -fit progressive")
+
 
     # Retrieve text from the clipboard
     sent = pyperclip.paste()
 
     return sent + " sent to clipboard"
+
+
+
 
 def clipboard_fit():
     """This function sends a python function with arguments to the clipboard."""
     
     # Copy text to the clipboard
-    pyperclip.copy(f"gmx trjconv -s .tpr -f .centered.xtc -o .fitted.xtc -fit progressive")
 
     # Retrieve text from the clipboard
     sent = pyperclip.paste()
@@ -1164,16 +1160,6 @@ def clipboard_energy():
     return sent + " sent to clipboard"
 
 
-def clipboard_generatefinalgro():
-    """This function sends a python function with arguments to the clipboard."""
-    
-    # Copy text to the clipboard
-    pyperclip.copy("gmx trjconv -s prod.tpr -f prod.xtc -o last_step.gro -dump 999999999")
-
-    # Retrieve text from the clipboard
-    sent = pyperclip.paste()
-
-    return sent + " sent to clipboard"
 
 
 

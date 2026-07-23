@@ -512,6 +512,8 @@
 
 
   "solvate": {
+    "radiobutton1": "water",
+    "radiobutton2": "custom box",
 
     "ok_button": "clipboard_solvate"
 
@@ -526,41 +528,27 @@
 
 
   "mdrun": {
+    "radiobutton1": "normal",
+    "radiobutton2": "continue",
+    "radiobutton3": "extend",
 
     "ok_button": "clipboard_mdrun"
 
   },
 
-  "mdrun (continue)": {
 
-    "ok_button": "clipboard_mdrun_continuation"
+    "trjconv": {
+    "radiobutton1": "generate last_step.gro",
+    "radiobutton2": "center",
+    "radiobutton3": "fit",
 
-  },
 
-  "mdrun (extend)": {
 
-    "ok_button": "clipboard_mdrun_extension"
-
-  },
-
-    "trjconv (to generate gro, if interrupted)": {
-
-    "ok_button": "clipboard_generatefinalgro"
-
-  },
-
-  "trjconv -center": {
-
-    "ok_button": "clipboard_center"
+    "ok_button": "clipboard_trjconv"
 
   },
 
 
-  "trjconv -fit": {
-
-    "ok_button": "clipboard_fit"
-
-  },
 
 
 
