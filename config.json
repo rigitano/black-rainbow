@@ -553,7 +553,7 @@
 
 
   "energy": {
-    "radiobutton1": "(interactive menu)",
+    "radiobutton1": "(menu)",
     "radiobutton2": "Density",
     "radiobutton3": "Temperature",
     "radiobutton4": "Pressure",
