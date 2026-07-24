@@ -1192,7 +1192,7 @@ def clipboard_runBENCHMARK(s_machine, s_tpr):
     if s_machine == "local":
         pyperclip.copy(f"./runBENCHMARK-local {s_tpr}")
 
-    elif s_machine == "slurm":
+    elif s_machine == "oxygen":
         pyperclip.copy(f"xxxxx")
 
     elif s_machine == "rome (moab wrapper with time limit)":

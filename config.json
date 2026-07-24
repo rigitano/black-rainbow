@@ -934,7 +934,7 @@
                     ],
         "droplist7": [
                      "pc",
-                     "slurm",
+                     "oxygen",
                      "rome"
                     ],
         "inputbox8": "nt OMP. ex: 2",
@@ -945,7 +945,7 @@
 
     "runBENCHMARK": {
       "droplist": ["local",
-                   "slurm",
+                   "oxygen",
                    "rome"],
         "inputbox1": "tpr file. ex: 'prod.tpr'",
         "ok_button": "clipboard_runBENCHMARK"
@@ -965,7 +965,7 @@
                     ],
         "droplist7": [
                      "pc",
-                     "slurm",
+                     "oxygen",
                      "rome",
                      "genoa",
                      "MI250"
@@ -989,10 +989,10 @@
                     ],
         "droplist8": [
                      "pc",
-                     "slurm",
+                     "oxygen",
                      "rome",
                      "genoa",
-                     "MI250"
+                     "MI300"
                     ],
         "inputbox9": "nt OMP. ex: 2",
         "inputbox10": "nt MPI. ex: 8",
@@ -1002,7 +1002,7 @@
 
     "runFEPswitch": {
       "droplist": ["local <NOT IMPLEMENTED>",
-                   "slurm <NOT IMPLEMENTED>",
+                   "oxygen <NOT IMPLEMENTED>",
                    "rome <NOT IMPLEMENTED>"],
       "inputbox0": "suffix",
       "inputbox2": "gro file WITH EXTRA COLUMNS",
@@ -1013,7 +1013,7 @@
 
     "runFEPtransfer": {
       "droplist": ["local <NOT IMPLEMENTED>",
-                   "slurm <NOT IMPLEMENTED>",
+                   "oxygen <NOT IMPLEMENTED>",
                    "rome <NOT IMPLEMENTED>"],
       "inputbox0": "suffix",
       "inputbox2": "gro",
@@ -1024,7 +1024,7 @@
 
     "runSTEERED": {
       "droplist": ["local <NOT IMPLEMENTED>",
-                   "slurm <NOT IMPLEMENTED>",
+                   "oxygen <NOT IMPLEMENTED>",
                    "rome (moab wrapper with time limit) <NOT IMPLEMENTED>"],
       "radiobutton1": "target mol pulled from anchor mol",
       "radiobutton2": "target mol pulled using a magic force",
@@ -1033,14 +1033,14 @@
 
     "runUMBRELLAS": {
       "droplist": ["local <NOT IMPLEMENTED>",
-                   "slurm <NOT IMPLEMENTED>",
+                   "oxygen <NOT IMPLEMENTED>",
                    "rome (moab wrapper with time limit) <NOT IMPLEMENTED>"],
       "ok_button": "xxxxx"
     },
 
     "runREPLICAS": {
       "droplist": ["local <NOT IMPLEMENTED>",
-                   "slurm <NOT IMPLEMENTED>",
+                   "oxygen <NOT IMPLEMENTED>",
                    "rome (moab wrapper with time limit) <NOT IMPLEMENTED>"],
       "droplist2": ["different temperatures (requires different mdps)",
                     "different force fields (requires different tops)"],
@@ -1056,29 +1056,24 @@
 
     "runHYBRIDqmmm": {
       "droplist": ["local <NOT IMPLEMENTED>",
-                   "slurm <NOT IMPLEMENTED>",
+                   "oxygen <NOT IMPLEMENTED>",
                    "rome (moab wrapper with time limit) <NOT IMPLEMENTED>"],
       "ok_button": "xxx setup mdp file (qmmm=yes qmmm-group=QM qm-theory=DFTB qm-program=cp2k) gmx make_ndx selecting atoms (10 |20) and setting their name (name 19 QM), then gmx mdrun -s topol.tpr -qmmm cp2k -qmcore 8"
     },
 
-    "runHYBRIDcgaa": {
-      "droplist": ["local <NOT IMPLEMENTED>",
-                   "slurm <NOT IMPLEMENTED>",
-                   "rome (moab wrapper with time limit) <NOT IMPLEMENTED>"],
-      "ok_button": "xxxxx"
-    },
+
 
     "runLIGANDSCREENING": {
       "droplist": ["local <NOT IMPLEMENTED>",
-                   "slurm <imperfect>",
+                   "oxygen <imperfect>",
                    "rome (moab wrapper with time limit) <NOT IMPLEMENTED>"],
-      "ok_button": "xxx runLIGANDSCREENING-slurm.sh"
+      "ok_button": "xxx runLIGANDSCREENING.sh"
     },
 
 
     "mdrun_all_tprs": {
       "droplist": ["local <NOT IMPLEMENTED>",
-                   "slurm <NOT IMPLEMENTED>",
+                   "oxygen <NOT IMPLEMENTED>",
                    "rome (moab wrapper with time limit) <imperfect>"],
 
       "radiobutton1": "paralelize in a simple way",
