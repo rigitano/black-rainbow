@@ -553,7 +553,11 @@
 
 
   "energy": {
-
+    "radiobutton1": "(interactive menu)",
+    "radiobutton2": "Density",
+    "radiobutton3": "Temperature",
+    "radiobutton4": "Pressure",
+    "radiobutton5": "Potential",
     "ok_button": "clipboard_energy"
 
   }
@@ -972,7 +976,7 @@
       "ok_button": "clipboard_runFEPoff"
     },
 
-    "runREX <ok>": {
+    "runREPLEX <ok>": {
         "inputbox1": "suffix without quotes after runFEPoff__ ex: bulk",
         "inputbox2": "gro without quotes. ex: bulk.gro",
         "inputbox3": "top without quotes. ex: bulk.top",
@@ -992,7 +996,7 @@
                     ],
         "inputbox9": "nt OMP. ex: 2",
         "inputbox10": "nt MPI. ex: 8",
-      "ok_button": "clipboard_runREX"
+      "ok_button": "clipboard_runREPLEX"
     },
 
 

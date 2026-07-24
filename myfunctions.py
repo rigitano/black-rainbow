@@ -1148,11 +1148,20 @@ def clipboard_fit():
 
     return sent + " sent to clipboard"
 
-def clipboard_energy():
+def clipboard_energy(s_option):
     """This function sends a python function with arguments to the clipboard."""
     
-    # Copy text to the clipboard
-    pyperclip.copy(f"gmx energy -f .edr -o .xvg")
+    if s_option == "(interactive menu)":
+        pyperclip.copy(f"gmx energy -f prod.edr -b 20000 -o output.xvg")
+    elif s_option == "Density":
+        pyperclip.copy(f"printf 'Density\n\n' | gmx energy -f prod.edr -b 0 -o edr_density.xvg")
+    elif s_option == "Temperature":
+        pyperclip.copy(f"printf 'Temperature\n\n' | gmx energy -f prod.edr -b 0 -o edr_temperature.xvg")
+    elif s_option == "Pressure":
+        pyperclip.copy(f"printf 'Pressure\n\n' | gmx energy -f prod.edr -b 0 -o edr_pressure.xvg")
+    elif s_option == "Potential":
+        pyperclip.copy(f"printf 'Potential\n\n' | gmx energy -f prod.edr -b 0 -o edr_potential.xvg")
+
 
     # Retrieve text from the clipboard
     sent = pyperclip.paste()
@@ -1208,10 +1217,10 @@ def clipboard_runFEPoff(s_suffix, s_gro, s_top, s_time, n_temperatures, s_ff, s_
 
     return sent + " sent to clipboard"
 
-def clipboard_runREX(s_suffix, s_gro, s_top, s_time, s_tmin, s_tmax, s_ff, s_machine, s_ntOMP, ntMPI ):
+def clipboard_runREPLEX(s_suffix, s_gro, s_top, s_time, s_tmin, s_tmax, s_ff, s_machine, s_ntOMP, ntMPI ):
     """This function sends codes to the clipboard, depending on the choice made on a droplist."""
     
-    pyperclip.copy(f"./runREX.sh {s_suffix} {s_gro} {s_top} {s_time} {s_tmin} {s_tmax} {s_ff} {s_machine} {s_ntOMP} {ntMPI}")
+    pyperclip.copy(f"./runREPLEX.sh {s_suffix} {s_gro} {s_top} {s_time} {s_tmin} {s_tmax} {s_ff} {s_machine} {s_ntOMP} {ntMPI}")
 
     # Retrieve text from the clipboard
     sent = pyperclip.paste()
