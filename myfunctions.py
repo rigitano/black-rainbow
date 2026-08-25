@@ -2496,3 +2496,87 @@ def clipboard_trim_ESP():
     sent = pyperclip.paste()
     return sent + " sent to clipboard"
 
+def clipboard_cc_fit(s_option):
+    """This function sends a text to the clipboard."""
+
+
+    if s_option == "straight line":
+        pyperclip.copy(f'cl.continuous_continuous_linearRegression(x, y)')
+    elif s_option == "exponential":
+        pyperclip.copy(f'cl.continuous_continuous_nonlinearRegression(x, y, MODEL="exponential")')
+    elif s_option == "polinomial":
+        pyperclip.copy(f'cl.continuous_continuous_nonlinearRegression(x, y, MODEL="polinomial")')
+    elif s_option == "sinusoidal":
+        pyperclip.copy(f'cl.continuous_continuous_nonlinearRegression(x, y, MODEL="sinusoidal")')
+    elif s_option == "fourrier (dihedral type 5)":
+        pyperclip.copy(f'cl.fit_constrained_fourier(x, y)')
+    elif s_option == "1+cos (dihedral type 9)":
+        pyperclip.copy(f'cl.fit_gromacs_type9_multi(phi_deg,y,multiplicities)')
+    
+
+    sent = pyperclip.paste()
+    return sent + " sent to clipboard"
+
+
+
+def clipboard_cd_test(s_option):
+    """This function sends a text to the clipboard."""
+
+
+    if s_option == "the discrete variable has 2 categories":
+        pyperclip.copy(f'cl.continuous_2categories(x, d)')
+    elif s_option == "the discrete variable has MANY categories":
+        pyperclip.copy(f'cl.continuous_MANYcategories(x,d)')
+
+    
+    sent = pyperclip.paste()
+    return sent + " sent to clipboard"
+
+
+
+def clipboard_dd_test():
+    """This function sends a text to the clipboard."""
+
+
+    pyperclip.copy(f'cl.categorica_categorical(x, y)')
+
+
+    
+    sent = pyperclip.paste()
+    return sent + " sent to clipboard"
+
+
+
+def clipboard_mlcontinuous(s_option):
+    """This function sends a text to the clipboard."""
+
+    if s_option == "XGBoost":
+        pyperclip.copy(f'model = XGBRegressor().fit(X, y)')
+    elif s_option == "decision tree":
+        pyperclip.copy(f'xxxx')
+    elif s_option == "naive bayes":
+        pyperclip.copy(f'xxxx')
+    elif s_option == "neural network":
+        pyperclip.copy(f'xxxx')
+    elif s_option == "multiple linear regression":
+        pyperclip.copy(f'cl.multiple_linear_regression(X,y,plot = False)')
+
+    sent = pyperclip.paste()
+    return sent + " sent to clipboard"
+
+def clipboard_mldiscrete(s_option):
+    """This function sends a text to the clipboard."""
+
+    if s_option == "XGBoost":
+        pyperclip.copy(f'model = XGBClassifier().fit(X, y)')
+    elif s_option == "svm":
+        pyperclip.copy(f'cl.continuous_continuous_svm(ll)')
+    elif s_option == "clustering - kmeans":
+        pyperclip.copy(f'xxxx')
+    elif s_option == "clustering - hierarchical":
+        pyperclip.copy(f'xxxx')
+    elif s_option == "clustering - DBSCAN":
+        pyperclip.copy(f'xxxx')
+
+    sent = pyperclip.paste()
+    return sent + " sent to clipboard"

@@ -1317,7 +1317,25 @@
 
 "table (bash)": {
 
-
+    "parse": {
+      "inputbox1": "regex putting parenthesis on the stuff to go to columns, for example: .*_([0-9]+)\\.(.*)",
+      "inputbox2": "which selection goes to each column. \\number represent a selection, & represents the entire pattern. for example: \\2 \\1 &",
+      "ok_button": "clipboard_parse_bash",
+      "plaintext1": "________what________",
+      "plaintext2": ". (any character)",
+      "plaintext3": "[abc] (a, b or c)",
+      "plaintext4": "[a-zA-Z] (letters)",
+      "plaintext5": "[a-zA-Z0-9] (letters and numbers)",
+      "plaintext6": "____________________",
+      "plaintext7": "^ (start of line)",
+      "plaintext8": "$ (end of line)",
+      "plaintext9": "______quantity______",
+      "plaintext11": "* (0-infinite)",
+      "plaintext12": "+ (1-infinite)",
+      "plaintext13": "{n} (exactly n)",
+      "plaintext14": "{n,m} (between n and m)",
+      "plaintext15": "{n,} (n-infinite)"
+    },
 
     "filter table": {
       "inputbox1": "value to be found. ex: CA",
@@ -1340,33 +1358,20 @@
       "inputbox1": "file with table",
       "plaintext1": "ps: if the separator is some character instead of spaces or tabs, add the -t flag. ex: -t;",
       "ok_button": "clipboard_unique_lines_bash"
-    },
-    "parse": {
-      "inputbox1": "regex putting parenthesis on the stuff to go to columns, for example: .*_([0-9]+)\\.(.*)",
-      "inputbox2": "which selection goes to each column. \\number represent a selection, & represents the entire pattern. for example: \\2 \\1 &",
-      "ok_button": "clipboard_parse_bash",
-      "plaintext1": "________what________",
-      "plaintext2": ". (any character)",
-      "plaintext3": "[abc] (a, b or c)",
-      "plaintext4": "[a-zA-Z] (letters)",
-      "plaintext5": "[a-zA-Z0-9] (letters and numbers)",
-      "plaintext6": "____________________",
-      "plaintext7": "^ (start of line)",
-      "plaintext8": "$ (end of line)",
-      "plaintext9": "______quantity______",
-      "plaintext11": "* (0-infinite)",
-      "plaintext12": "+ (1-infinite)",
-      "plaintext13": "{n} (exactly n)",
-      "plaintext14": "{n,m} (between n and m)",
-      "plaintext15": "{n,} (n-infinite)"
     }
+
 
 
 
 },
 
 
-"table (python)": {
+"table (pandas)": {
+
+    "parse csv": {
+      "plaintext": "df=pd.read_csv('file.csv', sep=';')",
+      "ok_button": "xxxxx"
+    },
 
 
     "filter table": {
@@ -1407,8 +1412,8 @@
       "plaintext": "df.describe()",
       "ok_button": "xxxxx"
     },
-    "fillna": {
-      "plaintext": "df.fillna(0, inplace=True)",
+    "treat na": {
+      "plaintext": "dfclean=df.fillna(0) dfclean=df.dropna(0)",
       "ok_button": "xxxxx"
     },
     "change type": {
@@ -1421,18 +1426,11 @@
 
 },
 
-"curve fitting":{
-
-  "Fourrier": {
-      "ok_button": "xxxx"
-  },
-  "dihedral type 9": {
-      "ok_button": "xxxx"
-  }
 
 
 
-},
+
+
 
 "ML":{
 
@@ -1448,14 +1446,25 @@
       "ok_button": "clipboard_train_test_plit"
   },
 
-  "Fit model": {
+  "predict continuous y": {
     "radiobutton1": "XGBoost",
-    "radiobutton6": "Decision Tree",
-    "radiobutton7": "Naive Bayes",
-    "radiobutton8": "Neural Network",
-    "radiobutton9": "Linear Regression",
-      "ok_button": "xxxx"
+    "radiobutton6": "decision tree",
+    "radiobutton7": "naive bayes",
+    "radiobutton8": "neural network",
+    "radiobutton9": "multiple linear regression",
+      "ok_button": "clipboard_mlcontinuous"
   },
+
+
+  "predict discrete y": {
+    "radiobutton0": "XGBoost",
+    "radiobutton1": "svm",
+    "radiobutton2": "clustering - kmeans",
+    "radiobutton3": "clustering - hierarchical",
+    "radiobutton4": "clustering - DBSCAN",
+      "ok_button": "clipboard_mldiscrete"
+  },
+
 
   "Evaluate": {
     "radiobutton1": "cross validation",
@@ -1469,37 +1478,28 @@
 
 },
 
-"statistical tests":{
+"two variable relation":{
 
-
-  "Difference between groups": {
-    "radiobutton1": "t-test",
-    "radiobutton2": "ANOVA",
-    "radiobutton3": "Kruskal-Wallis",
-    "radiobutton4": "Mann-Whitney",
-    "radiobutton5": "Wilcoxon",
-    "radiobutton6": "Chi-square",
-    "radiobutton7": "Fisher's exact test",
-    "radiobutton8": "Cohen's d",
-    "radiobutton9": "Hedges' g",
-    "radiobutton10": "Cliff's delta",
-    "radiobutton11": "Cramér's V",
-    "radiobutton12": "Phi coefficient",
-    "radiobutton13": "Kendall's tau",
-    "radiobutton14": "Spearman's rank correlation",
-    "radiobutton15": "Pearson's correlation",
-    "radiobutton16": "Point-biserial correlation",
-
-      "ok_button": "xxxx"
+  "continuous vs. continuous (curve-fitting)": {
+    "radiobutton1": "straight line",
+    "radiobutton2": "exponential",
+    "radiobutton3": "polinomial",
+    "radiobutton4": "sinusoidal",
+    "radiobutton5": "fourrier (dihedral type 5)",
+    "radiobutton6": "1+cos (dihedral type 9)",
+      "ok_button": "clipboard_cc_fit"
   },
 
-  "Correlation": {
-    "radiobutton1": "Pearson",
-    "radiobutton2": "Spearman",
-    "radiobutton3": "Kendall",
-    "radiobutton4": "Point-biserial",
 
-      "ok_button": "xxxx"
+
+
+  "continuous vs. discrete": {
+    "radiobutton1": "the discrete variable has 2 categories",
+    "radiobutton2": "the discrete variable has MANY categories",
+      "ok_button": "clipboard_cd_test"
+  },
+  "discrete vs. discrete": {
+      "ok_button": "clipboard_dd_test"
   }
 
 
