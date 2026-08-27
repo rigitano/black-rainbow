@@ -39,6 +39,34 @@ def clipboard_hello_world():
 
     return sent + " sent to clipboard"
 
+
+
+
+def clipboard_bashrc():
+    """This function sends something to the clipboard."""
+    
+    # Copy text to the clipboard
+    pyperclip.copy(
+r"""
+
+conda activate bio
+
+source /etc/profile.d/modules.sh
+module purge
+module load vmd
+module load gromacs/2025
+
+
+""")
+    
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
+
+
+
 def clipboard_os_info():
     """This function sends 'uname -a' to the clipboard."""
     
@@ -55,7 +83,10 @@ def clipboard_cpu_info():
     """This function sends 'lscpu' to the clipboard."""
     
     # Copy text to the clipboard
-    pyperclip.copy("lscpu")
+    #pyperclip.copy("lscpu")
+    pyperclip.copy(r"""LC_ALL=C lscpu | awk -F: '/^Model name:/ {model=$2} /^CPU\(s\):/ {logical=$2} /^Thread\(s\) per core:/ {threads=$2} /^Core\(s\) per socket:/ {cores=$2} /^Socket\(s\):/ {sockets=$2} /^CPU max MHz:/ {mhz=$2} /^L3 cache:/ {l3=$2} /^NUMA node\(s\):/ {numa=$2} END {gsub(/^ +/,"",model); gsub(/^ +/,"",logical); gsub(/^ +/,"",threads); gsub(/^ +/,"",cores); gsub(/^ +/,"",sockets); gsub(/^ +/,"",mhz); gsub(/^ +/,"",l3); gsub(/^ +/,"",numa); printf "\nCPU model:      %s\n\n",model; printf "Max frequency:  %.2f GHz   # this is the max; in CPU model you can see the base frequency\n",mhz/1000; printf "Sockets:        %s\n",sockets; printf "Cores/Socket:   %s   # multiply this number by Sockets (above) to get physical cores\n",cores; printf "Threads/Core:   %s   # hyperthreading capability\n",threads; printf "Logical Cores:  %s   # maximum threads Linux can schedule (physical cores x Threads/Core)\n",logical; printf "L3 cache:       %s   # shared fast memory\n",l3; printf "NUMA nodes:     %s   # physical cores / NUMA nodes = cores sharing local RAM\n",numa}'""")
+
+
 
     # Retrieve text from the clipboard
     sent = pyperclip.paste()
@@ -85,6 +116,18 @@ def clipboard_avalable_ram():
     return sent + " sent to clipboard"
 
 
+def clipboard_avalable_storage():
+    """This function sends a text to the clipboard."""
+    
+    # Copy text to the clipboard
+    pyperclip.copy("lsblk -f")
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
+
 def clipboard_filesystems_and_disk_space():
     """This function sends 'df -h' to the clipboard."""
     
@@ -97,12 +140,13 @@ def clipboard_filesystems_and_disk_space():
     return sent + " sent to clipboard"
 
 
-def clipboard_folders_and_disk_space():
+def clipboard_folders_and_disk_space(s_option):
     """This function sends 'du -hd1 .' to the clipboard."""
     
-    # Copy text to the clipboard
-    pyperclip.copy("du -hd1 . | sort -hr")
-
+    if s_option == "folders sizes":
+        pyperclip.copy("du -hd1 . | sort -hr")
+    elif s_option == "5 largest files nested":
+        pyperclip.copy(r"find . -type f -printf '%s\t%p\n' | sort -nr | head -n 5 | numfmt --field=1 --to=iec")
 
     # Retrieve text from the clipboard
     sent = pyperclip.paste()
@@ -122,17 +166,6 @@ def clipboard_ip():
     return sent + " sent to clipboard"
 
 
-def clipboard_ips_to_ssh():
-    """This function sends 'echo -------Who am I on the network?------- && ip a && echo -------How do I reach other machines/networks?------- && ip route' to the clipboard."""
-    
-    # Copy text to the clipboard
-    pyperclip.copy(r"""echo "";while read -r ipcidr; do ip=${ipcidr%/*}; pfx=${ipcidr#*/}; IFS=. read -r a b c d <<<"$ip"; ipi=$(( (a<<24)+(b<<16)+(c<<8)+d )); mask=$(( pfx==0 ? 0 : (0xFFFFFFFF << (32-pfx)) & 0xFFFFFFFF )); net=$(( ipi & mask )); bcast=$(( net | (~mask & 0xFFFFFFFF) )); for ((n=net+1; n<bcast; n++)); do A=$(( (n>>24)&255 )); B=$(( (n>>16)&255 )); C=$(( (n>>8)&255 )); D=$(( n&255 )); tgt="$A.$B.$C.$D"; (echo >/dev/tcp/$tgt/22) >/dev/null 2>&1 && { hn=$(getent hosts "$tgt" | awk '{print $2}' | head -n1); printf "%-15s\t%s\n" "$tgt" "${hn:--}"; }; done; done < <(ip -o -4 addr show scope global | awk '{print $4}')""")
-    
-    # Retrieve text from the clipboard
-    sent = pyperclip.paste()
-
-    return sent + " sent to clipboard"
-
 
     
 def clipboard_ports_listening():
@@ -146,6 +179,98 @@ def clipboard_ports_listening():
 
     return sent + " sent to clipboard"
 
+def clipboard_port_forwarding():
+    """This function sends something to the clipboard."""
+    
+    # Copy text to the clipboard
+    pyperclip.copy(r"""ssh -L <local_port>:<remote_host>:<remote_port> <user>@<host>""")
+    
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
+def clipboard_start_server():
+    """This function sends something to the clipboard."""
+    
+    # Copy text to the clipboard
+    pyperclip.copy(r"""python -m http.server <port>""")
+    
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
+
+
+def clipboard_ips_to_ssh():
+    """This function sends 'echo -------Who am I on the network?------- && ip a && echo -------How do I reach other machines/networks?------- && ip route' to the clipboard."""
+    
+    # Copy text to the clipboard
+    pyperclip.copy(r"""echo "";while read -r ipcidr; do ip=${ipcidr%/*}; pfx=${ipcidr#*/}; IFS=. read -r a b c d <<<"$ip"; ipi=$(( (a<<24)+(b<<16)+(c<<8)+d )); mask=$(( pfx==0 ? 0 : (0xFFFFFFFF << (32-pfx)) & 0xFFFFFFFF )); net=$(( ipi & mask )); bcast=$(( net | (~mask & 0xFFFFFFFF) )); for ((n=net+1; n<bcast; n++)); do A=$(( (n>>24)&255 )); B=$(( (n>>16)&255 )); C=$(( (n>>8)&255 )); D=$(( n&255 )); tgt="$A.$B.$C.$D"; (echo >/dev/tcp/$tgt/22) >/dev/null 2>&1 && { hn=$(getent hosts "$tgt" | awk '{print $2}' | head -n1); printf "%-15s\t%s\n" "$tgt" "${hn:--}"; }; done; done < <(ip -o -4 addr show scope global | awk '{print $4}')""")
+    
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
+
+
+
+def clipboard_ssh_send_key_to_server():
+    """This function sends something to the clipboard."""
+    
+    # Copy text to the clipboard
+    pyperclip.copy(r"""ssh-copy-id -i ~/.ssh/id_ed25519.pub <user>@<host>""")
+    
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
+
+
+def clipboard_ssh_alias():
+    """This function sends something to the clipboard."""
+    
+    # Copy text to the clipboard
+    pyperclip.copy(
+r"""
+
+Host chestnut                         
+    HostName ibcp24-083.ibcp.fr
+    User hrigitano
+
+Host oxygen
+    HostName oxygen
+    User hrigitano
+
+## bridge to external supercomputers
+
+Host ibcp3245
+    HostName ibcp3245
+
+ControlMaster auto
+ControlPath   /home/hrigitano/.ssh/tmp/%h_%p_%r
+
+## external supercomputers
+
+Host rome
+    HostName irene-amd-fr.ccc.cea.fr
+    User decarvah
+    ProxyCommand ssh -W %h:%p ibcp3245
+
+Host adastra
+    HostName adastra.cines.fr
+    User hrigitano
+    ProxyCommand ssh -W %h:%p ibcp3245
+
+""")
+    
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
 
 def clipboard_custer_overview():
     """This function sends something to the clipboard."""
@@ -262,21 +387,7 @@ def clipboard_create_conda_environment(s_env_name,s_python_version):
     return sent + " sent to clipboard"
 
 
-def clipboard_hpc_send(s_choice):
-    """This function sends a string to the clipboard."""
-    
-    # Copy text to the clipboard
-    if s_choice == "rome":
-        pyperclip.copy(f"rsync -avz --chmod=Dg+s --chown=:gen13458 folder_without_slash rome:/ccc/work/cont003/gen13458/decarvah/")
-    elif s_choice == "adastra":
-        pyperclip.copy(f"rsync -avz folder_without_slash adastra:/scratch/CT7/c1613458/hrigitano/")
 
-
-
-    # Retrieve text from the clipboard
-    sent = pyperclip.paste()
-
-    return sent + " sent to clipboard"
 
 
 
@@ -366,7 +477,21 @@ export OMP_DYNAMIC=FALSE
 
 
 
+def clipboard_hpc_send(s_choice):
+    """This function sends a string to the clipboard."""
+    
+    # Copy text to the clipboard
+    if s_choice == "rome":
+        pyperclip.copy(f"rsync -avz --chmod=Dg+s --chown=:gen13458 folder_without_slash rome:/ccc/work/cont003/gen13458/decarvah/")
+    elif s_choice == "adastra":
+        pyperclip.copy(f"rsync -avz folder_without_slash adastra:/scratch/CT7/c1613458/hrigitano/")
 
+
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
 
 
 def clipboard_hpc_bring(s_choice):
@@ -400,14 +525,12 @@ def clipboard_hpc_see(s_choice):
 
     return sent + " sent to clipboard"
 
-def clipboard_hpc_kill(s_choice):
+def clipboard_hpc_kill():
     """This function sends a string to the clipboard."""
     
-    # Copy text to the clipboard
-    if s_choice == "rome":
-        pyperclip.copy(f"ccc_mdel $(ccc_mstat | awk -v user=$USER '$3 == user {{print $1}}')")
-    elif s_choice == "adastra":
-        pyperclip.copy(f"xxxxxx")
+
+    pyperclip.copy(f"scancel -u $USER")
+
 
     # Retrieve text from the clipboard
     sent = pyperclip.paste()
@@ -551,6 +674,17 @@ def clipboard_push():
 
     return sent + " sent to clipboard"
 
+def clipboard_checkout(s_commit_hash):
+    """This function sends a text to the clipboard."""
+    
+    # Copy text to the clipboard
+    pyperclip.copy(f"git checkout '{s_commit_hash}'")
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
 
 def clipboard_go_back(s_commit_hash,s_option):
     """This function goes back to a commit, it will erase the ones after it or not depending on the value of s_option."""
@@ -597,10 +731,10 @@ def clipboard_see_all_branches():
 
 
 def clipboard_change_branch(s_branch_name):
-    """This function sends 'git branch xxxx' to the clipboard."""
+    """This function sends text to the clipboard."""
     
     # Copy text to the clipboard
-    pyperclip.copy(f"git branch {s_branch_name}")
+    pyperclip.copy(f"git checkout {s_branch_name}")
 
     # Retrieve text from the clipboard
     sent = pyperclip.paste()
@@ -623,17 +757,6 @@ def clipboard_merge(s_source_branch_with_extra_code,s_destination_branch):
 
 
 
-
-def clipboard_list_enhanced():
-    """This function sends 'ls -alhF --time-style=long-iso --color=auto' to the clipboard."""
-    
-    # Copy text to the clipboard
-    pyperclip.copy("ls -alhF --time-style=long-iso --color=auto")
-
-    # Retrieve text from the clipboard
-    sent = pyperclip.paste()
-
-    return sent + " sent to clipboard"
 
 
 def clipboard_search_filesystem(s_by_what, s_search_for_this):
@@ -895,7 +1018,7 @@ def clipboard_find(s_word_to_find,s_file_to_be_searched):
 
 
 def clipboard_replace(s_old_value,s_new_value,s_file_with_text,s_new_file_name):
-    """This function sends 'sed 's/old_value/new_value/g' file.txt > newfile.txt' to the clipboard."""
+    """This function sends text to the clipboard."""
     
     # Copy text to the clipboard
     pyperclip.copy(f"sed 's/{s_old_value}/{s_new_value}/g' {s_file_with_text} > {s_new_file_name}")

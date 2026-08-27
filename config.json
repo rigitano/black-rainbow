@@ -1,151 +1,12 @@
 {
-"infrastructure": {
-
-    "echo hello world !": {
-      "ok_button": "clipboard_hello_world"
-    },
-    "os": {
-      "ok_button": "clipboard_os_info"
-    },
-    "cpu": {
-        "ok_button": "clipboard_cpu_info"
-    },
-   "gpu": {
-        "ok_button": "clipboard_gpu_info"
-    },
-    "ram": {
-      "ok_button": "clipboard_avalable_ram"
-  },
-    "filesystems usage": {
-      "ok_button": "clipboard_filesystems_and_disk_space"
-    },
-    "local files usage": {
-      "ok_button": "clipboard_folders_and_disk_space"
-    }
-
-
-
-
-    
-
-},
-
-
-
-"network": {
-    "my ip": {
-      "ok_button": "clipboard_ip"
-    },
-    "all ips available for ssh": {
-      "ok_button": "clipboard_ips_to_ssh"
-    },
-    "ports listening": {
-      "ok_button": "clipboard_ports_listening"
-    }
-
-},
-
-"execution": {
-
-
-"make executable": {
-  "droplist": ["choose...",
-                 "shebang - interpreter will be bash",
-                 "shebang - interpreter will be python",
-                 "chmod - make executable",
-                 "export - add folder to PATH to call it directly"], 
-  "ok_button": "clipboard_make_executable"
-},
-
-"see content of the path variable": {
-  "ok_button": "clipboard_see_content_of_path_variable"
-},
-
-
-"execute file": {
-  "droplist": ["choose...",
-                 "------local------",
-                 "bash (./)", 
-                 "nextflow (nextflow run)", 
-                 "docker (docker run -d)",
-                 "------cluster------",
-                 "slurm (sbatch)",
-                 "torque (qsub)",
-                 "moab (msub)",
-                 "kubernetes (kubectl apply -f)",
-                 "yarn-hadoop (yarn jar)",
-                 "spark on top of yarn-hadoop (spark-submit --master yarn)"],
-  "ok_button": "clipboard_execute"
-},
-
-"whats being executed": {
-  "droplist": ["choose...",
-                "------local------",
-                "bash (top)", 
-                "nextflow (nextflow log)", 
-                "docker (docker ps)",
-                "------cluster------",
-                "slurm (squeue)",
-                "torque (qstat)",
-                "moab (showq)",
-                "kubernetes (kubectl get pods)",
-                "yarn-hadoop (yarn application -list)",
-                "spark on top of yarn-hadoop (use UI!)"],
-  "ok_button": "clipboard_see_running_processes"
-},
-
-"cancel execution": {
-
-  "droplist": ["choose...",
-                "------local------",
-                "bash (kill)", 
-                "nextflow (nextflow kill)", 
-                "docker (docker stop)",
-                "------cluster------",
-                "slurm (scancel)",
-                "torque (qdel)",
-                "moab(mjobctl -c)",
-                "kubernetes (kubectl delet pod)",
-                "yarn-hadoop (yarn application -kill)",
-                "spark on top of yarn-hadoop (yarn application -kill)"],
-  "ok_button": "clipboard_cancel_execution"
-}
-
-},
-
-"coding environment": {
-
-    "python location": {
-      "ok_button": "clipboard_python_location"
-    },
-    "modules location": {
-      "ok_button": "clipboard_modules_location"
-    },
-
-    "see all conda environments": {
-      "ok_button": "clipboard_see_all_conda_environments"
-    },
-    "create conda environment": {
-      "inputbox1": "environment name",
-      "inputbox2": "python version",
-      "ok_button": "clipboard_create_conda_environment"
-    }
-},
 
 
 
 
 
+"file search": {
 
-
-
-
-"file listing": {
-
-    "ls enhanced": {
-      "ok_button": "clipboard_list_enhanced"
-    },
-    "find": {
+    "find using regex": {
         "plaintext": "where is the text to be searched?",
         "radiobutton1": "in the file name",
         "radiobutton2": "entire path+name",
@@ -211,9 +72,9 @@
 },
 
 
-"doc (bash)": {
+"word search (bash)": {
 
-    "find (spit a list)": {
+    "list (grep)": {
       "plaintext1": "grep 'foo'",
       "inputbox1": "word to be found. ex: henrique",
       "inputbox2": "file to be searched. ex: file.txt",
@@ -222,7 +83,7 @@
 
     },
 
-    "replace (all at once)": {
+    "replace (sed s///g)": {
       "plaintext1": "sed 's/foo/bar/g'",
       "inputbox1": "old value",
       "inputbox2": "new value",
@@ -237,9 +98,9 @@
 
 },
 
-"doc (vim)": {
+"word search (vim)": {
 
-    "find (highlight)": {
+    "highlight (/)": {
       "plaintext0": "/foo",
       "inputbox1": "word to be found. ex: henrique",
       "ok_button": "clipboard_find_vim",
@@ -248,14 +109,17 @@
 
     },
 
-    "replace (highlight and ask)": {
+    "replace (:%s///g)": {
 
-      "plaintext0": ":%s/x/y/gc",
+      "plaintext0": ":%s/foo/bar/g",
       "inputbox1": "old value",
       "inputbox2": "new value",
 
       "ok_button": "clipboard_replace_vim",
-      "plaintext1": "after pasting, hit 'enter'. then 'y' to replace and see next"
+      "plaintext1": "after pasting, hit 'enter'",
+      "plaintext2": "OBS: for confirmation, add 'c'. ex: :%s/foo/bar/gc"
+      
+
 
     }
 
@@ -264,20 +128,17 @@
 
 
 "HPC": {
-
-    "send": {
-        "radiobutton1": "rome",
-        "radiobutton2": "adastra",
-      "ok_button": "clipboard_hpc_send"
-    },
-
     "paste minimal scheduler file": {
         "radiobutton1": "rome",
         "radiobutton2": "slurm",
       "ok_button": "clipboard_minimal_scheduler_file"
     },
 
-
+    "send": {
+        "radiobutton1": "rome",
+        "radiobutton2": "adastra",
+      "ok_button": "clipboard_hpc_send"
+    },
 
     "bring": {
         "radiobutton1": "rome",
@@ -289,9 +150,7 @@
         "radiobutton2": "slurm",
       "ok_button": "clipboard_hpc_see"
     },
-    "kill all my jobs": {
-        "radiobutton1": "rome",
-        "radiobutton2": "adastra",
+    "kill my jobs": {
       "ok_button": "clipboard_hpc_kill"
     },
     "hours in project": {
@@ -299,7 +158,7 @@
         "radiobutton2": "adastra",
       "ok_button": "clipboard_hpc_hours"
     },
-    "list cluster nodes (with specs)": {
+    "list nodes (with specs)": {
       "ok_button": "clipboard_custer_overview"
     }
 },
@@ -921,7 +780,7 @@
 },
 
 "run": {
-    "runREALISTIC <ok>": {
+    "runREALISTIC": {
 
         "inputbox1": "suffix without quotes after runREALISTIC__ ex: ala_inW",
         "inputbox2": "gro without quotes. ex: ala_inW.gro",
@@ -943,7 +802,7 @@
         
       },
 
-    "runBENCHMARK": {
+    "runBENCHMARK <NOT TESTED>": {
       "droplist": ["local",
                    "oxygen",
                    "rome"],
@@ -953,7 +812,7 @@
 
 
 
-    "runFEPoff <ok>": {
+    "runFEPoff": {
         "inputbox1": "suffix without quotes after runRE__ ex: ala_inW",
         "inputbox2": "gro without quotes. ex: ala_inW.gro",
         "inputbox3": "top without quotes. ex: ala_inW.top",
@@ -976,7 +835,7 @@
       "ok_button": "clipboard_runFEPoff"
     },
 
-    "runREPLEX <ok>": {
+    "runREPLEX": {
         "inputbox1": "suffix without quotes after runFEPoff__ ex: bulk",
         "inputbox2": "gro without quotes. ex: bulk.gro",
         "inputbox3": "top without quotes. ex: bulk.top",
@@ -1000,7 +859,7 @@
     },
 
 
-    "runFEPswitch": {
+    "runFEPswitch <NOT IMPLEMENTED>": {
       "droplist": ["local <NOT IMPLEMENTED>",
                    "oxygen <NOT IMPLEMENTED>",
                    "rome <NOT IMPLEMENTED>"],
@@ -1011,7 +870,7 @@
       "ok_button": "xxxxx"
     },
 
-    "runFEPtransfer": {
+    "runFEPtransfer <NOT IMPLEMENTED>": {
       "droplist": ["local <NOT IMPLEMENTED>",
                    "oxygen <NOT IMPLEMENTED>",
                    "rome <NOT IMPLEMENTED>"],
@@ -1022,7 +881,7 @@
       "ok_button": "xxxxx"
     },
 
-    "runSTEERED": {
+    "runSTEERED <NOT IMPLEMENTED>": {
       "droplist": ["local <NOT IMPLEMENTED>",
                    "oxygen <NOT IMPLEMENTED>",
                    "rome (moab wrapper with time limit) <NOT IMPLEMENTED>"],
@@ -1031,44 +890,18 @@
       "ok_button": "xxxxx"
     },
 
-    "runUMBRELLAS": {
+    "runUMBRELLAS <NOT IMPLEMENTED>": {
       "droplist": ["local <NOT IMPLEMENTED>",
                    "oxygen <NOT IMPLEMENTED>",
                    "rome (moab wrapper with time limit) <NOT IMPLEMENTED>"],
       "ok_button": "xxxxx"
     },
 
-    "runREPLICAS": {
-      "droplist": ["local <NOT IMPLEMENTED>",
-                   "oxygen <NOT IMPLEMENTED>",
-                   "rome (moab wrapper with time limit) <NOT IMPLEMENTED>"],
-      "droplist2": ["different temperatures (requires different mdps)",
-                    "different force fields (requires different tops)"],
-      "radiobutton1": "try to swap",
-      "radiobutton2": "dont swap",
-
-      "ok_button": "xxx build code that create forders for each replica, put different mdps or differt tops, grumpp, and run: gmx mdrun -multidir repl1 repl2 -replex 1000"
-    },
+ 
 
 
 
 
-
-    "runHYBRIDqmmm": {
-      "droplist": ["local <NOT IMPLEMENTED>",
-                   "oxygen <NOT IMPLEMENTED>",
-                   "rome (moab wrapper with time limit) <NOT IMPLEMENTED>"],
-      "ok_button": "xxx setup mdp file (qmmm=yes qmmm-group=QM qm-theory=DFTB qm-program=cp2k) gmx make_ndx selecting atoms (10 |20) and setting their name (name 19 QM), then gmx mdrun -s topol.tpr -qmmm cp2k -qmcore 8"
-    },
-
-
-
-    "runLIGANDSCREENING": {
-      "droplist": ["local <NOT IMPLEMENTED>",
-                   "oxygen <imperfect>",
-                   "rome (moab wrapper with time limit) <NOT IMPLEMENTED>"],
-      "ok_button": "xxx runLIGANDSCREENING.sh"
-    },
 
 
     "mdrun_all_tprs": {
@@ -1086,13 +919,6 @@
       "inputbox5": "-npme. ex: 1",
       "inputbox6": "-dlb. ex: yes",
       "ok_button": "xxxxx"
-    },
-
-
-    "watch run in live stream": {
-      "plaintext1": "this was the run example. probably some flag is necessary: run example: gmx_mpi -s virus.tpr -e vis.xtc -xvg none -nsteps 1000000000",
-
-      "ok_button": "clipboard_livestream"
     }
 
 
@@ -1654,14 +1480,187 @@
       }
 },
 
-"GIT": {
-    "keygen": {
+
+
+"terminal": {
+    "echo hello world !": {
+      "ok_button": "clipboard_hello_world"
+    },
+    ".bashrc settings": {
+      "plaintext1": "text to be inserted in .bashrc",
+      "ok_button": "clipboard_bashrc"
+    }
+},
+
+"hardware": {
+
+    "os": {
+      "ok_button": "clipboard_os_info"
+    },
+    "cpu": {
+        "ok_button": "clipboard_cpu_info"
+    },
+   "gpu (nvidia)": {
+        "ok_button": "clipboard_gpu_info"
+    },
+    "ram": {
+      "ok_button": "clipboard_avalable_ram",
+      "plaintext1": "OBS: look at AVAILABLE. free is completely unused, but If you need more, cache will be dumped"
+    },
+    "storage": {
+      "ok_button": "clipboard_avalable_storage",
+      "plaintext1": "OBS: look for devices WITH FILESYSTEM. they can be mounted. (remember FAT32 has a 4G limit per file)"
+    },
+    "filesystems usage": {
+      "ok_button": "clipboard_filesystems_and_disk_space"
+    },
+    "largest disk ocupyers here": {
+      "radiobutton1": "folders sizes",
+      "radiobutton2": "5 largest files nested",
+      "ok_button": "clipboard_folders_and_disk_space"
+    }
+
+
+
+
+    
+
+},
+
+
+
+"network and services": {
+    "my ip": {
+      "ok_button": "clipboard_ip"
+    },
+    "my ports listening": {
+      "ok_button": "clipboard_ports_listening"
+    },
+    "port forwarding": {
+      "ok_button": "clipboard_port_forwarding"
+    },
+    "start server": {
+      "ok_button": "clipboard_start_server"
+    },
+    "all ips available for ssh": {
+      "ok_button": "clipboard_ips_to_ssh"
+    },
+    "ssh key generation": {
       "radiobutton1": "see",
       "radiobutton2": "generate",
       "droplist": ["Ed25519 (modern)",
                    "RSA (older systems)"],
-      "ok_button": "clipboard_keygen"
+      "ok_button": "clipboard_keygen",
+      "plaintext1": "OBS: if there is already a key, dont overwrite! "
     },
+    "ssh send key to host": {
+      "plaintext1": "this will put ~/.ssh/id_ed25519.pub inside ~/.ssh/authorized_keys of the host",
+
+      "ok_button": "clipboard_ssh_send_key_to_server",
+      "plaintext2": "OBS1: this wont work on github. do this instead: click on profile picture / Settings / SSH and GPG keys / New SSH key",
+      "plaintext3": "OBS2: this wont work on EC2. do this instead: EC2 / Network & Security / Key Pairs / Import key pair / then, actually louch a machine and use that key in EC2 / Instances / Launch instances / make several choices, such as Ubuntu 24.04 LTS, chose my key at 'Key pair (login)'  and set SSH   TCP   port 22   source: My IP"
+
+    },
+    ".ssh/config settings": {
+      "plaintext1": "text to be inserted in .ssh/config",
+      "ok_button": "clipboard_ssh_alias"
+      
+    }
+
+
+
+},
+
+
+"environment": {
+
+    "python location": {
+      "ok_button": "clipboard_python_location"
+    },
+    "modules location": {
+      "ok_button": "clipboard_modules_location"
+    },
+
+    "see all conda environments": {
+      "ok_button": "clipboard_see_all_conda_environments"
+    },
+    "create conda environment": {
+      "inputbox1": "environment name",
+      "inputbox2": "python version",
+      "ok_button": "clipboard_create_conda_environment"
+    }
+},
+
+"execution": {
+
+
+"make executable": {
+  "droplist": ["choose...",
+                 "shebang - interpreter will be bash",
+                 "shebang - interpreter will be python",
+                 "chmod - make executable",
+                 "export - add folder to PATH to call it directly"], 
+  "ok_button": "clipboard_make_executable"
+},
+
+"see content of the path variable": {
+  "ok_button": "clipboard_see_content_of_path_variable"
+},
+
+
+"execute file": {
+  "droplist": ["choose...",
+                 "------local------",
+                 "bash (./)", 
+                 "nextflow (nextflow run)", 
+                 "docker (docker run -d)",
+                 "------cluster------",
+                 "slurm (sbatch)",
+                 "torque (qsub)",
+                 "moab (msub)",
+                 "kubernetes (kubectl apply -f)",
+                 "yarn-hadoop (yarn jar)",
+                 "spark on top of yarn-hadoop (spark-submit --master yarn)"],
+  "ok_button": "clipboard_execute"
+},
+
+"whats being executed": {
+  "droplist": ["choose...",
+                "------local------",
+                "bash (top)", 
+                "nextflow (nextflow log)", 
+                "docker (docker ps)",
+                "------cluster------",
+                "slurm (squeue)",
+                "torque (qstat)",
+                "moab (showq)",
+                "kubernetes (kubectl get pods)",
+                "yarn-hadoop (yarn application -list)",
+                "spark on top of yarn-hadoop (use UI!)"],
+  "ok_button": "clipboard_see_running_processes"
+},
+
+"cancel execution": {
+
+  "droplist": ["choose...",
+                "------local------",
+                "bash (kill)", 
+                "nextflow (nextflow kill)", 
+                "docker (docker stop)",
+                "------cluster------",
+                "slurm (scancel)",
+                "torque (qdel)",
+                "moab(mjobctl -c)",
+                "kubernetes (kubectl delet pod)",
+                "yarn-hadoop (yarn application -kill)",
+                "spark on top of yarn-hadoop (yarn application -kill)"],
+  "ok_button": "clipboard_cancel_execution"
+}
+
+},
+
+"GIT": {
+
     "init or clone": {
       "radiobutton1": "init (project started localy)",
       "plaintext1": "action required: go to github and create a new repository with the same name as the project folder ",
@@ -1688,8 +1687,16 @@
       "push": {
         "ok_button": "clipboard_push"
       },
-      "go back to a previous commit": {
-        "inputbox1": "go back to this commit",
+      "go back to a previous commit JUST TO TAKE A LOOK": {
+        "plaintext2": "checkout",
+        "inputbox1": "commit hash to go back to",
+        
+        "ok_button": "clipboard_checkout",
+        "plaintext3": "OBS: this will cause a 'detached head', head is where I am, its only attached if its on the last commit",
+        "plaintext4": "ATTENTION: its mandatory to commit or stash all changes before ckecking out another commit"
+      },
+      "go back to a previous commit DEFINITIVELY": {
+        "inputbox1": "commit hash to go back to",
         "radiobutton1": "reset --hard (DANGER: all posterior changes and commits will be deleted!)",
         "radiobutton2": "revert (posterior commits will be kept, a new commit will be created with the same code as the chosen commit)",
 
@@ -1700,10 +1707,11 @@
         "ok_button": "clipboard_stash"
       },
       "see all branches": {
-
+        "plaintext2": "branch",
         "ok_button": "clipboard_see_all_branches"
       },
-      "change branch": {
+      "go to last commit of a branch": {
+        "plaintext2": "checkout",
         "inputbox1": "destination branch",
         "plaintext1": "ATTENTION: its mandatory to commit or stash all changes before changing branch",
         "ok_button": "clipboard_change_branch"
@@ -1714,6 +1722,8 @@
         "ok_button": "clipboard_merge"
       }
 }
+
+
 
 
 

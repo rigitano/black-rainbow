@@ -1,5 +1,4 @@
 {
-"infrastructure": "#444",
 "vmd tools": "#60572d",
 "vmd representations": "#60572d",
 "vmd representations MARTINI": "#60572d",
@@ -24,7 +23,7 @@
 "mapped DNA analysis (chipseq)": "#a9a9a9",
 "mapped *RNA* analysis": "#a9a9a9",
 "SC analysis": "#553076",
-"GIT": "#444"
-
+"hardware": "#444",
+"GIT": "#333"
   }
   
