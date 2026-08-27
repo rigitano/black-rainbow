@@ -153,6 +153,12 @@
     "kill my jobs": {
       "ok_button": "clipboard_hpc_kill"
     },
+    "assess busyness": {
+      "plaintext1": "this command is for rome",
+      "ok_button": "clipboard_assess_busyness"
+    },
+
+
     "hours in project": {
         "radiobutton1": "rome",
         "radiobutton2": "adastra",
@@ -1539,7 +1545,7 @@
     "port forwarding": {
       "ok_button": "clipboard_port_forwarding"
     },
-    "start server": {
+    "start http server": {
       "ok_button": "clipboard_start_server"
     },
     "all ips available for ssh": {

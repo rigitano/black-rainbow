@@ -537,6 +537,21 @@ def clipboard_hpc_kill():
 
     return sent + " sent to clipboard"
 
+
+def clipboard_assess_busyness():
+    """This function sends a string to the clipboard."""
+    
+
+    pyperclip.copy(r"""ccc_mpp -p -q rome -n | awk 'NR>1 {jobs++; cores+=$4} END {printf "Pending jobs: %d\nPending requested cores: %d\n", jobs, cores}'""")
+
+
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
+
+
 def clipboard_hpc_hours(s_choice):
     """This function sends a string to the clipboard."""
     
