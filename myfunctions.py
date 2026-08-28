@@ -416,8 +416,8 @@ def clipboard_minimal_scheduler_file(s_choice):
 
 
 module purge
-module load cuda/11.8
-module load gromacs/2024.5
+module load cuda/12.8
+module load gromacs/2025.4
 
 
 
@@ -1289,7 +1289,7 @@ def clipboard_fit():
 def clipboard_energy(s_option):
     """This function sends a python function with arguments to the clipboard."""
     
-    if s_option == "(interactive menu)":
+    if s_option == "(menu)":
         pyperclip.copy(f"gmx energy -f prod.edr -b 20000 -o output.xvg")
     elif s_option == "Density":
         pyperclip.copy(f"printf 'Density\n\n' | gmx energy -f prod.edr -b 0 -o edr_density.xvg")
