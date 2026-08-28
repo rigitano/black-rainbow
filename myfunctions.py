@@ -416,15 +416,27 @@ def clipboard_minimal_scheduler_file(s_choice):
 
 
 module purge
-module load cuda/12.8
 module load gromacs/2025.4
 
+# ---- 24h-wall self-chaining : queue the follow-up job now ----
+# If production is already finished, stop the chain (done.txt is made in post-processing).
+if [[ -f "done.txt" ]]; then
+    echo "Simulation already complete. Exiting."
+    exit 0
+fi
+# Otherwise queue the NEXT copy of this job, to start when THIS one ends OK.
+THIS_SCRIPT_PATH="$(readlink -f "$0")"
+sbatch --dependency=afterany:$SLURM_JOB_ID "$THIS_SCRIPT_PATH"
+# --------------------------------------------------------------
 
 
 
 
+#insert the command here
 
 
+
+#insert some sort of theck to see if the command concluded, sanding a "done.txt" file
 
 
 
