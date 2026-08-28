@@ -423,6 +423,7 @@
     "radiobutton3": "Temperature",
     "radiobutton4": "Pressure",
     "radiobutton5": "Potential",
+    "radiobutton6": "SurfaceTension",
     "ok_button": "clipboard_energy"
 
   }
