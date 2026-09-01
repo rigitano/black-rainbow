@@ -1259,7 +1259,7 @@
       "plaintext2": "OPTIONS: int float str bool 'category'",
       "ok_button": "xxxxx"
     },
-    "export df to list": {
+    "export df column to list": {
       "plaintext": "df['col'].tolist()",
       "ok_button": "xxxxx"
     }
