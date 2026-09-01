@@ -267,7 +267,7 @@
       "ok_button": "call_see_partial_charges",
       "plaintext1": "ATENTION: unlike other visualisations. this will create a pdb and load it as a new molecule"
     },
-    "Forces from TRR <NOT IMPLEMENTED>": {
+    "Forces from TRR <NOT>": {
       "ok_button": "xxxxx"
     }
 
@@ -498,7 +498,7 @@
         "ok_button": "clipboard_add_truss"
     },
 
-    "add a plane to pdb <NOT IMPLEMENTED>": {
+    "add a plane to pdb <NOT>": {
         "ok_button": "xxxxx"
     }
 
@@ -539,7 +539,7 @@
     },             
 
 
-    "molecule in membrane <NOT IMPLEMENTED>": {
+    "molecule in membrane <NOT>": {
       "ok_button": "xxxxx"
     },
 
@@ -553,15 +553,15 @@
         "ok_button": "clipboard_pdb2box_full_of_that"
     },
 
-    "tube of lipids <NOT IMPLEMENTED>": {
+    "tube of lipids <NOT>": {
         "ok_button": "xxxxx"
     },
 
-    "sphere of lipids <NOT IMPLEMENTED>": {
+    "sphere of lipids <NOT>": {
         "ok_button": "xxxxx"
     },
 
-    "plane of lipids <NOT IMPLEMENTED>": {
+    "plane of lipids <NOT>": {
         "ok_button": "xxxxx"
     }
 
@@ -569,7 +569,7 @@
 },
 
 "restrict system": {
-    "positions <NOT IMPLEMENTED>": {
+    "positions <NOT>": {
         "droplist": [
                      "[position_restraints] type 1 (harmonic potential)",
                      "[position_restraints] type 2 (flat bottom potential)"
@@ -580,8 +580,8 @@
     "dihedrals": {
       "droplist": [
                    "[ dihedrals ] type 2 (improper dihedral harmonic)",
-                   "[ dihedrals ] type 4 (improper dihedral periodic)<NOT IMPLEMENTED>",
-                   "[ dihedral_restraints ] type 1 (a potential similar to improper dihedral)<NOT IMPLEMENTED>"
+                   "[ dihedrals ] type 4 (improper dihedral periodic)<NOT>",
+                   "[ dihedral_restraints ] type 1 (a potential similar to improper dihedral)<NOT>"
                   ],
 
 
@@ -597,16 +597,16 @@
       "inputbox5": "itp containing the [ dihedral_restraints ] to be edited. ex: 'Protein_chain_A.itp'",
       "inputbox6": "output name. ex: 'Protein_chain_A_restricted.itp'",
 
-      "radiobutton1": "all<NOT IMPLEMENTED>",
+      "radiobutton1": "all<NOT>",
       "radiobutton2": "just phi and psi of protein",
       "ok_button": "clipboard_freeze_dihedrals",
       "plaintext1": "a new file will be created with the new content, the original file will not be modified"
     },
-    "angles <NOT IMPLEMENTED>": {
+    "angles <NOT>": {
         "droplist": ["[ angle_restraints ] type 1 (a potential similar to proper dihedral)"],
         "ok_button": "xxxxx"
       },
-    "distances <NOT IMPLEMENTED>": {
+    "distances <NOT>": {
 
         "radiobutton1": "option 1: using potentials",
         "droplist1": ["[bonds] type 6 (harmonic potential)",
@@ -868,10 +868,10 @@
     },
 
 
-    "runFEPswitch <NOT IMPLEMENTED>": {
-      "droplist": ["local <NOT IMPLEMENTED>",
-                   "oxygen <NOT IMPLEMENTED>",
-                   "rome <NOT IMPLEMENTED>"],
+    "runFEPswitch <NOT>": {
+      "droplist": ["local <NOT>",
+                   "oxygen <NOT>",
+                   "rome <NOT>"],
       "inputbox0": "suffix",
       "inputbox2": "gro file WITH EXTRA COLUMNS",
       "inputbox3": "top file",
@@ -879,10 +879,10 @@
       "ok_button": "xxxxx"
     },
 
-    "runFEPtransfer <NOT IMPLEMENTED>": {
-      "droplist": ["local <NOT IMPLEMENTED>",
-                   "oxygen <NOT IMPLEMENTED>",
-                   "rome <NOT IMPLEMENTED>"],
+    "runFEPtransfer <NOT>": {
+      "droplist": ["local <NOT>",
+                   "oxygen <NOT>",
+                   "rome <NOT>"],
       "inputbox0": "suffix",
       "inputbox2": "gro",
       "inputbox3": "top",
@@ -890,19 +890,19 @@
       "ok_button": "xxxxx"
     },
 
-    "runSTEERED <NOT IMPLEMENTED>": {
-      "droplist": ["local <NOT IMPLEMENTED>",
-                   "oxygen <NOT IMPLEMENTED>",
-                   "rome (moab wrapper with time limit) <NOT IMPLEMENTED>"],
+    "runSTEERED <NOT>": {
+      "droplist": ["local <NOT>",
+                   "oxygen <NOT>",
+                   "rome (moab wrapper with time limit) <NOT>"],
       "radiobutton1": "target mol pulled from anchor mol",
       "radiobutton2": "target mol pulled using a magic force",
       "ok_button": "xxxxx"
     },
 
-    "runUMBRELLAS <NOT IMPLEMENTED>": {
-      "droplist": ["local <NOT IMPLEMENTED>",
-                   "oxygen <NOT IMPLEMENTED>",
-                   "rome (moab wrapper with time limit) <NOT IMPLEMENTED>"],
+    "runUMBRELLAS <NOT>": {
+      "droplist": ["local <NOT>",
+                   "oxygen <NOT>",
+                   "rome (moab wrapper with time limit) <NOT>"],
       "ok_button": "xxxxx"
     },
 
@@ -914,8 +914,8 @@
 
 
     "mdrun_all_tprs": {
-      "droplist": ["local <NOT IMPLEMENTED>",
-                   "oxygen <NOT IMPLEMENTED>",
+      "droplist": ["local <NOT>",
+                   "oxygen <NOT>",
                    "rome (moab wrapper with time limit) <imperfect>"],
 
       "radiobutton1": "paralelize in a simple way",
