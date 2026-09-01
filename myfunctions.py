@@ -272,6 +272,26 @@ Host adastra
 
     return sent + " sent to clipboard"
 
+
+
+def clipboard_file_transfer(s_choice,s_extension):
+    """This function sends something to the clipboard."""
+    
+    if s_choice == 'folder':
+        pyperclip.copy(f"""rsync -avz hrigitano@ibcp24-043:/data1/sonia/folder_without_slash .""")
+
+    elif s_choice == 'chosen extension, keeping folder structure':
+        pyperclip.copy(f"""rsync -avm --include='*/' --include='*.{s_extension}' --exclude='*' hrigitano@ibcp24-043:/data1/sonia/folder_without_slash .""")
+    
+    # Retrieve text from the clipboard
+    sent = pyperclip.paste()
+
+    return sent + " sent to clipboard"
+
+
+
+
+
 def clipboard_custer_overview():
     """This function sends something to the clipboard."""
     
@@ -1125,11 +1145,11 @@ def clipboard_unique_lines_bash(s_file_name):
 
 
 
-def clipboard_parse_bash(s_regex,s_column_setup):
+def clipboard_parse_bash(s_regex,s_column_setup, s_file):
     """This function sends 'sort data.txt | uniq' to the clipboard."""
     
     # Copy text to the clipboard
-    pyperclip.copy(f"sed -E 's#{s_regex}#{s_column_setup} #'")
+    pyperclip.copy(f"sed -E 's|{s_regex}|{s_column_setup}|' {s_file}")
 
     # Retrieve text from the clipboard
     sent = pyperclip.paste()
