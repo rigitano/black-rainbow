@@ -1304,15 +1304,15 @@ def clipboard_energy(s_option):
     if s_option == "(menu)":
         pyperclip.copy(r"gmx energy -f prod.edr -b 20000 -o edr_output20to END.xvg")
     elif s_option == "Density":
-        pyperclip.copy(r"printf 'Density\n\n' | gmx energy -f prod.edr -b 20000 -o edr_density20to END.xvg")
+        pyperclip.copy(r"""printf 'Density\n\n' | gmx energy -f prod.edr -b 20000 -o edr_density20to END.xvg""")
     elif s_option == "Temperature":
-        pyperclip.copy(r"printf 'Temperature\n\n' | gmx energy -f prod.edr -b 20000 -o edr_temperature20to END.xvg")
+        pyperclip.copy(r"""printf 'Temperature\n\n' | gmx energy -f prod.edr -b 20000 -o edr_temperature20to END.xvg""")
     elif s_option == "Pressure":
-        pyperclip.copy(r"printf 'Pressure\n\n' | gmx energy -f prod.edr -b 0 -20000 edr_pressure20to END.xvg")
+        pyperclip.copy(r"""printf 'Pressure\n\n' | gmx energy -f prod.edr -b 0 -20000 edr_pressure20to END.xvg""")
     elif s_option == "Potential":
-        pyperclip.copy(r"printf 'Potential\n\n' | gmx energy -f prod.edr -b 0 -20000 edr_potential20to END.xvg")
+        pyperclip.copy(r"""printf 'Potential\n\n' | gmx energy -f prod.edr -b 0 -20000 edr_potential20to END.xvg""")
     elif s_option == "SurfaceTension":
-        pyperclip.copy(r"printf '#Surf*SurfTen\n\n' | gmx energy -f prod.edr -b 20000 -o edr_st20to END.xvg")
+        pyperclip.copy(r"""printf '#Surf*SurfTen\n\n' | gmx energy -f prod.edr -b 20000 -o edr_st20to END.xvg""")
 
 
     # Retrieve text from the clipboard
