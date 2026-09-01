@@ -1213,7 +1213,7 @@
 
 
     "filter table": {
-      "plaintext": "df.query('column1 == value1 and column2 == value2')",
+      "plaintext": "df.query(\"column1 == 'hi' and column2 == 32\")",
       "ok_button": "xxxxx"
     },
 
@@ -1251,15 +1251,18 @@
       "ok_button": "xxxxx"
     },
     "treat na": {
-      "plaintext": "dfclean=df.fillna(0) dfclean=df.dropna(0)",
+      "plaintext": "dfclean=df.fillna(0) dfclean=df.dropna()",
       "ok_button": "xxxxx"
     },
     "change type": {
       "plaintext": "df['col'].astype(int)",
-      "plaintext2": "int float str bool 'category'",
+      "plaintext2": "OPTIONS: int float str bool 'category'",
+      "ok_button": "xxxxx"
+    },
+    "export df to list": {
+      "plaintext": "df['col'].tolist()",
       "ok_button": "xxxxx"
     }
-
 
 
 },
